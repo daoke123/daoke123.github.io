@@ -1,0 +1,1800 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>玩客云宝塔5.9版本</title>
+    <url>/2020/10/09/11/</url>
+    <content><![CDATA[<p>第一步<br>宝塔5.9版本<br>wget -O install.sh <a href="http://download.bt.cn/install/install-ubuntu.sh">http://download.bt.cn/install/install-ubuntu.sh</a> &amp;&amp; bash install.sh</p>
+<p>安装完成后记着账户和密码</p>
+<p>ip用本地ip上个视频讲过然后安装支持库<br>wget <a href="http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz">http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz</a></p>
+<p>接着解压<br>tar zxvf libiconv-1.13.1.tar.gz</p>
+<p>然后输入进入文件夹<br>cd libiconv-1.13.1</p>
+<p>接着输入配置libiconv<br>.&#x2F;configure -prefix&#x3D;&#x2F;usr&#x2F;local</p>
+<p>这个是如果出错输入！！！！！！！！！！！！！！！！！！！！<br>.&#x2F;configure -prefix&#x3D;&#x2F;usr&#x2F;local –build arm-pc-linux 如果失败指定arm机型</p>
+<p>随后编译安装编译安装<br>make</p>
+<p>make install</p>
+<p>接着输入创建一个文件链接到Libiconv库<br>ln -s &#x2F;usr&#x2F;local&#x2F;lib&#x2F;libiconv.so &#x2F;usr&#x2F;lib</p>
+<p>ln -s &#x2F;usr&#x2F;local&#x2F;lib&#x2F;libiconv.so.2 &#x2F;usr&#x2F;lib&#x2F;libiconv.so.2</p>
+<p>以上的全部复制鼠标右键粘贴就行<br>如果安装Apache登录宝塔面板下重新安装Apache 2.4 mysql5.5 php7.x（不要安装5.x）不用下面的</p>
+<p>如果要安装nginx请接着下面不要安装Apache<br>输入返回root目录<br>cd &#x2F;root<br>输入下载提供的nginx.sh<br>wget <a href="https://www.feiji.work/n1/bt/nginx.sh">https://www.feiji.work/n1/bt/nginx.sh</a><br>再输入直接安装<br>sh nginx.sh install<br>随后登录宝塔面板下重新安装nginx1.14 mysql5.5 php7.x</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>动态域名解析dns</title>
+    <url>/2020/10/09/12/</url>
+    <content><![CDATA[<p><a href="https://github.com/NewFuture/DDNS">https://github.com/NewFuture/DDNS</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/NewFuture/DDNS</span><br><span class="line">cd DDNS</span><br><span class="line">./run.py #运行一次 生成config.json配置文件</span><br><span class="line">vi config.json #修改 id 域名 token</span><br><span class="line">./task.sh</span><br></pre></td></tr></table></figure>
+
+<p>然后运行命令crontab -e ,将脚本加入定时运行中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+
+<p>末尾添加一行（复制后到黑色窗口直接鼠标右键就行）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*/5 * * * * /root/DDNS/task.sh</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>DDNS</tag>
+        <tag>动态域名解析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>N1 ARMBIAN 固定MAC</title>
+    <url>/2020/10/10/13/</url>
+    <content><![CDATA[<p>winscp编辑网卡etc&#x2F;network&#x2F;interfaces，在iface eth0 inet dhcp下添加一行并保存</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pre-up ifconfig eth0 hw ether 1A:33:E6:90:1F:27</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Linux VPS流量查看/监测工具 -- vnStat</title>
+    <url>/2020/10/11/14/</url>
+    <content><![CDATA[<p>vnstat安装步骤，软件包和编译安装任选一种方法即可<br>使用yum&#x2F;apt-get 软件包管理工具进行安装：（建议使用此方法）</p>
+<p>CentOS需要先安装EPEL第三方源，安装好EPEL后执行命令：yum install vnstat 即可安装上vnstat，安装过程可能会要求输入y 进行确认。<br>Fedora安装命令：yum install vnstat 或 dnf install vnstat<br>Debian&#x2F;Ubuntu安装命令：<code>apt-get install vnstat</code><br>可以<code>ifconfig</code>看看自己的网卡是否是eth0<br>执行一下：<code>vnstat -u -i eth0</code> 创建上对应网卡的数据库，eth0根据前面的说明自己修改网卡。<br>首先，停止 vnStat 服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop vnstat</span><br></pre></td></tr></table></figure>
+
+<p>再启动 vnStat 服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start vnstat</span><br></pre></td></tr></table></figure>
+
+<p>vnstat基本使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vnstat -l    #显示实时流量</span><br><span class="line">vnstat -h    #按小时查询</span><br><span class="line">vnstat -d    #按天数查询</span><br><span class="line">vnstat -m    #按月数查询</span><br><span class="line">vnstat -w    #按周数查询</span><br><span class="line">vnstat -t    #查询TOP10</span><br></pre></td></tr></table></figure>
+
+<p>更多命令帮助信息可以 <code>vnstat --help</code> 进行查看。</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>vps命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>玩客云安装AdGuardHome</title>
+    <url>/2020/10/12/15/</url>
+    <content><![CDATA[<p>安装 AdGuard Home</p>
+<p>二进制版本<br>wget <a href="https://static.adguard.com/adguardhome/release/AdGuardHome_linux_armv7.tar.gz">https://static.adguard.com/adguardhome/release/AdGuardHome_linux_armv7.tar.gz</a></p>
+<p>tar -zxvf AdGuardHome_linux_armv7.tar.gz</p>
+<p>cd AdGuardHome</p>
+<p>.&#x2F;AdGuardHome -s install</p>
+<h1 id="Linux-下使用的服务管理器是-systemd-、Upstart-或-SysV，macOS-下使用的服务管理器是-Launchd。"><a href="#Linux-下使用的服务管理器是-systemd-、Upstart-或-SysV，macOS-下使用的服务管理器是-Launchd。" class="headerlink" title="Linux 下使用的服务管理器是 systemd 、Upstart 或 SysV，macOS 下使用的服务管理器是 Launchd。"></a>Linux 下使用的服务管理器是 systemd 、Upstart 或 SysV，macOS 下使用的服务管理器是 Launchd。</h1><p>AdGuardHome -s install<br>服务安装后好，你可以使用以下命令来管理它。</p>
+<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>systemctl start AdGuardHome</p>
+<h1 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h1><p>systemctl enable AdGuardHome</p>
+<h1 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h1><p>restart AdGuardHome</p>
+<h1 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h1><p>systemctl stop AdGuardHome</p>
+<h1 id="卸载-AdGuardHome-服务"><a href="#卸载-AdGuardHome-服务" class="headerlink" title="卸载 AdGuardHome 服务"></a>卸载 AdGuardHome 服务</h1><p>systemctl uninstall AdGuardHome</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>甜糖 docker 命令</title>
+    <url>/2020/10/14/16/</url>
+    <content><![CDATA[<p><code>docker run -v /mnt/ssd1:/mnts -d --name ttnode --net=host -i -t --privileged=true --restart=always 744287383/linux-arm64-ttnode /start.sh</code></p>
+<h1 id="第一次执行命令需要下载镜像。如果下载镜像非常慢的，请按下CTRL-C来中断下载，然后再次执行这条命令重新下载-x2F-mnt-x2F-ssd1为硬盘的挂载路径，-x2F-mnts这个冒号和路径的不能改动，ttnode为容器的名字。"><a href="#第一次执行命令需要下载镜像。如果下载镜像非常慢的，请按下CTRL-C来中断下载，然后再次执行这条命令重新下载-x2F-mnt-x2F-ssd1为硬盘的挂载路径，-x2F-mnts这个冒号和路径的不能改动，ttnode为容器的名字。" class="headerlink" title="第一次执行命令需要下载镜像。如果下载镜像非常慢的，请按下CTRL+C来中断下载，然后再次执行这条命令重新下载 #&#x2F;mnt&#x2F;ssd1为硬盘的挂载路径，:&#x2F;mnts这个冒号和路径的不能改动，ttnode为容器的名字。"></a>第一次执行命令需要下载镜像。如果下载镜像非常慢的，请按下CTRL+C来中断下载，然后再次执行这条命令重新下载 #&#x2F;mnt&#x2F;ssd1为硬盘的挂载路径，:&#x2F;mnts这个冒号和路径的不能改动，ttnode为容器的名字。</h1><p>甜糖容器限制内存的方法（防止机器跑死）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker update ttnode --memory-swap -1 -m 1080M  </span><br></pre></td></tr></table></figure>
+
+<p>查看是否生效</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker stats</span><br></pre></td></tr></table></figure>
+
+<p>查询docker id</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p>设置自动启动容器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker update --restart=always</span><br></pre></td></tr></table></figure>
+
+<p>局域网设备解决办法：<br>连接N1的ssh执行以下命令：<br><code>docker exec -it ttnode /bin/bash</code> #进入容器的命令，ttnode是容器名。修改成自己的容器的名字<br><code>/usr/node/ttnode -p /mnts</code> #执行甜糖的命令</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>N1 armbian 前期基本操作管理</title>
+    <url>/2020/10/16/17/</url>
+    <content><![CDATA[<p>常用命令 1.<code>armbian-config</code> 调出窗口配置 2.<code>passwd</code> 修改密码 3.<code>apt install python3-pip</code> 安装软件 4.<code>apt list --installed</code> 列出安装的所有包 5.<code>apt list --installed grep docker</code> 列出安装的和docker相关的包 6.<code>apt-get remove docker-ce</code> 删除已安装的软件包（保留配置文件），不会删除依赖软件包，保留配置文件； 7.<code>apt-get purge</code> 删除已安装的软件包（不保留配置文件)，删除软件包，同时删除相应依赖软件包； 8.<code>apt-get autoremove</code> 删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件；高能警告：慎用本命令！！！它会在你不知情的情况下，一股脑删除很多“它认为”你不再使用的软件； 9.<code>apt-get clean</code> 删除已经安装过的的软件安装包；自动将<code>/var/cache/apt/archives/</code>下的所有deb删掉，相当于清理下载的软件安装包； 固定mac N1的mac每次重启都会变化，导致IP不固定，因此要固定mac</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/network/interfaces</span><br></pre></td></tr></table></figure>
+
+<p>iface eth0 inet dhcp（static）这行下面，加1行：pre-up ifconfig eth0 hw ether 52:d1:87:32:33:eb</p>
+<h1 id="换源——以stretch版本和buster版本为例"><a href="#换源——以stretch版本和buster版本为例" class="headerlink" title="换源——以stretch版本和buster版本为例"></a>换源——以<code>stretch</code>版本和<code>buster</code>版本为例</h1><p>执行下面的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>按Delete删除所有内容，并替换内容 如果你的是<code>stretch</code>版本，就换成下面的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br></pre></td></tr></table></figure>
+
+<p>如果你是<code>buster</code>版本，就换成下面的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br></pre></td></tr></table></figure>
+
+<p>简单常用命令：</p>
+<ul>
+<li><p>更换软件源：</p>
+<p>sed -i ‘s&#x2F;deb.debian.org&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;g’ &#x2F;etc&#x2F;apt&#x2F;sources.list<br>sed -i ‘ssecurity.debian.orgmirrors.tuna.tsinghua.edu.cn&#x2F;debian-securityg’ &#x2F;etc&#x2F;apt&#x2F;sources.list<br>sed -i ‘sapt.armbian.commirrors.tuna.tsinghua.edu.cn&#x2F;armbiang’ &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;armbian.list</p>
+</li>
+</ul>
+<p>如果遇到无法拉取 https 源的情况，请先使用 http 源并安装： <code>sudo apt install apt-transport-https ca-certificates</code> 改 armbian 源 注意<code>stretch</code> <code>buster</code> <code>bionic</code>版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/apt/sources.list.d/armbian.list</span><br></pre></td></tr></table></figure>
+
+<p>以<code>bionic</code>版本为例，将里面的那行注释掉（在前面添加 # ）然后添加这行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/armbian bionic main bionic-utils bionic-desktop</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>按Ctrl+X退出，选择是否保存输入Y，按回车确认 如果你是其他版本（如bullseye），源地址可以在这里查询，根据自己的版本选择即可获得地址 <a href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/">https://mirrors.tuna.tsinghua.edu.cn/help/debian/</a> 然后执行如下命令（非常重要！非常重要！非常重要！）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update&amp;&amp;apt upgrade -y</span><br></pre></td></tr></table></figure>
+
+<p>作用是更新所有的软件到最新版，无论是以后装宝塔还是装nginx，php，mysql都要先执行这个操作！（当然不用太频繁，太频繁了也没什么可以更新的）执行完之后再装软件一般就不会有什么错了</p>
+<h1 id="开启BBR加速："><a href="#开启BBR加速：" class="headerlink" title="开启BBR加速："></a>开启BBR加速：</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat &gt;&gt; /etc/sysctl.conf  /etc/timezone</span><br></pre></td></tr></table></figure>
+
+<p>删除默认 DNS：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm /etc/resolvconf/resolv.conf.d/head &amp;&amp; touch /etc/resolvconf/resolv.conf.d/head</span><br></pre></td></tr></table></figure>
+
+<p>注：在重启系统后，输入<code>cat /etc/resolv.conf</code>，查看返回结果是否为你路由器的 DNS，如果是，则表示删除成功，如果不是，则再执行一次删除命令。 安装docker</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line"></span><br><span class="line">sh get-docker.sh --mirror Aliyun</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用上述命令安装会调用阿里云的镜像，安装速度较快。 putty下执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line"> &quot;registry-mirrors&quot;: [</span><br><span class="line"> &quot;https://mirror.baidubce.com&quot;,</span><br><span class="line"> &quot;https://registry.docker-cn.com&quot;,</span><br><span class="line"> &quot;http://hub-mirror.c.163.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>Armbian</tag>
+        <tag>n1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux 格式化硬盘、分区</title>
+    <url>/2020/10/22/19/</url>
+    <content><![CDATA[<p>查看当前硬盘</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure>
+
+<p>格式化硬盘</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkfs -t ext4 /dev/sdb</span><br></pre></td></tr></table></figure>
+
+<p>分区</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fdisk /dev/sdb</span><br></pre></td></tr></table></figure>
+
+<p>然后按提示输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@test:/# fdisk /dev/sdb</span><br><span class="line"></span><br><span class="line">Welcome to fdisk (util-linux 2.27.1).</span><br><span class="line">Changes will remain in memory only, until you decide to write them.</span><br><span class="line">Be careful before using the write command.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Command (m for help): n</span><br><span class="line">Partition type</span><br><span class="line">   p   primary (1 primary, 0 extended, 3 free)</span><br><span class="line">   e   extended (container for logical partitions)</span><br><span class="line">Select (default p): p</span><br><span class="line">Partition number (2-4, default 2): 2</span><br><span class="line">First sector (651175056-1953525167, default 651175936): </span><br><span class="line">Last sector, +sectors or +size&#123;K,M,G,T,P&#125; (651175936-1953525167, default 1953525167): 1302350111</span><br><span class="line"></span><br><span class="line">Created a new partition 2 of type &#x27;Linux&#x27; and of size 310.5 GiB.</span><br><span class="line"></span><br><span class="line">Command (m for help): wq</span><br><span class="line">The partition table has been altered.</span><br><span class="line">Calling ioctl() to re-read partition table.</span><br></pre></td></tr></table></figure>
+
+<p>如果遇到提示Re-reading the partition table failed.: Device or resource busy<br>用命令<code>partprobe</code><br>初始化分区</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkfs.ext4 /dev/sdb1</span><br></pre></td></tr></table></figure>
+
+<p>挂载到本地</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mount /dev/sdb1 /mnt/disk_1</span><br></pre></td></tr></table></figure>
+
+<p>查看磁盘使用情况</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">df -l</span><br></pre></td></tr></table></figure>
+
+<p>提示partition满了,解决办法<br>把swapper分区删掉(不是一个好办法,但是能解决问题)<br>通过fdisk -l查看哪个是swapp<br>swapoff &#x2F;dev&#x2F;sdb*<br>然后通过fdisk &#x2F;dev&#x2F;sdb删掉swapp分区,这样就多了个partition</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>7ghost 反向代理神器</title>
+    <url>/2020/11/26/20/</url>
+    <content><![CDATA[<p>最近发现一个神器叫7ghost,是一款基于PHP的网站反向代理程序。能够快速高效的反向代理所指定的网站。<br>可以做很多事情，比如国外速度较慢的小鸡等,自己去发现吧。</p>
+]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>7ghost</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Arm Linux二进制程序合集</title>
+    <url>/2020/11/26/21/</url>
+    <content><![CDATA[<p>二进制程序真香！</p>
+<p>Nging</p>
+<p>安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O install.sh http://mouyijun.gitee.io/script/nging.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>Cloudreve网盘</p>
+<p>安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O install.sh http://mouyijun.gitee.io/script/cloudreve.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>Simple Torrent （BT&#x2F;磁力下载器）</p>
+<p>安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O install.sh http://mouyijun.gitee.io/script/simple-torrent.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>Filebrowser（小型文件浏览器）</p>
+<p>安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O install.sh http://mouyijun.gitee.io/script/filebrowser.sh &amp;&amp; sudo bash install.sh</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>转 <a href="http://wky.sssin.cn/index.php/120.html">http://wky.sssin.cn/index.php/120.html</a></p>
+]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>n1</tag>
+        <tag>二进制</tag>
+        <tag>玩客云</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>debian shell脚本加入开机启动</title>
+    <url>/2020/12/12/25/</url>
+    <content><![CDATA[<p>问题：<br>debian shell脚本加入开机启动</p>
+<p>解决：<br>编辑&#x2F;etc&#x2F;crontab，尾部加入：@reboot root &#x2F;root&#x2F;rules.sh即可，&#x2F;root&#x2F;rules.sh为脚本路径</p>
+<p>样例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">view source</span><br><span class="line">01</span><br><span class="line"># /etc/crontab: system-wide crontab</span><br><span class="line">02</span><br><span class="line"># Unlike any other crontab you don&#x27;t have to run the `crontab&#x27;</span><br><span class="line">03</span><br><span class="line"># command to install the new version when you edit this file</span><br><span class="line">04</span><br><span class="line"># and files in /etc/cron.d. These files also have username fields,</span><br><span class="line">05</span><br><span class="line"># that none of the other crontabs do.</span><br><span class="line">06</span><br><span class="line"> </span><br><span class="line">07</span><br><span class="line">SHELL=/bin/sh</span><br><span class="line">08</span><br><span class="line">PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin</span><br><span class="line">09</span><br><span class="line"> </span><br><span class="line">10</span><br><span class="line"># m h dom mon dow user  command</span><br><span class="line">11</span><br><span class="line">17 *    * * *   root    cd / &amp;&amp; run-parts --report /etc/cron.hourly</span><br><span class="line">12</span><br><span class="line">25 6    * * *   root    test -x /usr/sbin/anacron  ( cd / &amp;&amp; run-parts --report /etc/cron.daily )</span><br><span class="line">13</span><br><span class="line">47 6    * * 7   root    test -x /usr/sbin/anacron  ( cd / &amp;&amp; run-parts --report /etc/cron.weekly )</span><br><span class="line">14</span><br><span class="line">52 6    1 * *   root    test -x /usr/sbin/anacron  ( cd / &amp;&amp; run-parts --report /etc/cron.monthly )</span><br><span class="line">15</span><br><span class="line">#</span><br><span class="line">16</span><br><span class="line">@reboot root /root/rules.sh</span><br><span class="line"> </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Debian CentOS修改时区</title>
+    <url>/2020/12/12/26/</url>
+    <content><![CDATA[<p>Debian CentOS修改时区<br>Debian修改时区：</p>
+<p><code>dpkg-reconfigure tzdata</code></p>
+<p>CentOS修改时区：</p>
+<p>timedatectl set-timezone Asia&#x2F;Shanghai<br>1.首先查看当前语言环境<br><code>env grep LANG</code></p>
+<p>2.开始第一步</p>
+<p><code>export LANG=en_US.UTF-8</code><br>注意 en表示语言，US表示国家，UTF-8表示编码</p>
+<p>第二步<br><code>dpkg-reconfigure locales</code><br><code>reboot</code></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>CentOS</tag>
+        <tag>Debian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>甜糖一键部署脚本</title>
+    <url>/2020/12/13/27/</url>
+    <content><![CDATA[<p>使用方法</p>
+<ol>
+<li><p>推荐使用 Diskgenius 格式化存储设备为 ext4 格式（近期将支持 exfat 格式，以后可以不用格式化了，当然还是推荐 ext4 性能更高）</p>
+</li>
+<li><p>使用 FinalShell或者Xshell 通过SSH 进入玩客云&#x2F;N1&#x2F;等 Arm设备，执行以下指令</p>
+<p><code>wget --no-check-certificate https://cdn.jsdelivr.net/gh/ShallowAi/ttnode@main/install.sh &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh</code></p>
+</li>
+</ol>
+<p>复制代码<br>按下任意键，开始安装。</p>
+<ol start="3">
+<li>若以上内容无报错 且显示了正确的UID和二维码，即搭建完成。</li>
+<li>注意：本脚本默认不修改 MAC（Media Access Control Address） 地址 若你的 MAC 地址在刷机后被覆盖，需要随机 MAC 请使用如下脚本（更新中）</li>
+</ol>
+<p>更新日志<br>2020-12-9 发布于恩山.</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>n1</tag>
+        <tag>玩客云</tag>
+        <tag>arnbian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>speedtest-x</title>
+    <url>/2020/12/14/28/</url>
+    <content><![CDATA[<p><code>apt update &amp;&amp; apt install curl</code><br><code>curl -sSL https://get.docker.com/ sh</code><br><code>docker run -d -p 8008:80 badapple9/speedtest-x</code></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>speedtest</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>bbr加速脚本合集</title>
+    <url>/2020/12/14/29/</url>
+    <content><![CDATA[<p><code>wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&quot;</code><br><code>chmod +x tcp.sh</code><br><code>./tcp.sh</code></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>bbr</tag>
+        <tag>脚本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>n1 Armbian CloudFlare DDNS IPV6</title>
+    <url>/2020/10/03/3/</url>
+    <content><![CDATA[<p>.&#x2F;install.sh</p>
+<p>…<br>…</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># reboot 重启设备</span><br><span class="line"># poweroff 关闭设备</span><br><span class="line"># apt update &amp;&amp; apt upgrade -y</span><br></pre></td></tr></table></figure>
+
+<p>关闭或重启设备时将U盘拔出,就可以进入安装到 EMMC 的系统了.</p>
+<p>如果要配置和使用无线可以用 nmtui, 至少还有个界面看</p>
+<p>如果没有公网 IP 可以使用 Frp 等工具来打洞: Frp</p>
+<p>有公网就直接上 DDNS 吧,我使用的是 CloudFlare, 一个脚本加定时任务就能搞定:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">localIpv6=`ip -6 a  grep global  awk &#x27;&#123;print $2&#125;&#x27;  awk -F &#x27;/&#x27; &#x27;&#123;print $1&#125;&#x27;`</span><br><span class="line"></span><br><span class="line">echo &quot;ipv6 is: $localIpv6, updating to CloudFlare...&quot;</span><br><span class="line"></span><br><span class="line">curl -X PUT https://api.cloudflare.com/client/v4/zones/$zone/dns_records/$domain \</span><br><span class="line">  -H &#x27;Content-Type: application/json&#x27; \</span><br><span class="line">  -H &#x27;X-Auth-Email: youremail@example.com&#x27; \</span><br><span class="line">  -H &#x27;X-Auth-Key: yourapikey&#x27; \</span><br><span class="line">  -H &#x27;cache-control: no-cache&#x27; \</span><br><span class="line">  -d &#x27;&#123;&quot;type&quot;: &quot;AAAA&quot;,&quot;proxied&quot;: false,&quot;name&quot;: &quot;example.com&quot;,&quot;content&quot;: &quot;&#x27;$localIpv6&#x27;&quot;&#125;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>crontab 加个任务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*/5 * * * * sh /root/ddns.sh &gt; /dev/null</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>附件下载<a href="http://w.daoke.bid/usr/uploads/2020/10/1030870220.zip">CloudFlareddns.zip</a></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>DDNS</tag>
+        <tag>n1</tag>
+        <tag>CloudFlare</tag>
+        <tag>IPV6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux VPS常用命令集合备忘录</title>
+    <url>/2020/12/17/30/</url>
+    <content><![CDATA[<p><strong>Linux VPS常用命令集合备忘录</strong><br>常用命令</p>
+<h1 id="更改root密码"><a href="#更改root密码" class="headerlink" title="更改root密码"></a>更改root密码</h1><p>passwd root</p>
+<h1 id="mv命令-移动文件（把abc-tar-gz移动到backup目录）"><a href="#mv命令-移动文件（把abc-tar-gz移动到backup目录）" class="headerlink" title="mv命令 移动文件（把abc.tar.gz移动到backup目录）"></a>mv命令 移动文件（把abc.tar.gz移动到backup目录）</h1><p>mv &#x2F; &#x2F;backup</p>
+<h1 id="rm删除命令"><a href="#rm删除命令" class="headerlink" title="rm删除命令"></a>rm删除命令</h1><p>rm -rf &#x2F;<br>将会删除&#x2F;目录以及其下所有文件、文件夹<br>-r 就是向下递归，不管有多少级目录，一并删除<br>-f 就是直接强行删除，不作任何提示的意思<br>如文件夹命有空格，需加引号<br>如：rm -rf &#x2F;‘Naughty America SiteRip 4K Part13-sweety’</p>
+<h1 id="tar命令-C打包和X解压文件"><a href="#tar命令-C打包和X解压文件" class="headerlink" title="tar命令 C打包和X解压文件"></a>tar命令 C打包和X解压文件</h1><p>tar zcvf test.tar.gz &#x2F; # 把&#x2F;打包<br>tar zxvf test.tar.gz # 在当前目录解压test.tar.gz</p>
+<h1 id="安装VI编辑器："><a href="#安装VI编辑器：" class="headerlink" title="安装VI编辑器："></a>安装VI编辑器：</h1><p>apt-get install vim<br>i 开始编辑<br>Esc 完成编辑<br>:wq 保存退出<br>:q！ 退出，不保存</p>
+<h1 id="查看硬盘使用时间"><a href="#查看硬盘使用时间" class="headerlink" title="查看硬盘使用时间"></a>查看硬盘使用时间</h1><p>apt-get install smartmontools<br>smartctl -A &#x2F;sda<br>Power_On_Hours 后面的这个就是通电时间, 单位为小时</p>
+<h1 id="IPV6测试"><a href="#IPV6测试" class="headerlink" title="IPV6测试"></a>IPV6测试</h1><p>VPS<br>ping6<br>ping6<br>PC<br>ping -6 2400:da00::6666<br>ping -6</p>
+<h1 id="SSD硬盘测试"><a href="#SSD硬盘测试" class="headerlink" title="SSD硬盘测试"></a>SSD硬盘测试</h1><p>安装hdparm<br>install hdparm -y<br>找出对应磁盘的驱动号<br>fdisk -l<br>利用hdparm在指定的硬盘上测试硬盘的读写速度<br>hdparm -t &#x2F;hda</p>
+<h1 id="其它常用"><a href="#其它常用" class="headerlink" title="其它常用"></a>其它常用</h1><p>cd # 进入某目录 举例：cd &#x2F;<br>ls # 查看当前目录文件<br>echo nameserver 8.8.8.8 &#x2F;resolv.conf #设置dns为Google的<br>lsb_release -a查看系统版本<br>uname -r查看内核<br>uname -a # 查看内核&#x2F;操作系统&#x2F;CPU信息<br>head -n 1 &#x2F;issue # 查看操作系统版本<br>cat &#x2F;cpuinfo # 查看CPU信息<br>hostname # 查看计算机名<br>lspci -tv # 列出所有PCI设备<br>lsusb -tv # 列出所有USB设备<br>lsmod # 列出加载的内核模块<br>env # 查看环境变量</p>
+<p>关闭防火墙<br>&#x2F;Ubuntu 关闭防火墙<br>apt-get remove ufw<br>iptables -P INPUT ACCEPT<br>iptables -P OUTPUT ACCEPT<br>iptables -F<br>CentOS 关闭防火墙<br>systemctl stop firewalld.service<br>systemctl disable firewalld.service<br>yum install iptables iptables-services<br>iptables -P INPUT ACCEPT<br>iptables -P OUTPUT ACCEPT<br>iptables -F</p>
+<p>放行端口<br>&#x2F;Ubuntu<br>iptables -I INPUT -p tcp –dport 8888 -j ACCEPT<br>iptables-save<br>安装iptables-persistent使规则持续生效<br>apt-get install iptables-persistent<br>netfilter-persistent save<br>netfilter-persistent reload<br>Centos<br>firewall-cmd –zone&#x3D;public &#x2F;tcp –permanent<br>firewall-cmd –reload<br>查看防火墙规则<br>iptables -L</p>
+<p>阿里卸载云盾监控<br>卸载云盾监控<br>wget<br>sh uninstall.sh<br>wget<br>sh quartz_uninstall.sh<br>删除目录残留<br>pkill aliyun-service<br>rm -fr &#x2F;agentwatch &#x2F;aliyun-service<br>rm -rf &#x2F;aegis*</p>
+<p>wget命令<br>安装wget：<br>apt-get update<br>apt-get install wget<br>wget –version<br>常用命令：<br>wget命令 下载单个文件<br>wget<br>wget命令 下载并重命名<br>wget -O xx.zip<br>wget命令 限速下载<br>wget –limit-rate&#x3D;500k<br>wget命令 断点续传<br>wget -c<br>wget命令 后台下载<br>wget -b<br>wget命令 伪装代理名称下载<br>wget –user-agent&#x3D;”&#x2F;5.0 (Windows; U; Windows NT 6.1; en-US) &#x2F;534.16 (KHTML, like Gecko) &#x2F;10.0.648.204 &#x2F;534.16”<br>wget命令 批次下载多个文件<br>wget -i filelist.txt #我们制作一个filelist.txt文件，然后文档中放置多个文件需要下载。一行一个链接文件<br>wget命令 限制送文件大小下载<br>wget -Q5m -i filelist.txt</p>
+<p>TOP命令<br>例：<br>Tasks: 29 total, 1 running, 28 sleeping, 0 stopped, 0 zombie<br>Cpu(s): 0.3% us, 1.0% sy, 0.0% ni, 98.7% id, 0.0% wa, 0.0% hi, 0.0% si<br>-——————————- 分割线 ——————————-<br>Tasks: 29 total 进程总数<br>1 running 正在运行的进程数<br>28 sleeping 睡眠的进程数<br>0 stopped 停止的进程数<br>0 zombie 僵尸进程数<br>Cpu(s):<br>0.3% us 用户空间占用CPU百分比<br>1.0% sy 内核空间占用CPU百分比<br>0.0% ni 用户进程空间内改变过优先级的进程占用CPU百分比<br>98.7% id 空闲CPU百分比<br>0.0% wa 等待输入输出的CPU时间百分比<br>0.0% hi<br>0.0% si<br>0.0% wa wa百分比可以大致的体现出当前的磁盘io请求是否频繁；</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">如果wa的数量比较大，说明等待输入输出的的io比较多。</span><br></pre></td></tr></table></figure>
+
+<p>安装UNZIP<br>获取unzip源码<br>wget<br>解压<br>tar zxvf unzip552.tar.gz<br>进入目录<br>cd &#x2F;<br>将Makefile从unix子目录复制到当前目录<br>cp &#x2F;Makefile .&#x2F;<br>安装<br>make generic<br>make install<br>系统信息<br>arch 显示机器的处理器架构<br>uname -m 显示机器的处理器架构<br>uname -r 显示正在使用的内核版本<br>dmidecode -q 显示硬件系统部件 - (SMBIOS &#x2F; DMI)<br>hdparm -i &#x2F;hda 罗列一个磁盘的架构特性<br>hdparm -tT &#x2F;sda 在磁盘上执行测试性读取操作<br>cat &#x2F;cpuinfo 显示CPU info的信息<br>cat &#x2F;interrupts 显示中断<br>cat &#x2F;meminfo 校验内存使用<br>cat &#x2F;swaps 显示哪些swap被使用<br>cat &#x2F;version 显示内核的版本<br>cat &#x2F;dev 显示网络适配器及统计<br>cat &#x2F;mounts 显示已加载的文件系统<br>lspci -tv 罗列 PCI 设备<br>lsusb -tv 显示 USB 设备<br>date 显示系统日期<br>cal 2007 显示2007年的日历表<br>date 041217002007.00 设置日期和时间 - 月日时分年.秒<br>clock -w 将时间修改保存到 BIOS<br>资源</p>
+<h1 id="free-m-查看内存使用量和交换区使用量"><a href="#free-m-查看内存使用量和交换区使用量" class="headerlink" title="free -m # 查看内存使用量和交换区使用量"></a>free -m # 查看内存使用量和交换区使用量</h1><h1 id="df-h-查看各分区使用情况"><a href="#df-h-查看各分区使用情况" class="headerlink" title="df -h # 查看各分区使用情况"></a>df -h # 查看各分区使用情况</h1><h1 id="du-sh-查看指定目录的大小"><a href="#du-sh-查看指定目录的大小" class="headerlink" title="du -sh # 查看指定目录的大小"></a>du -sh # 查看指定目录的大小</h1><h1 id="grep-MemTotal-x2F-meminfo-查看内存总量"><a href="#grep-MemTotal-x2F-meminfo-查看内存总量" class="headerlink" title="grep MemTotal &#x2F;meminfo # 查看内存总量"></a>grep MemTotal &#x2F;meminfo # 查看内存总量</h1><h1 id="grep-MemFree-x2F-meminfo-查看空闲内存量"><a href="#grep-MemFree-x2F-meminfo-查看空闲内存量" class="headerlink" title="grep MemFree &#x2F;meminfo # 查看空闲内存量"></a>grep MemFree &#x2F;meminfo # 查看空闲内存量</h1><h1 id="uptime-查看系统运行时间、用户数、负载"><a href="#uptime-查看系统运行时间、用户数、负载" class="headerlink" title="uptime # 查看系统运行时间、用户数、负载"></a>uptime # 查看系统运行时间、用户数、负载</h1><h1 id="cat-x2F-loadavg-查看系统负载"><a href="#cat-x2F-loadavg-查看系统负载" class="headerlink" title="cat &#x2F;loadavg # 查看系统负载"></a>cat &#x2F;loadavg # 查看系统负载</h1><p>磁盘和分区</p>
+<h1 id="mount-column-t-查看挂接的分区状态"><a href="#mount-column-t-查看挂接的分区状态" class="headerlink" title="mount column -t # 查看挂接的分区状态"></a>mount column -t # 查看挂接的分区状态</h1><h1 id="fdisk-l-查看所有分区"><a href="#fdisk-l-查看所有分区" class="headerlink" title="fdisk -l # 查看所有分区"></a>fdisk -l # 查看所有分区</h1><h1 id="swapon-s-查看所有交换分区"><a href="#swapon-s-查看所有交换分区" class="headerlink" title="swapon -s # 查看所有交换分区"></a>swapon -s # 查看所有交换分区</h1><h1 id="hdparm-i-x2F-hda-查看磁盘参数-仅适用于IDE设备"><a href="#hdparm-i-x2F-hda-查看磁盘参数-仅适用于IDE设备" class="headerlink" title="hdparm -i &#x2F;hda # 查看磁盘参数(仅适用于IDE设备)"></a>hdparm -i &#x2F;hda # 查看磁盘参数(仅适用于IDE设备)</h1><h1 id="dmesg-grep-IDE-查看启动时IDE设备检测状况"><a href="#dmesg-grep-IDE-查看启动时IDE设备检测状况" class="headerlink" title="dmesg grep IDE # 查看启动时IDE设备检测状况"></a>dmesg grep IDE # 查看启动时IDE设备检测状况</h1><p>网络</p>
+<h1 id="ifconfig-查看所有网络接口的属性"><a href="#ifconfig-查看所有网络接口的属性" class="headerlink" title="ifconfig # 查看所有网络接口的属性"></a>ifconfig # 查看所有网络接口的属性</h1><h1 id="iptables-L-查看防火墙设置"><a href="#iptables-L-查看防火墙设置" class="headerlink" title="iptables -L # 查看防火墙设置"></a>iptables -L # 查看防火墙设置</h1><h1 id="route-n-查看路由表"><a href="#route-n-查看路由表" class="headerlink" title="route -n # 查看路由表"></a>route -n # 查看路由表</h1><h1 id="netstat-lntp-查看所有监听端口"><a href="#netstat-lntp-查看所有监听端口" class="headerlink" title="netstat -lntp # 查看所有监听端口"></a>netstat -lntp # 查看所有监听端口</h1><h1 id="netstat-antp-查看所有已经建立的连接"><a href="#netstat-antp-查看所有已经建立的连接" class="headerlink" title="netstat -antp # 查看所有已经建立的连接"></a>netstat -antp # 查看所有已经建立的连接</h1><h1 id="netstat-s-查看网络统计信息"><a href="#netstat-s-查看网络统计信息" class="headerlink" title="netstat -s # 查看网络统计信息"></a>netstat -s # 查看网络统计信息</h1><p>进程</p>
+<h1 id="ps-ef-查看所有进程"><a href="#ps-ef-查看所有进程" class="headerlink" title="ps -ef # 查看所有进程"></a>ps -ef # 查看所有进程</h1><h1 id="top-实时显示进程状态"><a href="#top-实时显示进程状态" class="headerlink" title="top # 实时显示进程状态"></a>top # 实时显示进程状态</h1><p>用户</p>
+<h1 id="w-查看活动用户"><a href="#w-查看活动用户" class="headerlink" title="w # 查看活动用户"></a>w # 查看活动用户</h1><h1 id="id-lt-用户名-gt-查看指定用户信息"><a href="#id-lt-用户名-gt-查看指定用户信息" class="headerlink" title="id &lt;用户名&gt; # 查看指定用户信息"></a>id &lt;用户名&gt; # 查看指定用户信息</h1><h1 id="last-查看用户登录日志"><a href="#last-查看用户登录日志" class="headerlink" title="last # 查看用户登录日志"></a>last # 查看用户登录日志</h1><h1 id="cut-d-f1-x2F-passwd-查看系统所有用户"><a href="#cut-d-f1-x2F-passwd-查看系统所有用户" class="headerlink" title="cut -d: -f1 &#x2F;passwd # 查看系统所有用户"></a>cut -d: -f1 &#x2F;passwd # 查看系统所有用户</h1><h1 id="cut-d-f1-x2F-group-查看系统所有组"><a href="#cut-d-f1-x2F-group-查看系统所有组" class="headerlink" title="cut -d: -f1 &#x2F;group # 查看系统所有组"></a>cut -d: -f1 &#x2F;group # 查看系统所有组</h1><h1 id="crontab-l-查看当前用户的计划任务"><a href="#crontab-l-查看当前用户的计划任务" class="headerlink" title="crontab -l # 查看当前用户的计划任务"></a>crontab -l # 查看当前用户的计划任务</h1><p>服务</p>
+<h1 id="chkconfig-list-列出所有系统服务"><a href="#chkconfig-list-列出所有系统服务" class="headerlink" title="chkconfig list # 列出所有系统服务"></a>chkconfig list # 列出所有系统服务</h1><h1 id="chkconfig-list-grep-on-列出所有启动的系统服务程序"><a href="#chkconfig-list-grep-on-列出所有启动的系统服务程序" class="headerlink" title="chkconfig list grep on # 列出所有启动的系统服务程序"></a>chkconfig list grep on # 列出所有启动的系统服务程序</h1><h1 id="rpm-qa-查看所有安装的软件包"><a href="#rpm-qa-查看所有安装的软件包" class="headerlink" title="rpm -qa # 查看所有安装的软件包"></a>rpm -qa # 查看所有安装的软件包</h1><p>文件搜索<br>find &#x2F; -name file1 从 ‘&#x2F;‘ 开始进入根文件系统搜索文件和目录<br>find &#x2F; -user user1 搜索属于用户 ‘user1’ 的文件和目录<br>find &#x2F;user1 -name *.bin 在目录 ‘&#x2F; &#x2F;user1’ 中搜索带有’.bin’ 结尾的文件<br>find &#x2F;bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件<br>find &#x2F;bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件<br>find &#x2F; -name *.rpm -exec chmod 755 ‘{}’ ; 搜索以 ‘.rpm’ 结尾的文件并定义其权限<br>find &#x2F; -xdev -name *.rpm 搜索以 ‘.rpm’ 结尾的文件，忽略光驱、捷盘等可移动设备<br>locate *.ps 寻找以 ‘.ps’ 结尾的文件 - 先运行 ‘updatedb’ 命令<br>whereis halt 显示一个二进制文件、源码或man的位置<br>which halt 显示一个二进制文件或可执行文件的完整路径</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>vps命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>谷歌云ssh开启root密码登录</title>
+    <url>/2020/12/17/31/</url>
+    <content><![CDATA[<p><strong>谷歌云ssh开启root密码登录</strong><br>修改配置<br>1.先选择从浏览器打开ssh连接服务器<br>连接登录成功后，输入以下命令<br>sudo -i #切换到root<br>passwd #修改密码<br>然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车。<br>修改root密码完成</p>
+<p>2.接着修改SSH配置文件&#x2F;sshd_config<br>vi &#x2F;sshd_config #编辑文件<br>找到以下内容并修改<br>PermitRootLogin yes &#x2F;&#x2F;默认为no，需要开启root用户访问改为yes<br>PasswordAuthentication yes &#x2F;&#x2F;默认为no，改为yes开启密码登陆<br>修改完成后，再下按 esc 键，然后再输入<br>:wq #保存并退出<br>3.最后重启下服务器即可<br>reboot #重启服务器</p>
+<p>修改的时候把输入法切换到英文输入、大小写一定要看清楚再输入、移动光标不要按方向键；“a”是进入编辑模式，“ESC”键是退出编辑模式；非编辑模式下“k”是把光标向上移动、“j”向下、“h”向左、“l”向右；“x”是非编辑模式删除键；编辑模式下一边按着“Shift”上档键一边按着小键盘上的“-”减号键才会出现“_”下划线；修改完成以后在非编辑模式下输入“:wq”回车保存退出，修改错误输入“:q!”回车不保存退出，然后在运行刚才的修改命令重新修改。</p>
+]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>谷歌云</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Debian8小内存环境安装Caddy+PHP5+SQLite3</title>
+    <url>/2020/12/17/32/</url>
+    <content><![CDATA[<p><strong>Debian8小内存环境安装Caddy+PHP5+SQLite3</strong><br><strong>0、前言</strong><br>最近入手了Gullo的128M内存小鸡，因为内存太小，故一直在找Debian8能用的一键环境安装脚本，<br>LNMP肯定是安装不上了，编译安装一半的时候，就已经报错了，所以编译安装这条路算是走不通了。</p>
+<p>经过多次尝试，发现Caddy-Web-Server-Installer整体来说做的比较好，故研究了下。<br>这个脚本除了没有SQlite3，装好了Caddy+PHP5可以直接用，无需额外设置。</p>
+<p>在Github上，给的脚本安装多次尝试无法成功，重新改了，复制下面的命令行，粘贴到SSH里面回车即可。<br>仅测试了Debian 8 64bit，理论上Debian8 32bit、Debian7 32bit都可以运行这个脚本，<br>包括安装下面的PHP组件和SQLite3数据库，有对应环境的可以尝试下。<br><strong>1、精简系统，你可以选择性尝试执行，并不是强制性这么做，但是的确可以清理少许的内存和磁盘占用，这对小内存vps来说，是很有帮助的，在SSH执行下面的命令即可。</strong><br>apt-get -y update&amp;&amp;apt-get -y upgrade&amp;&amp;apt-get dist-upgrade -y&amp;&amp;apt-get -y purge apache2- <em>bind9-</em> xinetd samba- <em>nscd-</em> portmap sendmail- <em>sasl2-bin&amp;&amp;apt-get -y purge lynx memtester unixodbc python-</em> odbcinst- <em>sudo tcpdump ttf-</em>&amp;&amp;apt-get -y autoremove &amp;&amp; apt-get clean</p>
+<p><strong>2、使用Caddy-Web-Server-Installer安装Caddy+PHP5，既然一键能做的事情，就让脚本完成吧。</strong><br>bash &lt;(curl -L -s <a href="https://git.io/JvNd7">https://git.io/JvNd7</a>)<br>如果提示：-bash: curl: command not found<br>请先执行：apt-get -y update&amp;&amp;apt-get install curl -y</p>
+<p>脚本安装完成后，在SSH输入 caddy install 即可开始安装Caddy+PHP5，填入对应信息后，即可安装完成。<br><strong>3、根据需要，安装SQLite3数据库</strong><br>等全部安装成功后，在SSH里面执行：apt-get install -y sqlite php5-sqlite 即可安装SQLite3数据库。<br><strong>4、上传PHP源码路径，和权限设置。</strong><br>安装完成后，上传代码到&#x2F;caddy，即可通过绑定的域名访问。<br>如果是php程序需要安装提示没有权限，那么执行：chown -R caddy:caddy &#x2F;caddy<br>每次更换了源码后或者更新了这个文件夹的文件后，都需要执行chown -R caddy:caddy &#x2F;caddy<br><strong>5、PHP的一些设置（仅Debian8）</strong><br>取消php已禁用的函数：sed -i ‘s@^disable_functions.*@disable_functions &#x3D; passthru,exec,system,chroot,chgrp,chown,shell_exec,proc_open,proc_get_status,ini_alter,ini_restore,dl,openlog,syslog,readlink,symlink,popepassthru,stream_socket_server,fsocket,popen@’ &#x2F;php.ini<br>修改时区：sed -i ‘s@^;date.timezone.*@date.timezone &#x3D; &#x2F;Shanghai@’ &#x2F;php.ini<br>脚本占用最大内存16M：sed -i “s@^memory_limit.*@memory_limit &#x3D; 16M@” &#x2F;php.ini<br><strong>6、多域名绑定</strong><br>使用FinalShell或者WinSCP等可视化SSH工具，编辑&#x2F;Caddyfile这个文件。<br>每个域名用英文状态下的中括号包裹着，就能简单的配置多域名绑定，比Nginx看起来简单多了。<br>演示下：<br>{</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root /</span><br><span class="line">gzip</span><br><span class="line">log /access.log</span><br><span class="line">errors /error.log</span><br><span class="line">fastcgi / 127.0.0.1:9000 php</span><br><span class="line">rewrite &#123;</span><br><span class="line">    if &#123;path&#125; not_match ^/admin</span><br><span class="line">    to &#123;path&#125; &#123;path&#125;/ /index.php?&#123;query&#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>}<br>:80 {</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gzip</span><br><span class="line">proxy / </span><br></pre></td></tr></table></figure>
+
+<p>}<br>:443 {</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root /caddy</span><br><span class="line">gzip</span><br><span class="line">log /access.log</span><br><span class="line">errors /error.log</span><br><span class="line">fastcgi / 127.0.0.1:9000 php</span><br><span class="line">tls .crt .key</span><br><span class="line">proxy /ws localhost:10000 &#123;</span><br><span class="line">    websocket</span><br><span class="line">    header_upstream -Origin</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>}</p>
+<p>简单说下root代表代码存放路径，gzip就是开启gzip压缩，log和errors是日志和错误日志，<br>fastcgi是网关接口，简单说要能解析php，这行就不能少，单纯的反代这行就可以不要。<br>tls 后面可以跟域名的whois邮箱，这样它能帮助你自动申请SSL证书，你也可以填写证书的绝对路径，来获取本地证书。<br>proxy是反向代理， &#x2F;ws 代表路径，你也可以反代为主页，取消ws即可。&#x2F;ws 后面可以跟本地地址+端口，也可以外网网址。<br>v2一键脚本安装后，在v2的配置文件里面有一个端口，你就填在这里面即可。</p>
+<p>注意事项<br>不管是修改了&#x2F;Caddyfile还是修改了&#x2F;php.ini ，都需要重启caddy服务才能生效。<br>Caddy重启命令：caddy restart</p>
+<p>你可以通过caddy help来查看caddy的状态并管理它。</p>
+]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>Debian</tag>
+        <tag>Caddy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Debian 8安装vnStat统计vps流量</title>
+    <url>/2021/01/16/35/</url>
+    <content><![CDATA[<p>安装vnStat</p>
+<p>apt-get install vnstat #apt安装<br>vnstat -u -i eth0 #生成流量统计数据库 ‘eth0’用’ip a’命令查看<br>systemctl stop vnstat #停止 vnStat 服务<br>chown vnstat:vnstat &#x2F;var&#x2F;lib&#x2F;vnstat&#x2F;.eth0 #修改 .eth0 文件的权限<br>systemctl start vnstat #启动 vnStat 服务<br>查看流量信息<br>vnstat -l #实时流量<br>vnstat -d #日流量<br>vnstat -m #月流量<br>参考：<a href="https://sb.sb/blog/debian-install-vnstat/">https://sb.sb/blog/debian-install-vnstat/</a></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>VPS性能测试脚本</title>
+    <url>/2021/01/25/36/</url>
+    <content><![CDATA[<p>bensh.sh测试的内容包括VPS系统基本信息、全球各知名数据中心的测试点的速度（支持IPv6）以及IO 测试。</p>
+<p>使用方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -qO- bench.sh  bash</span><br></pre></td></tr></table></figure>
+
+<p>SuperBench.sh<br>SuperBench.sh是在bench.sh的基础上发展而来的，也可以测试VPS系统基本信息和IO性能，不过将测速节点换成了国内节点。</p>
+<p>使用方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -qO- git.io/superbench.sh  bash</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>lnmp+froxlor</title>
+    <url>/2021/01/31/37/</url>
+    <content><![CDATA[<p>安装LNMP<br>wget <a href="http://soft.vpser.net/lnmp/lnmp1.7.tar.gz">http://soft.vpser.net/lnmp/lnmp1.7.tar.gz</a> -cO lnmp1.7.tar.gz &amp;&amp; tar zxf lnmp1.7.tar.gz &amp;&amp; cd lnmp1.7 &amp;&amp; .&#x2F;install.sh lnmp</p>
+<h1 id="安装froxlor"><a href="#安装froxlor" class="headerlink" title="安装froxlor"></a>安装froxlor</h1><p>cd &#x2F;home&#x2F;wwwroot&#x2F;default &amp;&amp; wget <a href="https://files.froxlor.org/releases/froxlor-latest.tar.gz">https://files.froxlor.org/releases/froxlor-latest.tar.gz</a> &amp;&amp; tar -zxvf froxlor-latest.tar.gz</p>
+<p>访问”ip&#x2F;froxlor”开始安装</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>GitHub 克隆太慢的解决方法</title>
+    <url>/2021/02/06/39/</url>
+    <content><![CDATA[<p>在克隆GitHub上的代码的时候，直接克隆会很慢<br>如</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/lxk0301/jd_scripts.git</span><br></pre></td></tr></table></figure>
+
+<p>只需要在com后面加.cnpmjs.org<br>如</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com.cnpmjs.org/lxk0301/jd_scripts.git</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>N1 Armbian 安装 docker 并启用 OpenWrt</title>
+    <url>/2021/02/15/40/</url>
+    <content><![CDATA[<ol>
+<li><p>安装 docker（这一步建议处于低调上网环境，否则可能会下载慢甚至失败）</p>
+<p>curl -fsSL <a href="https://get.docker.com/">https://get.docker.com</a> bash</p>
+</li>
+<li><p>拉取镜像<br>这里使用的 F 大的镜像，感谢！原帖地址</p>
+<p>docker pull unifreq&#x2F;openwrt-aarch64</p>
+</li>
+</ol>
+<p>默认拉取最新的镜像</p>
+<ol start="3">
+<li><p>打开网卡的混杂模式</p>
+<p>ip link set eth0 promisc on</p>
+</li>
+</ol>
+<p>复制代码</p>
+<ol start="4">
+<li><p>创建 macvlan 网络</p>
+<p>docker network create -d macvlan –subnet&#x3D;192.168.x.0&#x2F;24 –gateway&#x3D;192.168.x.1 -o parent&#x3D;eth0 macnet</p>
+</li>
+</ol>
+<p>复制代码<br>注意：这里需要根据实际网络来填写网关和子网掩码，如果主路由的 ip 地址为 192.168.0.1，则将上面的 192.168.x 改为 192.168.0</p>
+<ol start="5">
+<li><p>运行 OpenWrt</p>
+<p>docker run –name op –restart always -d –network macnet –privileged unifreq&#x2F;openwrt-aarch64 &#x2F;sbin&#x2F;init</p>
+</li>
+<li><p>修改 OpenWrt 的网络设置</p>
+<p>docker exec -it op bash</p>
+</li>
+</ol>
+<p>复制代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/config/network</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>修改图中两处红框，<br>第一处修改为需要访问 OpenWrt 的 ip 地址（前三未数字需要和主路由相同，最后一位数字随意修改，不要和其他设备冲突就行）<br>第二出修改为主路由 ip 地址</p>
+<p>退出，保存：<br>（按 ESC 键，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+
+<p>，回车）</p>
+<ol start="7">
+<li><p>重启 OpenWrt 的网络</p>
+<p>&#x2F;etc&#x2F;init.d&#x2F;network restart</p>
+</li>
+</ol>
+<p>复制代码</p>
+<ol start="8">
+<li>此时可以在浏览器访问第 6 步中第一个红框处填写的地址访问 OpenWrt<br>默认账户：root，默认密码：password</li>
+<li>设置 OpenWrt<br>9.1 关闭 DHCP<br>网络 -&gt; 接口 -&gt; LAN&#x2F;修改</li>
+</ol>
+<p>基础设置</p>
+<p>9.2 关闭桥接<br>物理设置</p>
+<p>保存即可</p>
+<p>到这里 OpenWrt 安装并且已经设置完毕，可以日用了，下面还有一些附加设置可以选择。</p>
+<ol>
+<li>设置 armbian 访问 OpenWrt<br>在 armbian 下修改 &#x2F;etc&#x2F;network&#x2F;interfaces 文件，替换为以下内容<br>auto eth0<br>iface eth0 inet static<br>address 192.168.0.x<br>netmask 255.255.255.0<br>gateway 192.168.0.1</li>
+</ol>
+<p>x 代表的是你需要设置的 n1 armbian 系统的 Ip 地址<br>然后重新载入 networking<br>systemctl reload networking<br>复制代码<br>如果重载失败，请使用<br>systemctl status networking</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>openwrt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简单好用的ddns -go</title>
+    <url>/2021/02/27/41/</url>
+    <content><![CDATA[<p>docker run -d –name ddns-go –restart&#x3D;always –net&#x3D;host -v &#x2F;opt&#x2F;ddns-go:&#x2F;root jeessy&#x2F;ddns-go</p>
+<p>简单好用的DDNS。自动更新域名解析到公网IP(支持阿里云、腾讯云dnspod、Cloudflare、华为云)</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>n1用的mini docker openwrt</title>
+    <url>/2021/02/27/42/</url>
+    <content><![CDATA[<p>基于openwrt官方19.07.5固件打包制作。</p>
+<p>请勿当路由使用（不包含路由组件），适合做有管理界面的mini Linux跑一些小应用比如京东签到。</p>
+<p>启用混杂模式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip link set eth0 promisc on</span><br></pre></td></tr></table></figure>
+
+<p>创建虚拟macvlan网卡(IP、网关请根据自己的网络修改)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker network create -d macvlan --subnet=192.168.11.0/24 --gateway=192.168.11.1 -o parent=eth0 macnet</span><br></pre></td></tr></table></figure>
+
+<p>创建openwrt容器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --restart always --name openwrt --network macnet --privileged 99010/openwrt /sbin/init</span><br><span class="line">docker run --restart always --name openwrt -d --network macnet --privileged sulinggg/openwrt-mini:arm64 /sbin/init</span><br></pre></td></tr></table></figure>
+
+<p>进入容器并修改相关参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker exec -it openwrt bash</span><br></pre></td></tr></table></figure>
+
+<p>执行此命令后我们便进入 OpenWrt 的命令行界面，首先，我们需要编辑 OpenWrt 的网络配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/config/network</span><br></pre></td></tr></table></figure>
+
+<p>我们需要更改 Lan 口设置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">config interface &#x27;lan&#x27;</span><br><span class="line">        option type &#x27;bridge&#x27;</span><br><span class="line">        option ifname &#x27;eth0&#x27;</span><br><span class="line">        option proto &#x27;static&#x27;</span><br><span class="line">        option ipaddr &#x27;192.168.3.88&#x27;</span><br><span class="line">        option netmask &#x27;255.255.255.0&#x27;</span><br><span class="line">        option ip6assign &#x27;60&#x27;</span><br><span class="line">        option gateway &#x27;192.168.3.1&#x27;</span><br><span class="line">        option broadcast &#x27;192.168.3.255&#x27;</span><br><span class="line">        option dns &#x27;192.168.3.1&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>6.重启网络</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/etc/init.d/network restart</span><br></pre></td></tr></table></figure>
+
+<p>京东签到的ipk下载</p>
+<p><a href="https://github.com/jerrykuku/luci-app-jd-dailybonus">https://github.com/jerrykuku/luci-app-jd-dailybonus</a></p>
+<p><a href="https://hub.docker.com/r/sulinggg/openwrt-mini">https://hub.docker.com/r/sulinggg/openwrt-mini</a></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>openwrt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>n1安装甜糖</title>
+    <url>/2021/03/18/43/</url>
+    <content><![CDATA[<p>安装甜糖<br>1、插入U盘<br>2、查看U盘挂载情况：<code>lsblk</code>，可以看到sda或者sda1后面MOUNTPOINT下面如果有内容，表示挂载了<br>3、新建目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /mnts</span><br><span class="line">mkdir -p /usr/node</span><br></pre></td></tr></table></figure>
+
+<p>复制代码<br>4、挂载U盘到&#x2F;mnts&#x2F;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mount /dev/sda1 /mnts/</span><br></pre></td></tr></table></figure>
+
+<p>5、设置开机自动挂载</p>
+<p>1）查看UUID并记录：<code>blkid /dev/sda1</code><br>如：aaaaaaaa-75c7-834f-bb69-bbbbbbbbbbbb<br>2）编辑文件<code>/etc/fstab</code><br>添加一行：<code>UUID=xxxxxxxxxxxx /mnts ext4 defaults 0 0</code><br>其中xxxxxxxxxxxx为UUID，ext4为U盘的文件格式<br>6、复制甜糖的三个文件 ttnode、log.log、crash_monitor.sh 拖进&#x2F;usr&#x2F;node文件夹，并修改权限为0777<br>7、配置开机自启动ssh及运行程序<br>编辑文件<code>/etc/rc.local</code>，在exit 0前添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">service sshd start</span><br><span class="line">/usr/node/ttnode -p /mnts</span><br></pre></td></tr></table></figure>
+
+<p>8、添加计划任务，守护甜糖</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+
+<p>在最后面添加一行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* * * * * /usr/node/crash_monitor.sh</span><br></pre></td></tr></table></figure>
+
+<p>9、重启，并判断是否运行甜糖：<code>ps -efgrep ttnode</code></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>n1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一键DD脚本</title>
+    <url>/2021/04/05/45/</url>
+    <content><![CDATA[<p>一键DD脚本，支持性好，更智能更全面，支持国内外各种VPS重装，特别是对国内各种访问国外资源慢的VPS安装有奇效。</p>
+<p>20210127：更换部分windows镜像.<br>20210109：更新支持Ubuntu20.04安装,更新几个windows镜像.<br>20200708：更新自动为CN主机使用国内镜像源.</p>
+<p>安装重装系统的前提组件:<br>Debian&#x2F;Ubuntu:</p>
+<p>apt-get install -y xz-utils openssl gawk file wget screen &amp;&amp; screen -S os<br>RedHat&#x2F;CentOS:</p>
+<p>yum install -y xz openssl gawk file glibc-common wget screen &amp;&amp; screen -S os<br>如果出现异常，请刷新Mirrors缓存或更换镜像源。<br>RedHat&#x2F;CentOS:</p>
+<p>yum makecache &amp;&amp; yum update -y<br>Debian&#x2F;Ubuntu:</p>
+<p>apt update -y &amp;&amp; apt dist-upgrade -y<br>使用:</p>
+<p>wget –no-check-certificate -O AutoReinstall.sh <a href="https://git.io/betags">https://git.io/betags</a> &amp;&amp; chmod a+x AutoReinstall.sh &amp;&amp; bash AutoReinstall.sh<br>如为CN主机，可能出现不能下载脚本的问题，可执行以下命令修改hosts，然后再次使用上面的命令</p>
+<p>echo “199.232.68.133 raw.githubusercontent.com” &gt;&gt; &#x2F;etc&#x2F;hosts<br>DD安装界面<br>输入Y确认DD后主机自动获取IP，N则自行设置IP 输入N后会自动检测出主机现用IP，如果正确可以按Y确认使用，如不正确则按N自行按正确的输入。<br>DD安装界面-选择系统<br>22合1的系统一键DD选择界面，输入99则使用自定义镜像。 以上系统密码不为默认密码的均为网络收集，如有疑虑使用自己的自定义镜像。</p>
+<p>22合一系统密码：<br>1、CentOS 7.7 (已关闭防火墙及SELinux，默认密码Pwd@CentOS)<br>2、CentOS 7 (默认密码cxthhhhh.com)<br>3、CentOS 8 (默认密码cxthhhhh.com)<br>4、CentOS 6 (默认密码Minijer.com)<br>5、Debian 10 (默认密码Minijer.com)<br>6、Debian 9 (默认密码Minijer.com)<br>7、Debian 8 (默认密码Minijer.com)<br>8、Debian 7 (默认密码Minijer.com)<br>9、Ubuntu 20.04 (默认密码Minijer.com)<br>10、Ubuntu 18.04 (默认密码Minijer.com)<br>11、Ubuntu 16.04 (默认密码Minijer.com)<br>12、Windows Server 2019 (默认密码cxthhhhh.com)<br>13、Windows Server 2016 (默认密码cxthhhhh.com)<br>14、Windows Server 2012 (默认密码cxthhhhh.com)<br>15、Windows Server 2012 Lite (默认密码nat.ee)<br>16、Windows Server 2008 (默认密码cxthhhhh.com)<br>17、Windows Server 2008 Lite (默认密码nat.ee)<br>18、Windows Server 2003 (默认密码Linode)<br>19、Windows Server 2003 Lite (默认密码WinSrv2003x86-Chinese)<br>20、Windows 10 LTSC Lite (默认密码<a href="http://www.nat.ee/">www.nat.ee</a>)<br>21、Windows 7 x86 Lite (默认密码Windows7x86-Chinese)<br>22、Windows 7 Ent Lite (默认密码nat.ee)<br>99、自定义镜像</p>
+<p>注意：<br>经测试在谷歌云原版系统基础上DD会出现自动获取的子网掩码为255.255.255.255,如出现这种情况需要手工输入改正为正确的如255.255.255.0,否则会安装完成离线。</p>
+<p>特别感谢：Vicer、cxt、hiCasper等各位技术大佬的脚本，站长只是脚本的”搬运工”。</p>
+<p>版权申明：以上所有脚本、系统均为网络收集，站长不对资源的安全及版权纠纷负责，如有侵犯您的权益欢迎联系。<br>站长邮箱：minijer#beta.gs(#换成@)<br>转<a href="https://git.beta.gs/">https://git.beta.gs/</a></p>
+]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>DD</tag>
+        <tag>DD脚本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MoeClub.org萌咖一键网络重装正式支持 Oracle/甲骨文/亚马逊Amazon</title>
+    <url>/2021/04/05/46/</url>
+    <content><![CDATA[<p>原系统请选择 ubuntu16 .(ubuntu18 有点小毛病, 稍后兼容.)<br>支持 debian9+&#x2F;ubuntu16.04+</p>
+<p>为什么不支持 debian8 或更低？<br>网卡驱动原因。</p>
+<p>为什么不支持 新版centos ?<br>不会用centos.</p>
+<p>默认root密码是什么?<br>GeekN.net</p>
+<p>地址: <a href="https://moeclub.org/2018/04/03/603/">https://moeclub.org/2018/04/03/603/</a><br>示例: 安装debian9 (甲骨文 -firmware 额外驱动支持)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>云大厂资源</title>
+    <url>/2021/04/05/47/</url>
+    <content><![CDATA[<p>1.腾讯云 cvm 配置:1h1g1m 期限15天地址：<a href="https://cloud.tencent.com/act/free?fromSource=gwzcw.367585.367585.367585">https://cloud.tencent.com/act/free?fromSource=gwzcw.367585.367585.367585</a> 2.华为云ECS 配置: 1h2g1m 7天 2h4g2m 100g 7天地址：<a href="https://activity.huaweicloud.com/free_test/index.html?utm_source=baidu-b">https://activity.huaweicloud.com/free_test&#x2F;index.html?utm_source&#x3D;baidu-b</a> 3.阿里云 阿里云新<strong>验 配置1h1g1m 40g 期限:30天 芝麻信用大于620分地址：<a href="https://free.aliyun.com/ntms/free/personal.html?handle=true">https://free.aliyun.com/ntms/free/personal.html?handle=true</a> 4.天翼云 天翼云新</strong>验:1h 1g1m 期限30天地址：<a href="https://www.ctyun.cn/activity/?20181220">https://www.ctyun.cn/activity/?20181220</a> 5.百度智能云: 新**验 1h1g1m 40g 期限30天 每天9:00开抢，数量有限地址：<a href="https://cloud.baidu.com/campaign/experience/index.html?from=index-event">https://cloud.baidu.com/campaign/experience/index.html?from=index-event</a> 6.aws 亚马逊 撸一年EC2 虚拟主机 要信用卡地址：<a href="https://aws.amazon.com/cn/free/?sc_channel=PS">https://aws.amazon.com/cn/free/?sc_channel&#x3D;PS</a> 7.微软云服务azure 撸一年云虚拟服务器地址：<a href="http://azure.microsoft.com/zh-cn/free/search/">http://azure.microsoft.com/zh-cn/free/search/?</a> 8.一元申请微软云服务器 配置4h8g50m 需要身份证地址：<a href="https://www.azure.cn/pricing/1rmb-trial-full/">https://www.azure.cn/pricing/1rmb-trial-full/</a></p>
+]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Padavan防火墙ipv6配置</title>
+    <url>/2021/08/11/48/</url>
+    <content><![CDATA[<p>防火墙ipv6配置<br>关闭ipv6防火墙</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip6tables -F</span><br><span class="line">ip6tables -X</span><br><span class="line">ip6tables -P INPUT ACCEPT</span><br><span class="line">ip6tables -P OUTPUT ACCEPT</span><br><span class="line">ip6tables -P FORWARD ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p>本机下允许ipv6防火墙特定端口转发</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip6tables -A FORWARD -p tcp --dport 11899 -j ACCEPT</span><br><span class="line">ip6tables -A FORWARD -p udp --dport 11899 -j ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p>本机开放ipv6防火墙特定端口80&#x2F;443</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip6tables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">ip6tables -A OUTPUT -p tcp --sport 80 -j ACCEPT</span><br><span class="line">ip6tables -A INPUT -p tcp --dport 443 -j ACCEPT</span><br><span class="line">ip6tables -A OUTPUT -p tcp --sport 443 -j ACCEPT</span><br></pre></td></tr></table></figure>
+
+<h1 id="本机服务端口开放-SSH-8622-HTTPS-8623"><a href="#本机服务端口开放-SSH-8622-HTTPS-8623" class="headerlink" title="本机服务端口开放 SSH:8622 HTTPS:8623"></a>本机服务端口开放 SSH:8622 HTTPS:8623</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport 8622 -j ACCEPT</span><br><span class="line">iptables -I OUTPUT -p tcp --sport 8622 -j ACCEPT</span><br><span class="line">iptables -I INPUT -p tcp --dport 8623 -j ACCEPT</span><br><span class="line">iptables -I OUTPUT -p tcp --sport 8623 -j ACCEPT</span><br><span class="line">ip6tables -I INPUT -p tcp --dport 8622 -j ACCEPT</span><br><span class="line">ip6tables -I OUTPUT -p tcp --sport 8622 -j ACCEPT</span><br><span class="line">ip6tables -I INPUT -p tcp --dport 8623 -j ACCEPT</span><br><span class="line">ip6tables -I OUTPUT -p tcp --sport 8623 -j ACCEPT</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="NAS服务端口开放-88"><a href="#NAS服务端口开放-88" class="headerlink" title="NAS服务端口开放 88"></a>NAS服务端口开放 88</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#iptables -I FORWARD -p tcp -d 192.168.9.10 --dport 88 -j ACCEPT</span><br><span class="line">#iptables -I FORWARD -p tcp -s 192.168.9.10 --sport 88 -j ACCEPT</span><br><span class="line">ip6tables -I FORWARD -p tcp -d 240e:XXXX:XXXX:XXXX:1a8b:15ff:fe16:5f01 --dport 88 -j ACCEPT</span><br><span class="line">ip6tables -I FORWARD -p tcp -s 240e:XXXX:XXXX:XXXX:1a8b:15ff:fe16:5f01 --sport 88 -j ACCEPT</span><br></pre></td></tr></table></figure>
+
+<h1 id="值班台服务端口开放-80-8080"><a href="#值班台服务端口开放-80-8080" class="headerlink" title="值班台服务端口开放 80,8080"></a>值班台服务端口开放 80,8080</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#iptables -I FORWARD -p tcp -d 192.168.9.209 --dport 80 -j ACCEPT</span><br><span class="line">#iptables -I FORWARD -p tcp -s 192.168.9.209 --sport 80 -j ACCEPT</span><br><span class="line">#iptables -I FORWARD -p tcp -d 192.168.9.209 --dport 8080 -j ACCEPT</span><br><span class="line">#iptables -I FORWARD -p tcp -s 192.168.9.209 --sport 8080 -j ACCEPT</span><br><span class="line">ip6tables -I FORWARD -p tcp -d 240e:XXXX:XXXX:XXXX:f017:f31f:6d5c:79ee --dport 80 -j ACCEPT</span><br><span class="line">ip6tables -I FORWARD -p tcp -s 240e:XXXX:XXXX:XXXX:f017:f31f:6d5c:79ee --sport 80 -j ACCEPT</span><br><span class="line">ip6tables -I FORWARD -p tcp -d 240e:XXXX:XXXX:XXXX:f017:f31f:6d5c:79ee --dport 8080 -j ACCEPT</span><br><span class="line">ip6tables -I FORWARD -p tcp -s 240e:XXXX:XXXX:XXXX:f017:f31f:6d5c:79ee --sport 8080 -j ACCEPT</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>IPV6</tag>
+        <tag>Padavan</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenWrt优选IP脚本自动更新</title>
+    <url>/2021/08/15/49/</url>
+    <content><![CDATA[<p><a href="https://github.com/Lbingyi/CloudflareST">https://github.com/Lbingyi/CloudflareST</a><br>路由器优选IP脚本设置定时更换优选ip<br>用ssh连接软件连接opewrt</p>
+<h1 id="进入root文件夹"><a href="#进入root文件夹" class="headerlink" title="进入root文件夹"></a>进入root文件夹</h1><p>cd &#x2F;root</p>
+<h1 id="如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）"><a href="#如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）" class="headerlink" title="如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）"></a>如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）</h1><p>mkdir CloudflareST</p>
+<h1 id="进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）"><a href="#进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）" class="headerlink" title="进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）"></a>进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）</h1><p>cd CloudflareST</p>
+<h1 id="下载-CloudflareST-压缩包（自行根据需求替换-URL-中版本号和文件名）"><a href="#下载-CloudflareST-压缩包（自行根据需求替换-URL-中版本号和文件名）" class="headerlink" title="下载 CloudflareST 压缩包（自行根据需求替换 URL 中版本号和文件名）"></a>下载 CloudflareST 压缩包（自行根据需求替换 URL 中版本号和文件名）</h1><p>wget -N <a href="https://cdn.jsdelivr.net/gh/Lbingyi/CloudflareST@main/cfst-DNS.tar.gz">https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Lbingyi&#x2F;CloudflareST@main&#x2F;cfst-DNS.tar.gz</a></p>
+<h1 id="解压（不需要删除旧文件，会直接覆盖，自行根据需求替换-文件名）"><a href="#解压（不需要删除旧文件，会直接覆盖，自行根据需求替换-文件名）" class="headerlink" title="解压（不需要删除旧文件，会直接覆盖，自行根据需求替换 文件名）"></a>解压（不需要删除旧文件，会直接覆盖，自行根据需求替换 文件名）</h1><p>tar -zxf cfst-DNS.tar.gz</p>
+<h1 id="赋予执行权限"><a href="#赋予执行权限" class="headerlink" title="赋予执行权限"></a>赋予执行权限</h1><p>chmod +x CloudflareST<br>修改cfst-DNS.sh中的一处地方<br>修改微信&#x2F;Telegram推送token<br>显示不了图片，开一下VPN吧</p>
+]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>N1刷入Armbian后换软件源、安装Docker并提速</title>
+    <url>/2020/10/03/5/</url>
+    <content><![CDATA[<p>网络环境所限，在使用Armbian的时候经常下载软件出问题，下载不到或者下载中断，所以找来了国内的源，更换一下，下载会变快很多。</p>
+<p>假定armbian已经安装完成</p>
+<p>1、打开putty，输入N1的IP地址连接并登陆</p>
+<p>2、输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>复制代码<br>3、在原先的源前面加#号注释掉，并将国内源复制过去</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb http://mirrors.ustc.edu.cn/debian stretch main contrib non-free</span><br><span class="line">deb http://mirrors.ustc.edu.cn/debian stretch-updates main contrib non-free</span><br><span class="line">deb http://mirrors.ustc.edu.cn/debian stretch-backports main contrib non-free</span><br><span class="line">deb http://mirrors.ustc.edu.cn/debian-security/ stretch/updates main contrib non-free</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>复制代码<br>改 armbian 源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/apt/sources.list.d/armbian.list</span><br></pre></td></tr></table></figure>
+
+<p>将里面的那行注释掉（在前面添加 # ）然后添加这行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/armbian bionic main bionic-utils bionic-desktop</span><br></pre></td></tr></table></figure>
+
+<p>4、ctrl+x退出编辑，按y回车保存<br>5、执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update &amp;&amp; apt upgrade -y</span><br></pre></td></tr></table></figure>
+
+<p>复制代码</p>
+<h3 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h3><p>更换软件源：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sed -i &#x27;s/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g&#x27; /etc/apt/sources.list</span><br><span class="line">sed -i &#x27;ssecurity.debian.orgmirrors.tuna.tsinghua.edu.cn/debian-securityg&#x27; /etc/apt/sources.list</span><br><span class="line">sed -i &#x27;sapt.armbian.commirrors.tuna.tsinghua.edu.cn/armbiang&#x27; /etc/apt/sources.list.d/armbian.list</span><br></pre></td></tr></table></figure>
+
+<p>复制代码<br>至此，软件源更换完毕。</p>
+<p>6、安装docker</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line"></span><br><span class="line">sh get-docker.sh --mirror Aliyun</span><br></pre></td></tr></table></figure>
+
+<p>复制代码<br>使用上述命令安装会调用阿里云的镜像，安装速度较快。</p>
+<p>7、配置docker镜像加速<br>登陆</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dev.aliyun.com</span><br></pre></td></tr></table></figure>
+
+<p>复制代码<br>进入容器镜像服务，得到镜像加速器地址</p>
+<p>8、putty下执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line"></span><br><span class="line">tee /etc/docker/daemon.json </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>n1</tag>
+        <tag>arnbian</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修改宝塔OneDrive插件API为自己的E5续命</title>
+    <url>/2021/08/17/50/</url>
+    <content><![CDATA[<p>地址：<a href="https://portal.azure.com/#home">https://portal.azure.com/#home</a></p>
+<p>1：使用@xxx.onmicrosoft.com账号登陆。</p>
+<p>2：点击左边的应用注册</p>
+<p>3：新注册。名称：随意，类型：任何组织目录（两个都可以），重定向 URI：<a href="http://localhost/login/authorized">http://localhost/login/authorized</a></p>
+<p>4：返回主页，点击打开刚注册好的应用，复制：应用程序(客户端) ID</p>
+<p>5：点击客户端凭据，+客户端密码，名称：随意，截至日期：24个月</p>
+<p>6：复制刚新建的客户端密码里面的值</p>
+<p>7：返回主页，打开第3步注册的应用，点击API 权限，点击代表XXX授权管理员同意</p>
+<p>8：宝塔安装好OneDrive插件。已登录的退出登录。</p>
+<p>9：编辑文件&#x2F;www&#x2F;server&#x2F;panel&#x2F;plugin&#x2F;msonedrive&#x2F;credentials.json</p>
+<p>10：修改onedrive-international下面的client_id为第4步复制的应用程序(客户端) ID，修改client_secret为第6步复制的值</p>
+<p>11：保存文件后，正常登录即可。<br><a href="https://hostloc.com/forum.php?mod=viewthread&tid=879895&highlight=e5">https://hostloc.com/forum.php?mod=viewthread&tid=879895&highlight=e5</a></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>e5</tag>
+        <tag>OneDrive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>甲骨文改成root密码登录</title>
+    <url>/2021/08/18/51/</url>
+    <content><![CDATA[<p>防火墙放行全部端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -P INPUT ACCEPT</span><br><span class="line">iptables -P OUTPUT ACCEPT</span><br><span class="line">iptables -F</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>或者直接删除规则</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -rf /etc/iptables/rules.v4</span><br><span class="line">rm -rf /etc/iptables/rules.v6</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>直接删除省事，如果是选择放行端口的话，需要保存修改到文件，不然重启会失效，要么apt-get purge iptables-persistent （不要直接用remove）；</p>
+<p>Ubuntu&#x2F;Debian保存修改的iptables规则：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables-save &gt; /etc/iptables/rules.v4</span><br><span class="line">ip6tables-save &gt; /etc/iptables/rules.v6</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>个人选择：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -P INPUT ACCEPT</span><br><span class="line">iptables -P OUTPUT ACCEPT</span><br><span class="line">iptables -F</span><br><span class="line">iptables-save &gt; /etc/iptables/rules.v4</span><br><span class="line">ip6tables-save &gt; /etc/iptables/rules.v6</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="顺便把开启root密码登录以及更改ssh端口方法也贴这吧："><a href="#顺便把开启root密码登录以及更改ssh端口方法也贴这吧：" class="headerlink" title="顺便把开启root密码登录以及更改ssh端口方法也贴这吧："></a>顺便把开启root密码登录以及更改ssh端口方法也贴这吧：</h1><h1 id="修改root密码，把下面的”密码“替换成你的密码，注意”root-密码“的冒号之后一定不要有空格，比如-root-passwd-hostloc"><a href="#修改root密码，把下面的”密码“替换成你的密码，注意”root-密码“的冒号之后一定不要有空格，比如-root-passwd-hostloc" class="headerlink" title="修改root密码，把下面的”密码“替换成你的密码，注意”root:密码“的冒号之后一定不要有空格，比如 root:passwd.hostloc"></a>修改root密码，把下面的”密码“替换成你的密码，注意”root:密码“的冒号之后一定不要有空格，比如 root:passwd.hostloc</h1><p>echo root:密码 sudo chpasswd root</p>
+<h1 id="或者直接使用passwd修改密码"><a href="#或者直接使用passwd修改密码" class="headerlink" title="或者直接使用passwd修改密码"></a>或者直接使用passwd修改密码</h1><h1 id="开启root密码登录"><a href="#开启root密码登录" class="headerlink" title="开启root密码登录"></a>开启root密码登录</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sed -i &#x27;s/^#\?PermitRootLogin.*/PermitRootLogin yes/g&#x27; /etc/ssh/sshd_config;</span><br><span class="line">sudo sed -i &#x27;s/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g&#x27; /etc/ssh/sshd_config;</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改ssh端口，假设改ssh端口为65522（可以直接在-x2F-etc-x2F-ssh-x2F-sshd-config中添加-Port-65522，如果没把握，把Port-22（默认一般是注释的）也加上，重启后没问题再注释掉-Port-22）"><a href="#修改ssh端口，假设改ssh端口为65522（可以直接在-x2F-etc-x2F-ssh-x2F-sshd-config中添加-Port-65522，如果没把握，把Port-22（默认一般是注释的）也加上，重启后没问题再注释掉-Port-22）" class="headerlink" title="修改ssh端口，假设改ssh端口为65522（可以直接在&#x2F;etc&#x2F;ssh&#x2F;sshd_config中添加 Port 65522，如果没把握，把Port 22（默认一般是注释的）也加上，重启后没问题再注释掉# Port 22）"></a>修改ssh端口，假设改ssh端口为65522（可以直接在&#x2F;etc&#x2F;ssh&#x2F;sshd_config中添加 Port 65522，如果没把握，把Port 22（默认一般是注释的）也加上，重启后没问题再注释掉# Port 22）</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sed -i &#x27;s/#Port 22/Port 65522/&#x27; /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<h1 id="重启sshd服务"><a href="#重启sshd服务" class="headerlink" title="重启sshd服务"></a>重启sshd服务</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+
+<h1 id="检查监听的端口"><a href="#检查监听的端口" class="headerlink" title="检查监听的端口"></a>检查监听的端口</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netstat -antp grep ssh</span><br></pre></td></tr></table></figure>
+
+<p>=&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h1 id="如果没把握，再处理一遍防火墙"><a href="#如果没把握，再处理一遍防火墙" class="headerlink" title="如果没把握，再处理一遍防火墙"></a>如果没把握，再处理一遍防火墙</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -P INPUT ACCEPT</span><br><span class="line">iptables -P OUTPUT ACCEPT</span><br><span class="line">iptables -F</span><br><span class="line">iptables-save &gt; /etc/iptables/rules.v4</span><br><span class="line">ip6tables-save &gt; /etc/iptables/rules.v6</span><br></pre></td></tr></table></figure>
+
+<hr>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>甲骨文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>甲骨文ubuntu20.04安装了宝塔无法打开面板</title>
+    <url>/2021/08/18/52/</url>
+    <content><![CDATA[<p>甲骨文其他的系统都可以进，</p>
+<p>就是ubuntu20进不去，防火墙也放行了，甲骨文后台的安全组已经开放全部端口了。<br>打开并登录Xshell自己服务器账号密钥：</p>
+<p>在未root权限输入命令：sudo -i 获取root权限，已root权限服务器可用忽略此步.然后直接复制下列命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get purge iptables</span><br></pre></td></tr></table></figure>
+
+<p>粘贴Xshell已获得root账号权限命令，按Enter回车键，等待代码加载完毕.</p>
+<p>重启VPS后正常。</p>
+]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>甲骨文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>定时任务cron表达式的填写规则介绍</title>
+    <url>/2021/08/21/53/</url>
+    <content><![CDATA[<p>一、Cron表达式的组成</p>
+<p>其实就是一组时间序列，一个由6个空格7个域组成的字符串，排序如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[秒] [分] [时] [日] [月] [周] [年]</span><br></pre></td></tr></table></figure>
+
+<p>二、Cron每个域（时间）的相关定义，用表格梳理比较明了。<br>域 是否必填 值以及范围 通配符</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">秒    是    0-59    , – * /</span><br><span class="line">分    是    0-59    , – * /</span><br><span class="line">时    是    0-23    , – * /</span><br><span class="line">日    是    1-31    , – * ? / L W</span><br><span class="line">月    是    1-12 或 JAN-DEC    , – * /</span><br><span class="line">周    是    1-7 或 SUN-SAT    , – * ? / L #</span><br><span class="line">年    否    1970-2099    , – * /</span><br></pre></td></tr></table></figure>
+
+<p>Cron表达式<br>通配符的含义：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件</span><br><span class="line">*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件</span><br><span class="line">?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?</span><br><span class="line">-：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。</span><br><span class="line">/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。</span><br><span class="line">#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期五。</span><br><span class="line">L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&#x27;L&#x27;时，不要指定列表&#x27;,&#x27;或范围&#x27;-&#x27;，否则易导致出现意料之外的结果。</span><br><span class="line">W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&quot;4W&quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&quot;1W&quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。</span><br><span class="line">LW：‘L’和&#x27;W&#x27;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。</span><br></pre></td></tr></table></figure>
+
+<p>三、举个例子（要足够多）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*/5 * * * * ? 每隔 5 秒执行一次</span><br><span class="line">0 */1 * * * ? 每隔 1 分钟执行一次</span><br><span class="line">0 0 2 1 * ? * 每月 1 日的凌晨 2 点执行一次</span><br><span class="line">0 15 10 ? * MON-FRI 周一到周五每天上午 10：15 执行作业</span><br><span class="line">0 15 10 ? 6L 2002-2006 2002 年至 2006 年的每个月的最后一个星期五上午 10:15 执行作业</span><br><span class="line">0 0 23 * * ? 每天 23 点执行一次</span><br><span class="line">0 0 1 * * ? 每天凌晨 1 点执行一次</span><br><span class="line">0 0 1 1 * ? 每月 1 日凌晨 1 点执行一次</span><br><span class="line">0 0 23 L * ? 每月最后一天 23 点执行一次</span><br><span class="line">0 0 1 ? * L 每周星期天凌晨 1 点执行一次</span><br><span class="line">0 26,29,33 * * * ? 在 26 分、29 分、33 分执行一次</span><br><span class="line">0 0 0,13,18,21 * * ? 每天的 0 点、13 点、18 点、21 点都执行一次</span><br><span class="line">0 0 10,14,16 * * ? 每天上午 10 点，下午 2 点，4 点执行一次</span><br><span class="line">0 0/30 9-17 * * ? 朝九晚五工作时间内每半小时执行一次</span><br><span class="line">0 0 12 ? * WED 每个星期三中午 12 点执行一次</span><br><span class="line">0 0 12 * * ? 每天中午 12 点触发</span><br><span class="line">0 15 10 ? * * 每天上午 10:15 触发</span><br><span class="line">0 15 10 * * ? 每天上午 10:15 触发</span><br><span class="line">0 15 10 * * ? * 每天上午 10:15 触发</span><br><span class="line">0 15 10 * * ? 2005 2005 年的每天上午 10:15 触发</span><br><span class="line">0 * 14 * * ? 每天下午 2 点到 2:59 期间的每 1 分钟触发</span><br><span class="line">0 0/5 14 * * ? 每天下午 2 点到 2:55 期间的每 5 分钟触发</span><br><span class="line">0 0/5 14,18 * * ? 每天下午 2 点到 2:55 期间和下午 6 点到 6:55 期间的每 5 分钟触发</span><br><span class="line">0 0-5 14 * * ? 每天下午 2 点到 2:05 期间的每 1 分钟触发</span><br><span class="line">0 10,44 14 ? 3 WED 每年三月的星期三的下午 2:10 和 2:44 触发</span><br><span class="line">0 15 10 ? * MON-FRI 周一至周五的上午 10:15 触发</span><br><span class="line">0 15 10 15 * ? 每月 15 日上午 10:15 触发</span><br><span class="line">0 15 10 L * ? 每月最后一日的上午 10:15 触发</span><br><span class="line">0 15 10 ? * 6L 每月的最后一个星期五上午 10:15 触发</span><br><span class="line">0 15 10 ? * 6L 2002-2005 2002 年至 2005 年的每月的最后一个星期五上午 10:15 触发</span><br><span class="line">0 15 10 ? * 6#3 每月的第三个星期五上午 10:15 触发</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>定时任务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Debian添加swap</title>
+    <url>/2021/08/23/54/</url>
+    <content><![CDATA[<p>查看下Swap的大小</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">free -m</span><br></pre></td></tr></table></figure>
+
+<p>创建一个存放Swap文件的文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir /opt/swap</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>生成一个大小为1G，名字是swapfile的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /opt/swap &amp;&amp; dd if=/dev/zero of=swapfile bs=1024 count=1048576</span><br></pre></td></tr></table></figure>
+
+<p>文件转换成swap并且激活</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkswap swapfile &amp;&amp; swapon /opt/swap/swapfile</span><br></pre></td></tr></table></figure>
+
+<p>设置开机自动挂载 nano &#x2F;etc&#x2F;fstab 添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/opt/swap/swapfile swap swap defaults 0 0</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>Debian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装AdGuardHome</title>
+    <url>/2021/08/24/55/</url>
+    <content><![CDATA[<p>安装AdGuardHome</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_arm.tar.gz</span><br><span class="line"></span><br><span class="line">#进入AdGuardHome目录</span><br><span class="line">cd AdGuardHome</span><br><span class="line">#放行3000端口（AdGuardHome初始化需要使用）</span><br><span class="line">#firewalld放行3000端口</span><br><span class="line">firewall-cmd --zone=public --add-port=3000/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">#iptables放行3000端口</span><br><span class="line">iptables -A INPUT -p tcp --dport 3000 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">#启动AdGuard Home</span><br><span class="line"></span><br><span class="line">./AdGuardHome -s install</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>下面是控制服务可能需要的其他命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./AdGuardHome -s uninstall- 卸载 AdGuard 家庭服务。</span><br><span class="line">./AdGuardHome -s start- 启动服务。</span><br><span class="line">./AdGuardHome -s stop- 停止服务。</span><br><span class="line">./AdGuardHome -s restart- 重新启动服务。</span><br><span class="line">./AdGuardHome -s status- 显示当前服务状态</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>AdGuardHome</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>老毛子固件DNSMASQ优化：AdGuardHome外挂服务</title>
+    <url>/2021/08/26/56/</url>
+    <content><![CDATA[<p>AdGuardHome</p>
+<p>表示对以下设置的所有server发起查询#选择回应最快的一条作为查询结果返回</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">all-servers</span><br><span class="line">server=192.168.2.2#5533 #AdGuardHome</span><br><span class="line">dns-forward-max=1000 #AdGuardHome</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/daoke123/pic/DNSMASQ.png" alt="DNSMASQ" title="DNSMASQ"></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>AdGuardHome</tag>
+        <tag>老毛子</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github+jsDelivr为图片文件加速</title>
+    <url>/2021/08/26/57/</url>
+    <content><![CDATA[<p><code>https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/</code> 即可访问你的内容了！<br>如本文示例：<code>https://cdn.jsdelivr.net/gh/malaohu/jscdn@1.0</code>&#x2F;<br>文件不想带版本号？将版本号换成latest即可！或者不带版本号！或者直接@master(或者其他分支名称)！</p>
+<p>如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/malaohu/jscdn@latest/pic.png</span><br><span class="line"></span><br><span class="line">https://cdn.jsdelivr.net/gh/malaohu/jscdn/pic.png</span><br><span class="line"></span><br><span class="line">https://cdn.jsdelivr.net/gh/malaohu/jscdn@master/pic.png</span><br></pre></td></tr></table></figure>
+
+<p>直接@master，就不用新建releases了！</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>jsDelivr</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水星摄像头</title>
+    <url>/2021/08/28/58/</url>
+    <content><![CDATA[<p>高清</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rtsp://admin:123456@192.168.2.3:554/stream1</span><br></pre></td></tr></table></figure>
+
+<p>一般</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rtsp://admin:123456@192.168.2.3:554/stream2</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>腾讯云DD 系统</title>
+    <url>/2021/08/30/59/</url>
+    <content><![CDATA[<p>萌咖脚本（debian10）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">全自动安装默认</span><br><span class="line">用户：root</span><br><span class="line">密码: MoeClub.org</span><br><span class="line">某些特殊的服务商不适用此脚本，比如 cloudcone</span><br><span class="line">已测试服务商：腾讯云、阿里云</span><br><span class="line"># Debian/Ubuntu:</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install -y xz-utils openssl gawk file</span><br><span class="line"></span><br><span class="line"># RedHat/CentOS:</span><br><span class="line">yum update</span><br><span class="line">yum install -y xz openssl gawk file</span><br><span class="line"></span><br><span class="line">wget https://moeclub.org/attachment/LinuxShell/InstallNET.sh</span><br><span class="line">chmod a+x InstallNET.sh</span><br><span class="line"></span><br><span class="line">bash InstallNET.sh -d 10 -v 64 -a</span><br></pre></td></tr></table></figure>
+
+<h1 id="系统选择详解："><a href="#系统选择详解：" class="headerlink" title="系统选择详解："></a>系统选择详解：</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 全自动安装Ubuntu 16.04 x64： </span><br><span class="line">bash InstallNET.sh -u 16.04 -v 64 -a</span><br><span class="line"></span><br><span class="line"># 全自动安装Debian 9 x64：</span><br><span class="line">bash InstallNET.sh -d 9 -v 64 -a</span><br><span class="line"></span><br><span class="line"># 全自动安装Debian 10 x64(中科大镜像源，用于国内服务器)： </span><br><span class="line">bash InstallNET.sh -d 10 -v 64 -a --mirror &#x27;http://mirrors.ustc.edu.cn/debian/&#x27;</span><br><span class="line"></span><br><span class="line"># 全自动安装CentOS 6.7 x64：</span><br><span class="line">bash InstallNET.sh -c 6.7 -v 64 -a</span><br></pre></td></tr></table></figure>
+
+<h1 id="腾讯云轻量-DD-win"><a href="#腾讯云轻量-DD-win" class="headerlink" title="腾讯云轻量 DD win"></a>腾讯云轻量 DD win</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install -y xz-utils openssl gawk file wget screen &amp;&amp; screen -S os</span><br><span class="line">wget --no-check-certificate -qO InstallNET.sh &#x27;https://tutu.bid/bash/InstallNET.sh&#x27; &amp;&amp; bash InstallNET.sh -dd &#x27;https://tutu.bid/os/dd/win10ltsc_x64.tar.gz&#x27;</span><br></pre></td></tr></table></figure>
+
+<h1 id="腾讯云改回内网软件源"><a href="#腾讯云改回内网软件源" class="headerlink" title="腾讯云改回内网软件源"></a>腾讯云改回内网软件源</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>DD</tag>
+        <tag>DD脚本</tag>
+        <tag>腾讯云</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Screen命令安装使用教程</title>
+    <url>/2021/08/31/60/</url>
+    <content><![CDATA[<p>CentOS系统执行以下命令安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install screen</span><br></pre></td></tr></table></figure>
+
+<p>Debian&#x2F;Ubuntu系统执行以下命令安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get install screen</span><br></pre></td></tr></table></figure>
+
+<p>如何使用screen命令<br>首先创建screen会话，执行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">screen -S lnmp</span><br></pre></td></tr></table></figure>
+
+<p>screen就会创建一个名字为lnmp的会话。然后就可以运行下载安装lnmp的命令了。</p>
+<p>如果有事离开关闭电脑，可以用快捷键Ctrl+a d(即按住Ctrl，依次再按a,d)，而会话中的程序不会关闭，仍在运行。在实际使用中都是用鼠标点击右上角的X来关闭SSH软件的，也是没问题的。</p>
+<p>恢复screen会话。回来时可以再执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">screen -r lnmp</span><br></pre></td></tr></table></figure>
+
+<p>即可恢复到离开前创建的lnmp会话的工作界面。</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>screen</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DD+cloudreve+caddy+aria2+OneDrive</title>
+    <url>/2021/09/10/61/</url>
+    <content><![CDATA[<p>bash</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>青龙</title>
+    <url>/2021/11/25/64/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run -dit \</span><br><span class="line">-v $PWD/ql/config:/ql/config \</span><br><span class="line">-v $PWD/ql/log:/ql/log \</span><br><span class="line">-v $PWD/ql/db:/ql/db \</span><br><span class="line">-v $PWD/ql/repo:/ql/repo \</span><br><span class="line">-v $PWD/ql/raw:/ql/raw \</span><br><span class="line">-v $PWD/ql/scripts:/ql/scripts \</span><br><span class="line">-p 5555:5700 \</span><br><span class="line">--name qinglong \</span><br><span class="line">--hostname qinglong \</span><br><span class="line">--restart unless-stopped \</span><br><span class="line">whyour/qinglong:latest</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>4行命令，设置80和443只允许CF访问，防止被扫。</title>
+    <url>/2021/12/21/65/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport 80 -j DROP</span><br><span class="line">iptables -I INPUT -p tcp --dport 443 -j DROP</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">curl https://www.cloudflare.com/ips-v4awk &#x27;&#123;print &quot;iptables -I INPUT -s &quot;$0&quot; -p tcp --dport 80 -j ACCEPT&quot;&#125;&#x27;sh</span><br><span class="line">curl https://www.cloudflare.com/ips-v4awk &#x27;&#123;print &quot;iptables -I INPUT -s &quot;$0&quot; -p tcp --dport 443 -j ACCEPT&quot;&#125;&#x27;sh</span><br></pre></td></tr></table></figure>
+
+<p>ipV6</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip6tables -I INPUT -p tcp --dport 80 -j DROP</span><br><span class="line">ip6tables -I INPUT -p tcp --dport 443 -j DROP</span><br><span class="line">curl https://www.cloudflare.com/ips-v6awk &#x27;&#123;print &quot;ip6tables -I INPUT -s &quot;$0&quot; -p tcp --dport 80 -j ACCEPT&quot;&#125;&#x27;sh</span><br><span class="line">curl https://www.cloudflare.com/ips-v6awk &#x27;&#123;print &quot;ip6tables -I INPUT -s &quot;$0&quot; -p tcp --dport 443 -j ACCEPT&quot;&#125;&#x27;sh</span><br></pre></td></tr></table></figure>
+
+<p>firewall版本：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --remove-port=80/tcp</span><br><span class="line">firewall-cmd --permanent --remove-port=443/tcp</span><br><span class="line">firewall-cmd --zone=public --remove-port=80/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --remove-port=443/tcp --permanent</span><br><span class="line">curl https://www.cloudflare.com/ips-v4awk &#x27;&#123;print &quot;firewall-cmd --permanent --add-rich-rule=\&quot;rule family=\&quot;ipv4\&quot; source address=\&quot;&quot;$0&quot;\&quot; port protocol=\&quot;tcp\&quot; port=\&quot;80\&quot; accept\&quot;&quot;&#125;&#x27;sh</span><br><span class="line">curl https://www.cloudflare.com/ips-v4awk &#x27;&#123;print &quot;firewall-cmd --permanent --add-rich-rule=\&quot;rule family=\&quot;ipv4\&quot; source address=\&quot;&quot;$0&quot;\&quot; port protocol=\&quot;tcp\&quot; port=\&quot;443\&quot; accept\&quot;&quot;&#125;&#x27;sh</span><br><span class="line">systemctl restart firewalld.service</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>宝塔相关安装与卸载</title>
+    <url>/2022/01/02/66/</url>
+    <content><![CDATA[<h1 id="宝塔国内版"><a href="#宝塔国内版" class="headerlink" title="宝塔国内版"></a>宝塔国内版</h1><p>Centos安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure>
+
+<p>Ubuntu&#x2F;Deepin安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>卸载命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget http://download.bt.cn/install/bt-uninstall.sh</span><br><span class="line"></span><br><span class="line">sh bt-uninstall.sh</span><br></pre></td></tr></table></figure>
+
+<p>bt工具箱 ，7.7.0版去强登后ssl申请好像有点问题，进去输入10降到7.6.0，输入3和1，去除强登</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O btpanel_tools.sh https://download.btpanel.cm/tools/btpanel_tools.sh &amp;&amp; bash btpanel_tools.sh</span><br></pre></td></tr></table></figure>
+
+<h1 id="aaPanel面板安装"><a href="#aaPanel面板安装" class="headerlink" title="aaPanel面板安装"></a>aaPanel面板安装</h1><p>Centos&#x2F;Debian&#x2F;Fedora:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O install.sh http://www.aapanel.com/script/install-en.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>Ubuntu：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O install.sh http://www.aapanel.com/script/install-ubuntu-en.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>dd CentOS</title>
+    <url>/2022/01/09/67/</url>
+    <content><![CDATA[<p>以下命令中的 -c 后面为CentOS版本号，-v 后面为64位&#x2F;32位，可根据需求进行替换。</p>
+<h1 id="CentOS-6-9-64位："><a href="#CentOS-6-9-64位：" class="headerlink" title="CentOS 6.9 64位："></a>CentOS 6.9 64位：</h1><p>`bash</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>WARP为服务器添加IPv4/IPv6网络</title>
+    <url>/2022/01/10/68/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh &amp;&amp; bash menu.sh</span><br></pre></td></tr></table></figure>
+
+<p>WireGuard 网络接口数据，查看 wg</p>
+<p>临时关闭和开启 WARP（reboot重启后恢复开启） warp o 官方原始指令 wg-quick down wgcf ，恢复启动 wg-quick up wgcf</p>
+<p>禁止开机启动 systemctl disable –now wg-quick@wgcf,恢复开机启动 systemctl enable –now wg-quick@wgcf</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>常用脚本备份</title>
+    <url>/2022/01/12/69/</url>
+    <content><![CDATA[<p>网络重装脚本<br>PS：自定义密码直接 -p 你想要的密码就行！！！<br>部分机器需要设置网卡，否则可以VNC，但是不能远程SSH</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-firmware                额外的驱动支持</span><br><span class="line">-d                        Debian系统 后面是系统版本号</span><br><span class="line">-c                        Centos系统 后面是系统版本号</span><br><span class="line">-v                         后面写64位 32位</span><br><span class="line">-a                        不清楚这个干啥的但是每个脚本都带</span><br><span class="line">--mirror                后面是镜像源地址</span><br><span class="line">-p                        后面写自定义密码</span><br><span class="line">–ip-addr                 ifconfig -a 后获取到的 例：194.87.xxx.xxx</span><br><span class="line">–ip-gate                 route -n    后获取到的 例   194.87.xxx.xxx</span><br><span class="line">–ip-mask                 255.255.xxx.xx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>· 甲骨文、三毛、Vir、RN等大部分VPS通用，三毛、甲骨文 记得去掉 -firmware</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash  /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">sysctl -p</span><br><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br><span class="line">lsmod  grep bbr</span><br></pre></td></tr></table></figure>
+
+<p>复制代码</p>
+<p>superbench</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -qO- git.io/superbench.sh  bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Bench.sh</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -qO- bench.sh  bash</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>三网测速</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用宝塔面板实现阿里云DDNS更新</title>
+    <url>/2020/10/03/7/</url>
+    <content><![CDATA[<p>由于我的N1在Armbian上安装了宝塔面板，并架设了NextCloud(性能低下)所以还是装了Cloudreve，利用IPv6实现外网的便捷访问。Docker使用仅仅是为了DDNS还是很浪费资源的。所以就使用宝塔的计划任务来实现吧！</p>
+<p><img src="http://w.daoke.bid/usr/uploads/2020/10/3670066567.jpg" alt="01-1024x618.jpg" title="01-1024x618.jpg"><br>其中的更新时间建议每天执行，当然也可以更频繁些，例如N小时一次。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aliddnsipv6_ak=&quot;**********&quot;</span><br><span class="line">aliddnsipv6_sk=&quot;************************&quot;</span><br><span class="line">aliddnsipv6_name1=&#x27;www&#x27;</span><br><span class="line">aliddnsipv6_domain=&#x27;xxx.com&#x27;</span><br><span class="line">aliddnsipv6_ttl=&quot;600&quot;</span><br><span class="line"></span><br><span class="line">if [ &quot;$aliddnsipv6_name1&quot; = &quot;@&quot; ]</span><br><span class="line">then</span><br><span class="line">  aliddnsipv6_name=$aliddnsipv6_domain</span><br><span class="line">else</span><br><span class="line">  aliddnsipv6_name=$aliddnsipv6_name1.$aliddnsipv6_domain</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">now=`date`</span><br><span class="line"></span><br><span class="line">die () &#123;</span><br><span class="line">    echo $1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ipv6s=`ip addr show eth0  grep &quot;inet6.*global&quot;  awk &#x27;&#123;print $2&#125;&#x27;  awk -F&quot;/&quot; &#x27;&#123;print $1&#125;&#x27;`  die &quot;$ipv6&quot;</span><br><span class="line"></span><br><span class="line">for ipv6 in $ipv6s</span><br><span class="line">do</span><br><span class="line">  #ipv6 = $ipv6</span><br><span class="line">  break</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">echo $ipv6</span><br><span class="line"></span><br><span class="line">current_ipv6=`nslookup -query=AAAA $aliddnsipv6_name 2&gt;&amp;1`</span><br><span class="line">#echo $current_ipv6</span><br><span class="line"></span><br><span class="line">current_ipv6=`echo &quot;$current_ipv6&quot;  grep &#x27;Address: &#x27;  tail -n1  awk &#x27;&#123;print $NF&#125;&#x27;`</span><br><span class="line">echo $current_ipv6</span><br><span class="line"></span><br><span class="line">if [ &quot;$?&quot; -eq &quot;0&quot; ]</span><br><span class="line">then</span><br><span class="line">    current_ipv6=`echo &quot;$current_ipv6&quot;  grep &#x27;Address: &#x27;  tail -n1  awk &#x27;&#123;print $NF&#125;&#x27;`</span><br><span class="line">    echo $current_ipv6</span><br><span class="line"></span><br><span class="line">    if [ &quot;$ipv6&quot; = &quot;$current_ipv6&quot; ]</span><br><span class="line">    then</span><br><span class="line">        echo &quot;skipping&quot;</span><br><span class="line">    fi</span><br><span class="line"># fix when A record removed by manual dns is always update error</span><br><span class="line">else</span><br><span class="line">    unset aliddnsipv6_record_id</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">timestamp=`date -u &quot;+%Y-%m-%dT%H%%3A%M%%3A%SZ&quot;`</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">urlencode() &#123;</span><br><span class="line">    # urlencode </span><br><span class="line">    out=&quot;&quot;</span><br><span class="line">    while read -n1 c</span><br><span class="line">    do</span><br><span class="line">        case $c in</span><br><span class="line">            [a-zA-Z0-9._-]) out=&quot;$out$c&quot; ;;</span><br><span class="line">            *) out=&quot;$out`printf &#x27;%%%02X&#x27; &quot;&#x27;$c&quot;`&quot; ;;</span><br><span class="line">        esac</span><br><span class="line">    done</span><br><span class="line">    echo -n $out</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">enc() &#123;</span><br><span class="line">    echo -n &quot;$1&quot;  urlencode</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">send_request() &#123;</span><br><span class="line">    local args=&quot;AccessKeyId=$aliddnsipv6_ak&amp;Action=$1&amp;Format=json&amp;$2&amp;Version=2015-01-09&quot;</span><br><span class="line">    local hash=$(echo -n &quot;GET&amp;%2F&amp;$(enc &quot;$args&quot;)&quot;  openssl dgst -sha1 -hmac &quot;$aliddnsipv6_sk&amp;&quot; -binary  openssl base64)</span><br><span class="line">    curl -s &quot;http://alidns.aliyuncs.com/?$args&amp;Signature=$(enc &quot;$hash&quot;)&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">get_recordid() &#123;</span><br><span class="line">    grep -Eo &#x27;&quot;RecordId&quot;:&quot;[0-9]+&quot;&#x27;  cut -d&#x27;:&#x27; -f2  tr -d &#x27;&quot;&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">query_recordid() &#123;</span><br><span class="line">    send_request &quot;DescribeSubDomainRecords&quot; &quot;SignatureMethod=HMAC-SHA1&amp;SignatureNonce=$timestamp&amp;SignatureVersion=1.0&amp;SubDomain=$aliddnsipv6_name&amp;Timestamp=$timestamp&amp;Type=AAAA&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">update_record() &#123;</span><br><span class="line">    send_request &quot;UpdateDomainRecord&quot; &quot;RR=$aliddnsipv6_name1&amp;RecordId=$1&amp;SignatureMethod=HMAC-SHA1&amp;SignatureNonce=$timestamp&amp;SignatureVersion=1.0&amp;TTL=$aliddnsipv6_ttl&amp;Timestamp=$timestamp&amp;Type=AAAA&amp;Value=$(enc $ipv6)&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add_record() &#123;</span><br><span class="line">    send_request &quot;AddDomainRecord&amp;DomainName=$aliddnsipv6_domain&quot; &quot;RR=$aliddnsipv6_name1&amp;SignatureMethod=HMAC-SHA1&amp;SignatureNonce=$timestamp&amp;SignatureVersion=1.0&amp;TTL=$aliddnsipv6_ttl&amp;Timestamp=$timestamp&amp;Type=AAAA&amp;Value=$(enc $ipv6)&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#add support */%2A and @/%40 record</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if [ &quot;$aliddnsipv6_record_id&quot; = &quot;&quot; ]</span><br><span class="line">then</span><br><span class="line">    aliddnsipv6_record_id=`query_recordid  get_recordid`</span><br><span class="line">    #echo &#x27;-----------------&#x27; $aliddnsipv6_record_id</span><br><span class="line">fi</span><br><span class="line">if [ &quot;$aliddnsipv6_record_id&quot; = &quot;&quot; ]</span><br><span class="line">then</span><br><span class="line">    aliddnsipv6_record_id=`add_record  get_recordid`</span><br><span class="line">    echo &quot;added record $aliddnsipv6_record_id&quot;</span><br><span class="line">else</span><br><span class="line">    update_record $aliddnsipv6_record_id</span><br><span class="line">    echo &quot;updated record $aliddnsipv6_record_id&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AccessKey ID：</span><br><span class="line">aliddnsipv6_ak=&quot;**********&quot;</span><br><span class="line"></span><br><span class="line">Access Key Secret</span><br><span class="line">aliddnsipv6_sk=&quot;************************&quot;</span><br></pre></td></tr></table></figure>
+
+<p>子域名：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aliddnsipv6_name1=&#x27;www&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>域名：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aliddnsipv6_domain=&#x27;xxx.com&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>TTL:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aliddnsipv6_ttl=&quot;600&quot;</span><br></pre></td></tr></table></figure>
+
+<p>show:etho 是指定网卡获取IPv6，可通过ifconfig命令来获取网卡名<br>ipv6s&#x3D;<code>ip addr show eth0 grep &quot;inet6.*global&quot; awk &#39;&#123;print $2&#125;&#39; awk -F&quot;/&quot; &#39;&#123;print $1&#125;&#39;</code> die “$ipv6”<br>配置好了之后保存，可以尝试执行一次看是否已经生效，如果正常就OK啦！是不是很简单？</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>DDNS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>宝塔降级7.7</title>
+    <url>/2022/01/12/70/</url>
+    <content><![CDATA[<p>破解的有BUG 推荐使用降级</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget http://download.bt.cn/install/update/LinuxPanel-7.7.0.zip</span><br><span class="line">unzip LinuxPanel-*</span><br><span class="line">cd panel</span><br><span class="line">bash update.sh</span><br><span class="line">cd .. &amp;&amp; rm -f LinuxPanel-*.zip &amp;&amp; rm -rf panel</span><br></pre></td></tr></table></figure>
+
+<p>破解登录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -f /www/server/panel/data/bind.pl</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sed -i -r &quot;s/not not get_user_info\(\)/True/&quot; /www/server/panel/class/public.py &amp;&amp; bt 1</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>NginxProxyManager</title>
+    <url>/2022/01/12/71/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir nginx</span><br><span class="line">cd nginx</span><br><span class="line"></span><br><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;80:80&#x27;</span><br><span class="line">      - &#x27;81:81&#x27;</span><br><span class="line">      - &#x27;443:443&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data</span><br><span class="line">      - ./letsencrypt:/etc/letsencrypt</span><br><span class="line"></span><br><span class="line">docker-compose up -d</span><br><span class="line"></span><br><span class="line">Email:    admin@example.com</span><br><span class="line">Password: changeme</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>docker 制作自己的镜像</title>
+    <url>/2022/01/17/72/</url>
+    <content><![CDATA[<h1 id="检查镜像"><a href="#检查镜像" class="headerlink" title="检查镜像"></a>检查镜像</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker image</span><br></pre></td></tr></table></figure>
+
+<h1 id="检查容器"><a href="#检查容器" class="headerlink" title="检查容器"></a>检查容器</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p>交互式运行debian镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -itd --name blog debian</span><br><span class="line">docker exec -it blog /bin/bash </span><br><span class="line">apt update</span><br><span class="line">apt install -y upgrade</span><br><span class="line">apt install -y vim curl wget bash htop</span><br><span class="line"></span><br><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+
+<p>将容器变成镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker commit -m=&quot;debian环境&quot; -a=&quot;mydaoke&quot; blog mydaoke/debian:1.0</span><br><span class="line">-m：注释信息</span><br><span class="line">-a：作者名称</span><br><span class="line">blog：待提交的容器名称</span><br><span class="line">mydaoke/debian:1.0：提交后的镜像名:TAG</span><br></pre></td></tr></table></figure>
+
+<p>登录Docker Hub</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker login</span><br></pre></td></tr></table></figure>
+
+<p>推送镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker push mydaoke/debian:1.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Linux 文件/文件夹的创建、复制、移动、删除</title>
+    <url>/2022/01/18/73/</url>
+    <content><![CDATA[<p>Linux 命令行终端中，文件&#x2F;文件夹的创建、复制、移动、删除。</p>
+<h3 id="文件夹创建命令"><a href="#文件夹创建命令" class="headerlink" title="文件夹创建命令"></a>文件夹创建命令</h3><ul>
+<li>mkdir 1 #创建文件夹1到当前目录</li>
+<li>mkdir -p 1&#x2F;2 #创建文件夹1，并在文件夹1中创建文件夹2</li>
+</ul>
+<h3 id="文件创建命令"><a href="#文件创建命令" class="headerlink" title="文件创建命令"></a>文件创建命令</h3><ul>
+<li>touch 1.txt #创建文件1.txt到当前目录</li>
+</ul>
+<h3 id="rm-选项-文件或目录"><a href="#rm-选项-文件或目录" class="headerlink" title="rm 选项 文件或目录"></a>rm 选项 文件或目录</h3><p>选项说明</p>
+<blockquote>
+<p>-f 强制删除<br>-i 交互模式，在删除前询问用户是否操作<br>-r 递归删除，常用在目录的删除</p>
+</blockquote>
+<p>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -f 1.txt  #强制删除文件1.txt</span><br><span class="line">rm -rf 1/*  #递归强制删除文件夹1里面的所有文件和文件夹</span><br><span class="line">rm -rf 1 #递归强制删除文件夹1</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>caddy安装</title>
+    <url>/2022/01/19/74/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -1sLf &#x27;https://dl.cloudsmith.io/public/caddy/stable/gpg.key&#x27;  sudo apt-key add - </span><br><span class="line">curl -1sLf &#x27;https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt&#x27;  sudo tee -a /etc/apt/sources.list.d/caddy-stable.list</span><br><span class="line">    sudo apt update</span><br><span class="line">    sudo apt install caddy</span><br></pre></td></tr></table></figure>
+
+<h3 id="证书位置"><a href="#证书位置" class="headerlink" title="证书位置"></a>证书位置</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置文件路径"><a href="#配置文件路径" class="headerlink" title="配置文件路径"></a>配置文件路径</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/etc/caddy/Caddyfile</span><br></pre></td></tr></table></figure>
+
+<p>修改配置后 重新加载配置</p>
+<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">www.psvmc.cn &#123;</span><br><span class="line">    reverse_proxy localhost:9000</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改配置后-重新加载配置"><a href="#修改配置后-重新加载配置" class="headerlink" title="修改配置后 重新加载配置"></a>修改配置后 重新加载配置</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl reload caddy</span><br></pre></td></tr></table></figure>
+
+<p>Ubuntu<br><code>sudo systemctl restart caddy</code></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>使用 Dockerfile 定制镜像</title>
+    <url>/2022/01/21/76/</url>
+    <content><![CDATA[<p>示例 frps<br>创建一个文件夹 frp</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir frp &amp;&amp; cd frp</span><br></pre></td></tr></table></figure>
+
+<p>编辑Dockerfile文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano Dockerfile</span><br></pre></td></tr></table></figure>
+
+<p>下面代码复制粘贴</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FROM alpine</span><br><span class="line">MAINTAINER Stille </span><br><span class="line"></span><br><span class="line">ENV FRP_VERSION 0.38.0</span><br><span class="line">WORKDIR /</span><br><span class="line"></span><br><span class="line">RUN set -xe &amp;&amp; \</span><br><span class="line">    apk add tzdata &amp;&amp; \</span><br><span class="line">    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &amp;&amp; \</span><br><span class="line">    echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; \</span><br><span class="line">    apk del tzdata</span><br><span class="line"></span><br><span class="line">RUN set -x &amp;&amp; \</span><br><span class="line">    if [ &quot;$(uname -m)&quot; = &quot;x86_64&quot; ]; then export PLATFORM=amd64 ; else if [ &quot;$(uname -m)&quot; = &quot;aarch64&quot; ]; then export PLATFORM=arm64 ; fi fi &amp;&amp; \</span><br><span class="line">    wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v$&#123;FRP_VERSION&#125;/frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;.tar.gz &amp;&amp; \ </span><br><span class="line">    tar xzf frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;.tar.gz &amp;&amp; \</span><br><span class="line">    cd frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125; &amp;&amp; \</span><br><span class="line">    mkdir /frp &amp;&amp; \</span><br><span class="line">    mv frps frps.ini /frp &amp;&amp; \</span><br><span class="line">    cd .. &amp;&amp; \</span><br><span class="line">    rm -rf *.tar.gz frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;</span><br><span class="line"></span><br><span class="line">VOLUME /frp</span><br><span class="line"></span><br><span class="line">CMD /frp/frps -c /frp/frps.ini</span><br></pre></td></tr></table></figure>
+
+<p>生成docker镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker build -t mydaoke/frps:0.38 .</span><br></pre></td></tr></table></figure>
+
+<p>mydaoke&#x2F;frps:0.38修改自己的名称<br>查看生成docker镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<p>试运行一下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run --restart=always --network host -d -v /root/frp/frps.ini:/frp/frps.ini --name frps mydaoke/frps:0.38</span><br></pre></td></tr></table></figure>
+
+<p>Ok</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>玩客云当录像机安装pyNvr</title>
+    <url>/2022/02/13/77/</url>
+    <content><![CDATA[<p><a href="https://gitee.com/wfxzf/pyNvr">pyNvr脚本</a></p>
+<p>安装python3</p>
+<p>如果使用百度网盘：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip3 install bypy</span><br><span class="line">bypy info</span><br></pre></td></tr></table></figure>
+
+<p>复制链接粘贴到浏览器打开，登录，填写授权码。<br>如果出错<br>试试删掉配置文件重新授权</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -Rf ~/.bypy</span><br><span class="line">rm -f ~/.bypy.*</span><br></pre></td></tr></table></figure>
+
+<p>如果使用阿里云盘：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip3 install aligo</span><br></pre></td></tr></table></figure>
+
+<p>安装opencv：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install python3-opencv</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>创建保存视频的文件夹,例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir /home/videos</span><br><span class="line">mkdir /home/videos/cam01</span><br></pre></td></tr></table></figure>
+
+<p>一定要创建好路径，并且跟配置的路径一致，最后一层文件夹的名称为摄像头名称（camname）,参数pwd写到倒数第二层文件夹，以&#x2F;&#x2F;结尾即可。 编辑pyNvr.py,修改配置（选择netdisk（netdisk &#x3D; 1为百度，2为阿里），摄像头名称camname、串流地址url、本地存储路径pwd，单个视频时长blocktime,开启储存到百度网盘upyoby，上传完成后删除本地文件re_af_up）</p>
+<p>运行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd pyNvr</span><br></pre></td></tr></table></figure>
+
+<p>运行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python3 pyNvr.py</span><br></pre></td></tr></table></figure>
+
+<p>如果使用阿里网盘，第一次使用需要登录（百度已经登陆过）<br>如果二维码显示错乱，需要新建一个终端，手动找到&#x2F;tmp中的图片复制到手机可以直接访问的文件夹中，扫描，如：<br>cp &#x2F;tmp&#x2F;tmp56sdcc.png &#x2F;sdcard&#x2F;DCIM&#x2F;QRcode.png<br>打开文件管理，找到DCIM文件夹下的这张图，扫描即可。<br>测试没有问题后，ctrl + C终止程序。<br>后台运行程序:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nohup python3 pyNvr.py &amp;</span><br></pre></td></tr></table></figure>
+
+<p>增加重启开机自动运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/rc.local</span><br></pre></td></tr></table></figure>
+
+<p>把<br><code>nohup python3 /root/pyNvr/pyNvr.py &amp;</code><br>增加exit 0前面<br>程序极其简陋，稳定和安全毫无保障，仅仅用于不含任何隐私信息、图省钱省事还想多一层云备份的情况<br>仅建议用于linux不完整的安卓手机，云服务器、实体机、树莓派建议使用知名开源或商业软件，如bluebeery等。<br>附，国内常见IP摄像头串流地址:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">海康威视</span><br><span class="line">主码流：</span><br><span class="line">rtsp://user:password@ip:554/h264/ch1/main/av_stream</span><br><span class="line">子码流：</span><br><span class="line">rtsp://user:password@ip:554/mpeg4/ch1/sub/av_stream</span><br><span class="line"></span><br><span class="line">大华</span><br><span class="line">rtsp://username:password@ip:port/cam/realmonitor?channel=1&amp;subtype=0</span><br><span class="line"></span><br><span class="line">TP-Link/水星安防</span><br><span class="line">rtsp://user:password@ip:554/stream1</span><br><span class="line">rtsp://user:password@ip:554/stream2</span><br><span class="line">三星</span><br><span class="line">高码流rtsp地址：</span><br><span class="line">rtsp://user:password@ip:554/onvif/profile2/media.smp（720P）</span><br><span class="line">低码率rtsp地址</span><br><span class="line">rtsp://user:password@ip:554/onvif/profile3/media.smp</span><br><span class="line"></span><br><span class="line">LG</span><br><span class="line">高码流（主码流）RTSP地址：</span><br><span class="line">rtsp://user:password@ip:554/Master-0</span><br><span class="line">低码流（子码流）RTSP地址：</span><br><span class="line">rtsp://user:password@ip:554/Slave-0</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>自制N1 Docker Openwrt镜像及运行镜像</title>
+    <url>/2022/02/16/78/</url>
+    <content><![CDATA[<p>1.编译openwrt</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Target System 选择 QEMU ARM VIrtual Machine</span><br><span class="line">Subtarget 选择 ARMv8 multiplatform</span><br><span class="line">其它的随意</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编译好的openwrt，会生成 rootfs 打包文件：<br>openwrt-armvirt-64-default-rootfs.tar.gz</li>
+<li>在装好armbian和docker的N1上，把openwrt-armvirt-64-default-rootfs.tar.gz和Dockerfile放到同一个目录下</li>
+<li>制造镜像<br>(示例用的是openwrt by lean r9.7.6源码，因此镜像名称为：openwrt-arm64 版本为 r9.7.6<br>docker build -t openwrt-arm64:r9.7.6 .<br>即可生成镜像<br>用docker images，可以查看到已生成的镜像<br>用docker save openwrt-arm64:r9.7.6 gzip &gt; docker-image-openwrt-arm64-r9.7.6.tar.gz 可以把镜像导出成打包文件<br>用 gzip -dc docker-image-openwrt-arm64-r9.7.6.tar.gz docker load ，可以把打包文件还原成docker镜像</li>
+<li>运行镜像：<br>可以参见 <a href="https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg">https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg</a><br>重点：<br>a. 物理网卡要开启混杂模式（promisc)，有临时生效型（命令）和永久生效型（要改网络配置文件）<br>b. docker创建macvlan网络<br>c. 用macvlan网络绑定docker容器<br>d. 物理机和openwrt容器在同一网段，但不同ip<br>e. macvlan模式下，物理机和openwrt容器之间是ping不通的，这是正常现象，但第三方电脑都能ping通两者</li>
+</ol>
+<p>示例：</p>
+<h1 id="docker创建macvlan网络，名为macnet"><a href="#docker创建macvlan网络，名为macnet" class="headerlink" title="docker创建macvlan网络，名为macnet"></a>docker创建macvlan网络，名为macnet</h1><p>docker network create -d macvlan –subnet&#x3D;192.168.3.0&#x2F;24 –gateway&#x3D;192.168.3.1 -o parent&#x3D;eth0 macnet</p>
+<h1 id="用macnet运行openwrt实例，实例名为phicomm-n1"><a href="#用macnet运行openwrt实例，实例名为phicomm-n1" class="headerlink" title="用macnet运行openwrt实例，实例名为phicomm-n1"></a>用macnet运行openwrt实例，实例名为phicomm-n1</h1><h1 id="引用armbian的通用函数包"><a href="#引用armbian的通用函数包" class="headerlink" title="引用armbian的通用函数包"></a>引用armbian的通用函数包</h1><p>source &#x2F;usr&#x2F;lib&#x2F;armbian&#x2F;armbian-common</p>
+<h1 id="得到一个随机MAC地址-存入MACADDR变量"><a href="#得到一个随机MAC地址-存入MACADDR变量" class="headerlink" title="得到一个随机MAC地址,存入MACADDR变量"></a>得到一个随机MAC地址,存入MACADDR变量</h1><p>get_random_mac</p>
+<p>docker run –name phicomm-n1 –restart always –network macnet –mac-address $MACADDR -d –privileged&#x3D;true –ulimit nofile&#x3D;16384:65536 openwrt-arm64:r9.8.17</p>
+<h1 id="进入op容器，修改-x2F-etc-x2F-config-x2F-network"><a href="#进入op容器，修改-x2F-etc-x2F-config-x2F-network" class="headerlink" title="进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network"></a>进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network</h1><p>docker exec -it phicomm-n1 sh<br>vi &#x2F;etc&#x2F;config&#x2F;network</p>
+<p>修改下面这段：<br>config interface ‘lan’</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">option ifname &#x27;eth0&#x27;</span><br><span class="line">option proto &#x27;static&#x27;</span><br><span class="line">option netmask &#x27;255.255.255.0&#x27;</span><br><span class="line">option gateway &#x27;192.168.3.1&#x27;</span><br><span class="line">option ipaddr &#x27;192.168.3.20&#x27;</span><br><span class="line">option broadcast &#x27;192.168.3.255&#x27;</span><br><span class="line">option ip6assign &#x27;64&#x27;</span><br><span class="line">option dns &#x27;192.168.3.1&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>注：192.168.3.1是主路由的地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">192.168.3.20是openwrt自己的地址，也就是旁路由的地址</span><br><span class="line"> broadcast和dns也做相应更改</span><br></pre></td></tr></table></figure>
+
+<p>改好后，存盘，运行：<br>&#x2F;etc&#x2F;init.d&#x2F;network restart<br>过一会就可以ping通旁路由了，然后用浏览器连上192.168.3.20就可以按一般的操作了</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+        <category>网络资源</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>docker filebrowser</title>
+    <url>/2022/02/18/79/</url>
+    <content><![CDATA[<h1 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir /home/videos</span><br><span class="line">mkdir /home/videos/cam01</span><br><span class="line">cd</span><br><span class="line">mkdir filebrowser</span><br><span class="line">cd filebrowser</span><br><span class="line">touch filebrowser.db</span><br></pre></td></tr></table></figure>
+
+<h1 id="运行docker"><a href="#运行docker" class="headerlink" title="运行docker"></a>运行docker</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--name filebrowser \</span><br><span class="line">-v /:/srv/ \</span><br><span class="line">-v /root/filebrowser/filebrowser.db:/database.db \</span><br><span class="line">--user $(id -u):$(id -g) \</span><br><span class="line">-p 8088:80 \</span><br><span class="line">--restart=always \</span><br><span class="line">filebrowser/filebrowser</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>ArmBian做ZeroTier内网穿透</title>
+    <url>/2020/10/09/8/</url>
+    <content><![CDATA[<p>Linux最简单的安装方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s https://install.zerotier.com/  sudo bash</span><br></pre></td></tr></table></figure>
+
+<p>无任何报错显示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*** Waiting for identity generation...</span><br></pre></td></tr></table></figure>
+
+<p><em>*</em> Success! You are ZeroTier address [ d56f99571f ].<br>把zerotier服务复制到系统服务目录并激活</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl start zerotier-one</span><br><span class="line">systemctl enable zerotier-one //开机启动</span><br></pre></td></tr></table></figure>
+
+<p>察看状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zerotier-cli info</span><br></pre></td></tr></table></figure>
+
+<p>演示：</p>
+<p>[root@instance-1 ~]# <code>zerotier-cli info</code><br>200 info d56f99571f 1.2.12 ONLINE<br>最后加入zerotier网络：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zerotier-cli join  //你的Zeroiter网络ID</span><br></pre></td></tr></table></figure>
+
+<p><strong>彻底卸载Zerotier-one</strong><br>通过dpkg删除zerotier-one服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -P zerotier-one</span><br></pre></td></tr></table></figure>
+
+<p>删除zerotier-one文件夹，该文件夹存储了address地址，删除后再次安装会获得新的address地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rm -rf /var/lib/zerotier-one/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>服务**</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -P zerotier-one</span><br></pre></td></tr></table></figure>
+
+<p>删除zerotier-one文件夹，该文件夹存储了address地址，删除后再次安装会获得新的address地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rm -rf /var/lib/zerotier-one/</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>玩客云官方系统ROOT安装哪吒探针</title>
+    <url>/2022/02/23/80/</url>
+    <content><![CDATA[<p>下载哪吒 nezha-agent_linux_arm.tar.gz<br><a href="https://github.com/naiba/nezha">哪吒</a><br>上传ROOT目录给于权限</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod 755 nezha-agent</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置开机自起</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc/init.d</span><br><span class="line">touch S96nezha</span><br><span class="line">chmod 755 S96nezha</span><br><span class="line">echo &quot;sleep 10&quot;        &gt;&gt; S96nezha</span><br><span class="line">echo &quot;cd&quot;        &gt;&gt; S96nezha</span><br><span class="line">echo &quot;/root/nezha-agent -s 面板网址:接收端口 -p 唯一秘钥 -d&quot;    &gt;&gt; S96nezha</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>玩客云重启</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>github国内设置</title>
+    <url>/2022/05/12/82/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global url.https://xx.xx.xx/.insteadof https://   增加</span><br><span class="line">git config --global --unset url.https://xx.xx.xx/.insteadof https://   取消</span><br><span class="line">git config --global --list  检查</span><br></pre></td></tr></table></figure>
+
+<p>xx.xx.xx 是代理域名</p>
+]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用Caddy2作为文件服务器</title>
+    <url>/2022/05/15/85/</url>
+    <content><![CDATA[<p>Caddyfile</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://yourdomain.com &#123;</span><br><span class="line">basicauth &#123;</span><br><span class="line">    bob xDJhJDEwJEVoOWxYTmY5eVdCbXhhRC95SGZoYxU0bVQvaXhyamdLRkxKdUlPSHhLVFY0RWNlRDN5eDx2</span><br><span class="line">&#125;</span><br><span class="line">file_server &#123;</span><br><span class="line">    root /home/share</span><br><span class="line">    browse</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">其中密码应该使用 caddy hash-password 生成</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>Caddy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker mysql容器创建用户密码</title>
+    <url>/2022/05/18/86/</url>
+    <content><![CDATA[<h1 id="进入-mysql5-7-容器"><a href="#进入-mysql5-7-容器" class="headerlink" title="进入 mysql5.7 容器"></a>进入 mysql5.7 容器</h1><p><code>sudo docker exec -it mysql5.7 bash</code></p>
+<p><code>mysql -uroot -p123456</code></p>
+<h1 id="创建用户，密码随意"><a href="#创建用户，密码随意" class="headerlink" title="创建用户，密码随意"></a>创建用户，密码随意</h1><p><code>mysql&gt; create user &#39;239239&#39;@&#39;%&#39; identified by &#39;123456&#39;;</code><br><code>mysql&gt; grant all privileges on *.* to &#39;239239&#39;@&#39;%&#39; with grant option;</code><br><code>mysql&gt; flush privileges;</code></p>
+<h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><p><code>mysql&gt; create database 239239;</code></p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+        <category>网络资源</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>花生壳5.0 for 树莓派</title>
+    <url>/2020/10/09/9/</url>
+    <content><![CDATA[<p>一、下载<br>在<a href="https://hsk.oray.com/download/">花生壳下载页面</a>，找到树莓派5.0并下载。将安装包下载到本地电脑后，可以通过WinSCP等工具将安装包传输到树莓派中。</p>
+<p>二、安装<br>注意：安装花生壳前，需输入命令：sudo -s 切换到管理员权限。<br>1、使用cd命令进入安装包所在的文件路径，输入安装命令：dpkg -i 安装包名称。回车，等待安装完成。<br>如： dpkg -i phtunnel_5_0_rapi_aarch64.deb</p>
+<p>安装成功后，将显示花生壳的SN码、默认密码（admin）及远程管理地址<a href="http://b.oray.com/">http://b.oray.com</a>。<br>三、操作功能<br>1、输入命令：phddns回车，可以看到扩展功能。phddns start（启动） status（状态） stop（停止）restart（重启） reset（重置）enable（开机自启动）disable（关闭开机自启动）version（版本）<br>日志文件存放路径：&#x2F;var&#x2F;log&#x2F;phddns</p>
+]]></content>
+      <categories>
+        <category>默认分类</category>
+      </categories>
+      <tags>
+        <tag>DDNS</tag>
+        <tag>动态域名解析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title> ArmBian做ZeroTier内网穿透</title>
+    <url>/2020/10/08/clypbp/</url>
+    <content><![CDATA[<p>Linux 最简单的安装方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s https://install.zerotier.com/ | sudo bash</span><br></pre></td></tr></table></figure>
+
+<p>无任何报错显示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*** Waiting for identity generation...</span><br></pre></td></tr></table></figure>
+
+<p>*** Success! You are ZeroTier address [ d56f99571f ].<br>把 zerotier 服务复制到系统服务目录并激活</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl start zerotier-one</span><br><span class="line">systemctl enable zerotier-one //开机启动</span><br></pre></td></tr></table></figure>
+
+<p>察看状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zerotier-cli info</span><br></pre></td></tr></table></figure>
+
+<p>演示：</p>
+<p>[root<a href="/instance-1">@instance-1 </a> ~]# <code>zerotier-cli info</code><br>200 info d56f99571f 1.2.12 ONLINE<br>最后加入 zerotier 网络：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zerotier-cli join &lt;network&gt; //你的Zeroiter网络ID</span><br></pre></td></tr></table></figure>
+
+<p><strong>彻底卸载 Zerotier-one</strong><br>通过 dpkg 删除 zerotier-one 服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -P zerotier-one</span><br></pre></td></tr></table></figure>
+
+<p>删除 zerotier-one 文件夹，该文件夹存储了 address 地址，删除后再次安装会获得新的 address 地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rm -rf /var/lib/zerotier-one/</span><br></pre></td></tr></table></figure>
+
+<p>服务**</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -P zerotier-one</span><br></pre></td></tr></table></figure>
+
+<p>删除 zerotier-one 文件夹，该文件夹存储了 address 地址，删除后再次安装会获得新的 address 地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rm -rf /var/lib/zerotier-one/</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>ArmBian</category>
+        <category>DDNS</category>
+      </categories>
+      <tags>
+        <tag>ArmBian</tag>
+        <tag>ddns</tag>
+        <tag>ZeroTier</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>语雀自动部署 Hexo 博客</title>
+    <url>/2022/05/26/ld7o8d/</url>
+    <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>这是一个测试页面，看到这个说明已经成功了，</p>
+<h4 id="欢迎使用-Hexo-博客"><a href="#欢迎使用-Hexo-博客" class="headerlink" title="欢迎使用 Hexo 博客"></a>欢迎使用 Hexo 博客</h4>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>语雀</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/11/02/mjj/</url>
+    <content><![CDATA[<hr>
+<p>title: mjj版的linux入门教程 #名字<br>tags: [mjj,命令,linux] #标签<br>categories: [liunx] #分类<br>date: 2022-11-2 06:24:00 #日期</p>
+<hr>
+<p>#mjj版的linux入门教程</p>
+<p>本文的首要目的是给予Linux初学者一个简单、易学的教程，以便在看完本文后对Linux系统有一个基础的认识（而非系统级的深入），可以对常见的软件和功能进行配置，甚至可以自己写一写一键脚本。</p>
+<p>本教程写于2021年下半年，采用的系统为Debian GNU&#x2F;Linux 11 (bullseye)。</p>
+<h2 id="0-前言吐槽CentOS"><a href="#0-前言吐槽CentOS" class="headerlink" title="0 前言吐槽CentOS"></a>0 前言吐槽CentOS</h2><p><strong>解释使用Debian而不是CentOS的原因</strong></p>
+<p>国内首批接触Linux系统的人主要集中在科研院校，大多数是延续了Unix-like的背景，在千禧年前后才有了真正意义上的Linux使用者：纯Linux平台开发、运行服务和应用，他们或直接或间接地推广了Linux系统。红帽（Red Hat, Inc.）在1994年就开始发布了同名的操作系统：Red Hat Linux（后改组为Red Hat Enterprise Linux，缩写为RHEL）。得益于红帽优秀的团队和商业支持，RHEL这一发行版迅速占领了国内市场。彼时的国内计算机市场远不如今日繁荣，在口口相传和红帽的推广中，RHEL成为了Linux入门的主流选项，即使后来号称用户友好的Ubuntu出现了，绝大多数尝鲜的人依然能看到众多网站里面只提供RHEL版本的教程。</p>
+<p>CentOS是根据RHEL的源码重新编译的，等于换商标版本的RHEL，软件层面上，两者无本质区别。但CentOS是反人类的，至少是反入门用户的。使用RHEL的基本为商业用户，可以付费获得红帽的技术支持，或者干脆有一个自己的维护团队；而CentOS作为一个社区自发形成的操作系统，拥有落后的软件源&#x2F;包，繁琐的配置，和对个人用户而言根本没有必要的SElinux等。举个例子，很多入门者修改SSH端口的时候，发现所有的操作都没有问题，但是死活无法生效，最终发现是没有在SElinux里面放行。如果你想安装个软件，你就得考虑是从落后主流版本好几代的软件源&#x2F;包里面安装，还是自己下载源码进行编译以获取主流的使用体验。对于入门者而言，CentOS的安全性和稳定性是个虚假的概念，毕竟让一个刚接触Linux的人去自己编译源码安装，无异于让小学生上战场，输了就说是小学生战斗力太弱。</p>
+<p>所以本文以Debian GNU&#x2F;Linux（后续简称为Debian）来演示，也有着推广Debian的意思在里面，毕竟相比于Ubuntu往系统里面塞包括snap在内的一系列私货而言，Debain始终遵循着一个纯净的Linux的要求。而其他一些发行版，要么是专用性太强（如SUSE），要么是入门者不友好（如 Arch Linux），权衡之后，选择了写本文时，最新的Debian系统，即Debian GNU&#x2F;Linux 11 (bullseye)。</p>
+<h2 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1 环境搭建"></a>1 环境搭建</h2><h3 id="1-1-系统选择与安装"><a href="#1-1-系统选择与安装" class="headerlink" title="1.1 系统选择与安装"></a>1.1 系统选择与安装</h3><p>Debian的安装包有一系列的前缀或者后缀，例如在默认的下载地址<code>https://www.debian.org/download</code>中的是<code>debian-11.0.0-amd64-netinst.iso</code>。其中，</p>
+<ul>
+<li>11代表大版本是11，代号是bullseye，各版本代号都来源于电影《玩具总动员》中的角色名称；</li>
+<li>amd64是指系统为64位的，i386或者x86是32位的，amd64或者x86-64是64位的，32位系统已经被逐步弃用，目前仅在特定行业中使用；</li>
+<li>netinst是网络安装版本，只是个安装器，安装过程需要联网，而DVD后缀的是完整版（如：debian-11.0.0-amd64-DVD-1.iso），如果系统太大，会在DVD后面加数字，默认DVD-1是完整版本，其后数字的是软件源&#x2F;包；</li>
+<li>带firmware前缀的是包含第三方非开源驱动的（如：firmware-11.1.0-amd64-DVD-1.iso），其中就包含intel和Realtek等公司的闭源网卡驱动。</li>
+</ul>
+<p>VPS全称为virtual private server（虚拟专用服务器），如果需要安装纯净版的Debian 11系统，推荐使用vicer的Linux一键重装脚本（如下）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(wget --no-check-certificate -qO- &#x27;https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh&#x27;) -d 11 -v 64 -p &quot;自定义root密码&quot; -port &quot;自定义ssh端口&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-2-常用的命令"><a href="#1-2-常用的命令" class="headerlink" title="1.2 常用的命令"></a>1.2 常用的命令</h3><p><code>cat</code> 用于查看文本文件的内容，如<code>cat /etc/os-release</code> 将显示系统信息，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PRETTY_NAME=&quot;Debian GNU/Linux 11 (bullseye)&quot;</span><br><span class="line">NAME=&quot;Debian GNU/Linux&quot;</span><br><span class="line">VERSION_ID=&quot;11&quot;</span><br><span class="line">VERSION=&quot;11 (bullseye)&quot;</span><br><span class="line">VERSION_CODENAME=bullseye</span><br><span class="line">ID=debian</span><br><span class="line">HOME_URL=&quot;https://www.debian.org/&quot;</span><br><span class="line">SUPPORT_URL=&quot;https://www.debian.org/support&quot;</span><br><span class="line">BUG_REPORT_URL=&quot;https://bugs.debian.org/&quot;</span><br></pre></td></tr></table></figure>
+
+<p><code>touch</code> 新建文本文件，如<code>touch /home/hello.py</code> 将在<code>home</code> 文件夹下新建一个Python文件。</p>
+<p><code>ls</code> 列出所有文件，但默认只是显示出最基础的文件和文件夹，如果需要更详细的信息，则使用<code>ls -la</code>，这将列出包括隐藏文件在内的所有文件和文件夹，并且给出对应的权限、大小和日期等信息。</p>
+<p><code>cd</code> 进入指定文件夹，如<code>cd /home</code> 将进入<code>home</code>目录。返回上层目录的命令是<code>cd ..</code>，返回刚才操作的目录的命令是<code>cd -</code>。</p>
+<p><code>mkdir</code> 新建文件夹，如<code>mkdir /home/Python</code> 将在<code>home</code> 文件夹下新建一个<code>Python</code> 文件夹。</p>
+<p><code>mv</code> 移动文件和文件夹，也可以用来修改名称，如<code>mv /home/hello.py /home/helloworld.py</code> 将上文的<code>hello.py</code>重命名为<code>helloworld.py</code>，<code>mv /home/helloworld.py /home/Python/helloworld.py</code> 将<code>helloworld.py</code> 由<code>home</code>文件夹移动到了次级的<code>Python</code>文件夹。</p>
+<p><code>cp</code> 复制文件，<code>cp /home/Python/hellowrold.py /home/Python/HelloWorld.py</code> 将<code>helloworld.py</code>复制为<code>HelloWolrd.py</code>。注意：Linux系统严格区分大小写，<code>helloworld.py</code>和<code>HelloWolrd.py</code>是两个文件。如果想复制整个文件夹，则需要带<code>r</code>，即<code>cp -r</code>，但此命令无法复制隐藏文件夹，需要使用<code>cp -r pathA/. pathB</code> 注意这个点<code>.</code>是灵魂。</p>
+<p><code>rm</code> 删除，即江湖传说中<code>rm -rf</code> ，<code>r</code>为递归，可以删除文件夹中的文件，<code>f</code>为强制删除。<code>rm /home/Python/helloworld.py</code> 可以删除刚才的<code>helloworld.py</code> 文件，而想删除包括<code>Python</code> 在内的所有文件，则是<code>rm -rf /home/Python</code> 。</p>
+<p><code>du -lh</code> 查看当前文件夹下，各文件、文件夹的大小，<code>l</code>是硬链接（软连接类似于快捷方式），<code>h</code>是让文件自动使用K&#x2F;M&#x2F;G显示而不是只有K。</p>
+<h3 id="1-3-基础文本编辑器nano、vim"><a href="#1-3-基础文本编辑器nano、vim" class="headerlink" title="1.3 基础文本编辑器nano、vim"></a>1.3 基础文本编辑器nano、vim</h3><p>Linux系统的一大优势（同时也是劣势）是默认不需要GUI，因此节省了大量的性能开支，无GUI版本的Debian 11可以在512M甚至更小内存的VPS上正常启动和运行。但缺少GUI加大了入门者修改文件的难度，所幸Debian 11自带了简便易用的nano文本编辑器。以下以修改系统的更新源为例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nano /etc/apt/sources.list #打开sources.list文件，在Linux系统中，#是注释符，其后的内容会被忽略</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_ui.jpg" alt="nano_ui"></p>
+<p>如图所示，即为<code>nano</code>打开<code>sources.list</code>后的界面，最下面两行为提示，比如<code>Ctrl+E</code>为退出，如果文档被改动了，则会出现下图，询问是否保存。如果没有被更改，则会直接退出。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_ctrl_e.jpg" alt="nano_ctrl_e"></p>
+<p><code>Y</code>则保存，<code>N</code>则不保存，<code>Ctrl+C</code>取消操作。此处输入<code>Y</code>，则会如下图：</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_yes.jpg" alt="nano_yes.jpg"></p>
+<p>此时按下<code>Enter</code>键就会保存了。</p>
+<p>这里多提一句关于Debian 11的更新源内容，一般是以下6行。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deb http://deb.debian.org/debian bullseye main contrib non-free</span><br><span class="line">deb-src http://deb.debian.org/debian bullseye main contrib non-free</span><br><span class="line"></span><br><span class="line">deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free</span><br><span class="line">deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free</span><br><span class="line"></span><br><span class="line">deb http://deb.debian.org/debian bullseye-updates main contrib non-free</span><br><span class="line">deb-src http://deb.debian.org/debian bullseye-updates main contrib non-free</span><br></pre></td></tr></table></figure>
+
+<p>deb表示为已经编译好的安装包，类似于Windows上的MSI安装包，deb-src是源文件，万一没有打包好，提供自己本地编译安装的机会。总共分三大行，第一行是系统主文件，第二行是安全性更新，第三个是一些更新补充，推荐三个都写上。在每行的末尾都有<code>main contrib non-free</code>字样，其中<code>main</code>是官方给的包&#x2F;源，严格遵守相关开源协议；<code>contrib</code>是包&#x2F;源本身遵守相关开源协议，但是它们的依赖则不是；<code>non-free</code>是私有的软件，比如上文提到的Realtek的WiFi驱动等。除此之外，其实还有个<code>Backports</code>作为第四大行，是将比较陈旧的软件移植过来的，很少会用到，一般默认不写上。</p>
+<p>nano虽然好，但是功能简单，只适合一些简单的文本文件编辑功能，而发展自vi的vim则被成为编辑器之神（Emacs被称为神之编辑器，Linux之父Linus Torvalds就在用）。系统会自带vi但是不带vim，正好我们可以使用上述修改过的更新源来安装vim作为示例。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update # 更新一下源</span><br><span class="line">apt install vim -y #安装vim这个软件 -y是确认安装</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>vim /etc/apt/sources.list</code>打开更新源文件，如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_ui.jpg" alt="vim_ui"></p>
+<p>vim功能众多，使用复杂，得慢慢说。左下角是此文件的路径和名称，右下角是光标此时的行数和列数。此时是无法直接输入，要先按下<code>insert</code>或者<code>i</code>键变成插入模式才行。此时，左下角如下图，变成了INSERT&#x2F;插入模式。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s1.jpg" alt="vim_s1"></p>
+<p>然后就是该怎么写就怎么写，一些快捷键去百度谷歌必应吧，说的肯定比我详细。但是必须提到如何保存文件：<code>insert</code>模式下按<code>esc</code>键（一般是键盘最左上角，99%的人可能都不怎么用的一个键），INSERT会消失不见，如下图：</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s3.jpg" alt="vim_s3"></p>
+<p>这个时候再按下<code>:</code>键，界面上也会出现一个冒号，如下图。注意，这个冒号是半角的，全角冒号是没用的。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s2.jpg" alt="vim_s2"></p>
+<p>这个时候，按下<code>wq</code>这两个键，即可保存内容。w是write&#x2F;写入的意思，q是quit&#x2F;退出的意思。如果你不想保存，则只输入q键即可，但是有时候因为文件已经被修改了，vim不让退出，这时候输入<code>q!</code>就可以了，感叹号是强制执行的意思，执行后文件不会被修改并且会退出vim。</p>
+<h3 id="1-4-更新系统"><a href="#1-4-更新系统" class="headerlink" title="1.4 更新系统"></a>1.4 更新系统</h3><p>至此，不管是使用nano还是vim都可以对更新源进行编辑了，让我们来具体了解一下如果更新系统和相关指令。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt list --upgradable</span><br><span class="line">apt upgrade -y</span><br></pre></td></tr></table></figure>
+
+<p>以上三行，分别是和更新源同步，显示出哪些软件可以更新，以及进行更新。</p>
+<p>如上文中，安装了vim，若想卸载vim，则有以下两个命令，任意一个即可，但之间存在差别。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt remove vim -y</span><br><span class="line">apt purge vim -y</span><br></pre></td></tr></table></figure>
+
+<p>第一个会址卸载vim软件本身，配置文件仍然会本留下；第二种连带着配置文件和相关依赖一起卸载了，所以存在一定风险。除此之外，<code>apt autoremove</code>是对整个系统进行整理，将不需要的依赖卸载了，不针对于特定软件。</p>
+<h2 id="2-SSH连接和基础配置"><a href="#2-SSH连接和基础配置" class="headerlink" title="2 SSH连接和基础配置"></a>2 SSH连接和基础配置</h2><p>一般VPS供应商都会提供SSH的链接方式，包括用户名，密码和端口号，一些注重安全性的会修改端口号甚至只有采用密钥才能登陆VPS。这里使用纯净版的系统和默认配置进行演示。</p>
+<h3 id="2-1-连接SSH的软件和相关操作"><a href="#2-1-连接SSH的软件和相关操作" class="headerlink" title="2.1 连接SSH的软件和相关操作"></a>2.1 连接SSH的软件和相关操作</h3><p>SSH软件有开源的和不开源的，有付费的和免费的，整理了一个常见SSH客户端（Windows平台）的对比表格和相关信息。其实在2021年，macos、Linux和windows 10都自带SSH功能，这里先不讨论。个人目前主用mobaxterm，偶尔使用xshell。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>免费与否</th>
+<th>下载地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Xshell</td>
+<td>家庭&#x2F;学校免费</td>
+<td><a href="https://www.netsarang.com/zh/free-for-home-school/">https://www.netsarang.com/zh/free-for-home-school/</a></td>
+</tr>
+<tr>
+<td>MobaXterm</td>
+<td>家庭版免费</td>
+<td><a href="https://mobaxterm.mobatek.net/download.html">https://mobaxterm.mobatek.net/download.html</a></td>
+</tr>
+<tr>
+<td>FinalShell</td>
+<td>基础功能免费</td>
+<td><a href="https://www.hostbuf.com/t/988.html">https://www.hostbuf.com/t/988.html</a></td>
+</tr>
+<tr>
+<td>electerm</td>
+<td>免费+开源</td>
+<td><a href="https://github.com/electerm/electerm/releases">https://github.com/electerm/electerm/releases</a></td>
+</tr>
+<tr>
+<td>PuTTY</td>
+<td>免费+开源</td>
+<td><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></td>
+</tr>
+</tbody></table>
+<p>Xshell：传播广泛，自带中文，个人使用完全免费，但是会话窗口限制最多只能打开四个SSH连接，再多之后就会自动新建会话窗口了，传输文件需要配合Xftp才行。目前国区被臭名昭著的思杰马克丁代理了，如需使用，请前往官网下载，在输入邮件和姓名后，会收到一封邮件，邮件里面给出下载连接。</p>
+<p>MobaXterm：只有英文版本，偶尔会反应慢半拍，除此之外没缺点。功能极其强大，传输文件、性能监控、串口通信、X11支持、IP检测、宏、WSL、远程桌面等，能想到的功能都有，而且个人使用免费。</p>
+<p>FinalShell：国人开发，所以本地化很好，全中文，日常需要的功能也都有。有一些进阶功能需要付费，也可以云端保存SSH账号，虽然也是付费功能。缺点的话，和MobaXterm一样，JAVA写的东西，总是让人觉得慢半拍。</p>
+<p>electerm：日常所需功能都有，完全开源和免费，还可以通过GitHub实现免费的云端保存SSH账号功能，适合自己折腾和魔改。基于electron开发的，从而实现了跨平台，Windows、Mac和Linux都有客户端。不过缺点也显而易见，electron本质上是个浏览器，占内存和硬盘空间。</p>
+<p>PuTTY：由Simon Tatham开发和维护的，老牌中的老牌，但是缺少人性化设置，不推荐。</p>
+<h3 id="2-2-SSH配置文件介绍和修改"><a href="#2-2-SSH配置文件介绍和修改" class="headerlink" title="2.2 SSH配置文件介绍和修改"></a>2.2 SSH配置文件介绍和修改</h3><p>SSH的配置文件在<code>/etc/ssh/sshd_config</code>中，是一个纯文本文件，可以使用<code>nano</code>或者<code>vim</code>打开和编辑。打开文件后，在前几行就能看到<code>#Port 22</code>字样，这个代表使用了默认的22端口作为SSH连接使用。因为大家都在使用22端口，所以会有一些扫描机器使用弱密码不断尝试登录，使用<code>lastb</code>命令可以查看登录失败的记录，如下图。233333是尝试登录的账号，144.214.xxx.xxx是发起者的IP，最后面是尝试登录的时间。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssh_lastb.jpg" alt="ssh_lastb"></p>
+<p>因此，我们可以改成高端口，比如<code>35261</code>这种没有特殊含义&#x2F;排列的随机数，以减小被攻击的可能。要注意端口只能在0-65535之间，并且很多低位数的端口，已经被共识的程序占领了，比如80端口是http的，443端口是https的，就如22是SSH的一样。此处，我们修改<code>/etc/ssh/sshd_config</code>中的端口数后，还需要重启SSH服务才行，否则只会在系统下次重启后才启用新的端口。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart ssh #重启SSH服务</span><br></pre></td></tr></table></figure>
+
+<p><code>systemctl</code>是systemd的命令，用于启动和监控系统服务的，在系统内核启动后，systemd就会开始服务，<code>restart</code>即重启的意思。关于systemd的相关内容，后文会详细说明。</p>
+<p>除此之外，把密码改的复杂一些，也可以有效的降低系统被黑的风险，使用<code>passwd root</code>命令，即可修改root账号的密码，会提示<code>New password:</code>，此时输入新密码，注意这里是看不见任何输入反馈的，随后在显示<code>Retype new password:</code>后再次输入一遍，如果两次密码相同，就会更新root密码了。</p>
+<h3 id="2-3-使用密钥登陆SSH"><a href="#2-3-使用密钥登陆SSH" class="headerlink" title="2.3 使用密钥登陆SSH"></a>2.3 使用密钥登陆SSH</h3><p>即使更改了端口，但因为使用密码即可登录，考虑到不是所有人都会使用强密码，所以SSH提供了使用密钥登录的功能，可以简单理解成是一长串复杂的并且可以相互验证的密码。以root用户为例，演示如何将SSH由密码登录改成密钥登录。</p>
+<p>输入<code>ssh-keygen -t rsa </code>，随后一路enter键，如下图</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssh_key.jpg" alt="ssh_key"></p>
+<p>在显示完成后，在<code>/root/.ssh/</code>文件夹下，你将看到<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，id_rsa是私钥，下载下来并妥善保存，id_rsa.pub是公钥，放在服务器上的。将id_rsa.pub写入到SSH的密钥文件中：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch authorized_keys</span><br><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>除此之外，还需要给文件和相关文件夹合适的权限：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 authorized_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>这里有个<code>~</code>，它代表的是<code>当前用户</code>，比如现在是root用户，那<code>~</code>就是<code>root</code>，所以<code>chmod 700 ~/.ssh</code>等于<code>chmod 700 /root/.ssh</code></p>
+<p>现在密钥已经配对好了，还需要修改SSH的配置文件，打开<code>/etc/ssh/sshd_config</code>文件，查找并修改如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PubkeyAuthentication yes # yes表示允许密钥登陆</span><br><span class="line">AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2 # 指定密钥的文件位置，这里是去掉了开头的#</span><br><span class="line">PasswordAuthentication no # 不允许使用密码登陆，等测试密钥登陆成功了再修改此条，以防无法登陆</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>systemctl restart ssh</code>重启SSH服务，此刻，你将只能使用密钥才能登录，一旦私钥遗失了，就再也进不去了。</p>
+<h2 id="3-Linux文件系统"><a href="#3-Linux文件系统" class="headerlink" title="3 Linux文件系统"></a>3 Linux文件系统</h2><h3 id="3-1-文件系统格式"><a href="#3-1-文件系统格式" class="headerlink" title="3.1 文件系统格式"></a>3.1 文件系统格式</h3><p>与Windows分割硬盘（甚至一个硬盘被划分成了好几个）不同，Linux的是将所有硬盘都<code>挂载</code>在了一起。简单来说，Windows分C盘D盘等，还针对软盘额外给予了A盘和B盘，Linux把所有的硬盘都放在了<code>/</code>下，即<code>根目录</code>，这也是Linux中root账户的权限最大的原因，<code>root</code>即为根，如同树根一样，所有的内容都要基于根才有了可能。文件系统是另外一个极其复杂的内容，这里只提到Windows使用的是NTFS，而Linux普遍采用EXT4格式，这两种文件系统互不兼容，装在Linux系统上的硬盘，在Windows上是无法直接读写的，必须使用额外的软件才能访问。反过来，在Linux上读取Windows下的硬盘中的内容，需要安装<code>ntfs-3g</code>才行。这两种文件系统各有优缺点，一般人用就行了，不要问，问就是用默认。实际上，目前在广泛使用的文件系统种类繁多，所有需要在它们之间交换文件的时候，会使用exFAT格式的U盘&#x2F;硬盘（exFAT是FAT的替代品，因为FAT下单个文件最大不能超过4G）。</p>
+<h3 id="3-2-文件树、文件夹功能和权限"><a href="#3-2-文件树、文件夹功能和权限" class="headerlink" title="3.2 文件树、文件夹功能和权限"></a>3.2 文件树、文件夹功能和权限</h3><p>在<code>/</code>目录下，使用<code>ls -la</code>会显示出所有的文件和文件夹（如下图所示），<code>a</code>是列出所有文件，<code>l</code>是显示详细信息。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/root_files.jpg" alt="root_files"></p>
+<p>第一列是文件&#x2F;文件夹的权限，一共有10个字符，第一位是文件类型，比如d代表文件夹，l代表链接。之后，三个为一组，总共3组。r是读，w是写，x是执行，也可以通过数字来区分，r是4，w是2，x是1，所以有了常见的一把梭<code>chmod +777</code>。第二列是硬链接数量，即这个文件&#x2F;文件夹下有多少真实放着的文件。第三列和第四列是这个件分别属于谁，以及这个人是哪个组的。这里的<code>组</code>概念来源于最开始的unix是个多用户系统，所有会把用户分类，比如某软件用户放一个组，系统维护人员放一个组等。第六列是文件&#x2F;文件夹大小，默认单位是K。第七八九列是修改的日期。最后一列是文件&#x2F;文件夹的名字。我们会发现有一些<code>-&gt;</code>的字样，这是指软链接。软连接类似于Windows上的快捷方式，而硬连接类似于复制了一份（但并不会真的占用空间）。</p>
+<ul>
+<li>bin或者usr&#x2F;bin：应用程序，比如Python的主程序就在这里</li>
+<li>boot：系统启动文件</li>
+<li>dev：外部硬件设备，Linux下一切皆文件，所以外部硬件设备也是以文件形式出现</li>
+<li>etc：系统的配置文件，比如上述提到的SSH的配置文件就在这里</li>
+<li>home：用户目录，类似于Windows上的桌面</li>
+<li>initrd.img：启动文件，可以看到它被软连接到了boot目录中</li>
+<li>lib：库文件，类似于Windows的dll，程序的依赖都在这里</li>
+<li>lost+found：丢失寻找文件，系统被强迫关机后，会在这里记录下来</li>
+<li>media：媒体文件，如果系统发现了光盘之类的，会自动挂载到这里</li>
+<li>mnt：临时挂载目录，上述的光盘，还有U盘硬盘，如果手动挂载，都会选择这里</li>
+<li>opt：系统额外软件的安装位置，极少使用，比如甲骨文的数据库会放一些东西在这里</li>
+<li>proc：系统进程&#x2F;内核会把一些信息放到这里，本质上是反应系统状态而不是文件</li>
+<li>root：root用户的“桌面”，普通用户在home中</li>
+<li>run：系统启动后存放临时文件</li>
+<li>sbin：root用户的”bin”</li>
+<li>srv：放服务运行而需要的文件</li>
+<li>sys：文件系统，里面包括进程信息，设备信息和终端信息</li>
+<li>tmp：临时文件</li>
+<li>usr：共享资源，类似于Windows安装软件的默认目录</li>
+<li>var：不断变化的文件会放在这里，比如日志</li>
+<li>vmlinuz：启动文件，可以看到它被软连接到了boot目录中</li>
+</ul>
+<p>如果我们自己写了一个程序，还放在系统里面运行，那一般是在<code>/usr/local/</code>中新建目录，这遵循着Linux系统的默认规则。</p>
+<h3 id="3-3-示例：挂载U盘"><a href="#3-3-示例：挂载U盘" class="headerlink" title="3.3 示例：挂载U盘"></a>3.3 示例：挂载U盘</h3><p>如果是Ubuntu桌面的话，会自动挂载U盘，但是无GUI版本的Linux大概率不会，所以会需要手动挂载，又或者加了一块新的硬盘，需要我们自己挂载。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fdisk -l</span><br><span class="line">mkdir /mnt/usb</span><br><span class="line">mount /dev/sda1 /mnt/usb</span><br><span class="line">umount /mnt/usb</span><br></pre></td></tr></table></figure>
+
+<p><code>fdisk -l</code>是显示出所有的储存，会显示出来类似于<code>/dev/sda1</code>等，<code>mkdir /mnt/usb</code>在<code>mnt</code>目录里面新建一个文件夹，即挂载点，假设<code>sda1</code>就是我们插入的U盘，<code>mount /dev/sda1 /mnt/usb</code>将这块U盘挂载到了<code>/mnt/usb</code>中，这时候我们就能在<code>/mnt/usb</code>中看到U盘里的文件。如果不再需要了，要手动移除这个U盘，使用<code>umount /mnt/usb</code>命令。</p>
+<h2 id="4-Shell-x2F-Dash入门"><a href="#4-Shell-x2F-Dash入门" class="headerlink" title="4 Shell&#x2F;Dash入门"></a>4 Shell&#x2F;Dash入门</h2><p>让人头大，Shell本身就能写一本书了，少说得有300页！这里面夹杂着从Unix开始的一大堆事情，shell的发展，bash和dash的区别与联系，本身的命令，调用系统的命令，交互方式。累了，姑且先把它当成一堆命令拼凑起来的脚本吧。</p>
+<p>还是写个例子，简单介绍一下实际内容，等以后有时间了再继续补充。比如我们想写一个查看CPU和内存使用率的脚本：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">echo &quot;which useage do you want to konw?&quot;</span><br><span class="line">echo &quot;1 for CPU, 2 for RAM&quot;</span><br><span class="line">read choice</span><br><span class="line"></span><br><span class="line">if [ $choice -eq 1 ]</span><br><span class="line">then</span><br><span class="line">   echo &quot;CPU usage&quot;</span><br><span class="line">   grep &#x27;cpu &#x27; /proc/stat | awk &#x27;&#123;usage=($2+$4)*100/($2+$4+$5)&#125; END &#123;print usage &quot;%&quot;&#125;&#x27;</span><br><span class="line">elif [ $choice -eq 2 ]</span><br><span class="line">then</span><br><span class="line">   echo &quot;RAM usage&quot;</span><br><span class="line">   free -m | grep Mem | awk &#x27;&#123;print ($3/$2)*100 &quot;%&quot;&#125;&#x27;</span><br><span class="line">else</span><br><span class="line">   echo &quot;WRONG INPUT&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>细说每一行内容</p>
+<p><code>#!/bin/bash</code>是指定此文件由&#x2F;bin下面的bash这个程序来执行。</p>
+<p>在Debian 11里面，bash其实是dash，别问dash是什么，就写bash，天王老子来了也写bash。Bash全称是GNU Bourne-Again Shell，bash被从NetBSD（一个Unix的分支）上移植到Debian上，所以叫dash (Debian Almquist Shell)。</p>
+<p><code>echo &quot;which useage do you want to konw?&quot;</code>是输出冒号内的文字</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;1 for CPU, 2 for RAM&quot;</span><br><span class="line">read choice</span><br></pre></td></tr></table></figure>
+
+<p>把输入内容赋值给<code>choice</code>这个变量，即数字1或者2。<code>rcho -p &quot;1 for CPU, 2 for RAM&quot; choice</code>也可以实现相同功能。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if [ ... ]</span><br><span class="line">then</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">elif [ ... ]</span><br><span class="line">then</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">else</span><br><span class="line">	...</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>这是一个if…elif…else的判断语句，先经过两次判断，如果都不能成功，那就执行最后一行。</p>
+<p><code>$choice -eq 1</code>把刚才的<code>choice</code>这个输入变量和数字1对比，注意，要有<code>$</code>才代表变量，不然就默认是文字，<code>-eq</code>是等于的意思。判断是否等于1，是的话就给出CPU使用量，如果不等于1，那就继续判断是否等于2，是的话就给出RAM使用量，如果不等于2，那就输出错误提醒，然后结束。<code>grep</code>是抓取有关键词的那一行，<code>$2</code>是这一行的第几个内容，如下：</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/grep.jpg" alt="grep"></p>
+<p><code>grep Mem</code>抓取到了第二行，即真实内存这一行，<code>$2</code>是内存总量，<code>$3</code>是已经使用了的内存，因此<code>($3/$2)*100</code>就是已经使用了百分之多少的内存，</p>
+<h2 id="5-Crontab定时任务"><a href="#5-Crontab定时任务" class="headerlink" title="5 Crontab定时任务"></a>5 Crontab定时任务</h2><p>Crontab用于定时任务，比如设定周五晚上运行脚本备份网站，又或者每分钟检查一下CPU使用率等。但除此之外，crontab还有个<code>@reboot</code>功能，即可以在系统启动的时候自动运行指定程序。</p>
+<p>推荐<code>crontab -e</code>，其中的<code>-e</code>是指当前用户，不建议直接使用<code>crontab</code>。首次运行<code>crontab -e</code>的时候，会让选择使用何种编辑工具，这个随便，nano和vim basic都行，什么顺手和习惯就用什么。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/crontab_eg.jpg" alt="crontab_eg"></p>
+<p>如上图，将每隔15分钟，就会使用位于<code>usr/bin</code>中的<code>python3</code>运行位于<code>/usr/local/weather</code>中的<code>weather.py</code>程序。前五个星号其实是设置的时间，推荐去 <a href="https://crontab.guru/">https://crontab.guru/</a> 这里直接设置时间（如下图）。第一个星号是分钟，第二个星号是小时，第三个星号是天，第四个星号是月份，第五个星号是每周的第几天。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/crontab_set.jpg" alt="crontab_set"></p>
+<h2 id="6-系统权限"><a href="#6-系统权限" class="headerlink" title="6 系统权限"></a>6 系统权限</h2><h3 id="6-1-root和user，以及sudo"><a href="#6-1-root和user，以及sudo" class="headerlink" title="6.1 root和user，以及sudo"></a>6.1 root和user，以及sudo</h3><p>上述已经简单的减少了root来源，由于root的权限太高，以至于在实际使用中发现并不安全，而且作为一个初始目的是多用户多终端的操作系统，Linux主要操作都不需要发生在root用户上的。所以这里就有了user这个角色，如果用户多了起来，为了便于管理，也会把某些用户分组，就有了group的概念。以下演示使用root用户新建一个user用户并进入此用户：</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/adduser.jpg" alt="adduser"></p>
+<p>如图所示，<code>adduser mjj</code>为新建一个叫做mjj的用户，由于此前并没有除了root之外的用户，所以会使用这个名字作为group&#x2F;组的名字，并且在&#x2F;home文件夹里面生成一个mjj文件夹，即mjj的”桌面“。所以输入两次密码，之后会问一堆问题，都是例行的，一路enter就好，最后会问一下信息对不对，输入y就完成添加新用户了。</p>
+<p>但此时，mjj这个用户的权限是很小的，四舍五入等于没有，连某些文件夹都不能进去更别说执行软件了。使用<code>su mjj</code>切换到mjj用户中，可以在终端中看到已经从root@rn变成了mjj@rn，rn是这台服务器的名字，即为某某在rn这台服务器上。查看以下root文件夹下有些什么东西，结果发现权限不够而被拒绝访问&#x2F;Permission denied。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/sudo.jpg" alt="sudo"></p>
+<p>所以我们要给一个能够临时使用root权限的能力，这被称为<code>sudo</code>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">su root #切换回root账号</span><br><span class="line">apt install sudo -y #有些时候，纯净安装的Debian系统是没有sudo的，所以要安装一下</span><br><span class="line">usermod -aG sudo mjj ##给予mjj用户sudo权限</span><br></pre></td></tr></table></figure>
+
+<p>此时，我们再切换到mjj用户上，在刚才的命令前加上sudo，临时获取root权限，就可以查看了：</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/sudo_root.jpg" alt="sudo_root"></p>
+<p>在用户首次使用root权限的时候，系统会提示三个准则，也请谨记：</p>
+<ol>
+<li>尊重他人隐私；</li>
+<li>输入之前请三思；</li>
+<li>能力越大，责任越大。</li>
+</ol>
+<h3 id="6-2-chmod和chown"><a href="#6-2-chmod和chown" class="headerlink" title="6.2 chmod和chown"></a>6.2 chmod和chown</h3><p>chmod的全称是change mode，是针对于文件夹或者文件，改变它们的权限，这样就可以让某些用户正常使用了。这里不深入探讨chmod的使用详解，仅演示一些常见的内容。<code>chmod +x helloworld.py</code> 这里的<code>x</code>在上面说过，是执行的意思，即赋予此程序被执行的权限，多见于一键脚本里面，让脚本能够正常运行。<code>+</code>是新增权限，如果是<code>-</code>则是去除对应的权限。<code>chmod -R 755 folder/</code> <code>-R</code>如上述的<code>rm -rf</code>中的<code>r</code>一样，是递归，即从这里开始，下面不论多少层文件夹，都执行这个命令。<code>755</code>是换算下来，则是root用户可以读写执行（1+2+4&#x3D;7），用户和用户组只能读和执行（1+4&#x3D;5），不能对文件进行更改。某些程序会对文件的权限有着极其严重的控制，比如上说的SSH密钥，分别给<code>authorized_keys</code>600的权限和<code>.ssh</code>文件夹700的权限，意味着只能被所有者&#x2F;owner读写，在例子中即为只能被root账户读写。这种设计让没有相应权限的人无法修改密钥登陆的方式，换而言之，隔绝了用户之间的操作，从而增强安全性。</p>
+<p>chown的全称是change owner，是用于设置文件所有权的。由于<code>归属者</code>的概念并没有文件这个概念常见，所有chown比较少见到，大多数人接触到的时候，大概是建网站的时候用<code>chown -R www-data:www-data-group /var/www/html</code>来确定文件关联。这句的意思是，将<code>/var/www/html</code>这个文件夹及里面的所有文件都归给<code>www-data-group</code>用户组的<code>www-data</code>用户。这样做的目的是实现权限分离，文件分离，从而让服务器可以更方便的被维护，以及明确使用途径。不过考虑到mjj大部分都是使用VPS的，可能很难遇到需要chown的情况吧。</p>
+<p>不要<code>chmod +777</code>！不要<code>chmod +777</code>！不要<code>chmod +777</code>！<strong>人才是服务器安全的最大漏洞！</strong></p>
+<h2 id="7-Systemd入门和配置"><a href="#7-Systemd入门和配置" class="headerlink" title="7 Systemd入门和配置"></a>7 Systemd入门和配置</h2><h3 id="7-1-开机自启和进程守护"><a href="#7-1-开机自启和进程守护" class="headerlink" title="7.1 开机自启和进程守护"></a>7.1 开机自启和进程守护</h3><p>Systemd是由Redhat家的Lennart Poettering开发的，其人以创造性和不靠谱闻名，Systemd在最开始的时候，和init相比没有明显优势，经过多次迭代才有了今天的稳定性和适用性，现在就让老旧的init进入历史垃圾桶吧。事实上，在Linux系统启动的时候，一旦kernel运行了，Systemd就会跟随启动，之后由Systemd唤醒并维护各个程序的正常运行，比如网卡，显示器，SSH服务等。你会在<code>/etc/systemd/system/</code>文件夹中发现一个叫做<code>sshd.service</code>的文件，并且还是enable模式的，这意味着SSH是<code>开机自启</code>的，并且系统会一直监控这这个程序，如果程序崩溃，系统会尝试自动重启它以确保能够正常运行。</p>
+<p>以著名的内网穿透<code>frp</code>的服务器端的Systemd文件为例（下节将详细介绍如何搭建frp），将<code>frps.service</code>放到<code>/etc/systemd/system/</code>文件夹中，使用以下命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl enable frps.service</span><br><span class="line">systemctl start frps.service</span><br><span class="line">systemctl status frps.service</span><br><span class="line">systemctl restart frps.service</span><br></pre></td></tr></table></figure>
+
+<p>systemctl是systemd在系统中的程序名字，enable是指让这个程序能够开机自启，start为让程序现就运行，status是查看这个程序现在的状态，restart是重启程序。</p>
+<p>当然，我们也可以自己写systemd的service文件，这里以 <a href="https://github.com/cnsilvan/UnblockNeteaseMusic">https://github.com/cnsilvan/UnblockNeteaseMusic</a> 解锁网易云音乐的程序做参考</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=UnblockNeteaseMusic</span><br><span class="line">After=network.target</span><br><span class="line">Wants=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">WorkingDirectory=/usr/local/UnblockNeteaseMusic</span><br><span class="line">ExecStart=/usr/bin/node app.js -e http://music.163.com -s -p 8888</span><br><span class="line">RestartPreventExitStatus=23</span><br><span class="line">Restart=always</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>一共分为三组，分别为Unit，Service和Install。Unit是这个服务的名称，示例中为<code>UnblockNeteaseMusic</code>而<code>After</code>和<code>Wants</code>指明的<code>network.target</code>意味希望这个程序在网络服务启动后再启动，毕竟是个网络功能，不能还没有网就启动了。Service是核心部分，<code>Type</code>指定了类型,<code>Simple</code>是默认的类型，发现有网了就启动。此外，常见的还有<code>fork</code>和<code>idle</code>，前者意味着程序依赖于另外一个程序的运行，通常还会配置<code>PIDFile</code>，后者是等系统空闲了再启动，属于一点都不急的。<code>WorkingDirectory</code>是工作目录，<code>ExecStart</code>是执行的命令，实例中，是用位于<code>/usr/bin/</code>的nodejs执行位于工作目录的<code>app.js</code>这个文件，并且还带了参数<code>http://music.163.com -s -p 8888</code>。<code>RestartPreventExitStatus</code>是指如果报错信息为<code>23</code>则不会再重启了，具体报错信息是运行的程序决定的。<code>Restart=always</code>指只要不是23的报错信息，那就一旦服务停了，Systemd就会去重启。最后一部分，Install中的<code>WantedBy=multi-user.target</code>指网络服务已经正常启动，也可以让用户登录了，但是并没有开启GUI服务，这个部分不用去探究。</p>
+<h3 id="7-2-Timer代替Crontab"><a href="#7-2-Timer代替Crontab" class="headerlink" title="7.2 Timer代替Crontab"></a>7.2 Timer代替Crontab</h3><p>我写了一个自动登录百度贴吧并签到的shell脚本，想每天都运行一次帮我拿积分，但是又不想用crontab实现定时任务，那么Systemd也是有类似的功能的，名字叫做Timer，即定时器。这个功能需要两个文件，比较繁琐。</p>
+<p>需要再<code>/etc/systemd/system/</code>中写两份配置文件，<code>tieba.service</code>和<code>tieba.timer</code>，前缀必须一样，后缀不同。</p>
+<p>前者很简单，就是个脚本（如下），名字和程序的路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Tieba Sign</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/home/tieba.sh</span><br></pre></td></tr></table></figure>
+
+<p>后者<code>tieba.timer</code>需要详细解释：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Tieba Sign Timer</span><br><span class="line"></span><br><span class="line">[Timer]</span><br><span class="line">OnCalendar=*-*-* 12:00:00</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=timers.target</span><br></pre></td></tr></table></figure>
+
+<p>Timer的名称需要是service名字后面加一个Timer，用以提高准确性。<code>OnCalendar</code>类似于<code>corntab</code>的<code>* * * * *</code>，实例中的意味每天中午12点的时候执行以下<code>tieba.service</code>中的位于<code>/home</code>文件夹的<code>tieba.sh</code>这个程序。此处的<code>WantedBy</code>是<code>timers.target</code>，指明是个定时器。</p>
+<h2 id="8-手动配置系统：以frp为例"><a href="#8-手动配置系统：以frp为例" class="headerlink" title="8 手动配置系统：以frp为例"></a>8 手动配置系统：以frp为例</h2><p>frp是个内网穿透软件，可以将局域网设备通过frp服务端映射出来，实现公网服务，常见的有SSH、http&#x2F;https服务等。这里以将内网设备的SSH映射到有公网IP的服务器上为例，从而不在家也能服务家里面的服务器了。</p>
+<p>在这里下载最新版的安装包 <a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a> </p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/frp_tar.jpg" alt="frp_tar"></p>
+<p>如图所示，0.38.0是版本号；后面的是系统，darwin是MacOS，freebsd是UNIX的一个分支，这里我们选择linux；紧跟着的是CPU架构，由于本次服务器的客户端是装了64位系统的树莓派4B（arm架构的CPU），所以选择<code>frp_0.38.0_linux_arm64.tar.gz</code>，而服务端是普通的VPS，所以选择<code>frp_0.38.0_linux_amd64.tar.gz</code>。</p>
+<p><strong>服务端配置</strong></p>
+<p>注意：版本号和CPU架构须按照实际情况决定。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.38.0/frp_0.38.0_linux_amd64.tar.gz</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">使用wget下载软件包</span></span><br><span class="line">tar -zxvf frp_0.38.0_linux_amd64.tar.gz</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">解压下载的软件包</span></span><br><span class="line">cd frp_0.38.0_linux_amd64/</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入解压后的文件夹</span></span><br><span class="line">mkdir /etc/frp/</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新建一个frp的文件夹</span></span><br><span class="line">mv frps.ini /etc/frp/frps.ini</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">把服务器端的配置文件放到刚才新建的文件夹</span></span><br><span class="line">mv frps /bin/</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">把服务器端软件放到/bin中</span></span><br><span class="line">mv systemd/frps.service /etc/systemd/system/frps.service</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">放置Systemd文件</span></span><br><span class="line">systemctl enable frps.service</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置开机自启</span></span><br><span class="line">systemctl start frps.service</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">立即运行</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>客户端配置</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.38.0/frp_0.38.0_linux_arm.tar.gz</span><br><span class="line">tar -zxvf frp_0.38.0_linux_arm.tar.gz</span><br><span class="line">cd frp_0.38.0_linux_arm/</span><br><span class="line">mkdir /etc/frp/</span><br><span class="line">mv frpc.ini /etc/frp/frpc.ini</span><br><span class="line">mv frpc /bin/</span><br><span class="line">mv systemd/frpc.service /etc/systemd/system/frpc.service</span><br></pre></td></tr></table></figure>
+
+<p>上述与服务器配置类似，就不重复了，但需要额外修改服务端的配置文件，让它知道该和谁连接，打开<code>/etc/frp/frpc.ini</code>配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 服务器ip</span><br><span class="line">server_port = 7000</span><br><span class="line"></span><br><span class="line">[raspi]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 本地服务器的SSH端口</span><br><span class="line">remote_port = 远程端口</span><br></pre></td></tr></table></figure>
+
+<p>其中，需要填写服务器端的IP，7000端口是握手和保活用的，默认就好了。<code>[raspi]</code>是客户端的名字，不可以重复，<code>local_port</code>是客户端的SSH端口，<code>remote_port</code>是远程的端口，此处假设是6000。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl enable frpc.service</span><br><span class="line">systemctl start frpc.service</span><br></pre></td></tr></table></figure>
+
+<p>设置开机自启并立即运行，此时在SSH软件上，通过 <code>服务器IP:6000 </code>就可以连接到这台内网的树莓派了。</p>
+<h2 id="9-网站环境搭建"><a href="#9-网站环境搭建" class="headerlink" title="9 网站环境搭建"></a>9 网站环境搭建</h2><p>网站搭建，说简单也简单，安装一个nginx放个html页面就算是了，但也可以做的极其复杂以至于需要一个团队，比如淘宝。这里提供了两个搭建网站的方法：面板和手动搭建。对于小白用户，还是推荐用用面板吧，不然出问题，网站被黑都不知道如何解决。</p>
+<h3 id="9-1-宝塔解人忧"><a href="#9-1-宝塔解人忧" class="headerlink" title="9.1 宝塔解人忧"></a>9.1 宝塔解人忧</h3><p>宝塔面板是个伪开源的一键式建站面板，国内版可以在 <a href="https://www.bt.cn/">https://www.bt.cn/</a> 中找到安装方式，目前的安装命令是<code>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</code> 。需要注意的是，国内版需要登陆并且验证手机号后才能操作，宝塔也有强制后台升级的前科。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/aapanel.jpg" alt="aapanel"></p>
+<p>除此之外，还有国际版的叫做aapanel，安装地址为 <a href="https://www.aapanel.com/install.html">https://www.aapanel.com/install.html</a> ，安装命令是<code>wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh &amp;&amp; bash install.sh</code>。相对而言，国际版的隐私保护会更好一些，不会要求手机号等信息，但是默认语言是英文，如果会哪怕一点点英文，都推荐使用国际版的。</p>
+<p>宝塔有一点不好的地方是动辄编译（原先是在CentOS上开发的，所以有这个臭毛病），面板是python3写的，安装起来很快，但是要安装一些服务的话，如果VPS性能不好，则需要花费相当长一段时间来编译安装，普遍30分钟起步。</p>
+<h3 id="9-2-手动搭建"><a href="#9-2-手动搭建" class="headerlink" title="9.2 手动搭建"></a>9.2 手动搭建</h3><p>宝塔面板是将网站搭建可视化了，本质上和手动搭建没有区别。这里主要是介绍常见的相关软件和Let’s Encrypt配置SSL证书的方法。</p>
+<h4 id="9-2-1-Apache和Nginx"><a href="#9-2-1-Apache和Nginx" class="headerlink" title="9.2.1 Apache和Nginx"></a>9.2.1 Apache和Nginx</h4><p>Apache和Nginx都是Web服务器。前者是老牌Web服务器软件，对PHP有着优秀的支持，并且动态响应优秀，但是对性能和内存要求高。后者是俄罗斯出品，对静态网站支持良好，性能消耗也更小，反代和简单的网站都倾向于使用Nginx，甚至还有一系列基于Nginx衍生出来的版本，比如Tengine就是淘宝从Nginx衍生出来的，用以支撑淘宝的各种服务。除此之外，还有个Caddy也用的比较多，这是由golang语言写出来的，所以对多线程高并发的支持很好，并且自带SSL证书申请的功能。</p>
+<p>入门用户首选Nginx，毕竟网站没有什么服务，对VPS的性能消耗也少点。当然，选择Apache也完全可以，入门用户其实很难用到需要对比选择Apache和Nginx的时候。Caddy的话，先不推荐入门用户了。</p>
+<p>安装Apache使用以下命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt install apache2</span><br></pre></td></tr></table></figure>
+
+<p>安装Nginx使用以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install nginx</span><br></pre></td></tr></table></figure>
+
+<p>这两个软件安装完后，都会开机自启和立刻运行，浏览器中输入<code>http://ip</code>就可以看到默认的网页，比如Nginx的是这样：</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nginx.jpg" alt="nginx"></p>
+<h4 id="9-2-2-PHP"><a href="#9-2-2-PHP" class="headerlink" title="9.2.2 PHP"></a>9.2.2 PHP</h4><p>安装了Nginx之后，可以实现静态网页，但是常见的网站平台，比如Wordpress和typecho都是PHP写的，所以还需要安装PHP才能运行。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt install php-fpm</span><br></pre></td></tr></table></figure>
+
+<p>安装完php还不算完事，还得让Nginx知道，也就是需要更改Nginx的配置文件。</p>
+<p>进入目录<code>/etc/nginx/sites-available/</code>中，将默认的文件<code>default</code>重命名为网站的域名，比如<code>mjj.hostloc.com</code>，即<code>mv default mjj.hostloc.com</code>，打开<code>mjj.hostloc.com</code>，在下述的第二行末尾加入<code>index.php</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Add index.php to the list if you are using PHP</span><br><span class="line">index index.html index.htm index.nginx-debian.html index.php; # 注意加入了index.php</span><br></pre></td></tr></table></figure>
+
+<p>并且将下述的<code>_</code>改成网站域名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">server_name _;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">改成 server_name mjj.hostloc.com;</span></span><br></pre></td></tr></table></figure>
+
+<p>随后，重新软链接，并重启Nginx</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm /etc/nginx/sites-enabled/default</span><br><span class="line">ln -s /etc/nginx/sites-available/mjj.hostloc.com /etc/nginx/sites-enabled/mjj.hostloc.com</span><br><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
+
+<p>注意域名不要填错了，重启完后，Nginx将能够和PHP一起支持动态网站。</p>
+<h4 id="9-2-3-MySQL和MariaDB"><a href="#9-2-3-MySQL和MariaDB" class="headerlink" title="9.2.3 MySQL和MariaDB"></a>9.2.3 MySQL和MariaDB</h4><p>MySQL是一个市场占有率极大的数据库软件，应用场景极其广泛，最开始是SUN公司开发的，2009年被甲骨文收购。甲骨文作恶多端，所以MySQL的一部分作者则独立出来，直接做了一个复刻版的，被命名为MariaDB，Maria是作者女儿的名字，Linux社区逐步放弃MySQL而采用MariaDB。所以在近期发布的各Linux版本中，默认是没有MySQL的，一律采用MariaDB。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install mariadb-server # 安装数据库</span><br><span class="line">mysql_secure_installation # 首次配置</span><br></pre></td></tr></table></figure>
+
+<p>由于是首次使用，所以在如下提示中，直接enter键就可以了，因为数据库的root用户此时并没有密码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB</span><br><span class="line">      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!</span><br><span class="line"></span><br><span class="line">In order to log into MariaDB to secure it, we&#x27;ll need the current</span><br><span class="line">password for the root user.  If you&#x27;ve just installed MariaDB, and</span><br><span class="line">you haven&#x27;t set the root password yet, the password will be blank,</span><br><span class="line">so you should just press enter here.</span><br><span class="line"></span><br><span class="line">Enter current password for root (enter for none): </span><br></pre></td></tr></table></figure>
+
+<p>随后，会询问是否要设置数据库的root密码，怎么说呢，反正就建个站而已（不涉及多用户多服务），有没有无所谓，我习惯性的不设置（输入N）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">OK, successfully used password, moving on...</span><br><span class="line"></span><br><span class="line">Setting the root password ensures that nobody can log into the MariaDB</span><br><span class="line">root user without the proper authorisation.</span><br><span class="line"></span><br><span class="line">Set root password? [Y/n] N</span><br></pre></td></tr></table></figure>
+
+<p>现在，新建一个用户和对应的数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql # 进入数据库，如果有root密码，则是mysql -u root -p</span><br><span class="line"></span><br><span class="line">CREATE DATABASE name; # 新建数据库，name是数据库名字</span><br><span class="line">Query OK, 1 row affected (0.00 sec) #此段为mySQL反馈提示，不需要输入。</span><br><span class="line"></span><br><span class="line">CREATE USER user@localhost; # 新建用户，user是用户名字</span><br><span class="line">Query OK, 0 rows affected (0.00 sec) #此段为mySQL反馈提示，不需要输入。</span><br><span class="line"></span><br><span class="line">SET PASSWORD FOR user@localhost= PASSWORD(&quot;密码&quot;); # 给用户设置一个密码</span><br><span class="line">Query OK, 0 rows affected (0.00 sec) #此段为mySQL反馈提示，不需要输入。</span><br><span class="line"></span><br><span class="line">GRANT ALL PRIVILEGES ON name.* TO user@localhost IDENTIFIED BY &#x27;密码&#x27;; # 把name这个数据库和user这个用户关联</span><br><span class="line">Query OK, 0 rows affected (0.00 sec) #此段为mySQL反馈提示，不需要输入。</span><br><span class="line"></span><br><span class="line">FLUSH PRIVILEGES; # 完成设置</span><br><span class="line">exit # 退出数据库</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="9-2-4-Let’s-Encrypt，SSL-x2F-TLS"><a href="#9-2-4-Let’s-Encrypt，SSL-x2F-TLS" class="headerlink" title="9.2.4 Let’s Encrypt，SSL&#x2F;TLS"></a>9.2.4 Let’s Encrypt，SSL&#x2F;TLS</h4><p>http连接，由于不是加密的，所以任何人都可以查看内容，这对于一些金融服务有着巨大的危害，比如使用信用卡在网上购物的时候，账号和密码会被获知。所以网景（Firefox浏览器的前身）提出了SSL（安全套接层&#x2F;Secure Sockets Layer）这个概念（后来演变升级为TLS，即传输层安全性协议&#x2F;Transport Layer Security），http变成了https，电脑会内置证书，而网站也会有一个证书，只有两者相互验证成功，才能正常浏览玩网页，并且全程加密（DNS部分并不是加密的，所以有个DoH，dns over https）。</p>
+<p>SSL&#x2F;TLS证书是个垄断行业，电脑内置的证书就那么几家，如果想网站被大多数浏览器&#x2F;系统接受，那就只能去申请其中某家的证书，这里面层层签发转售，几近无本万利。不过好在还是有很多免费的SSL&#x2F;TLS证书的，比如Let’s Encrypt提供三个月的免费证书，而亚洲诚信通过第三方公司，提供一年免费的证书。这里以Let’s Encrypt为例演示，相关链接为 <a href="https://certbot.eff.org/instructions">https://certbot.eff.org/instructions</a> ：</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssl_tls.jpg" alt="ssl_tls"></p>
+<p>Let’s Encrypt提供的SSL&#x2F;TLS工具叫做cerbot，可以通过snap或者pip安装。snap是Ubuntu强推的一种软件部署和软件包管理系统，把所有需要的东西都放一起。pip是通过python3的pip安装，pip和snap没有功能上的区别，不想被Ubuntu强推就使用pip。</p>
+<p><strong>snap安装cerbot申请SSL&#x2F;TLS证书</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install snapd</span><br><span class="line">snap install core</span><br><span class="line">snap refresh core</span><br><span class="line">snap install --classic certbot</span><br><span class="line">ln -s /snap/bin/certbot /usr/bin/certbot</span><br><span class="line">certbot --nginx</span><br></pre></td></tr></table></figure>
+
+<p>然后按照提示，输入邮箱和同意服务协议，并且在提示域名的时候，注意不要输错。</p>
+<p><strong>pip安装cerbot申请SSL&#x2F;TLS证书</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install python3 python3-venv libaugeas0</span><br><span class="line">python3 -m venv /opt/certbot/</span><br><span class="line">/opt/certbot/bin/pip install --upgrade pip</span><br><span class="line">/opt/certbot/bin/pip install certbot certbot-nginx</span><br><span class="line">ln -s /opt/certbot/bin/certbot /usr/bin/certbot</span><br><span class="line">certbot --nginx</span><br><span class="line">echo &quot;0 0,12 * * * root /opt/certbot/bin/python -c &#x27;import random; import time; time.sleep(random.random() * 3600)&#x27; &amp;&amp; certbot renew -q&quot; | sudo tee -a /etc/crontab &gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<p>相比于snap自动每三个月更新证书，pip需要通过crontab加一个定时任务（上述最后一行），另外，也需要偶尔检查以下certbot有没有更新，即使用此命令<code>/opt/certbot/bin/pip install --upgrade certbot certbot-nginx</code></p>
+<h2 id="10-Docker快速入门"><a href="#10-Docker快速入门" class="headerlink" title="10 Docker快速入门"></a>10 Docker快速入门</h2><p>Docker的本意是“码头工人”，即搬运别人打包好的集装箱。之所以取这个名字，是因为Docker的功能与此类似：将系统和里面的应用一起打包好，别人“搬走”就能直接使用——可以将Docker粗略的理解成一个包含了系统和应用的虚拟机（严格来说，Docker是使用了沙箱机制的虚拟化容器）。常见的例子就是别人把某一个软件配置好了，用户直接下载下来，简单设置一下就可以使用了，不需要繁杂的配置过程，所以在批量服务中有着广泛的应用场景。Docker分为社区版&#x2F;CE（Community Edition，免费的）和企业版&#x2F;EE（Enterprise Edition，收费的），两者功能无本质区别，以下默认使用社区版。</p>
+<h3 id="10-1-安装Docker环境"><a href="#10-1-安装Docker环境" class="headerlink" title="10.1 安装Docker环境"></a>10.1 安装Docker环境</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt update # 同步更新源</span><br><span class="line">apt install -y ca-certificates curl gnupg lsb-release # 安装必要依赖软件</span><br></pre></td></tr></table></figure>
+
+<p>添加GPG密钥，注意这里和上面一样，必须是root权限（如下命令）。这里简单介绍一下GPG，全称是GnuPG，真·全称是GNU Privacy Guard，一个密码学软件，用来验证通信中的安全性，防止传输过程中被篡改，前身是Pretty Good Privacy&#x2F;PGP。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
+
+<p>选择使用稳定版，如果需要nightly或者test版，可以把下面的stable改成对应的版本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable&quot; | tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<p>更新并安装Docker</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install -y docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<p>期间会下载几百兆的文件，网络不好的话，可能会需要一段时间，当完成安装后，使用<code>docker run hello-world</code>命令来测试功能是否正常，理论上会输出下图内容：</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_hello.jpg" alt="docker_hello"></p>
+<p>至此，系统已经安装好了Docker环境，可以自己写一个Docker的应用，或者直接拉取别人写好的为自己所用。</p>
+<h3 id="10-2-安装别人打包好的的Docker"><a href="#10-2-安装别人打包好的的Docker" class="headerlink" title="10.2 安装别人打包好的的Docker"></a>10.2 安装别人打包好的的Docker</h3><p>先说一下常用的Docker命令，然后以安装Docker版本的Nextcloud为例。Nextcloud是一个开源的网盘系统，类似于私有版本的百度云，可以自己搭建从而确保数据都在自己手上而不会被8秒。</p>
+<h4 id="10-2-1-常用Docker命令"><a href="#10-2-1-常用Docker命令" class="headerlink" title="10.2.1 常用Docker命令"></a>10.2.1 常用Docker命令</h4><p><code>docker ps</code> 列出所有正在运行的容器，如果需要查看所有的容器（包括未运行或者启动失败的）则使用<code>docker ps -la</code>，这点类似于<code>ls</code>和<code>ls -la</code>的区别。</p>
+<p><code>docker start/stop/restart CONTAINER ID</code> 开启&#x2F;停止&#x2F;重启特定容器，后面要加上指定的ID，CONTAINER ID见下文。</p>
+<p><code>docker rm CONTAINER ID</code> 删除容器，如果是删除镜像，则需要把rm换成rmi</p>
+<h4 id="10-2-2-安装Docker版Nextcloud"><a href="#10-2-2-安装Docker版Nextcloud" class="headerlink" title="10.2.2 安装Docker版Nextcloud"></a>10.2.2 安装Docker版Nextcloud</h4><p>在 <a href="https://hub.docker.com/">https://hub.docker.com/</a> 中直接搜索Nextcloud，找到官方版本的镜像，点击进去，在右侧有拉取镜像的命令，直接运行即可。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud.jpg" alt="docker_nextcloud"></p>
+<p>安装过程中会下载各个组件，等全部显示Pull conplete即表示下载完成，之后会自动校验并提示完成。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_pull_nextcloud.jpg" alt="docker_pull_nextcloud"></p>
+<p>使用<code>docker run -d -p 80:80 nextcloud</code> 运行，此时使用<code>docker ps</code>可以查看到具体的详细信息</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud_status.jpg" alt="docker_nextcloud_status"></p>
+<p>CONTAINER ID类似于身份证号码；IMAGE是身份证上的姓名；COMMAND是实际运行的程序；CREATED是创建的时间；STATUS是此时的运行状态；PORTS是端口，上述我们把容器的80端口定向到服务器的80，并且默认ipv4和ipv6都可以访问，接受所有IP的访问（0.0.0.0代表接受所有IP）；NAMES是容器的名字，可以理解为外号。</p>
+<p>之后就是通过IP或者绑定的域名访问，进行最后的安装。这里就能看出来Docker的优势了：用户无需了解具体操作和搭建步骤，提供者负责维护，这可以极大的简化用户的使用步骤，还可以标准化环境，无论使用Debain还是REHL，镜像&#x2F;容器都是提供者给定的。</p>
+<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud_install.jpg" alt="docker_nextcloud_install"></p>
+<p>如果不再需要Nextcloud，则首先停止容器，随后再删除：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker stop c30d348f1ef1</span><br><span class="line">docker rm c30d348f1ef1</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="10-3-建自己的Docker"><a href="#10-3-建自己的Docker" class="headerlink" title="10.3 建自己的Docker"></a>10.3 建自己的Docker</h3><p>Docker通过Unix socket与它的引擎进行通信，出于安全考虑，一般只有root用户和在docker组的用户才能正常访问Unix socket。所以，如果想建一个完善的Docker应用，那么建议额外新增一个用户，并加入docker用户组。</p>
+]]></content>
+  </entry>
+</search>

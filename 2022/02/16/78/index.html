@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"daoke123.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1.编译openwrt 123Target System 选择 QEMU ARM VIrtual MachineSubtarget 选择 ARMv8 multiplatform其它的随意   编译好的openwrt，会生成 rootfs 打包文件：openwrt-armvirt-64-default-rootfs.tar.gz 在装好armbian和docker的N1上，把openwrt-armv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自制N1 Docker Openwrt镜像及运行镜像">
+<meta property="og:url" content="http://daoke123.github.io/2022/02/16/78/index.html">
+<meta property="og:site_name" content="Daoke">
+<meta property="og:description" content="1.编译openwrt 123Target System 选择 QEMU ARM VIrtual MachineSubtarget 选择 ARMv8 multiplatform其它的随意   编译好的openwrt，会生成 rootfs 打包文件：openwrt-armvirt-64-default-rootfs.tar.gz 在装好armbian和docker的N1上，把openwrt-armv">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-16T11:48:00.000Z">
+<meta property="article:modified_time" content="2022-10-30T14:11:22.494Z">
+<meta property="article:author" content="daoke">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://daoke123.github.io/2022/02/16/78/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://daoke123.github.io/2022/02/16/78/","path":"2022/02/16/78/","title":"自制N1 Docker Openwrt镜像及运行镜像"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>自制N1 Docker Openwrt镜像及运行镜像 | Daoke</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Daoke" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Daoke</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录笔记只是怕忘记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker%E5%88%9B%E5%BB%BAmacvlan%E7%BD%91%E7%BB%9C%EF%BC%8C%E5%90%8D%E4%B8%BAmacnet"><span class="nav-number">1.</span> <span class="nav-text">docker创建macvlan网络，名为macnet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8macnet%E8%BF%90%E8%A1%8Copenwrt%E5%AE%9E%E4%BE%8B%EF%BC%8C%E5%AE%9E%E4%BE%8B%E5%90%8D%E4%B8%BAphicomm-n1"><span class="nav-number">2.</span> <span class="nav-text">用macnet运行openwrt实例，实例名为phicomm-n1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E7%94%A8armbian%E7%9A%84%E9%80%9A%E7%94%A8%E5%87%BD%E6%95%B0%E5%8C%85"><span class="nav-number">3.</span> <span class="nav-text">引用armbian的通用函数包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%97%E5%88%B0%E4%B8%80%E4%B8%AA%E9%9A%8F%E6%9C%BAMAC%E5%9C%B0%E5%9D%80-%E5%AD%98%E5%85%A5MACADDR%E5%8F%98%E9%87%8F"><span class="nav-number">4.</span> <span class="nav-text">得到一个随机MAC地址,存入MACADDR变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5op%E5%AE%B9%E5%99%A8%EF%BC%8C%E4%BF%AE%E6%94%B9-x2F-etc-x2F-config-x2F-network"><span class="nav-number">5.</span> <span class="nav-text">进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">daoke</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://daoke123.github.io/2022/02/16/78/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="daoke">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daoke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="自制N1 Docker Openwrt镜像及运行镜像 | Daoke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          自制N1 Docker Openwrt镜像及运行镜像
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-16 19:48:00" itemprop="dateCreated datePublished" datetime="2022-02-16T19:48:00+08:00">2022-02-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/" itemprop="url" rel="index"><span itemprop="name">网络资源</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>1.编译openwrt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Target System 选择 QEMU ARM VIrtual Machine</span><br><span class="line">Subtarget 选择 ARMv8 multiplatform</span><br><span class="line">其它的随意</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编译好的openwrt，会生成 rootfs 打包文件：<br>openwrt-armvirt-64-default-rootfs.tar.gz</li>
+<li>在装好armbian和docker的N1上，把openwrt-armvirt-64-default-rootfs.tar.gz和Dockerfile放到同一个目录下</li>
+<li>制造镜像<br>(示例用的是openwrt by lean r9.7.6源码，因此镜像名称为：openwrt-arm64 版本为 r9.7.6<br>docker build -t openwrt-arm64:r9.7.6 .<br>即可生成镜像<br>用docker images，可以查看到已生成的镜像<br>用docker save openwrt-arm64:r9.7.6 gzip &gt; docker-image-openwrt-arm64-r9.7.6.tar.gz 可以把镜像导出成打包文件<br>用 gzip -dc docker-image-openwrt-arm64-r9.7.6.tar.gz docker load ，可以把打包文件还原成docker镜像</li>
+<li>运行镜像：<br>可以参见 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg">https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg</a><br>重点：<br>a. 物理网卡要开启混杂模式（promisc)，有临时生效型（命令）和永久生效型（要改网络配置文件）<br>b. docker创建macvlan网络<br>c. 用macvlan网络绑定docker容器<br>d. 物理机和openwrt容器在同一网段，但不同ip<br>e. macvlan模式下，物理机和openwrt容器之间是ping不通的，这是正常现象，但第三方电脑都能ping通两者</li>
+</ol>
+<p>示例：</p>
+<h1 id="docker创建macvlan网络，名为macnet"><a href="#docker创建macvlan网络，名为macnet" class="headerlink" title="docker创建macvlan网络，名为macnet"></a>docker创建macvlan网络，名为macnet</h1><p>docker network create -d macvlan –subnet&#x3D;192.168.3.0&#x2F;24 –gateway&#x3D;192.168.3.1 -o parent&#x3D;eth0 macnet</p>
+<h1 id="用macnet运行openwrt实例，实例名为phicomm-n1"><a href="#用macnet运行openwrt实例，实例名为phicomm-n1" class="headerlink" title="用macnet运行openwrt实例，实例名为phicomm-n1"></a>用macnet运行openwrt实例，实例名为phicomm-n1</h1><h1 id="引用armbian的通用函数包"><a href="#引用armbian的通用函数包" class="headerlink" title="引用armbian的通用函数包"></a>引用armbian的通用函数包</h1><p>source &#x2F;usr&#x2F;lib&#x2F;armbian&#x2F;armbian-common</p>
+<h1 id="得到一个随机MAC地址-存入MACADDR变量"><a href="#得到一个随机MAC地址-存入MACADDR变量" class="headerlink" title="得到一个随机MAC地址,存入MACADDR变量"></a>得到一个随机MAC地址,存入MACADDR变量</h1><p>get_random_mac</p>
+<p>docker run –name phicomm-n1 –restart always –network macnet –mac-address $MACADDR -d –privileged&#x3D;true –ulimit nofile&#x3D;16384:65536 openwrt-arm64:r9.8.17</p>
+<h1 id="进入op容器，修改-x2F-etc-x2F-config-x2F-network"><a href="#进入op容器，修改-x2F-etc-x2F-config-x2F-network" class="headerlink" title="进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network"></a>进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network</h1><p>docker exec -it phicomm-n1 sh<br>vi &#x2F;etc&#x2F;config&#x2F;network</p>
+<p>修改下面这段：<br>config interface ‘lan’</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">option ifname &#x27;eth0&#x27;</span><br><span class="line">option proto &#x27;static&#x27;</span><br><span class="line">option netmask &#x27;255.255.255.0&#x27;</span><br><span class="line">option gateway &#x27;192.168.3.1&#x27;</span><br><span class="line">option ipaddr &#x27;192.168.3.20&#x27;</span><br><span class="line">option broadcast &#x27;192.168.3.255&#x27;</span><br><span class="line">option ip6assign &#x27;64&#x27;</span><br><span class="line">option dns &#x27;192.168.3.1&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>注：192.168.3.1是主路由的地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">192.168.3.20是openwrt自己的地址，也就是旁路由的地址</span><br><span class="line"> broadcast和dns也做相应更改</span><br></pre></td></tr></table></figure>
+
+<p>改好后，存盘，运行：<br>&#x2F;etc&#x2F;init.d&#x2F;network restart<br>过一会就可以ping通旁路由了，然后用浏览器连上192.168.3.20就可以按一般的操作了</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/02/13/77/" rel="prev" title="玩客云当录像机安装pyNvr">
+                  <i class="fa fa-chevron-left"></i> 玩客云当录像机安装pyNvr
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/02/18/79/" rel="next" title="docker filebrowser">
+                  docker filebrowser <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">daoke</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">75k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:08</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
