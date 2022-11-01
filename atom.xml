@@ -6,7 +6,7 @@
   <link href="http://daoke123.github.io/atom.xml" rel="self"/>
   
   <link href="http://daoke123.github.io/"/>
-  <updated>2022-11-01T22:24:47.370Z</updated>
+  <updated>2022-11-01T22:37:18.880Z</updated>
   <id>http://daoke123.github.io/</id>
   
   <author>
@@ -17,24 +17,26 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>mjj版的linux入门教程</title>
     <link href="http://daoke123.github.io/2022/11/02/mjj/"/>
     <id>http://daoke123.github.io/2022/11/02/mjj/</id>
-    <published>2022-11-01T22:18:47.428Z</published>
-    <updated>2022-11-01T22:24:47.370Z</updated>
+    <published>2022-11-01T22:24:00.000Z</published>
+    <updated>2022-11-01T22:37:18.880Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;title: mjj版的linux入门教程 #名字&lt;br&gt;tags: [mjj,命令,linux] #标签&lt;br&gt;categories: [liunx] #分类&lt;br&gt;date: 2022-11-2 06:24:00</summary>
-        
-      
+    <summary type="html">&lt;p&gt;本文的首要目的是给予Linux初学者一个简单、易学的教程，以便在看完本文后对Linux系统有一个基础的认识（而非系统级的深入），可以对常见的软件和功能进行配置，甚至可以自己写一写一键脚本。&lt;/p&gt;
+&lt;p&gt;本教程写于2021年下半年，采用的系统为Debian GNU&amp;#x2F;Linux 11 (bullseye)。&lt;/p&gt;</summary>
     
     
     
+    <category term="liunx" scheme="http://daoke123.github.io/categories/liunx/"/>
+    
+    
+    <category term="mjj" scheme="http://daoke123.github.io/tags/mjj/"/>
+    
+    <category term="命令" scheme="http://daoke123.github.io/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+    <category term="linux" scheme="http://daoke123.github.io/tags/linux/"/>
     
   </entry>
   

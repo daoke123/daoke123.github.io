@@ -5,6 +5,7 @@
     <url>/2020/10/09/11/</url>
     <content><![CDATA[<p>第一步<br>宝塔5.9版本<br>wget -O install.sh <a href="http://download.bt.cn/install/install-ubuntu.sh">http://download.bt.cn/install/install-ubuntu.sh</a> &amp;&amp; bash install.sh</p>
 <p>安装完成后记着账户和密码</p>
+<span id="more"></span>
 <p>ip用本地ip上个视频讲过然后安装支持库<br>wget <a href="http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz">http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz</a></p>
 <p>接着解压<br>tar zxvf libiconv-1.13.1.tar.gz</p>
 <p>然后输入进入文件夹<br>cd libiconv-1.13.1</p>
@@ -53,6 +54,7 @@
     <title>Linux VPS流量查看/监测工具 -- vnStat</title>
     <url>/2020/10/11/14/</url>
     <content><![CDATA[<p>vnstat安装步骤，软件包和编译安装任选一种方法即可<br>使用yum&#x2F;apt-get 软件包管理工具进行安装：（建议使用此方法）</p>
+<span id="more"></span>
 <p>CentOS需要先安装EPEL第三方源，安装好EPEL后执行命令：yum install vnstat 即可安装上vnstat，安装过程可能会要求输入y 进行确认。<br>Fedora安装命令：yum install vnstat 或 dnf install vnstat<br>Debian&#x2F;Ubuntu安装命令：<code>apt-get install vnstat</code><br>可以<code>ifconfig</code>看看自己的网卡是否是eth0<br>执行一下：<code>vnstat -u -i eth0</code> 创建上对应网卡的数据库，eth0根据前面的说明自己修改网卡。<br>首先，停止 vnStat 服务</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop vnstat</span><br></pre></td></tr></table></figure>
 
@@ -115,7 +117,9 @@
   <entry>
     <title>N1 armbian 前期基本操作管理</title>
     <url>/2020/10/16/17/</url>
-    <content><![CDATA[<p>常用命令 1.<code>armbian-config</code> 调出窗口配置 2.<code>passwd</code> 修改密码 3.<code>apt install python3-pip</code> 安装软件 4.<code>apt list --installed</code> 列出安装的所有包 5.<code>apt list --installed grep docker</code> 列出安装的和docker相关的包 6.<code>apt-get remove docker-ce</code> 删除已安装的软件包（保留配置文件），不会删除依赖软件包，保留配置文件； 7.<code>apt-get purge</code> 删除已安装的软件包（不保留配置文件)，删除软件包，同时删除相应依赖软件包； 8.<code>apt-get autoremove</code> 删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件；高能警告：慎用本命令！！！它会在你不知情的情况下，一股脑删除很多“它认为”你不再使用的软件； 9.<code>apt-get clean</code> 删除已经安装过的的软件安装包；自动将<code>/var/cache/apt/archives/</code>下的所有deb删掉，相当于清理下载的软件安装包； 固定mac N1的mac每次重启都会变化，导致IP不固定，因此要固定mac</p>
+    <content><![CDATA[<p>常用命令 1.<code>armbian-config</code> 调出窗口配置 2.<code>passwd</code> 修改密码 3.<code>apt install python3-pip</code> 安装软件 4.<code>apt list --installed</code> 列出安装的所有包 5.<code>apt list --installed grep docker</code><br>列出安装的和docker相关的包 6.<code>apt-get remove docker-ce</code> 删除已安装的软件包（保留配置文件），不会删除依赖软件包，保留配置文件；</p>
+<span id="more"></span>
+<p>7.<code>apt-get purge</code> 删除已安装的软件包（不保留配置文件)，删除软件包，同时删除相应依赖软件包； 8.<code>apt-get autoremove</code> 删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件；高能警告：慎用本命令！！！它会在你不知情的情况下，一股脑删除很多“它认为”你不再使用的软件； 9.<code>apt-get clean</code> 删除已经安装过的的软件安装包；自动将<code>/var/cache/apt/archives/</code>下的所有deb删掉，相当于清理下载的软件安装包； 固定mac N1的mac每次重启都会变化，导致IP不固定，因此要固定mac</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/network/interfaces</span><br></pre></td></tr></table></figure>
 
 <p>iface eth0 inet dhcp（static）这行下面，加1行：pre-up ifconfig eth0 hw ether 52:d1:87:32:33:eb</p>
@@ -354,7 +358,8 @@
     <url>/2020/12/17/30/</url>
     <content><![CDATA[<p><strong>Linux VPS常用命令集合备忘录</strong><br>常用命令</p>
 <h1 id="更改root密码"><a href="#更改root密码" class="headerlink" title="更改root密码"></a>更改root密码</h1><p>passwd root</p>
-<h1 id="mv命令-移动文件（把abc-tar-gz移动到backup目录）"><a href="#mv命令-移动文件（把abc-tar-gz移动到backup目录）" class="headerlink" title="mv命令 移动文件（把abc.tar.gz移动到backup目录）"></a>mv命令 移动文件（把abc.tar.gz移动到backup目录）</h1><p>mv &#x2F; &#x2F;backup</p>
+<h1 id="mv命令-移动文件（把abc-tar-gz移动到backup目录）"><a href="#mv命令-移动文件（把abc-tar-gz移动到backup目录）" class="headerlink" title="mv命令 移动文件（把abc.tar.gz移动到backup目录）"></a>mv命令 移动文件（把abc.tar.gz移动到backup目录）</h1><span id="more"></span>
+<p>mv &#x2F; &#x2F;backup</p>
 <h1 id="rm删除命令"><a href="#rm删除命令" class="headerlink" title="rm删除命令"></a>rm删除命令</h1><p>rm -rf &#x2F;<br>将会删除&#x2F;目录以及其下所有文件、文件夹<br>-r 就是向下递归，不管有多少级目录，一并删除<br>-f 就是直接强行删除，不作任何提示的意思<br>如文件夹命有空格，需加引号<br>如：rm -rf &#x2F;‘Naughty America SiteRip 4K Part13-sweety’</p>
 <h1 id="tar命令-C打包和X解压文件"><a href="#tar命令-C打包和X解压文件" class="headerlink" title="tar命令 C打包和X解压文件"></a>tar命令 C打包和X解压文件</h1><p>tar zcvf test.tar.gz &#x2F; # 把&#x2F;打包<br>tar zxvf test.tar.gz # 在当前目录解压test.tar.gz</p>
 <h1 id="安装VI编辑器："><a href="#安装VI编辑器：" class="headerlink" title="安装VI编辑器："></a>安装VI编辑器：</h1><p>apt-get install vim<br>i 开始编辑<br>Esc 完成编辑<br>:wq 保存退出<br>:q！ 退出，不保存</p>
@@ -388,6 +393,7 @@
     <title>谷歌云ssh开启root密码登录</title>
     <url>/2020/12/17/31/</url>
     <content><![CDATA[<p><strong>谷歌云ssh开启root密码登录</strong><br>修改配置<br>1.先选择从浏览器打开ssh连接服务器<br>连接登录成功后，输入以下命令<br>sudo -i #切换到root<br>passwd #修改密码<br>然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车。<br>修改root密码完成</p>
+<span id="more"></span>
 <p>2.接着修改SSH配置文件&#x2F;sshd_config<br>vi &#x2F;sshd_config #编辑文件<br>找到以下内容并修改<br>PermitRootLogin yes &#x2F;&#x2F;默认为no，需要开启root用户访问改为yes<br>PasswordAuthentication yes &#x2F;&#x2F;默认为no，改为yes开启密码登陆<br>修改完成后，再下按 esc 键，然后再输入<br>:wq #保存并退出<br>3.最后重启下服务器即可<br>reboot #重启服务器</p>
 <p>修改的时候把输入法切换到英文输入、大小写一定要看清楚再输入、移动光标不要按方向键；“a”是进入编辑模式，“ESC”键是退出编辑模式；非编辑模式下“k”是把光标向上移动、“j”向下、“h”向左、“l”向右；“x”是非编辑模式删除键；编辑模式下一边按着“Shift”上档键一边按着小键盘上的“-”减号键才会出现“_”下划线；修改完成以后在非编辑模式下输入“:wq”回车保存退出，修改错误输入“:q!”回车不保存退出，然后在运行刚才的修改命令重新修改。</p>
 ]]></content>
@@ -402,6 +408,7 @@
     <title>Debian8小内存环境安装Caddy+PHP5+SQLite3</title>
     <url>/2020/12/17/32/</url>
     <content><![CDATA[<p><strong>Debian8小内存环境安装Caddy+PHP5+SQLite3</strong><br><strong>0、前言</strong><br>最近入手了Gullo的128M内存小鸡，因为内存太小，故一直在找Debian8能用的一键环境安装脚本，<br>LNMP肯定是安装不上了，编译安装一半的时候，就已经报错了，所以编译安装这条路算是走不通了。</p>
+<span id="more"></span>
 <p>经过多次尝试，发现Caddy-Web-Server-Installer整体来说做的比较好，故研究了下。<br>这个脚本除了没有SQlite3，装好了Caddy+PHP5可以直接用，无需额外设置。</p>
 <p>在Github上，给的脚本安装多次尝试无法成功，重新改了，复制下面的命令行，粘贴到SSH里面回车即可。<br>仅测试了Debian 8 64bit，理论上Debian8 32bit、Debian7 32bit都可以运行这个脚本，<br>包括安装下面的PHP组件和SQLite3数据库，有对应环境的可以尝试下。<br><strong>1、精简系统，你可以选择性尝试执行，并不是强制性这么做，但是的确可以清理少许的内存和磁盘占用，这对小内存vps来说，是很有帮助的，在SSH执行下面的命令即可。</strong><br>apt-get -y update&amp;&amp;apt-get -y upgrade&amp;&amp;apt-get dist-upgrade -y&amp;&amp;apt-get -y purge apache2- <em>bind9-</em> xinetd samba- <em>nscd-</em> portmap sendmail- <em>sasl2-bin&amp;&amp;apt-get -y purge lynx memtester unixodbc python-</em> odbcinst- <em>sudo tcpdump ttf-</em>&amp;&amp;apt-get -y autoremove &amp;&amp; apt-get clean</p>
 <p><strong>2、使用Caddy-Web-Server-Installer安装Caddy+PHP5，既然一键能做的事情，就让脚本完成吧。</strong><br>bash &lt;(curl -L -s <a href="https://git.io/JvNd7">https://git.io/JvNd7</a>)<br>如果提示：-bash: curl: command not found<br>请先执行：apt-get -y update&amp;&amp;apt-get install curl -y</p>
@@ -832,7 +839,7 @@
     <content><![CDATA[<p>一、Cron表达式的组成</p>
 <p>其实就是一组时间序列，一个由6个空格7个域组成的字符串，排序如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[秒] [分] [时] [日] [月] [周] [年]</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <p>二、Cron每个域（时间）的相关定义，用表格梳理比较明了。<br>域 是否必填 值以及范围 通配符</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">秒    是    0-59    , – * /</span><br><span class="line">分    是    0-59    , – * /</span><br><span class="line">时    是    0-23    , – * /</span><br><span class="line">日    是    1-31    , – * ? / L W</span><br><span class="line">月    是    1-12 或 JAN-DEC    , – * /</span><br><span class="line">周    是    1-7 或 SUN-SAT    , – * ? / L #</span><br><span class="line">年    否    1970-2099    , – * /</span><br></pre></td></tr></table></figure>
 
@@ -938,13 +945,13 @@
     <title>腾讯云DD 系统</title>
     <url>/2021/08/30/59/</url>
     <content><![CDATA[<p>萌咖脚本（debian10）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">全自动安装默认</span><br><span class="line">用户：root</span><br><span class="line">密码: MoeClub.org</span><br><span class="line">某些特殊的服务商不适用此脚本，比如 cloudcone</span><br><span class="line">已测试服务商：腾讯云、阿里云</span><br><span class="line"># Debian/Ubuntu:</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install -y xz-utils openssl gawk file</span><br><span class="line"></span><br><span class="line"># RedHat/CentOS:</span><br><span class="line">yum update</span><br><span class="line">yum install -y xz openssl gawk file</span><br><span class="line"></span><br><span class="line">wget https://moeclub.org/attachment/LinuxShell/InstallNET.sh</span><br><span class="line">chmod a+x InstallNET.sh</span><br><span class="line"></span><br><span class="line">bash InstallNET.sh -d 10 -v 64 -a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">全自动安装默认</span><br><span class="line">用户：root</span><br><span class="line">密码: MoeClub.org</span><br><span class="line">某些特殊的服务商不适用此脚本，比如 cloudcone</span><br><span class="line">已测试服务商：腾讯云、阿里云</span><br><span class="line"># Debian/Ubuntu:</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install -y xz-utils openssl gawk file</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"># RedHat/CentOS:</span><br><span class="line">yum update</span><br><span class="line">yum install -y xz openssl gawk file</span><br><span class="line"></span><br><span class="line">wget https://moeclub.org/attachment/LinuxShell/InstallNET.sh</span><br><span class="line">chmod a+x InstallNET.sh</span><br><span class="line"></span><br><span class="line">bash InstallNET.sh -d 10 -v 64 -a</span><br></pre></td></tr></table></figure>
 
 <h1 id="系统选择详解："><a href="#系统选择详解：" class="headerlink" title="系统选择详解："></a>系统选择详解：</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 全自动安装Ubuntu 16.04 x64： </span><br><span class="line">bash InstallNET.sh -u 16.04 -v 64 -a</span><br><span class="line"></span><br><span class="line"># 全自动安装Debian 9 x64：</span><br><span class="line">bash InstallNET.sh -d 9 -v 64 -a</span><br><span class="line"></span><br><span class="line"># 全自动安装Debian 10 x64(中科大镜像源，用于国内服务器)： </span><br><span class="line">bash InstallNET.sh -d 10 -v 64 -a --mirror &#x27;http://mirrors.ustc.edu.cn/debian/&#x27;</span><br><span class="line"></span><br><span class="line"># 全自动安装CentOS 6.7 x64：</span><br><span class="line">bash InstallNET.sh -c 6.7 -v 64 -a</span><br></pre></td></tr></table></figure>
 
 <h1 id="腾讯云轻量-DD-win"><a href="#腾讯云轻量-DD-win" class="headerlink" title="腾讯云轻量 DD win"></a>腾讯云轻量 DD win</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install -y xz-utils openssl gawk file wget screen &amp;&amp; screen -S os</span><br><span class="line">wget --no-check-certificate -qO InstallNET.sh &#x27;https://tutu.bid/bash/InstallNET.sh&#x27; &amp;&amp; bash InstallNET.sh -dd &#x27;https://tutu.bid/os/dd/win10ltsc_x64.tar.gz&#x27;</span><br></pre></td></tr></table></figure>
 
-<h1 id="腾讯云改回内网软件源"><a href="#腾讯云改回内网软件源" class="headerlink" title="腾讯云改回内网软件源"></a>腾讯云改回内网软件源</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat </span><br></pre></td></tr></table></figure>]]></content>
+]]></content>
       <categories>
         <category>默认分类</category>
       </categories>
@@ -1416,7 +1423,7 @@
     <url>/2020/10/08/clypbp/</url>
     <content><![CDATA[<p>Linux 最简单的安装方法：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s https://install.zerotier.com/ | sudo bash</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <p>无任何报错显示：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*** Waiting for identity generation...</span><br></pre></td></tr></table></figure>
 
@@ -1466,14 +1473,12 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>mjj版的linux入门教程</title>
     <url>/2022/11/02/mjj/</url>
-    <content><![CDATA[<hr>
-<p>title: mjj版的linux入门教程 #名字<br>tags: [mjj,命令,linux] #标签<br>categories: [liunx] #分类<br>date: 2022-11-2 06:24:00 #日期</p>
-<hr>
-<p>#mjj版的linux入门教程</p>
-<p>本文的首要目的是给予Linux初学者一个简单、易学的教程，以便在看完本文后对Linux系统有一个基础的认识（而非系统级的深入），可以对常见的软件和功能进行配置，甚至可以自己写一写一键脚本。</p>
+    <content><![CDATA[<p>本文的首要目的是给予Linux初学者一个简单、易学的教程，以便在看完本文后对Linux系统有一个基础的认识（而非系统级的深入），可以对常见的软件和功能进行配置，甚至可以自己写一写一键脚本。</p>
 <p>本教程写于2021年下半年，采用的系统为Debian GNU&#x2F;Linux 11 (bullseye)。</p>
+<span id="more"></span>
+
 <h2 id="0-前言吐槽CentOS"><a href="#0-前言吐槽CentOS" class="headerlink" title="0 前言吐槽CentOS"></a>0 前言吐槽CentOS</h2><p><strong>解释使用Debian而不是CentOS的原因</strong></p>
 <p>国内首批接触Linux系统的人主要集中在科研院校，大多数是延续了Unix-like的背景，在千禧年前后才有了真正意义上的Linux使用者：纯Linux平台开发、运行服务和应用，他们或直接或间接地推广了Linux系统。红帽（Red Hat, Inc.）在1994年就开始发布了同名的操作系统：Red Hat Linux（后改组为Red Hat Enterprise Linux，缩写为RHEL）。得益于红帽优秀的团队和商业支持，RHEL这一发行版迅速占领了国内市场。彼时的国内计算机市场远不如今日繁荣，在口口相传和红帽的推广中，RHEL成为了Linux入门的主流选项，即使后来号称用户友好的Ubuntu出现了，绝大多数尝鲜的人依然能看到众多网站里面只提供RHEL版本的教程。</p>
 <p>CentOS是根据RHEL的源码重新编译的，等于换商标版本的RHEL，软件层面上，两者无本质区别。但CentOS是反人类的，至少是反入门用户的。使用RHEL的基本为商业用户，可以付费获得红帽的技术支持，或者干脆有一个自己的维护团队；而CentOS作为一个社区自发形成的操作系统，拥有落后的软件源&#x2F;包，繁琐的配置，和对个人用户而言根本没有必要的SElinux等。举个例子，很多入门者修改SSH端口的时候，发现所有的操作都没有问题，但是死活无法生效，最终发现是没有在SElinux里面放行。如果你想安装个软件，你就得考虑是从落后主流版本好几代的软件源&#x2F;包里面安装，还是自己下载源码进行编译以获取主流的使用体验。对于入门者而言，CentOS的安全性和稳定性是个虚假的概念，毕竟让一个刚接触Linux的人去自己编译源码安装，无异于让小学生上战场，输了就说是小学生战斗力太弱。</p>
@@ -1796,5 +1801,13 @@
 
 <h3 id="10-3-建自己的Docker"><a href="#10-3-建自己的Docker" class="headerlink" title="10.3 建自己的Docker"></a>10.3 建自己的Docker</h3><p>Docker通过Unix socket与它的引擎进行通信，出于安全考虑，一般只有root用户和在docker组的用户才能正常访问Unix socket。所以，如果想建一个完善的Docker应用，那么建议额外新增一个用户，并加入docker用户组。</p>
 ]]></content>
+      <categories>
+        <category>liunx</category>
+      </categories>
+      <tags>
+        <tag>mjj</tag>
+        <tag>命令</tag>
+        <tag>linux</tag>
+      </tags>
   </entry>
 </search>

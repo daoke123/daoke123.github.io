@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"daoke123.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="常用命令 1.armbian-config 调出窗口配置 2.passwd 修改密码 3.apt install python3-pip 安装软件 4.apt list --installed 列出安装的所有包 5.apt list --installed grep docker 列出安装的和docker相关的包 6.apt-get remove docker-ce 删除已安装的软件包（保留配置文">
+    <meta name="description" content="常用命令 1.armbian-config 调出窗口配置 2.passwd 修改密码 3.apt install python3-pip 安装软件 4.apt list --installed 列出安装的所有包 5.apt list --installed grep docker列出安装的和docker相关的包 6.apt-get remove docker-ce 删除已安装的软件包（保留配置文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="N1 armbian 前期基本操作管理">
 <meta property="og:url" content="http://daoke123.github.io/2020/10/16/17/index.html">
 <meta property="og:site_name" content="Daoke">
-<meta property="og:description" content="常用命令 1.armbian-config 调出窗口配置 2.passwd 修改密码 3.apt install python3-pip 安装软件 4.apt list --installed 列出安装的所有包 5.apt list --installed grep docker 列出安装的和docker相关的包 6.apt-get remove docker-ce 删除已安装的软件包（保留配置文">
+<meta property="og:description" content="常用命令 1.armbian-config 调出窗口配置 2.passwd 修改密码 3.apt install python3-pip 安装软件 4.apt list --installed 列出安装的所有包 5.apt list --installed grep docker列出安装的和docker相关的包 6.apt-get remove docker-ce 删除已安装的软件包（保留配置文件">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-16T12:32:00.000Z">
-<meta property="article:modified_time" content="2022-10-30T14:11:22.374Z">
+<meta property="article:modified_time" content="2022-11-01T22:39:34.069Z">
 <meta property="article:author" content="daoke">
 <meta property="article:tag" content="Armbian">
 <meta property="article:tag" content="n1">
@@ -165,12 +165,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
+      <time title="修改时间：2022-11-02 06:39:34" itemprop="dateModified" datetime="2022-11-02T06:39:34+08:00">2022-11-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -283,7 +283,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>常用命令 1.<code>armbian-config</code> 调出窗口配置 2.<code>passwd</code> 修改密码 3.<code>apt install python3-pip</code> 安装软件 4.<code>apt list --installed</code> 列出安装的所有包 5.<code>apt list --installed grep docker</code> 列出安装的和docker相关的包 6.<code>apt-get remove docker-ce</code> 删除已安装的软件包（保留配置文件），不会删除依赖软件包，保留配置文件； 7.<code>apt-get purge</code> 删除已安装的软件包（不保留配置文件)，删除软件包，同时删除相应依赖软件包； 8.<code>apt-get autoremove</code> 删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件；高能警告：慎用本命令！！！它会在你不知情的情况下，一股脑删除很多“它认为”你不再使用的软件； 9.<code>apt-get clean</code> 删除已经安装过的的软件安装包；自动将<code>/var/cache/apt/archives/</code>下的所有deb删掉，相当于清理下载的软件安装包； 固定mac N1的mac每次重启都会变化，导致IP不固定，因此要固定mac</p>
+        <p>常用命令 1.<code>armbian-config</code> 调出窗口配置 2.<code>passwd</code> 修改密码 3.<code>apt install python3-pip</code> 安装软件 4.<code>apt list --installed</code> 列出安装的所有包 5.<code>apt list --installed grep docker</code><br>列出安装的和docker相关的包 6.<code>apt-get remove docker-ce</code> 删除已安装的软件包（保留配置文件），不会删除依赖软件包，保留配置文件；</p>
+<span id="more"></span>
+<p>7.<code>apt-get purge</code> 删除已安装的软件包（不保留配置文件)，删除软件包，同时删除相应依赖软件包； 8.<code>apt-get autoremove</code> 删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件；高能警告：慎用本命令！！！它会在你不知情的情况下，一股脑删除很多“它认为”你不再使用的软件； 9.<code>apt-get clean</code> 删除已经安装过的的软件安装包；自动将<code>/var/cache/apt/archives/</code>下的所有deb删掉，相当于清理下载的软件安装包； 固定mac N1的mac每次重启都会变化，导致IP不固定，因此要固定mac</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/network/interfaces</span><br></pre></td></tr></table></figure>
 
 <p>iface eth0 inet dhcp（static）这行下面，加1行：pre-up ifconfig eth0 hw ether 52:d1:87:32:33:eb</p>
@@ -381,7 +383,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">75k</span>
+    <span title="站点总字数">74k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
