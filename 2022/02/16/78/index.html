@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"daoke123.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="1.编译openwrt 123Target System 选择 QEMU ARM VIrtual MachineSubtarget 选择 ARMv8 multiplatform其它的随意   编译好的openwrt，会生成 rootfs 打包文件：openwrt-armvirt-64-default-rootfs.tar.gz 在装好armbian和docker的N1上，把openwrt-armv">
+    <meta name="description" content="1.编译openwrt 123Target System 选择 QEMU ARM VIrtual MachineSubtarget 选择 ARMv8 multiplatform其它的随意">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自制N1 Docker Openwrt镜像及运行镜像">
 <meta property="og:url" content="http://daoke123.github.io/2022/02/16/78/index.html">
 <meta property="og:site_name" content="Daoke">
-<meta property="og:description" content="1.编译openwrt 123Target System 选择 QEMU ARM VIrtual MachineSubtarget 选择 ARMv8 multiplatform其它的随意   编译好的openwrt，会生成 rootfs 打包文件：openwrt-armvirt-64-default-rootfs.tar.gz 在装好armbian和docker的N1上，把openwrt-armv">
+<meta property="og:description" content="1.编译openwrt 123Target System 选择 QEMU ARM VIrtual MachineSubtarget 选择 ARMv8 multiplatform其它的随意">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-16T11:48:00.000Z">
-<meta property="article:modified_time" content="2022-10-30T14:11:22.494Z">
+<meta property="article:modified_time" content="2022-11-10T15:09:39.305Z">
 <meta property="article:author" content="daoke">
 <meta name="twitter:card" content="summary">
 
@@ -131,7 +131,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -144,7 +144,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker%E5%88%9B%E5%BB%BAmacvlan%E7%BD%91%E7%BB%9C%EF%BC%8C%E5%90%8D%E4%B8%BAmacnet"><span class="nav-number">1.</span> <span class="nav-text">docker创建macvlan网络，名为macnet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8macnet%E8%BF%90%E8%A1%8Copenwrt%E5%AE%9E%E4%BE%8B%EF%BC%8C%E5%AE%9E%E4%BE%8B%E5%90%8D%E4%B8%BAphicomm-n1"><span class="nav-number">2.</span> <span class="nav-text">用macnet运行openwrt实例，实例名为phicomm-n1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E7%94%A8armbian%E7%9A%84%E9%80%9A%E7%94%A8%E5%87%BD%E6%95%B0%E5%8C%85"><span class="nav-number">3.</span> <span class="nav-text">引用armbian的通用函数包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%97%E5%88%B0%E4%B8%80%E4%B8%AA%E9%9A%8F%E6%9C%BAMAC%E5%9C%B0%E5%9D%80-%E5%AD%98%E5%85%A5MACADDR%E5%8F%98%E9%87%8F"><span class="nav-number">4.</span> <span class="nav-text">得到一个随机MAC地址,存入MACADDR变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5op%E5%AE%B9%E5%99%A8%EF%BC%8C%E4%BF%AE%E6%94%B9-x2F-etc-x2F-config-x2F-network"><span class="nav-number">5.</span> <span class="nav-text">进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +156,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +167,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -244,7 +243,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
+      <time title="修改时间：2022-11-10 23:09:39" itemprop="dateModified" datetime="2022-11-10T23:09:39+08:00">2022-11-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -287,19 +286,24 @@
     <div class="post-body" itemprop="articleBody">
         <p>1.编译openwrt</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Target System 选择 QEMU ARM VIrtual Machine</span><br><span class="line">Subtarget 选择 ARMv8 multiplatform</span><br><span class="line">其它的随意</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <ol start="2">
-<li>编译好的openwrt，会生成 rootfs 打包文件：<br>openwrt-armvirt-64-default-rootfs.tar.gz</li>
+<li>编译好的openwrt，会生成 rootfs 打包文件：  <br>openwrt-armvirt-64-default-rootfs.tar.gz</li>
 <li>在装好armbian和docker的N1上，把openwrt-armvirt-64-default-rootfs.tar.gz和Dockerfile放到同一个目录下</li>
 <li>制造镜像<br>(示例用的是openwrt by lean r9.7.6源码，因此镜像名称为：openwrt-arm64 版本为 r9.7.6<br>docker build -t openwrt-arm64:r9.7.6 .<br>即可生成镜像<br>用docker images，可以查看到已生成的镜像<br>用docker save openwrt-arm64:r9.7.6 gzip &gt; docker-image-openwrt-arm64-r9.7.6.tar.gz 可以把镜像导出成打包文件<br>用 gzip -dc docker-image-openwrt-arm64-r9.7.6.tar.gz docker load ，可以把打包文件还原成docker镜像</li>
 <li>运行镜像：<br>可以参见 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg">https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg</a><br>重点：<br>a. 物理网卡要开启混杂模式（promisc)，有临时生效型（命令）和永久生效型（要改网络配置文件）<br>b. docker创建macvlan网络<br>c. 用macvlan网络绑定docker容器<br>d. 物理机和openwrt容器在同一网段，但不同ip<br>e. macvlan模式下，物理机和openwrt容器之间是ping不通的，这是正常现象，但第三方电脑都能ping通两者</li>
 </ol>
 <p>示例：</p>
-<h1 id="docker创建macvlan网络，名为macnet"><a href="#docker创建macvlan网络，名为macnet" class="headerlink" title="docker创建macvlan网络，名为macnet"></a>docker创建macvlan网络，名为macnet</h1><p>docker network create -d macvlan –subnet&#x3D;192.168.3.0&#x2F;24 –gateway&#x3D;192.168.3.1 -o parent&#x3D;eth0 macnet</p>
-<h1 id="用macnet运行openwrt实例，实例名为phicomm-n1"><a href="#用macnet运行openwrt实例，实例名为phicomm-n1" class="headerlink" title="用macnet运行openwrt实例，实例名为phicomm-n1"></a>用macnet运行openwrt实例，实例名为phicomm-n1</h1><h1 id="引用armbian的通用函数包"><a href="#引用armbian的通用函数包" class="headerlink" title="引用armbian的通用函数包"></a>引用armbian的通用函数包</h1><p>source &#x2F;usr&#x2F;lib&#x2F;armbian&#x2F;armbian-common</p>
-<h1 id="得到一个随机MAC地址-存入MACADDR变量"><a href="#得到一个随机MAC地址-存入MACADDR变量" class="headerlink" title="得到一个随机MAC地址,存入MACADDR变量"></a>得到一个随机MAC地址,存入MACADDR变量</h1><p>get_random_mac</p>
+<p>#docker创建macvlan网络，名为macnet</p>
+<p>docker network create -d macvlan –subnet&#x3D;192.168.3.0&#x2F;24 –gateway&#x3D;192.168.3.1 -o parent&#x3D;eth0 macnet</p>
+<p>#用macnet运行openwrt实例，实例名为phicomm-n1</p>
+<p>#引用armbian的通用函数包</p>
+<p>source &#x2F;usr&#x2F;lib&#x2F;armbian&#x2F;armbian-common</p>
+<p>#得到一个随机MAC地址,存入MACADDR变量</p>
+<p>get_random_mac</p>
 <p>docker run –name phicomm-n1 –restart always –network macnet –mac-address $MACADDR -d –privileged&#x3D;true –ulimit nofile&#x3D;16384:65536 openwrt-arm64:r9.8.17</p>
-<h1 id="进入op容器，修改-x2F-etc-x2F-config-x2F-network"><a href="#进入op容器，修改-x2F-etc-x2F-config-x2F-network" class="headerlink" title="进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network"></a>进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network</h1><p>docker exec -it phicomm-n1 sh<br>vi &#x2F;etc&#x2F;config&#x2F;network</p>
+<p>#进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network</p>
+<p>docker exec -it phicomm-n1 sh<br>vi &#x2F;etc&#x2F;config&#x2F;network</p>
 <p>修改下面这段：<br>config interface ‘lan’</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">option ifname &#x27;eth0&#x27;</span><br><span class="line">option proto &#x27;static&#x27;</span><br><span class="line">option netmask &#x27;255.255.255.0&#x27;</span><br><span class="line">option gateway &#x27;192.168.3.1&#x27;</span><br><span class="line">option ipaddr &#x27;192.168.3.20&#x27;</span><br><span class="line">option broadcast &#x27;192.168.3.255&#x27;</span><br><span class="line">option ip6assign &#x27;64&#x27;</span><br><span class="line">option dns &#x27;192.168.3.1&#x27;</span><br></pre></td></tr></table></figure>
 
@@ -359,13 +363,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">74k</span>
+    <span title="站点总字数">78k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:08</span>
+    <span title="站点阅读时长">1:11</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

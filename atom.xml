@@ -6,7 +6,7 @@
   <link href="http://daoke123.github.io/atom.xml" rel="self"/>
   
   <link href="http://daoke123.github.io/"/>
-  <updated>2022-11-01T22:37:18.880Z</updated>
+  <updated>2022-11-10T14:41:40.186Z</updated>
   <id>http://daoke123.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在LNMP环境下实现反向代理</title>
+    <link href="http://daoke123.github.io/2022/11/10/%E5%9C%A8LNMP%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    <id>http://daoke123.github.io/2022/11/10/%E5%9C%A8LNMP%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</id>
+    <published>2022-11-10T14:25:00.000Z</published>
+    <updated>2022-11-10T14:41:40.186Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;安装LNMP稳定版只需要安装nginx&lt;/p&gt;
+&lt;pre class=&quot;EnlighterJSRAW&quot; data-enlighter-language=&quot;md&quot;&gt;wget http://soft.vpser.net/lnmp/lnmp1.9.tar.gz -cO</summary>
+        
+      
+    
+    
+    
+    <category term="lnmp" scheme="http://daoke123.github.io/categories/lnmp/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vps常用一键脚本与命令</title>
+    <link href="http://daoke123.github.io/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/"/>
+    <id>http://daoke123.github.io/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/</id>
+    <published>2022-11-10T14:24:20.000Z</published>
+    <updated>2022-11-10T14:55:10.033Z</updated>
+    
+    
+    <summary type="html">&lt;p style=&quot;text-align: left;&quot;&gt;更新源&lt;/p&gt;
+&lt;code&gt;apt update &amp;amp;&amp;amp; apt upgrade -y&lt;/code&gt;
+&lt;h4&gt;安装常用软件&lt;/h4&gt;
+&lt;code&gt;apt install net-tools vim wget git screen curl xz-utils unzip sudo zip t -y&lt;/code&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>mjj版的linux入门教程</title>
@@ -41,30 +83,22 @@
   </entry>
   
   <entry>
-    <title>语雀自动部署 Hexo 博客</title>
+    <title>VPS采用Ed25519密钥登录</title>
     <link href="http://daoke123.github.io/2022/05/26/ld7o8d/"/>
     <id>http://daoke123.github.io/2022/05/26/ld7o8d/</id>
     <published>2022-05-25T16:00:00.000Z</published>
-    <updated>2022-10-30T14:11:22.134Z</updated>
+    <updated>2022-11-10T14:57:37.071Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这是一个测试页面，看到这个说明已经成功了，&lt;/p&gt;
-&lt;h4 id=&quot;欢迎使用-Hexo-博客&quot;&gt;&lt;a href=&quot;#欢迎使用-Hexo-博客&quot;</summary>
-        
-      
+    <summary type="html">&lt;p&gt;本文抄自：&lt;a href=&quot;https://github.com/nkypy/blog/issues/17&quot;&gt;https://github.com/nkypy/blog/issues/17&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;正文前先对比一下：&lt;/p&gt;
+&lt;p&gt;3072的RSA的安全性&amp;#x3D;256的ECC(包括ECDSA和25519(EdDSA))&lt;/p&gt;
+&lt;p&gt;25519相对于传统NIST P-256曲线的ECDSA效率与速度更快且为确定性签名。&lt;/p&gt;</summary>
     
     
     
-    <category term="Hexo" scheme="http://daoke123.github.io/categories/Hexo/"/>
     
-    
-    <category term="语雀" scheme="http://daoke123.github.io/tags/%E8%AF%AD%E9%9B%80/"/>
-    
-    <category term="Hexo" scheme="http://daoke123.github.io/tags/Hexo/"/>
+    <category term="vps" scheme="http://daoke123.github.io/tags/vps/"/>
     
   </entry>
   
@@ -73,14 +107,16 @@
     <link href="http://daoke123.github.io/2022/05/18/86/"/>
     <id>http://daoke123.github.io/2022/05/18/86/</id>
     <published>2022-05-17T21:56:21.000Z</published>
-    <updated>2022-10-30T14:11:22.494Z</updated>
+    <updated>2022-11-10T14:58:02.595Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;进入-mysql5-7-容器&quot;&gt;&lt;a href=&quot;#进入-mysql5-7-容器&quot; class=&quot;headerlink&quot; title=&quot;进入 mysql5.7 容器&quot;&gt;&lt;/a&gt;进入 mysql5.7 容器&lt;/h1&gt;&lt;p&gt;&lt;code&gt;sudo docker</summary>
+    <summary type="html">&lt;p&gt;#进入 mysql5.7 容器&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo docker exec -it mysql5.7 bash&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mysql -uroot</summary>
         
       
     
@@ -200,17 +236,11 @@
     <link href="http://daoke123.github.io/2022/02/16/78/"/>
     <id>http://daoke123.github.io/2022/02/16/78/</id>
     <published>2022-02-16T11:48:00.000Z</published>
-    <updated>2022-10-30T14:11:22.494Z</updated>
+    <updated>2022-11-10T15:09:39.305Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;1.编译openwrt&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span</summary>
-        
-      
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Target System 选择 QEMU ARM VIrtual Machine&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Subtarget 选择 ARMv8 multiplatform&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;其它的随意&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -276,7 +306,7 @@
     <link href="http://daoke123.github.io/2022/01/19/74/"/>
     <id>http://daoke123.github.io/2022/01/19/74/</id>
     <published>2022-01-19T12:45:00.000Z</published>
-    <updated>2022-10-30T14:11:22.490Z</updated>
+    <updated>2022-11-10T15:00:16.600Z</updated>
     
     
       
@@ -299,7 +329,7 @@
     <link href="http://daoke123.github.io/2022/01/18/73/"/>
     <id>http://daoke123.github.io/2022/01/18/73/</id>
     <published>2022-01-17T16:37:34.000Z</published>
-    <updated>2022-10-30T14:11:22.462Z</updated>
+    <updated>2022-11-10T15:21:13.935Z</updated>
     
     
       
@@ -307,7 +337,7 @@
         
         
     <summary type="html">&lt;p&gt;Linux 命令行终端中，文件&amp;#x2F;文件夹的创建、复制、移动、删除。&lt;/p&gt;
-&lt;h3 id=&quot;文件夹创建命令&quot;&gt;&lt;a href=&quot;#文件夹创建命令&quot; class=&quot;headerlink&quot;</summary>
+&lt;h6 id=&quot;文件夹创建命令&quot;&gt;&lt;a href=&quot;#文件夹创建命令&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -323,14 +353,14 @@
     <link href="http://daoke123.github.io/2022/01/17/72/"/>
     <id>http://daoke123.github.io/2022/01/17/72/</id>
     <published>2022-01-16T17:16:50.000Z</published>
-    <updated>2022-10-30T14:11:22.466Z</updated>
+    <updated>2022-11-10T15:10:55.870Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;检查镜像&quot;&gt;&lt;a href=&quot;#检查镜像&quot; class=&quot;headerlink&quot; title=&quot;检查镜像&quot;&gt;&lt;/a&gt;检查镜像&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+    <summary type="html">&lt;h4 id=&quot;检查镜像&quot;&gt;&lt;a href=&quot;#检查镜像&quot; class=&quot;headerlink&quot; title=&quot;检查镜像&quot;&gt;&lt;/a&gt;检查镜像&lt;/h4&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
         
       
     
@@ -346,7 +376,7 @@
     <link href="http://daoke123.github.io/2022/01/12/71/"/>
     <id>http://daoke123.github.io/2022/01/12/71/</id>
     <published>2022-01-12T15:47:00.000Z</published>
-    <updated>2022-10-30T14:11:22.466Z</updated>
+    <updated>2022-11-10T15:18:49.990Z</updated>
     
     
       
@@ -449,53 +479,6 @@
         
     <summary type="html">&lt;p&gt;以下命令中的 -c 后面为CentOS版本号，-v 后面为64位&amp;#x2F;32位，可根据需求进行替换。&lt;/p&gt;
 &lt;h1 id=&quot;CentOS-6-9-64位：&quot;&gt;&lt;a href=&quot;#CentOS-6-9-64位：&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="默认分类" scheme="http://daoke123.github.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>宝塔相关安装与卸载</title>
-    <link href="http://daoke123.github.io/2022/01/02/66/"/>
-    <id>http://daoke123.github.io/2022/01/02/66/</id>
-    <published>2022-01-01T20:25:00.000Z</published>
-    <updated>2022-10-30T14:11:22.462Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;宝塔国内版&quot;&gt;&lt;a href=&quot;#宝塔国内版&quot; class=&quot;headerlink&quot; title=&quot;宝塔国内版&quot;&gt;&lt;/a&gt;宝塔国内版&lt;/h1&gt;&lt;p&gt;Centos安装命令：&lt;/p&gt;
-&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    <category term="默认分类" scheme="http://daoke123.github.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>4行命令，设置80和443只允许CF访问，防止被扫。</title>
-    <link href="http://daoke123.github.io/2021/12/21/65/"/>
-    <id>http://daoke123.github.io/2021/12/21/65/</id>
-    <published>2021-12-21T11:09:00.000Z</published>
-    <updated>2022-10-30T14:11:22.466Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
         
       
     

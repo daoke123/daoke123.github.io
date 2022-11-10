@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -163,7 +163,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -193,6 +193,215 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://daoke123.github.io/2022/11/10/%E5%9C%A8LNMP%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="daoke">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daoke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Daoke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/10/%E5%9C%A8LNMP%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" class="post-title-link" itemprop="url">在LNMP环境下实现反向代理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-11-10 22:25:00 / 修改时间：22:41:40" itemprop="dateCreated datePublished" datetime="2022-11-10T22:25:00+08:00">2022-11-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/lnmp/" itemprop="url" rel="index"><span itemprop="name">lnmp</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>462</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>安装LNMP稳定版只需要安装nginx</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="md">wget http://soft.vpser.net/lnmp/lnmp1.9.tar.gz -cO lnmp1.9.tar.gz &amp;&amp; tar zxf lnmp1.9.tar.gz &amp;&amp; cd lnmp1.9 &amp;&amp; ./install.sh nginx</pre>
+
+
+
+<p><strong>添加网站(虚拟主机)</strong></p>
+<p><code>lnmp vhost add</code></p>
+<p>编辑网站nginx配置文件</p>
+<p><code>cd usr/local/nginx/conf/vhost</code></p>
+<p><code>ls</code></p>
+<p><code>xxx.com.conf</code></p>
+<p>配置Nginx文件，将下列代码插入nginx文件中，注意端口、路径要保持一致</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="asm">location /app
+{
+proxy_redirect off;
+proxy_pass http://127.0.0.1:8443;
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+proxy_set_header Host $http_host;
+}</pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://daoke123.github.io/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="daoke">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daoke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Daoke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">vps常用一键脚本与命令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-11-10 22:24:20 / 修改时间：22:55:10" itemprop="dateCreated datePublished" datetime="2022-11-10T22:24:20+08:00">2022-11-10</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>993</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p style="text-align: left;">更新源</p>
+<code>apt update &amp;&amp; apt upgrade -y</code>
+<h4>安装常用软件</h4>
+<code>apt install net-tools vim wget git screen curl xz-utils unzip sudo zip t -y</code>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -322,7 +531,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/26/ld7o8d/" class="post-title-link" itemprop="url">语雀自动部署 Hexo 博客</a>
+          <a href="/2022/05/26/ld7o8d/" class="post-title-link" itemprop="url">VPS采用Ed25519密钥登录</a>
         </h2>
 
         <div class="post-meta-container">
@@ -340,16 +549,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
+      <time title="修改时间：2022-11-10 22:57:37" itemprop="dateModified" datetime="2022-11-10T22:57:37+08:00">2022-11-10</time>
     </span>
 
   
@@ -359,14 +559,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>31</span>
+      <span>1.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -377,8 +577,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>这是一个测试页面，看到这个说明已经成功了，</p>
-<h4 id="欢迎使用-Hexo-博客"><a href="#欢迎使用-Hexo-博客" class="headerlink" title="欢迎使用 Hexo 博客"></a>欢迎使用 Hexo 博客</h4>
+          <p>本文抄自：<a target="_blank" rel="noopener" href="https://github.com/nkypy/blog/issues/17">https://github.com/nkypy/blog/issues/17</a></p>
+<p>正文前先对比一下：</p>
+<p>3072的RSA的安全性&#x3D;256的ECC(包括ECDSA和25519(EdDSA))</p>
+<p>25519相对于传统NIST P-256曲线的ECDSA效率与速度更快且为确定性签名。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/26/ld7o8d/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -440,7 +650,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
+      <time title="修改时间：2022-11-10 22:58:02" itemprop="dateModified" datetime="2022-11-10T22:58:02+08:00">2022-11-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -463,7 +673,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>283</span>
+      <span>286</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -481,10 +691,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="进入-mysql5-7-容器"><a href="#进入-mysql5-7-容器" class="headerlink" title="进入 mysql5.7 容器"></a>进入 mysql5.7 容器</h1><p><code>sudo docker exec -it mysql5.7 bash</code></p>
+          <p>#进入 mysql5.7 容器</p>
+<p><code>sudo docker exec -it mysql5.7 bash</code></p>
 <p><code>mysql -uroot -p123456</code></p>
-<h1 id="创建用户，密码随意"><a href="#创建用户，密码随意" class="headerlink" title="创建用户，密码随意"></a>创建用户，密码随意</h1><p><code>mysql&gt; create user &#39;239239&#39;@&#39;%&#39; identified by &#39;123456&#39;;</code><br><code>mysql&gt; grant all privileges on *.* to &#39;239239&#39;@&#39;%&#39; with grant option;</code><br><code>mysql&gt; flush privileges;</code></p>
-<h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><p><code>mysql&gt; create database 239239;</code></p>
+<p>#创建用户，密码随意</p>
+<p><code>mysql&gt; create user &#39;239239&#39;@&#39;%&#39; identified by &#39;123456&#39;;</code><br><code>mysql&gt; grant all privileges on *.* to &#39;239239&#39;@&#39;%&#39; with grant option;</code><br><code>mysql&gt; flush privileges;</code></p>
+<p>#创建数据库</p>
+<p><code>mysql&gt; create database 239239;</code></p>
 
       
     </div>
@@ -959,7 +1172,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
+      <time title="修改时间：2022-11-10 23:09:39" itemprop="dateModified" datetime="2022-11-10T23:09:39+08:00">2022-11-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1002,275 +1215,14 @@
     <div class="post-body" itemprop="articleBody">
           <p>1.编译openwrt</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Target System 选择 QEMU ARM VIrtual Machine</span><br><span class="line">Subtarget 选择 ARMv8 multiplatform</span><br><span class="line">其它的随意</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>编译好的openwrt，会生成 rootfs 打包文件：<br>openwrt-armvirt-64-default-rootfs.tar.gz</li>
-<li>在装好armbian和docker的N1上，把openwrt-armvirt-64-default-rootfs.tar.gz和Dockerfile放到同一个目录下</li>
-<li>制造镜像<br>(示例用的是openwrt by lean r9.7.6源码，因此镜像名称为：openwrt-arm64 版本为 r9.7.6<br>docker build -t openwrt-arm64:r9.7.6 .<br>即可生成镜像<br>用docker images，可以查看到已生成的镜像<br>用docker save openwrt-arm64:r9.7.6 gzip &gt; docker-image-openwrt-arm64-r9.7.6.tar.gz 可以把镜像导出成打包文件<br>用 gzip -dc docker-image-openwrt-arm64-r9.7.6.tar.gz docker load ，可以把打包文件还原成docker镜像</li>
-<li>运行镜像：<br>可以参见 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg">https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg</a><br>重点：<br>a. 物理网卡要开启混杂模式（promisc)，有临时生效型（命令）和永久生效型（要改网络配置文件）<br>b. docker创建macvlan网络<br>c. 用macvlan网络绑定docker容器<br>d. 物理机和openwrt容器在同一网段，但不同ip<br>e. macvlan模式下，物理机和openwrt容器之间是ping不通的，这是正常现象，但第三方电脑都能ping通两者</li>
-</ol>
-<p>示例：</p>
-<h1 id="docker创建macvlan网络，名为macnet"><a href="#docker创建macvlan网络，名为macnet" class="headerlink" title="docker创建macvlan网络，名为macnet"></a>docker创建macvlan网络，名为macnet</h1><p>docker network create -d macvlan –subnet&#x3D;192.168.3.0&#x2F;24 –gateway&#x3D;192.168.3.1 -o parent&#x3D;eth0 macnet</p>
-<h1 id="用macnet运行openwrt实例，实例名为phicomm-n1"><a href="#用macnet运行openwrt实例，实例名为phicomm-n1" class="headerlink" title="用macnet运行openwrt实例，实例名为phicomm-n1"></a>用macnet运行openwrt实例，实例名为phicomm-n1</h1><h1 id="引用armbian的通用函数包"><a href="#引用armbian的通用函数包" class="headerlink" title="引用armbian的通用函数包"></a>引用armbian的通用函数包</h1><p>source &#x2F;usr&#x2F;lib&#x2F;armbian&#x2F;armbian-common</p>
-<h1 id="得到一个随机MAC地址-存入MACADDR变量"><a href="#得到一个随机MAC地址-存入MACADDR变量" class="headerlink" title="得到一个随机MAC地址,存入MACADDR变量"></a>得到一个随机MAC地址,存入MACADDR变量</h1><p>get_random_mac</p>
-<p>docker run –name phicomm-n1 –restart always –network macnet –mac-address $MACADDR -d –privileged&#x3D;true –ulimit nofile&#x3D;16384:65536 openwrt-arm64:r9.8.17</p>
-<h1 id="进入op容器，修改-x2F-etc-x2F-config-x2F-network"><a href="#进入op容器，修改-x2F-etc-x2F-config-x2F-network" class="headerlink" title="进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network"></a>进入op容器，修改&#x2F;etc&#x2F;config&#x2F;network</h1><p>docker exec -it phicomm-n1 sh<br>vi &#x2F;etc&#x2F;config&#x2F;network</p>
-<p>修改下面这段：<br>config interface ‘lan’</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">option ifname &#x27;eth0&#x27;</span><br><span class="line">option proto &#x27;static&#x27;</span><br><span class="line">option netmask &#x27;255.255.255.0&#x27;</span><br><span class="line">option gateway &#x27;192.168.3.1&#x27;</span><br><span class="line">option ipaddr &#x27;192.168.3.20&#x27;</span><br><span class="line">option broadcast &#x27;192.168.3.255&#x27;</span><br><span class="line">option ip6assign &#x27;64&#x27;</span><br><span class="line">option dns &#x27;192.168.3.1&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>注：192.168.3.1是主路由的地址</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">192.168.3.20是openwrt自己的地址，也就是旁路由的地址</span><br><span class="line"> broadcast和dns也做相应更改</span><br></pre></td></tr></table></figure>
-
-<p>改好后，存盘，运行：<br>&#x2F;etc&#x2F;init.d&#x2F;network restart<br>过一会就可以ping通旁路由了，然后用浏览器连上192.168.3.20就可以按一般的操作了</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://daoke123.github.io/2022/02/13/77/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="daoke">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daoke">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Daoke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/13/77/" class="post-title-link" itemprop="url">玩客云当录像机安装pyNvr</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-13 21:46:00" itemprop="dateCreated datePublished" datetime="2022-02-13T21:46:00+08:00">2022-02-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/" itemprop="url" rel="index"><span itemprop="name">网络资源</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://gitee.com/wfxzf/pyNvr">pyNvr脚本</a></p>
-<p>安装python3</p>
-<p>如果使用百度网盘：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip3 install bypy</span><br><span class="line">bypy info</span><br></pre></td></tr></table></figure>
-
-<p>复制链接粘贴到浏览器打开，登录，填写授权码。<br>如果出错<br>试试删掉配置文件重新授权</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -Rf ~/.bypy</span><br><span class="line">rm -f ~/.bypy.*</span><br></pre></td></tr></table></figure>
-
-<p>如果使用阿里云盘：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install aligo</span><br></pre></td></tr></table></figure>
-
-<p>安装opencv：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install python3-opencv</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>创建保存视频的文件夹,例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/videos</span><br><span class="line">mkdir /home/videos/cam01</span><br></pre></td></tr></table></figure>
-
-<p>一定要创建好路径，并且跟配置的路径一致，最后一层文件夹的名称为摄像头名称（camname）,参数pwd写到倒数第二层文件夹，以&#x2F;&#x2F;结尾即可。 编辑pyNvr.py,修改配置（选择netdisk（netdisk &#x3D; 1为百度，2为阿里），摄像头名称camname、串流地址url、本地存储路径pwd，单个视频时长blocktime,开启储存到百度网盘upyoby，上传完成后删除本地文件re_af_up）</p>
-<p>运行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd pyNvr</span><br></pre></td></tr></table></figure>
-
-<p>运行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 pyNvr.py</span><br></pre></td></tr></table></figure>
-
-<p>如果使用阿里网盘，第一次使用需要登录（百度已经登陆过）<br>如果二维码显示错乱，需要新建一个终端，手动找到&#x2F;tmp中的图片复制到手机可以直接访问的文件夹中，扫描，如：<br>cp &#x2F;tmp&#x2F;tmp56sdcc.png &#x2F;sdcard&#x2F;DCIM&#x2F;QRcode.png<br>打开文件管理，找到DCIM文件夹下的这张图，扫描即可。<br>测试没有问题后，ctrl + C终止程序。<br>后台运行程序:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup python3 pyNvr.py &amp;</span><br></pre></td></tr></table></figure>
-
-<p>增加重启开机自动运行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/rc.local</span><br></pre></td></tr></table></figure>
-
-<p>把<br><code>nohup python3 /root/pyNvr/pyNvr.py &amp;</code><br>增加exit 0前面<br>程序极其简陋，稳定和安全毫无保障，仅仅用于不含任何隐私信息、图省钱省事还想多一层云备份的情况<br>仅建议用于linux不完整的安卓手机，云服务器、实体机、树莓派建议使用知名开源或商业软件，如bluebeery等。<br>附，国内常见IP摄像头串流地址:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">海康威视</span><br><span class="line">主码流：</span><br><span class="line">rtsp://user:password@ip:554/h264/ch1/main/av_stream</span><br><span class="line">子码流：</span><br><span class="line">rtsp://user:password@ip:554/mpeg4/ch1/sub/av_stream</span><br><span class="line"></span><br><span class="line">大华</span><br><span class="line">rtsp://username:password@ip:port/cam/realmonitor?channel=1&amp;subtype=0</span><br><span class="line"></span><br><span class="line">TP-Link/水星安防</span><br><span class="line">rtsp://user:password@ip:554/stream1</span><br><span class="line">rtsp://user:password@ip:554/stream2</span><br><span class="line">三星</span><br><span class="line">高码流rtsp地址：</span><br><span class="line">rtsp://user:password@ip:554/onvif/profile2/media.smp（720P）</span><br><span class="line">低码率rtsp地址</span><br><span class="line">rtsp://user:password@ip:554/onvif/profile3/media.smp</span><br><span class="line"></span><br><span class="line">LG</span><br><span class="line">高码流（主码流）RTSP地址：</span><br><span class="line">rtsp://user:password@ip:554/Master-0</span><br><span class="line">低码流（子码流）RTSP地址：</span><br><span class="line">rtsp://user:password@ip:554/Slave-0</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://daoke123.github.io/2022/01/21/76/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="daoke">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daoke">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Daoke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/01/21/76/" class="post-title-link" itemprop="url">使用 Dockerfile 定制镜像</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-21 19:54:00" itemprop="dateCreated datePublished" datetime="2022-01-21T19:54:00+08:00">2022-01-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>示例 frps<br>创建一个文件夹 frp</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir frp &amp;&amp; cd frp</span><br></pre></td></tr></table></figure>
-
-<p>编辑Dockerfile文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano Dockerfile</span><br></pre></td></tr></table></figure>
-
-<p>下面代码复制粘贴</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">FROM alpine</span><br><span class="line">MAINTAINER Stille </span><br><span class="line"></span><br><span class="line">ENV FRP_VERSION 0.38.0</span><br><span class="line">WORKDIR /</span><br><span class="line"></span><br><span class="line">RUN set -xe &amp;&amp; \</span><br><span class="line">    apk add tzdata &amp;&amp; \</span><br><span class="line">    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &amp;&amp; \</span><br><span class="line">    echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; \</span><br><span class="line">    apk del tzdata</span><br><span class="line"></span><br><span class="line">RUN set -x &amp;&amp; \</span><br><span class="line">    if [ &quot;$(uname -m)&quot; = &quot;x86_64&quot; ]; then export PLATFORM=amd64 ; else if [ &quot;$(uname -m)&quot; = &quot;aarch64&quot; ]; then export PLATFORM=arm64 ; fi fi &amp;&amp; \</span><br><span class="line">    wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v$&#123;FRP_VERSION&#125;/frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;.tar.gz &amp;&amp; \ </span><br><span class="line">    tar xzf frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;.tar.gz &amp;&amp; \</span><br><span class="line">    cd frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125; &amp;&amp; \</span><br><span class="line">    mkdir /frp &amp;&amp; \</span><br><span class="line">    mv frps frps.ini /frp &amp;&amp; \</span><br><span class="line">    cd .. &amp;&amp; \</span><br><span class="line">    rm -rf *.tar.gz frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;</span><br><span class="line"></span><br><span class="line">VOLUME /frp</span><br><span class="line"></span><br><span class="line">CMD /frp/frps -c /frp/frps.ini</span><br></pre></td></tr></table></figure>
-
-<p>生成docker镜像</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t mydaoke/frps:0.38 .</span><br></pre></td></tr></table></figure>
-
-<p>mydaoke&#x2F;frps:0.38修改自己的名称<br>查看生成docker镜像</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-
-<p>试运行一下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart=always --network host -d -v /root/frp/frps.ini:/frp/frps.ini --name frps mydaoke/frps:0.38</span><br></pre></td></tr></table></figure>
-
-<p>Ok</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/16/78/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1289,7 +1241,7 @@
 
 
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1312,13 +1264,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">74k</span>
+    <span title="站点总字数">78k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:08</span>
+    <span title="站点阅读时长">1:11</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

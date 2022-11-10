@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -163,7 +163,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -193,6 +193,226 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://daoke123.github.io/2022/01/02/66/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="daoke">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daoke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Daoke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/01/02/66/" class="post-title-link" itemprop="url">宝塔相关安装与卸载</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-02 04:25:00" itemprop="dateCreated datePublished" datetime="2022-01-02T04:25:00+08:00">2022-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-11-10 23:03:36" itemprop="dateModified" datetime="2022-11-10T23:03:36+08:00">2022-11-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>701</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h5 id="宝塔国内版"><a href="#宝塔国内版" class="headerlink" title="宝塔国内版"></a>宝塔国内版</h5><p>Centos安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure>
+
+<p>Ubuntu&#x2F;Deepin安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>卸载命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.bt.cn/install/bt-uninstall.sh</span><br><span class="line"></span><br><span class="line">sh bt-uninstall.sh</span><br></pre></td></tr></table></figure>
+
+<p>bt工具箱 ，7.7.0版去强登后ssl申请好像有点问题，进去输入10降到7.6.0，输入3和1，去除强登</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O btpanel_tools.sh https://download.btpanel.cm/tools/btpanel_tools.sh &amp;&amp; bash btpanel_tools.sh</span><br></pre></td></tr></table></figure>
+
+<h5 id="aaPanel面板安装"><a href="#aaPanel面板安装" class="headerlink" title="aaPanel面板安装"></a>aaPanel面板安装</h5><p>Centos&#x2F;Debian&#x2F;Fedora:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>Ubuntu：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://daoke123.github.io/2021/12/21/65/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="daoke">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daoke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Daoke">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/12/21/65/" class="post-title-link" itemprop="url">4行命令，设置80和443只允许CF访问，防止被扫。</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-21 19:09:00" itemprop="dateCreated datePublished" datetime="2021-12-21T19:09:00+08:00">2021-12-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport 80 -j DROP</span><br><span class="line">iptables -I INPUT -p tcp --dport 443 -j DROP</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">curl https://www.cloudflare.com/ips-v4awk &#x27;&#123;print &quot;iptables -I INPUT -s &quot;$0&quot; -p tcp --dport 80 -j ACCEPT&quot;&#125;&#x27;sh</span><br><span class="line">curl https://www.cloudflare.com/ips-v4awk &#x27;&#123;print &quot;iptables -I INPUT -s &quot;$0&quot; -p tcp --dport 443 -j ACCEPT&quot;&#125;&#x27;sh</span><br></pre></td></tr></table></figure>
+
+<p>ipV6</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ip6tables -I INPUT -p tcp --dport 80 -j DROP</span><br><span class="line">ip6tables -I INPUT -p tcp --dport 443 -j DROP</span><br><span class="line">curl https://www.cloudflare.com/ips-v6awk &#x27;&#123;print &quot;ip6tables -I INPUT -s &quot;$0&quot; -p tcp --dport 80 -j ACCEPT&quot;&#125;&#x27;sh</span><br><span class="line">curl https://www.cloudflare.com/ips-v6awk &#x27;&#123;print &quot;ip6tables -I INPUT -s &quot;$0&quot; -p tcp --dport 443 -j ACCEPT&quot;&#125;&#x27;sh</span><br></pre></td></tr></table></figure>
+
+<p>firewall版本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --remove-port=80/tcp</span><br><span class="line">firewall-cmd --permanent --remove-port=443/tcp</span><br><span class="line">firewall-cmd --zone=public --remove-port=80/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --remove-port=443/tcp --permanent</span><br><span class="line">curl https://www.cloudflare.com/ips-v4awk &#x27;&#123;print &quot;firewall-cmd --permanent --add-rich-rule=\&quot;rule family=\&quot;ipv4\&quot; source address=\&quot;&quot;$0&quot;\&quot; port protocol=\&quot;tcp\&quot; port=\&quot;80\&quot; accept\&quot;&quot;&#125;&#x27;sh</span><br><span class="line">curl https://www.cloudflare.com/ips-v4awk &#x27;&#123;print &quot;firewall-cmd --permanent --add-rich-rule=\&quot;rule family=\&quot;ipv4\&quot; source address=\&quot;&quot;$0&quot;\&quot; port protocol=\&quot;tcp\&quot; port=\&quot;443\&quot; accept\&quot;&quot;&#125;&#x27;sh</span><br><span class="line">systemctl restart firewalld.service</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -238,7 +458,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
+      <time title="修改时间：2022-11-10 23:00:57" itemprop="dateModified" datetime="2022-11-10T23:00:57+08:00">2022-11-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -257,7 +477,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>279</span>
+      <span>267</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -275,7 +495,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run -dit \</span><br><span class="line">-v $PWD/ql/config:/ql/config \</span><br><span class="line">-v $PWD/ql/log:/ql/log \</span><br><span class="line">-v $PWD/ql/db:/ql/db \</span><br><span class="line">-v $PWD/ql/repo:/ql/repo \</span><br><span class="line">-v $PWD/ql/raw:/ql/raw \</span><br><span class="line">-v $PWD/ql/scripts:/ql/scripts \</span><br><span class="line">-p 5555:5700 \</span><br><span class="line">--name qinglong \</span><br><span class="line">--hostname qinglong \</span><br><span class="line">--restart unless-stopped \</span><br><span class="line">whyour/qinglong:latest</span><br></pre></td></tr></table></figure>
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">docker run -dit \</span><br><span class="line">  -v $PWD/ql/config:/ql/config \</span><br><span class="line">  -v $PWD/ql/log:/ql/log \</span><br><span class="line">  -v $PWD/ql/db:/ql/db \</span><br><span class="line">  -v $PWD/ql/repo:/ql/repo \</span><br><span class="line">  -v $PWD/ql/raw:/ql/raw \</span><br><span class="line">  -v $PWD/ql/scripts:/ql/scripts \</span><br><span class="line">  -p 5555:5700 \</span><br><span class="line">  --name qinglong \</span><br><span class="line">  --hostname qinglong \</span><br><span class="line">  --restart unless-stopped \</span><br><span class="line">  whyour/qinglong:latest</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -319,7 +539,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/10/61/" class="post-title-link" itemprop="url">DD+cloudreve+caddy+aria2+OneDrive</a>
+          <a href="/2021/09/10/61/" class="post-title-link" itemprop="url">IPV6用Warp配置IPv4</a>
         </h2>
 
         <div class="post-meta-container">
@@ -337,7 +557,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
+      <time title="修改时间：2022-11-10 23:47:18" itemprop="dateModified" datetime="2022-11-10T23:47:18+08:00">2022-11-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -356,7 +576,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4</span>
+      <span>791</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -374,8 +594,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>bash</p>
-
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"># 安装wireguard</span><br><span class="line">apt update -y &amp;&amp; apt install wireguard sudo curl vim openresolv -y</span><br><span class="line"></span><br><span class="line"># 安装wgcf</span><br><span class="line">curl -fsSL git.io/wgcf.sh | sudo bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 注册账户</span><br><span class="line">wgcf register</span><br><span class="line"></span><br><span class="line"># 生成配置文件</span><br><span class="line">wgcf generate</span><br><span class="line"></span><br><span class="line"># 编辑配置文件</span><br><span class="line">vim wgcf-profile.conf</span><br><span class="line"></span><br><span class="line"># 将配置文件的DNS、AllowedIPs、Endpoint，如下</span><br><span class="line">[Interface]</span><br><span class="line">PrivateKey = 这里会自动生成</span><br><span class="line">Address = 172.16.0.2/32</span><br><span class="line">Address = 这里会自动生成</span><br><span class="line">DNS = 8.8.8.8,8.8.4.4,2001:4860:4860::8888,2001:4860:4860::8844</span><br><span class="line">MTU = 1280</span><br><span class="line">[Peer]</span><br><span class="line">PublicKey = bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=</span><br><span class="line">AllowedIPs = 0.0.0.0/0</span><br><span class="line">Endpoint = [2606:4700:d0::a29f:c001]:2408</span><br><span class="line"></span><br><span class="line"># 复制配置文件到wireguard文件夹</span><br><span class="line">cp wgcf-profile.conf /etc/wireguard/wgcf.conf</span><br><span class="line"></span><br><span class="line"># 尝试启动 wireguard</span><br><span class="line">wg-quick up wgcf</span><br><span class="line"></span><br><span class="line"># 测试</span><br><span class="line">ping google.com -4</span><br><span class="line"></span><br><span class="line"># 关闭wgcf接口</span><br><span class="line">wg-quick down wgcf</span><br><span class="line"></span><br><span class="line"># 加入开机启动</span><br><span class="line">systemctl start wg-quick@wgcf</span><br><span class="line">systemctl enable wg-quick@wgcf</span><br><span class="line"></span><br><span class="line"># 默认v6优先级</span><br><span class="line"># 编辑文件 /etc/gai.conf，将 label 2002::/16 2 的注释删除</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -555,7 +774,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-11-02 06:41:28" itemprop="dateModified" datetime="2022-11-02T06:41:28+08:00">2022-11-02</time>
+      <time title="修改时间：2022-11-10 23:29:52" itemprop="dateModified" datetime="2022-11-10T23:29:52+08:00">2022-11-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -595,11 +814,9 @@
           <p>萌咖脚本（debian10）：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">全自动安装默认</span><br><span class="line">用户：root</span><br><span class="line">密码: MoeClub.org</span><br><span class="line">某些特殊的服务商不适用此脚本，比如 cloudcone</span><br><span class="line">已测试服务商：腾讯云、阿里云</span><br><span class="line"># Debian/Ubuntu:</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install -y xz-utils openssl gawk file</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"># RedHat/CentOS:</span><br><span class="line">yum update</span><br><span class="line">yum install -y xz openssl gawk file</span><br><span class="line"></span><br><span class="line">wget https://moeclub.org/attachment/LinuxShell/InstallNET.sh</span><br><span class="line">chmod a+x InstallNET.sh</span><br><span class="line"></span><br><span class="line">bash InstallNET.sh -d 10 -v 64 -a</span><br></pre></td></tr></table></figure>
 
-<h1 id="系统选择详解："><a href="#系统选择详解：" class="headerlink" title="系统选择详解："></a>系统选择详解：</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 全自动安装Ubuntu 16.04 x64： </span><br><span class="line">bash InstallNET.sh -u 16.04 -v 64 -a</span><br><span class="line"></span><br><span class="line"># 全自动安装Debian 9 x64：</span><br><span class="line">bash InstallNET.sh -d 9 -v 64 -a</span><br><span class="line"></span><br><span class="line"># 全自动安装Debian 10 x64(中科大镜像源，用于国内服务器)： </span><br><span class="line">bash InstallNET.sh -d 10 -v 64 -a --mirror &#x27;http://mirrors.ustc.edu.cn/debian/&#x27;</span><br><span class="line"></span><br><span class="line"># 全自动安装CentOS 6.7 x64：</span><br><span class="line">bash InstallNET.sh -c 6.7 -v 64 -a</span><br></pre></td></tr></table></figure>
+<h4 id="系统选择详解："><a href="#系统选择详解：" class="headerlink" title="系统选择详解："></a>系统选择详解：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 全自动安装Ubuntu 16.04 x64： </span><br><span class="line">bash InstallNET.sh -u 16.04 -v 64 -a</span><br><span class="line"></span><br><span class="line"># 全自动安装Debian 9 x64：</span><br><span class="line">bash InstallNET.sh -d 9 -v 64 -a</span><br><span class="line"></span><br><span class="line"># 全自动安装Debian 10 x64(中科大镜像源，用于国内服务器)： </span><br><span class="line">bash InstallNET.sh -d 10 -v 64 -a --mirror &#x27;http://mirrors.ustc.edu.cn/debian/&#x27;</span><br><span class="line"></span><br><span class="line"># 全自动安装CentOS 6.7 x64：</span><br><span class="line">bash InstallNET.sh -c 6.7 -v 64 -a</span><br></pre></td></tr></table></figure>
 
-<h1 id="腾讯云轻量-DD-win"><a href="#腾讯云轻量-DD-win" class="headerlink" title="腾讯云轻量 DD win"></a>腾讯云轻量 DD win</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install -y xz-utils openssl gawk file wget screen &amp;&amp; screen -S os</span><br><span class="line">wget --no-check-certificate -qO InstallNET.sh &#x27;https://tutu.bid/bash/InstallNET.sh&#x27; &amp;&amp; bash InstallNET.sh -dd &#x27;https://tutu.bid/os/dd/win10ltsc_x64.tar.gz&#x27;</span><br></pre></td></tr></table></figure>
-
-
+<h4 id="腾讯云轻量-DD-win"><a href="#腾讯云轻量-DD-win" class="headerlink" title="腾讯云轻量 DD win"></a>腾讯云轻量 DD win</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install -y xz-utils openssl gawk file wget screen &amp;&amp; screen -S os</span><br><span class="line">wget --no-check-certificate -qO InstallNET.sh &#x27;https://tutu.bid/bash/InstallNET.sh&#x27; &amp;&amp; bash InstallNET.sh -dd &#x27;https://tutu.bid/os/dd/win10ltsc_x64.tar.gz&#x27;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1035,229 +1252,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://daoke123.github.io/2021/08/23/54/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="daoke">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daoke">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Daoke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/23/54/" class="post-title-link" itemprop="url">Debian添加swap</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-23 00:37:00" itemprop="dateCreated datePublished" datetime="2021-08-23T00:37:00+08:00">2021-08-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-30 22:11:22" itemprop="dateModified" datetime="2022-10-30T22:11:22+08:00">2022-10-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>273</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>查看下Swap的大小</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -m</span><br></pre></td></tr></table></figure>
-
-<p>创建一个存放Swap文件的文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/swap</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>生成一个大小为1G，名字是swapfile的文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/swap &amp;&amp; dd if=/dev/zero of=swapfile bs=1024 count=1048576</span><br></pre></td></tr></table></figure>
-
-<p>文件转换成swap并且激活</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap swapfile &amp;&amp; swapon /opt/swap/swapfile</span><br></pre></td></tr></table></figure>
-
-<p>设置开机自动挂载 nano &#x2F;etc&#x2F;fstab 添加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/swap/swapfile swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://daoke123.github.io/2021/08/21/53/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="daoke">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daoke">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Daoke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/21/53/" class="post-title-link" itemprop="url">定时任务cron表达式的填写规则介绍</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-21 04:15:00" itemprop="dateCreated datePublished" datetime="2021-08-21T04:15:00+08:00">2021-08-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-11-02 06:40:54" itemprop="dateModified" datetime="2022-11-02T06:40:54+08:00">2022-11-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/" itemprop="url" rel="index"><span itemprop="name">网络资源</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一、Cron表达式的组成</p>
-<p>其实就是一组时间序列，一个由6个空格7个域组成的字符串，排序如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[秒] [分] [时] [日] [月] [周] [年]</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/21/53/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1280,13 +1276,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">74k</span>
+    <span title="站点总字数">78k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:08</span>
+    <span title="站点阅读时长">1:11</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
