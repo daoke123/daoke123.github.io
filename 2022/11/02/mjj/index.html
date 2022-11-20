@@ -1,310 +1,270 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Daoke">
+    
+    <title>
+        
+            mjj版的linux入门教程 |
+        
+        Daoke
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"daoke123.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-
-    <meta name="description" content="本文的首要目的是给予Linux初学者一个简单、易学的教程，以便在看完本文后对Linux系统有一个基础的认识（而非系统级的深入），可以对常见的软件和功能进行配置，甚至可以自己写一写一键脚本。 本教程写于2021年下半年，采用的系统为Debian GNU&#x2F;Linux 11 (bullseye)。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="mjj版的linux入门教程">
-<meta property="og:url" content="http://daoke123.github.io/2022/11/02/mjj/index.html">
-<meta property="og:site_name" content="Daoke">
-<meta property="og:description" content="本文的首要目的是给予Linux初学者一个简单、易学的教程，以便在看完本文后对Linux系统有一个基础的认识（而非系统级的深入），可以对常见的软件和功能进行配置，甚至可以自己写一写一键脚本。 本教程写于2021年下半年，采用的系统为Debian GNU&#x2F;Linux 11 (bullseye)。">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_ui.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_ctrl_e.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_yes.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_ui.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s1.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s3.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s2.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssh_lastb.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssh_key.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/root_files.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/grep.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/crontab_eg.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/crontab_set.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/adduser.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/sudo.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/sudo_root.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/frp_tar.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/aapanel.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nginx.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssl_tls.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_hello.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_pull_nextcloud.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud_status.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud_install.jpg">
-<meta property="article:published_time" content="2022-11-01T22:24:00.000Z">
-<meta property="article:modified_time" content="2022-11-01T22:37:18.880Z">
-<meta property="article:author" content="daoke">
-<meta property="article:tag" content="mjj">
-<meta property="article:tag" content="命令">
-<meta property="article:tag" content="linux">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_ui.jpg">
-
-
-<link rel="canonical" href="http://daoke123.github.io/2022/11/02/mjj/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://daoke123.github.io/2022/11/02/mjj/","path":"2022/11/02/mjj/","title":"mjj版的linux入门教程"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>mjj版的linux入门教程 | Daoke</title>
-  
-
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-<link rel="alternate" href="/atom.xml" title="Daoke" type="application/atom+xml">
+    <link rel="shortcut icon" href="/">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/fontawesome/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/fontawesome/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"daoke123.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","avatar":"/images/avatar.svg","font_size":"15px","font_family":"STKaiti","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"header_transparent":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":true,"use":"twikoo","valine":{"appid":null,"appkey":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null},"twikoo":{"env_id":"http://ip.luobu.eu.org","region":null,"version":"1.6.7"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.5.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Daoke" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
 
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+               Daoke
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">Daoke</p>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">记录笔记只是怕忘记</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
     </div>
-  </div>
-</div>
+
+    <div class="window-mask"></div>
+
+</header>
 
 
+        </div>
 
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
+        <div class="page-main-content-middle">
 
+            <div class="main-content">
 
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
+            <div class="article-title">
+                <span class="title-hover-animation">mjj版的linux入门教程</span>
+            </div>
 
-    </div>
-  </div>
-
-</div>
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Daoke</span>
+                            
+                                <span class="author-label">Lv5</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
         
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%89%8D%E8%A8%80%E5%90%90%E6%A7%BDCentOS"><span class="nav-number">1.</span> <span class="nav-text">0 前言吐槽CentOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">1 环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E7%B3%BB%E7%BB%9F%E9%80%89%E6%8B%A9%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 系统选择与安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 常用的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%9F%BA%E7%A1%80%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8nano%E3%80%81vim"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 基础文本编辑器nano、vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.4.</span> <span class="nav-text">1.4 更新系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-SSH%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">2 SSH连接和基础配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E8%BF%9E%E6%8E%A5SSH%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%92%8C%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 连接SSH的软件和相关操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-SSH%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BF%AE%E6%94%B9"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 SSH配置文件介绍和修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E4%BD%BF%E7%94%A8%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86SSH"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 使用密钥登陆SSH</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">4.</span> <span class="nav-text">3 Linux文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 文件系统格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%96%87%E4%BB%B6%E6%A0%91%E3%80%81%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8A%9F%E8%83%BD%E5%92%8C%E6%9D%83%E9%99%90"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 文件树、文件夹功能和权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E7%A4%BA%E4%BE%8B%EF%BC%9A%E6%8C%82%E8%BD%BDU%E7%9B%98"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 示例：挂载U盘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Shell-x2F-Dash%E5%85%A5%E9%97%A8"><span class="nav-number">5.</span> <span class="nav-text">4 Shell&#x2F;Dash入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Crontab%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-number">6.</span> <span class="nav-text">5 Crontab定时任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%B3%BB%E7%BB%9F%E6%9D%83%E9%99%90"><span class="nav-number">7.</span> <span class="nav-text">6 系统权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-root%E5%92%8Cuser%EF%BC%8C%E4%BB%A5%E5%8F%8Asudo"><span class="nav-number">7.1.</span> <span class="nav-text">6.1 root和user，以及sudo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-chmod%E5%92%8Cchown"><span class="nav-number">7.2.</span> <span class="nav-text">6.2 chmod和chown</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Systemd%E5%85%A5%E9%97%A8%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">8.</span> <span class="nav-text">7 Systemd入门和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%92%8C%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4"><span class="nav-number">8.1.</span> <span class="nav-text">7.1 开机自启和进程守护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-Timer%E4%BB%A3%E6%9B%BFCrontab"><span class="nav-number">8.2.</span> <span class="nav-text">7.2 Timer代替Crontab</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%EF%BC%9A%E4%BB%A5frp%E4%B8%BA%E4%BE%8B"><span class="nav-number">9.</span> <span class="nav-text">8 手动配置系统：以frp为例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E7%BD%91%E7%AB%99%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">10.</span> <span class="nav-text">9 网站环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-%E5%AE%9D%E5%A1%94%E8%A7%A3%E4%BA%BA%E5%BF%A7"><span class="nav-number">10.1.</span> <span class="nav-text">9.1 宝塔解人忧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA"><span class="nav-number">10.2.</span> <span class="nav-text">9.2 手动搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-1-Apache%E5%92%8CNginx"><span class="nav-number">10.2.1.</span> <span class="nav-text">9.2.1 Apache和Nginx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-2-PHP"><span class="nav-number">10.2.2.</span> <span class="nav-text">9.2.2 PHP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-3-MySQL%E5%92%8CMariaDB"><span class="nav-number">10.2.3.</span> <span class="nav-text">9.2.3 MySQL和MariaDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-4-Let%E2%80%99s-Encrypt%EF%BC%8CSSL-x2F-TLS"><span class="nav-number">10.2.4.</span> <span class="nav-text">9.2.4 Let’s Encrypt，SSL&#x2F;TLS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Docker%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="nav-number">11.</span> <span class="nav-text">10 Docker快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-%E5%AE%89%E8%A3%85Docker%E7%8E%AF%E5%A2%83"><span class="nav-number">11.1.</span> <span class="nav-text">10.1 安装Docker环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-%E5%AE%89%E8%A3%85%E5%88%AB%E4%BA%BA%E6%89%93%E5%8C%85%E5%A5%BD%E7%9A%84%E7%9A%84Docker"><span class="nav-number">11.2.</span> <span class="nav-text">10.2 安装别人打包好的的Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-1-%E5%B8%B8%E7%94%A8Docker%E5%91%BD%E4%BB%A4"><span class="nav-number">11.2.1.</span> <span class="nav-text">10.2.1 常用Docker命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-2-%E5%AE%89%E8%A3%85Docker%E7%89%88Nextcloud"><span class="nav-number">11.2.2.</span> <span class="nav-text">10.2.2 安装Docker版Nextcloud</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-3-%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Docker"><span class="nav-number">11.3.</span> <span class="nav-text">10.3 建自己的Docker</span></a></li></ol></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">daoke</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">72</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">43</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-
-
-
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
-
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2022-11-02 06:24:00</span>
+        <span class="mobile">2022-11-02 06:24</span>
+    </span>
     
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-  <div class="reading-progress-bar"></div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner post posts-expand">
-
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://daoke123.github.io/2022/11/02/mjj/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="daoke">
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2022-11-02 06:37:18</span>
     </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daoke">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="mjj版的linux入门教程 | Daoke">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          mjj版的linux入门教程
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-11-02 06:24:00 / 修改时间：06:37:18" itemprop="dateCreated datePublished" datetime="2022-11-02T06:24:00+08:00">2022-11-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/liunx/" itemprop="url" rel="index"><span itemprop="name">liunx</span></a>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/liunx/">liunx</a>&nbsp;
+                    </li>
+                
+            </ul>
         </span>
-    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/mjj/">mjj</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%91%BD%E4%BB%A4/">命令</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/linux/">linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>24k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>21 分钟</span>
-    </span>
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
 </div>
 
-        </div>
-      </header>
+                        </div>
+                    </div>
+                </div>
+            
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p>本文的首要目的是给予Linux初学者一个简单、易学的教程，以便在看完本文后对Linux系统有一个基础的认识（而非系统级的深入），可以对常见的软件和功能进行配置，甚至可以自己写一写一键脚本。</p>
+            <div class="article-content keep-markdown-body">
+                <p>本文的首要目的是给予Linux初学者一个简单、易学的教程，以便在看完本文后对Linux系统有一个基础的认识（而非系统级的深入），可以对常见的软件和功能进行配置，甚至可以自己写一写一键脚本。</p>
 <p>本教程写于2021年下半年，采用的系统为Debian GNU&#x2F;Linux 11 (bullseye)。</p>
 <span id="more"></span>
 
@@ -338,11 +298,26 @@
 <h3 id="1-3-基础文本编辑器nano、vim"><a href="#1-3-基础文本编辑器nano、vim" class="headerlink" title="1.3 基础文本编辑器nano、vim"></a>1.3 基础文本编辑器nano、vim</h3><p>Linux系统的一大优势（同时也是劣势）是默认不需要GUI，因此节省了大量的性能开支，无GUI版本的Debian 11可以在512M甚至更小内存的VPS上正常启动和运行。但缺少GUI加大了入门者修改文件的难度，所幸Debian 11自带了简便易用的nano文本编辑器。以下以修改系统的更新源为例</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/apt/sources.list #打开sources.list文件，在Linux系统中，#是注释符，其后的内容会被忽略</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_ui.jpg" alt="nano_ui"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_ui.jpg"
+                      alt="nano_ui"
+                ></p>
 <p>如图所示，即为<code>nano</code>打开<code>sources.list</code>后的界面，最下面两行为提示，比如<code>Ctrl+E</code>为退出，如果文档被改动了，则会出现下图，询问是否保存。如果没有被更改，则会直接退出。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_ctrl_e.jpg" alt="nano_ctrl_e"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_ctrl_e.jpg"
+                      alt="nano_ctrl_e"
+                ></p>
 <p><code>Y</code>则保存，<code>N</code>则不保存，<code>Ctrl+C</code>取消操作。此处输入<code>Y</code>，则会如下图：</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_yes.jpg" alt="nano_yes.jpg"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nano_yes.jpg"
+                      alt="nano_yes.jpg"
+                ></p>
 <p>此时按下<code>Enter</code>键就会保存了。</p>
 <p>这里多提一句关于Debian 11的更新源内容，一般是以下6行。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb http://deb.debian.org/debian bullseye main contrib non-free</span><br><span class="line">deb-src http://deb.debian.org/debian bullseye main contrib non-free</span><br><span class="line"></span><br><span class="line">deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free</span><br><span class="line">deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free</span><br><span class="line"></span><br><span class="line">deb http://deb.debian.org/debian bullseye-updates main contrib non-free</span><br><span class="line">deb-src http://deb.debian.org/debian bullseye-updates main contrib non-free</span><br></pre></td></tr></table></figure>
@@ -352,13 +327,33 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update # 更新一下源</span><br><span class="line">apt install vim -y #安装vim这个软件 -y是确认安装</span><br></pre></td></tr></table></figure>
 
 <p>使用<code>vim /etc/apt/sources.list</code>打开更新源文件，如下图所示：</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_ui.jpg" alt="vim_ui"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_ui.jpg"
+                      alt="vim_ui"
+                ></p>
 <p>vim功能众多，使用复杂，得慢慢说。左下角是此文件的路径和名称，右下角是光标此时的行数和列数。此时是无法直接输入，要先按下<code>insert</code>或者<code>i</code>键变成插入模式才行。此时，左下角如下图，变成了INSERT&#x2F;插入模式。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s1.jpg" alt="vim_s1"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s1.jpg"
+                      alt="vim_s1"
+                ></p>
 <p>然后就是该怎么写就怎么写，一些快捷键去百度谷歌必应吧，说的肯定比我详细。但是必须提到如何保存文件：<code>insert</code>模式下按<code>esc</code>键（一般是键盘最左上角，99%的人可能都不怎么用的一个键），INSERT会消失不见，如下图：</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s3.jpg" alt="vim_s3"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s3.jpg"
+                      alt="vim_s3"
+                ></p>
 <p>这个时候再按下<code>:</code>键，界面上也会出现一个冒号，如下图。注意，这个冒号是半角的，全角冒号是没用的。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s2.jpg" alt="vim_s2"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/vim_s2.jpg"
+                      alt="vim_s2"
+                ></p>
 <p>这个时候，按下<code>wq</code>这两个键，即可保存内容。w是write&#x2F;写入的意思，q是quit&#x2F;退出的意思。如果你不想保存，则只输入q键即可，但是有时候因为文件已经被修改了，vim不让退出，这时候输入<code>q!</code>就可以了，感叹号是强制执行的意思，执行后文件不会被修改并且会退出vim。</p>
 <h3 id="1-4-更新系统"><a href="#1-4-更新系统" class="headerlink" title="1.4 更新系统"></a>1.4 更新系统</h3><p>至此，不管是使用nano还是vim都可以对更新源进行编辑了，让我们来具体了解一下如果更新系统和相关指令。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt list --upgradable</span><br><span class="line">apt upgrade -y</span><br></pre></td></tr></table></figure>
@@ -381,27 +376,27 @@
 <tbody><tr>
 <td>Xshell</td>
 <td>家庭&#x2F;学校免费</td>
-<td><a target="_blank" rel="noopener" href="https://www.netsarang.com/zh/free-for-home-school/">https://www.netsarang.com/zh/free-for-home-school/</a></td>
+<td><a class="link"   target="_blank" rel="noopener" href="https://www.netsarang.com/zh/free-for-home-school/" >https://www.netsarang.com/zh/free-for-home-school/<i class="fas fa-external-link-alt"></i></a></td>
 </tr>
 <tr>
 <td>MobaXterm</td>
 <td>家庭版免费</td>
-<td><a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/download.html">https://mobaxterm.mobatek.net/download.html</a></td>
+<td><a class="link"   target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/download.html" >https://mobaxterm.mobatek.net/download.html<i class="fas fa-external-link-alt"></i></a></td>
 </tr>
 <tr>
 <td>FinalShell</td>
 <td>基础功能免费</td>
-<td><a target="_blank" rel="noopener" href="https://www.hostbuf.com/t/988.html">https://www.hostbuf.com/t/988.html</a></td>
+<td><a class="link"   target="_blank" rel="noopener" href="https://www.hostbuf.com/t/988.html" >https://www.hostbuf.com/t/988.html<i class="fas fa-external-link-alt"></i></a></td>
 </tr>
 <tr>
 <td>electerm</td>
 <td>免费+开源</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/electerm/electerm/releases">https://github.com/electerm/electerm/releases</a></td>
+<td><a class="link"   target="_blank" rel="noopener" href="https://github.com/electerm/electerm/releases" >https://github.com/electerm/electerm/releases<i class="fas fa-external-link-alt"></i></a></td>
 </tr>
 <tr>
 <td>PuTTY</td>
 <td>免费+开源</td>
-<td><a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></td>
+<td><a class="link"   target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" >https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html<i class="fas fa-external-link-alt"></i></a></td>
 </tr>
 </tbody></table>
 <p>Xshell：传播广泛，自带中文，个人使用完全免费，但是会话窗口限制最多只能打开四个SSH连接，再多之后就会自动新建会话窗口了，传输文件需要配合Xftp才行。目前国区被臭名昭著的思杰马克丁代理了，如需使用，请前往官网下载，在输入邮件和姓名后，会收到一封邮件，邮件里面给出下载连接。</p>
@@ -410,7 +405,12 @@
 <p>electerm：日常所需功能都有，完全开源和免费，还可以通过GitHub实现免费的云端保存SSH账号功能，适合自己折腾和魔改。基于electron开发的，从而实现了跨平台，Windows、Mac和Linux都有客户端。不过缺点也显而易见，electron本质上是个浏览器，占内存和硬盘空间。</p>
 <p>PuTTY：由Simon Tatham开发和维护的，老牌中的老牌，但是缺少人性化设置，不推荐。</p>
 <h3 id="2-2-SSH配置文件介绍和修改"><a href="#2-2-SSH配置文件介绍和修改" class="headerlink" title="2.2 SSH配置文件介绍和修改"></a>2.2 SSH配置文件介绍和修改</h3><p>SSH的配置文件在<code>/etc/ssh/sshd_config</code>中，是一个纯文本文件，可以使用<code>nano</code>或者<code>vim</code>打开和编辑。打开文件后，在前几行就能看到<code>#Port 22</code>字样，这个代表使用了默认的22端口作为SSH连接使用。因为大家都在使用22端口，所以会有一些扫描机器使用弱密码不断尝试登录，使用<code>lastb</code>命令可以查看登录失败的记录，如下图。233333是尝试登录的账号，144.214.xxx.xxx是发起者的IP，最后面是尝试登录的时间。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssh_lastb.jpg" alt="ssh_lastb"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssh_lastb.jpg"
+                      alt="ssh_lastb"
+                ></p>
 <p>因此，我们可以改成高端口，比如<code>35261</code>这种没有特殊含义&#x2F;排列的随机数，以减小被攻击的可能。要注意端口只能在0-65535之间，并且很多低位数的端口，已经被共识的程序占领了，比如80端口是http的，443端口是https的，就如22是SSH的一样。此处，我们修改<code>/etc/ssh/sshd_config</code>中的端口数后，还需要重启SSH服务才行，否则只会在系统下次重启后才启用新的端口。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart ssh #重启SSH服务</span><br></pre></td></tr></table></figure>
 
@@ -418,7 +418,12 @@
 <p>除此之外，把密码改的复杂一些，也可以有效的降低系统被黑的风险，使用<code>passwd root</code>命令，即可修改root账号的密码，会提示<code>New password:</code>，此时输入新密码，注意这里是看不见任何输入反馈的，随后在显示<code>Retype new password:</code>后再次输入一遍，如果两次密码相同，就会更新root密码了。</p>
 <h3 id="2-3-使用密钥登陆SSH"><a href="#2-3-使用密钥登陆SSH" class="headerlink" title="2.3 使用密钥登陆SSH"></a>2.3 使用密钥登陆SSH</h3><p>即使更改了端口，但因为使用密码即可登录，考虑到不是所有人都会使用强密码，所以SSH提供了使用密钥登录的功能，可以简单理解成是一长串复杂的并且可以相互验证的密码。以root用户为例，演示如何将SSH由密码登录改成密钥登录。</p>
 <p>输入<code>ssh-keygen -t rsa </code>，随后一路enter键，如下图</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssh_key.jpg" alt="ssh_key"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssh_key.jpg"
+                      alt="ssh_key"
+                ></p>
 <p>在显示完成后，在<code>/root/.ssh/</code>文件夹下，你将看到<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，id_rsa是私钥，下载下来并妥善保存，id_rsa.pub是公钥，放在服务器上的。将id_rsa.pub写入到SSH的密钥文件中：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch authorized_keys</span><br><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
 
@@ -432,7 +437,12 @@
 <p>使用<code>systemctl restart ssh</code>重启SSH服务，此刻，你将只能使用密钥才能登录，一旦私钥遗失了，就再也进不去了。</p>
 <h2 id="3-Linux文件系统"><a href="#3-Linux文件系统" class="headerlink" title="3 Linux文件系统"></a>3 Linux文件系统</h2><h3 id="3-1-文件系统格式"><a href="#3-1-文件系统格式" class="headerlink" title="3.1 文件系统格式"></a>3.1 文件系统格式</h3><p>与Windows分割硬盘（甚至一个硬盘被划分成了好几个）不同，Linux的是将所有硬盘都<code>挂载</code>在了一起。简单来说，Windows分C盘D盘等，还针对软盘额外给予了A盘和B盘，Linux把所有的硬盘都放在了<code>/</code>下，即<code>根目录</code>，这也是Linux中root账户的权限最大的原因，<code>root</code>即为根，如同树根一样，所有的内容都要基于根才有了可能。文件系统是另外一个极其复杂的内容，这里只提到Windows使用的是NTFS，而Linux普遍采用EXT4格式，这两种文件系统互不兼容，装在Linux系统上的硬盘，在Windows上是无法直接读写的，必须使用额外的软件才能访问。反过来，在Linux上读取Windows下的硬盘中的内容，需要安装<code>ntfs-3g</code>才行。这两种文件系统各有优缺点，一般人用就行了，不要问，问就是用默认。实际上，目前在广泛使用的文件系统种类繁多，所有需要在它们之间交换文件的时候，会使用exFAT格式的U盘&#x2F;硬盘（exFAT是FAT的替代品，因为FAT下单个文件最大不能超过4G）。</p>
 <h3 id="3-2-文件树、文件夹功能和权限"><a href="#3-2-文件树、文件夹功能和权限" class="headerlink" title="3.2 文件树、文件夹功能和权限"></a>3.2 文件树、文件夹功能和权限</h3><p>在<code>/</code>目录下，使用<code>ls -la</code>会显示出所有的文件和文件夹（如下图所示），<code>a</code>是列出所有文件，<code>l</code>是显示详细信息。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/root_files.jpg" alt="root_files"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/root_files.jpg"
+                      alt="root_files"
+                ></p>
 <p>第一列是文件&#x2F;文件夹的权限，一共有10个字符，第一位是文件类型，比如d代表文件夹，l代表链接。之后，三个为一组，总共3组。r是读，w是写，x是执行，也可以通过数字来区分，r是4，w是2，x是1，所以有了常见的一把梭<code>chmod +777</code>。第二列是硬链接数量，即这个文件&#x2F;文件夹下有多少真实放着的文件。第三列和第四列是这个件分别属于谁，以及这个人是哪个组的。这里的<code>组</code>概念来源于最开始的unix是个多用户系统，所有会把用户分类，比如某软件用户放一个组，系统维护人员放一个组等。第六列是文件&#x2F;文件夹大小，默认单位是K。第七八九列是修改的日期。最后一列是文件&#x2F;文件夹的名字。我们会发现有一些<code>-&gt;</code>的字样，这是指软链接。软连接类似于Windows上的快捷方式，而硬连接类似于复制了一份（但并不会真的占用空间）。</p>
 <ul>
 <li>bin或者usr&#x2F;bin：应用程序，比如Python的主程序就在这里</li>
@@ -477,23 +487,53 @@
 
 <p>这是一个if…elif…else的判断语句，先经过两次判断，如果都不能成功，那就执行最后一行。</p>
 <p><code>$choice -eq 1</code>把刚才的<code>choice</code>这个输入变量和数字1对比，注意，要有<code>$</code>才代表变量，不然就默认是文字，<code>-eq</code>是等于的意思。判断是否等于1，是的话就给出CPU使用量，如果不等于1，那就继续判断是否等于2，是的话就给出RAM使用量，如果不等于2，那就输出错误提醒，然后结束。<code>grep</code>是抓取有关键词的那一行，<code>$2</code>是这一行的第几个内容，如下：</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/grep.jpg" alt="grep"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/grep.jpg"
+                      alt="grep"
+                ></p>
 <p><code>grep Mem</code>抓取到了第二行，即真实内存这一行，<code>$2</code>是内存总量，<code>$3</code>是已经使用了的内存，因此<code>($3/$2)*100</code>就是已经使用了百分之多少的内存，</p>
 <h2 id="5-Crontab定时任务"><a href="#5-Crontab定时任务" class="headerlink" title="5 Crontab定时任务"></a>5 Crontab定时任务</h2><p>Crontab用于定时任务，比如设定周五晚上运行脚本备份网站，又或者每分钟检查一下CPU使用率等。但除此之外，crontab还有个<code>@reboot</code>功能，即可以在系统启动的时候自动运行指定程序。</p>
 <p>推荐<code>crontab -e</code>，其中的<code>-e</code>是指当前用户，不建议直接使用<code>crontab</code>。首次运行<code>crontab -e</code>的时候，会让选择使用何种编辑工具，这个随便，nano和vim basic都行，什么顺手和习惯就用什么。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/crontab_eg.jpg" alt="crontab_eg"></p>
-<p>如上图，将每隔15分钟，就会使用位于<code>usr/bin</code>中的<code>python3</code>运行位于<code>/usr/local/weather</code>中的<code>weather.py</code>程序。前五个星号其实是设置的时间，推荐去 <a target="_blank" rel="noopener" href="https://crontab.guru/">https://crontab.guru/</a> 这里直接设置时间（如下图）。第一个星号是分钟，第二个星号是小时，第三个星号是天，第四个星号是月份，第五个星号是每周的第几天。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/crontab_set.jpg" alt="crontab_set"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/crontab_eg.jpg"
+                      alt="crontab_eg"
+                ></p>
+<p>如上图，将每隔15分钟，就会使用位于<code>usr/bin</code>中的<code>python3</code>运行位于<code>/usr/local/weather</code>中的<code>weather.py</code>程序。前五个星号其实是设置的时间，推荐去 <a class="link"   target="_blank" rel="noopener" href="https://crontab.guru/" >https://crontab.guru/<i class="fas fa-external-link-alt"></i></a> 这里直接设置时间（如下图）。第一个星号是分钟，第二个星号是小时，第三个星号是天，第四个星号是月份，第五个星号是每周的第几天。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/crontab_set.jpg"
+                      alt="crontab_set"
+                ></p>
 <h2 id="6-系统权限"><a href="#6-系统权限" class="headerlink" title="6 系统权限"></a>6 系统权限</h2><h3 id="6-1-root和user，以及sudo"><a href="#6-1-root和user，以及sudo" class="headerlink" title="6.1 root和user，以及sudo"></a>6.1 root和user，以及sudo</h3><p>上述已经简单的减少了root来源，由于root的权限太高，以至于在实际使用中发现并不安全，而且作为一个初始目的是多用户多终端的操作系统，Linux主要操作都不需要发生在root用户上的。所以这里就有了user这个角色，如果用户多了起来，为了便于管理，也会把某些用户分组，就有了group的概念。以下演示使用root用户新建一个user用户并进入此用户：</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/adduser.jpg" alt="adduser"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/adduser.jpg"
+                      alt="adduser"
+                ></p>
 <p>如图所示，<code>adduser mjj</code>为新建一个叫做mjj的用户，由于此前并没有除了root之外的用户，所以会使用这个名字作为group&#x2F;组的名字，并且在&#x2F;home文件夹里面生成一个mjj文件夹，即mjj的”桌面“。所以输入两次密码，之后会问一堆问题，都是例行的，一路enter就好，最后会问一下信息对不对，输入y就完成添加新用户了。</p>
 <p>但此时，mjj这个用户的权限是很小的，四舍五入等于没有，连某些文件夹都不能进去更别说执行软件了。使用<code>su mjj</code>切换到mjj用户中，可以在终端中看到已经从root@rn变成了mjj@rn，rn是这台服务器的名字，即为某某在rn这台服务器上。查看以下root文件夹下有些什么东西，结果发现权限不够而被拒绝访问&#x2F;Permission denied。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/sudo.jpg" alt="sudo"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/sudo.jpg"
+                      alt="sudo"
+                ></p>
 <p>所以我们要给一个能够临时使用root权限的能力，这被称为<code>sudo</code>。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su root #切换回root账号</span><br><span class="line">apt install sudo -y #有些时候，纯净安装的Debian系统是没有sudo的，所以要安装一下</span><br><span class="line">usermod -aG sudo mjj ##给予mjj用户sudo权限</span><br></pre></td></tr></table></figure>
 
 <p>此时，我们再切换到mjj用户上，在刚才的命令前加上sudo，临时获取root权限，就可以查看了：</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/sudo_root.jpg" alt="sudo_root"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/sudo_root.jpg"
+                      alt="sudo_root"
+                ></p>
 <p>在用户首次使用root权限的时候，系统会提示三个准则，也请谨记：</p>
 <ol>
 <li>尊重他人隐私；</li>
@@ -508,7 +548,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable frps.service</span><br><span class="line">systemctl start frps.service</span><br><span class="line">systemctl status frps.service</span><br><span class="line">systemctl restart frps.service</span><br></pre></td></tr></table></figure>
 
 <p>systemctl是systemd在系统中的程序名字，enable是指让这个程序能够开机自启，start为让程序现就运行，status是查看这个程序现在的状态，restart是重启程序。</p>
-<p>当然，我们也可以自己写systemd的service文件，这里以 <a target="_blank" rel="noopener" href="https://github.com/cnsilvan/UnblockNeteaseMusic">https://github.com/cnsilvan/UnblockNeteaseMusic</a> 解锁网易云音乐的程序做参考</p>
+<p>当然，我们也可以自己写systemd的service文件，这里以 <a class="link"   target="_blank" rel="noopener" href="https://github.com/cnsilvan/UnblockNeteaseMusic" >https://github.com/cnsilvan/UnblockNeteaseMusic<i class="fas fa-external-link-alt"></i></a> 解锁网易云音乐的程序做参考</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=UnblockNeteaseMusic</span><br><span class="line">After=network.target</span><br><span class="line">Wants=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">WorkingDirectory=/usr/local/UnblockNeteaseMusic</span><br><span class="line">ExecStart=/usr/bin/node app.js -e http://music.163.com -s -p 8888</span><br><span class="line">RestartPreventExitStatus=23</span><br><span class="line">Restart=always</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 
 <p>一共分为三组，分别为Unit，Service和Install。Unit是这个服务的名称，示例中为<code>UnblockNeteaseMusic</code>而<code>After</code>和<code>Wants</code>指明的<code>network.target</code>意味希望这个程序在网络服务启动后再启动，毕竟是个网络功能，不能还没有网就启动了。Service是核心部分，<code>Type</code>指定了类型,<code>Simple</code>是默认的类型，发现有网了就启动。此外，常见的还有<code>fork</code>和<code>idle</code>，前者意味着程序依赖于另外一个程序的运行，通常还会配置<code>PIDFile</code>，后者是等系统空闲了再启动，属于一点都不急的。<code>WorkingDirectory</code>是工作目录，<code>ExecStart</code>是执行的命令，实例中，是用位于<code>/usr/bin/</code>的nodejs执行位于工作目录的<code>app.js</code>这个文件，并且还带了参数<code>http://music.163.com -s -p 8888</code>。<code>RestartPreventExitStatus</code>是指如果报错信息为<code>23</code>则不会再重启了，具体报错信息是运行的程序决定的。<code>Restart=always</code>指只要不是23的报错信息，那就一旦服务停了，Systemd就会去重启。最后一部分，Install中的<code>WantedBy=multi-user.target</code>指网络服务已经正常启动，也可以让用户登录了，但是并没有开启GUI服务，这个部分不用去探究。</p>
@@ -522,8 +562,13 @@
 
 <p>Timer的名称需要是service名字后面加一个Timer，用以提高准确性。<code>OnCalendar</code>类似于<code>corntab</code>的<code>* * * * *</code>，实例中的意味每天中午12点的时候执行以下<code>tieba.service</code>中的位于<code>/home</code>文件夹的<code>tieba.sh</code>这个程序。此处的<code>WantedBy</code>是<code>timers.target</code>，指明是个定时器。</p>
 <h2 id="8-手动配置系统：以frp为例"><a href="#8-手动配置系统：以frp为例" class="headerlink" title="8 手动配置系统：以frp为例"></a>8 手动配置系统：以frp为例</h2><p>frp是个内网穿透软件，可以将局域网设备通过frp服务端映射出来，实现公网服务，常见的有SSH、http&#x2F;https服务等。这里以将内网设备的SSH映射到有公网IP的服务器上为例，从而不在家也能服务家里面的服务器了。</p>
-<p>在这里下载最新版的安装包 <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a> </p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/frp_tar.jpg" alt="frp_tar"></p>
+<p>在这里下载最新版的安装包 <a class="link"   target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases" >https://github.com/fatedier/frp/releases<i class="fas fa-external-link-alt"></i></a> </p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/frp_tar.jpg"
+                      alt="frp_tar"
+                ></p>
 <p>如图所示，0.38.0是版本号；后面的是系统，darwin是MacOS，freebsd是UNIX的一个分支，这里我们选择linux；紧跟着的是CPU架构，由于本次服务器的客户端是装了64位系统的树莓派4B（arm架构的CPU），所以选择<code>frp_0.38.0_linux_arm64.tar.gz</code>，而服务端是普通的VPS，所以选择<code>frp_0.38.0_linux_amd64.tar.gz</code>。</p>
 <p><strong>服务端配置</strong></p>
 <p>注意：版本号和CPU架构须按照实际情况决定。</p>
@@ -540,9 +585,14 @@
 
 <p>设置开机自启并立即运行，此时在SSH软件上，通过 <code>服务器IP:6000 </code>就可以连接到这台内网的树莓派了。</p>
 <h2 id="9-网站环境搭建"><a href="#9-网站环境搭建" class="headerlink" title="9 网站环境搭建"></a>9 网站环境搭建</h2><p>网站搭建，说简单也简单，安装一个nginx放个html页面就算是了，但也可以做的极其复杂以至于需要一个团队，比如淘宝。这里提供了两个搭建网站的方法：面板和手动搭建。对于小白用户，还是推荐用用面板吧，不然出问题，网站被黑都不知道如何解决。</p>
-<h3 id="9-1-宝塔解人忧"><a href="#9-1-宝塔解人忧" class="headerlink" title="9.1 宝塔解人忧"></a>9.1 宝塔解人忧</h3><p>宝塔面板是个伪开源的一键式建站面板，国内版可以在 <a target="_blank" rel="noopener" href="https://www.bt.cn/">https://www.bt.cn/</a> 中找到安装方式，目前的安装命令是<code>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</code> 。需要注意的是，国内版需要登陆并且验证手机号后才能操作，宝塔也有强制后台升级的前科。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/aapanel.jpg" alt="aapanel"></p>
-<p>除此之外，还有国际版的叫做aapanel，安装地址为 <a target="_blank" rel="noopener" href="https://www.aapanel.com/install.html">https://www.aapanel.com/install.html</a> ，安装命令是<code>wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh &amp;&amp; bash install.sh</code>。相对而言，国际版的隐私保护会更好一些，不会要求手机号等信息，但是默认语言是英文，如果会哪怕一点点英文，都推荐使用国际版的。</p>
+<h3 id="9-1-宝塔解人忧"><a href="#9-1-宝塔解人忧" class="headerlink" title="9.1 宝塔解人忧"></a>9.1 宝塔解人忧</h3><p>宝塔面板是个伪开源的一键式建站面板，国内版可以在 <a class="link"   target="_blank" rel="noopener" href="https://www.bt.cn/" >https://www.bt.cn/<i class="fas fa-external-link-alt"></i></a> 中找到安装方式，目前的安装命令是<code>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</code> 。需要注意的是，国内版需要登陆并且验证手机号后才能操作，宝塔也有强制后台升级的前科。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/aapanel.jpg"
+                      alt="aapanel"
+                ></p>
+<p>除此之外，还有国际版的叫做aapanel，安装地址为 <a class="link"   target="_blank" rel="noopener" href="https://www.aapanel.com/install.html" >https://www.aapanel.com/install.html<i class="fas fa-external-link-alt"></i></a> ，安装命令是<code>wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh &amp;&amp; bash install.sh</code>。相对而言，国际版的隐私保护会更好一些，不会要求手机号等信息，但是默认语言是英文，如果会哪怕一点点英文，都推荐使用国际版的。</p>
 <p>宝塔有一点不好的地方是动辄编译（原先是在CentOS上开发的，所以有这个臭毛病），面板是python3写的，安装起来很快，但是要安装一些服务的话，如果VPS性能不好，则需要花费相当长一段时间来编译安装，普遍30分钟起步。</p>
 <h3 id="9-2-手动搭建"><a href="#9-2-手动搭建" class="headerlink" title="9.2 手动搭建"></a>9.2 手动搭建</h3><p>宝塔面板是将网站搭建可视化了，本质上和手动搭建没有区别。这里主要是介绍常见的相关软件和Let’s Encrypt配置SSL证书的方法。</p>
 <h4 id="9-2-1-Apache和Nginx"><a href="#9-2-1-Apache和Nginx" class="headerlink" title="9.2.1 Apache和Nginx"></a>9.2.1 Apache和Nginx</h4><p>Apache和Nginx都是Web服务器。前者是老牌Web服务器软件，对PHP有着优秀的支持，并且动态响应优秀，但是对性能和内存要求高。后者是俄罗斯出品，对静态网站支持良好，性能消耗也更小，反代和简单的网站都倾向于使用Nginx，甚至还有一系列基于Nginx衍生出来的版本，比如Tengine就是淘宝从Nginx衍生出来的，用以支撑淘宝的各种服务。除此之外，还有个Caddy也用的比较多，这是由golang语言写出来的，所以对多线程高并发的支持很好，并且自带SSL证书申请的功能。</p>
@@ -554,7 +604,12 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install nginx</span><br></pre></td></tr></table></figure>
 
 <p>这两个软件安装完后，都会开机自启和立刻运行，浏览器中输入<code>http://ip</code>就可以看到默认的网页，比如Nginx的是这样：</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nginx.jpg" alt="nginx"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/nginx.jpg"
+                      alt="nginx"
+                ></p>
 <h4 id="9-2-2-PHP"><a href="#9-2-2-PHP" class="headerlink" title="9.2.2 PHP"></a>9.2.2 PHP</h4><p>安装了Nginx之后，可以实现静态网页，但是常见的网站平台，比如Wordpress和typecho都是PHP写的，所以还需要安装PHP才能运行。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install php-fpm</span><br></pre></td></tr></table></figure>
 
@@ -584,8 +639,13 @@
 
 
 <h4 id="9-2-4-Let’s-Encrypt，SSL-x2F-TLS"><a href="#9-2-4-Let’s-Encrypt，SSL-x2F-TLS" class="headerlink" title="9.2.4 Let’s Encrypt，SSL&#x2F;TLS"></a>9.2.4 Let’s Encrypt，SSL&#x2F;TLS</h4><p>http连接，由于不是加密的，所以任何人都可以查看内容，这对于一些金融服务有着巨大的危害，比如使用信用卡在网上购物的时候，账号和密码会被获知。所以网景（Firefox浏览器的前身）提出了SSL（安全套接层&#x2F;Secure Sockets Layer）这个概念（后来演变升级为TLS，即传输层安全性协议&#x2F;Transport Layer Security），http变成了https，电脑会内置证书，而网站也会有一个证书，只有两者相互验证成功，才能正常浏览玩网页，并且全程加密（DNS部分并不是加密的，所以有个DoH，dns over https）。</p>
-<p>SSL&#x2F;TLS证书是个垄断行业，电脑内置的证书就那么几家，如果想网站被大多数浏览器&#x2F;系统接受，那就只能去申请其中某家的证书，这里面层层签发转售，几近无本万利。不过好在还是有很多免费的SSL&#x2F;TLS证书的，比如Let’s Encrypt提供三个月的免费证书，而亚洲诚信通过第三方公司，提供一年免费的证书。这里以Let’s Encrypt为例演示，相关链接为 <a target="_blank" rel="noopener" href="https://certbot.eff.org/instructions">https://certbot.eff.org/instructions</a> ：</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssl_tls.jpg" alt="ssl_tls"></p>
+<p>SSL&#x2F;TLS证书是个垄断行业，电脑内置的证书就那么几家，如果想网站被大多数浏览器&#x2F;系统接受，那就只能去申请其中某家的证书，这里面层层签发转售，几近无本万利。不过好在还是有很多免费的SSL&#x2F;TLS证书的，比如Let’s Encrypt提供三个月的免费证书，而亚洲诚信通过第三方公司，提供一年免费的证书。这里以Let’s Encrypt为例演示，相关链接为 <a class="link"   target="_blank" rel="noopener" href="https://certbot.eff.org/instructions" >https://certbot.eff.org/instructions<i class="fas fa-external-link-alt"></i></a> ：</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/ssl_tls.jpg"
+                      alt="ssl_tls"
+                ></p>
 <p>Let’s Encrypt提供的SSL&#x2F;TLS工具叫做cerbot，可以通过snap或者pip安装。snap是Ubuntu强推的一种软件部署和软件包管理系统，把所有需要的东西都放一起。pip是通过python3的pip安装，pip和snap没有功能上的区别，不想被Ubuntu强推就使用pip。</p>
 <p><strong>snap安装cerbot申请SSL&#x2F;TLS证书</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt install snapd</span><br><span class="line">snap install core</span><br><span class="line">snap refresh core</span><br><span class="line">snap install --classic certbot</span><br><span class="line">ln -s /snap/bin/certbot /usr/bin/certbot</span><br><span class="line">certbot --nginx</span><br></pre></td></tr></table></figure>
@@ -608,21 +668,46 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install -y docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
 
 <p>期间会下载几百兆的文件，网络不好的话，可能会需要一段时间，当完成安装后，使用<code>docker run hello-world</code>命令来测试功能是否正常，理论上会输出下图内容：</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_hello.jpg" alt="docker_hello"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_hello.jpg"
+                      alt="docker_hello"
+                ></p>
 <p>至此，系统已经安装好了Docker环境，可以自己写一个Docker的应用，或者直接拉取别人写好的为自己所用。</p>
 <h3 id="10-2-安装别人打包好的的Docker"><a href="#10-2-安装别人打包好的的Docker" class="headerlink" title="10.2 安装别人打包好的的Docker"></a>10.2 安装别人打包好的的Docker</h3><p>先说一下常用的Docker命令，然后以安装Docker版本的Nextcloud为例。Nextcloud是一个开源的网盘系统，类似于私有版本的百度云，可以自己搭建从而确保数据都在自己手上而不会被8秒。</p>
 <h4 id="10-2-1-常用Docker命令"><a href="#10-2-1-常用Docker命令" class="headerlink" title="10.2.1 常用Docker命令"></a>10.2.1 常用Docker命令</h4><p><code>docker ps</code> 列出所有正在运行的容器，如果需要查看所有的容器（包括未运行或者启动失败的）则使用<code>docker ps -la</code>，这点类似于<code>ls</code>和<code>ls -la</code>的区别。</p>
 <p><code>docker start/stop/restart CONTAINER ID</code> 开启&#x2F;停止&#x2F;重启特定容器，后面要加上指定的ID，CONTAINER ID见下文。</p>
 <p><code>docker rm CONTAINER ID</code> 删除容器，如果是删除镜像，则需要把rm换成rmi</p>
-<h4 id="10-2-2-安装Docker版Nextcloud"><a href="#10-2-2-安装Docker版Nextcloud" class="headerlink" title="10.2.2 安装Docker版Nextcloud"></a>10.2.2 安装Docker版Nextcloud</h4><p>在 <a target="_blank" rel="noopener" href="https://hub.docker.com/">https://hub.docker.com/</a> 中直接搜索Nextcloud，找到官方版本的镜像，点击进去，在右侧有拉取镜像的命令，直接运行即可。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud.jpg" alt="docker_nextcloud"></p>
+<h4 id="10-2-2-安装Docker版Nextcloud"><a href="#10-2-2-安装Docker版Nextcloud" class="headerlink" title="10.2.2 安装Docker版Nextcloud"></a>10.2.2 安装Docker版Nextcloud</h4><p>在 <a class="link"   target="_blank" rel="noopener" href="https://hub.docker.com/" >https://hub.docker.com/<i class="fas fa-external-link-alt"></i></a> 中直接搜索Nextcloud，找到官方版本的镜像，点击进去，在右侧有拉取镜像的命令，直接运行即可。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud.jpg"
+                      alt="docker_nextcloud"
+                ></p>
 <p>安装过程中会下载各个组件，等全部显示Pull conplete即表示下载完成，之后会自动校验并提示完成。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_pull_nextcloud.jpg" alt="docker_pull_nextcloud"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_pull_nextcloud.jpg"
+                      alt="docker_pull_nextcloud"
+                ></p>
 <p>使用<code>docker run -d -p 80:80 nextcloud</code> 运行，此时使用<code>docker ps</code>可以查看到具体的详细信息</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud_status.jpg" alt="docker_nextcloud_status"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud_status.jpg"
+                      alt="docker_nextcloud_status"
+                ></p>
 <p>CONTAINER ID类似于身份证号码；IMAGE是身份证上的姓名；COMMAND是实际运行的程序；CREATED是创建的时间；STATUS是此时的运行状态；PORTS是端口，上述我们把容器的80端口定向到服务器的80，并且默认ipv4和ipv6都可以访问，接受所有IP的访问（0.0.0.0代表接受所有IP）；NAMES是容器的名字，可以理解为外号。</p>
 <p>之后就是通过IP或者绑定的域名访问，进行最后的安装。这里就能看出来Docker的优势了：用户无需了解具体操作和搭建步骤，提供者负责维护，这可以极大的简化用户的使用步骤，还可以标准化环境，无论使用Debain还是REHL，镜像&#x2F;容器都是提供者给定的。</p>
-<p><img src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud_install.jpg" alt="docker_nextcloud_install"></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://raw.githubusercontent.com/uselibrary/Getting-Started-with-Linux/main/images/docker_nextcloud_install.jpg"
+                      alt="docker_nextcloud_install"
+                ></p>
 <p>如果不再需要Nextcloud，则首先停止容器，随后再删除：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker stop c30d348f1ef1</span><br><span class="line">docker rm c30d348f1ef1</span><br></pre></td></tr></table></figure>
 
@@ -630,92 +715,337 @@
 
 <h3 id="10-3-建自己的Docker"><a href="#10-3-建自己的Docker" class="headerlink" title="10.3 建自己的Docker"></a>10.3 建自己的Docker</h3><p>Docker通过Unix socket与它的引擎进行通信，出于安全考虑，一般只有root用户和在docker组的用户才能正常访问Unix socket。所以，如果想建一个完善的Docker应用，那么建议额外新增一个用户，并加入docker用户组。</p>
 
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/mjj/">#mjj</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E5%91%BD%E4%BB%A4/">#命令</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/linux/">#linux</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">vps常用一键脚本与命令</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2022/05/26/ld7o8d/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">VPS采用Ed25519密钥登录</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;评论
+    </div>
+    
+        
+            
+
+    <div class="twikoo-container">
+        <script data-pjax src="//cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js"></script>
+        <div id="twikoo-comment"></div>
+        <script data-pjax>
+          function loadTwikoo() {
+            twikoo.init({
+              el: '#twikoo-comment',
+              envId: 'http://ip.luobu.eu.org',
+              region: '',
+              lang: 'zh-CN' || 'zh-CN'
+            });
+          }
+
+          if ('true' === 'true') {
+            const loadTwikooTimeout = setTimeout(() => {
+              loadTwikoo();
+              clearTimeout(loadTwikooTimeout);
+            }, 1000);
+          } else {
+            window.addEventListener('DOMContentLoaded', loadTwikoo);
+          }
+        </script>
     </div>
 
-    
-    
-    
 
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/mjj/" rel="tag"># mjj</a>
-              <a href="/tags/%E5%91%BD%E4%BB%A4/" rel="tag"># 命令</a>
-              <a href="/tags/linux/" rel="tag"># linux</a>
-          </div>
 
         
+    
+</div>
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2022/05/26/ld7o8d/" rel="prev" title="VPS采用Ed25519密钥登录">
-                  <i class="fa fa-chevron-left"></i> VPS采用Ed25519密钥登录
-                </a>
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%89%8D%E8%A8%80%E5%90%90%E6%A7%BDCentOS"><span class="nav-number">1.</span> <span class="nav-text">0 前言吐槽CentOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">1 环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E7%B3%BB%E7%BB%9F%E9%80%89%E6%8B%A9%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 系统选择与安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 常用的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%9F%BA%E7%A1%80%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8nano%E3%80%81vim"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 基础文本编辑器nano、vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.4.</span> <span class="nav-text">1.4 更新系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-SSH%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">2 SSH连接和基础配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E8%BF%9E%E6%8E%A5SSH%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%92%8C%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 连接SSH的软件和相关操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-SSH%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BF%AE%E6%94%B9"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 SSH配置文件介绍和修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E4%BD%BF%E7%94%A8%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86SSH"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 使用密钥登陆SSH</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">4.</span> <span class="nav-text">3 Linux文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 文件系统格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%96%87%E4%BB%B6%E6%A0%91%E3%80%81%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8A%9F%E8%83%BD%E5%92%8C%E6%9D%83%E9%99%90"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 文件树、文件夹功能和权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E7%A4%BA%E4%BE%8B%EF%BC%9A%E6%8C%82%E8%BD%BDU%E7%9B%98"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 示例：挂载U盘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Shell-x2F-Dash%E5%85%A5%E9%97%A8"><span class="nav-number">5.</span> <span class="nav-text">4 Shell&#x2F;Dash入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Crontab%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-number">6.</span> <span class="nav-text">5 Crontab定时任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%B3%BB%E7%BB%9F%E6%9D%83%E9%99%90"><span class="nav-number">7.</span> <span class="nav-text">6 系统权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-root%E5%92%8Cuser%EF%BC%8C%E4%BB%A5%E5%8F%8Asudo"><span class="nav-number">7.1.</span> <span class="nav-text">6.1 root和user，以及sudo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-chmod%E5%92%8Cchown"><span class="nav-number">7.2.</span> <span class="nav-text">6.2 chmod和chown</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Systemd%E5%85%A5%E9%97%A8%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">8.</span> <span class="nav-text">7 Systemd入门和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%92%8C%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4"><span class="nav-number">8.1.</span> <span class="nav-text">7.1 开机自启和进程守护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-Timer%E4%BB%A3%E6%9B%BFCrontab"><span class="nav-number">8.2.</span> <span class="nav-text">7.2 Timer代替Crontab</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%EF%BC%9A%E4%BB%A5frp%E4%B8%BA%E4%BE%8B"><span class="nav-number">9.</span> <span class="nav-text">8 手动配置系统：以frp为例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E7%BD%91%E7%AB%99%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">10.</span> <span class="nav-text">9 网站环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-%E5%AE%9D%E5%A1%94%E8%A7%A3%E4%BA%BA%E5%BF%A7"><span class="nav-number">10.1.</span> <span class="nav-text">9.1 宝塔解人忧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA"><span class="nav-number">10.2.</span> <span class="nav-text">9.2 手动搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-1-Apache%E5%92%8CNginx"><span class="nav-number">10.2.1.</span> <span class="nav-text">9.2.1 Apache和Nginx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-2-PHP"><span class="nav-number">10.2.2.</span> <span class="nav-text">9.2.2 PHP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-3-MySQL%E5%92%8CMariaDB"><span class="nav-number">10.2.3.</span> <span class="nav-text">9.2.3 MySQL和MariaDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-4-Let%E2%80%99s-Encrypt%EF%BC%8CSSL-x2F-TLS"><span class="nav-number">10.2.4.</span> <span class="nav-text">9.2.4 Let’s Encrypt，SSL&#x2F;TLS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Docker%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="nav-number">11.</span> <span class="nav-text">10 Docker快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-%E5%AE%89%E8%A3%85Docker%E7%8E%AF%E5%A2%83"><span class="nav-number">11.1.</span> <span class="nav-text">10.1 安装Docker环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-%E5%AE%89%E8%A3%85%E5%88%AB%E4%BA%BA%E6%89%93%E5%8C%85%E5%A5%BD%E7%9A%84%E7%9A%84Docker"><span class="nav-number">11.2.</span> <span class="nav-text">10.2 安装别人打包好的的Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-1-%E5%B8%B8%E7%94%A8Docker%E5%91%BD%E4%BB%A4"><span class="nav-number">11.2.1.</span> <span class="nav-text">10.2.1 常用Docker命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-2-%E5%AE%89%E8%A3%85Docker%E7%89%88Nextcloud"><span class="nav-number">11.2.2.</span> <span class="nav-text">10.2.2 安装Docker版Nextcloud</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-3-%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Docker"><span class="nav-number">11.3.</span> <span class="nav-text">10.3 建自己的Docker</span></a></li></ol></li></ol>
+    </div>
+</div>
+
             </div>
-            <div class="post-nav-item">
-                <a href="/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/" rel="next" title="vps常用一键脚本与命令">
-                  vps常用一键脚本与命令 <i class="fa fa-chevron-right"></i>
-                </a>
+        
+    </div>
+</div>
+
+
+                
             </div>
-          </div>
-    </footer>
-  </article>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2020</span> -
+            
+            2022
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Daoke</a>
+            
+        </div>
+        
+            <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.5.2</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
 </div>
 
+        </div>
+    
 
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
 
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
 
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
 </div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">daoke</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="站点总字数">78k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="站点阅读时长">1:11</span>
-  </span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
 
     </div>
-  </footer>
 
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
-
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
 
 
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
 
 
 
-  
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/dark-light-toggle.js"></script>
 
 
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
 
 
 
