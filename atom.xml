@@ -68,15 +68,18 @@
     <link href="http://daoke123.github.io/2022/11/22/Hexo/"/>
     <id>http://daoke123.github.io/2022/11/22/Hexo/</id>
     <published>2022-11-22T14:15:00.000Z</published>
-    <updated>2022-11-22T14:16:56.700Z</updated>
+    <updated>2022-11-22T14:57:24.148Z</updated>
     
-    <content type="html"><![CDATA[<p>docker exec -it hexo &#x2F;bin&#x2F;bash </p><p>git config –global user.email “<a class="link"   href="mailto:&#x78;&#120;&#x78;&#x78;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;" >&#x78;&#120;&#x78;&#x78;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;<i class="fas fa-external-link-alt"></i></a>“<br>git config –global user.name “xxxx”</p><p>生成 和 发布<br>hexo clean &amp;&amp; hexo d github</p><p>生成 hexo g &amp;&amp; hexo generate</p><p>发布hexo d   &amp;&amp; hexo deploy</p>]]></content>
+    <content type="html"><![CDATA[<pre class="EnlighterJSRAW" data-enlighter-language="md">docker exec -it hexo /bin/bash git config --global user.email "xxxx@gmail.com"git config --global user.name "xxxx"生成 和 发布hexo clean && hexo d github生成 hexo g && hexo generate发布hexo d   && hexo deploy]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;docker exec -it hexo &amp;#x2F;bin&amp;#x2F;bash &lt;/p&gt;
-&lt;p&gt;git config –global user.email “&lt;a class=&quot;link&quot;   href=&quot;mailto:&amp;#x78;&amp;#120;&amp;#x78;&amp;#x78;&amp;#</summary>
+    <summary type="html">&lt;pre class=&quot;EnlighterJSRAW&quot; data-enlighter-language=&quot;md&quot;&gt;
+docker exec -it hexo /bin/bash 
+
+git config --global user.email &quot;xxxx@gmail.com&quot;
+g</summary>
       
     
     
@@ -93,7 +96,7 @@
     <link href="http://daoke123.github.io/2022/11/22/%E7%94%B2%E9%AA%A8%E6%96%87/"/>
     <id>http://daoke123.github.io/2022/11/22/%E7%94%B2%E9%AA%A8%E6%96%87/</id>
     <published>2022-11-22T14:00:00.000Z</published>
-    <updated>2022-11-22T14:12:36.928Z</updated>
+    <updated>2022-11-22T14:55:56.036Z</updated>
     
     <content type="html"><![CDATA[<blockquote><h4 id="甲骨文-ARM-x2F-x86均可-oracle-cloud使用netboot任意重装系统"><a href="#甲骨文-ARM-x2F-x86均可-oracle-cloud使用netboot任意重装系统" class="headerlink" title="甲骨文(ARM&#x2F;x86均可) oracle cloud使用netboot任意重装系统"></a>甲骨文(ARM&#x2F;x86均可) oracle cloud使用netboot任意重装系统</h4></blockquote><h6 id="一-创建控制台连接-注意-创建vps时候记得开默认的系统-oracle-linux-其他系统的bios和它不一定相同-试过ubuntu是不一样的-其他没尝试过"><a href="#一-创建控制台连接-注意-创建vps时候记得开默认的系统-oracle-linux-其他系统的bios和它不一定相同-试过ubuntu是不一样的-其他没尝试过" class="headerlink" title="一.创建控制台连接 注意:创建vps时候记得开默认的系统,oracle linux,其他系统的bios和它不一定相同(试过ubuntu是不一样的,其他没尝试过)"></a>一.创建控制台连接 注意:创建vps时候记得开默认的系统,oracle linux,其他系统的bios和它不一定相同(试过ubuntu是不一样的,其他没尝试过)</h6><p>这里我选择用本地的wsl生成了ssh key命令如<br><code>ssh-keygen -t rsa   cat .ssh/id\_rsa.pub</code><br>即可获得你的ssh公钥   然后去创建控制台连接粘贴密钥   创建完成后,复制linux的串口连接命令   再将命令复制到刚才的linux系统里就可以连接了,连接时候会有警告,输入yes即可   </p><h5 id="二-下载netboot-efi-这是重装系统前的最后一步-去netboot-xyz下载EFI引导文件"><a href="#二-下载netboot-efi-这是重装系统前的最后一步-去netboot-xyz下载EFI引导文件" class="headerlink" title="二.下载netboot.efi 这是重装系统前的最后一步,去netboot.xyz下载EFI引导文件"></a>二.下载netboot.efi 这是重装系统前的最后一步,去netboot.xyz下载EFI引导文件</h5><h6 id="x86-64"><a href="#x86-64" class="headerlink" title="x86_64:"></a>x86_64:</h6><p><code>https://boot.netboot.xyz/ipxe/netboot.xyz.efi</code> </p><h6 id="arm64"><a href="#arm64" class="headerlink" title="arm64:"></a>arm64:</h6><p><code>https://boot.netboot.xyz/ipxe/netboot.xyz-arm64.efi</code>  <br>将efi文件wget到vps的<code>/boot/efi/EFI</code>文件夹下即可   </p><h5 id="三-开始重装-连接上串口连接后-去网站控制台重启vps-然后回到连接中-狂按ESC-即可进入bios"><a href="#三-开始重装-连接上串口连接后-去网站控制台重启vps-然后回到连接中-狂按ESC-即可进入bios" class="headerlink" title="三.开始重装 连接上串口连接后,去网站控制台重启vps,然后回到连接中,狂按ESC,即可进入bios"></a>三.开始重装 连接上串口连接后,去网站控制台重启vps,然后回到连接中,狂按ESC,即可进入bios</h5><p>这里选择第三项`Boot Maintenance Manager`按回车进入   选择<code>Boot From File</code>  <br>然后再按一次回车进入默认的硬盘,选择EFI文件夹下的<code>netboot.efi</code>进入<code>netboot</code>   这是启动netboot后的界面,选择<code>Linux Network Installs</code>开始安装  <br>可以看到能安装的系统相当多,我这里选择安装debian11   安装时候记得选择<code>Text Based Install</code> 这样再次重新启动后，系统正常情况下是自动启动进iPXE当中去而不是默认的Debian&#x2F;Ubuntu中去  <br>进了netboot.xyz的启动功能后，用   <code>chain –autofree http://boot.netboot.xyz</code> 再从列表中选择自己要的系统，比如CentOS或Debian ARM 用 netboot.xyz<br>装 CentOS 会下载不到内核，手动下载一下就行； x86_64 CentOS 不能装版本大于7.2的，因为内存不够。</p>]]></content>
     
