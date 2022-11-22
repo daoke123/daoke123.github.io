@@ -6,7 +6,7 @@
   <link href="http://daoke123.github.io/atom.xml" rel="self"/>
   
   <link href="http://daoke123.github.io/"/>
-  <updated>2022-11-10T14:41:40.000Z</updated>
+  <updated>2022-11-22T14:31:57.768Z</updated>
   <id>http://daoke123.github.io/</id>
   
   <author>
@@ -15,6 +15,129 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VPS主机一键更换国内软件源脚本</title>
+    <link href="http://daoke123.github.io/2022/11/22/VPShost/"/>
+    <id>http://daoke123.github.io/2022/11/22/VPShost/</id>
+    <published>2022-11-22T14:31:00.000Z</published>
+    <updated>2022-11-22T14:31:57.768Z</updated>
+    
+    <content type="html"><![CDATA[<p><a class="link"   href="https://gitee.com/SuperManito/LinuxMirrors" >https://gitee.com/SuperManito/LinuxMirrors<i class="fas fa-external-link-alt"></i></a> <a class="link"   href="https://github.com/SuperManito/LinuxMirrors" >https://github.com/SuperManito/LinuxMirrors<i class="fas fa-external-link-alt"></i></a></p><p><code>bash &lt;(curl \-sSL https://gitee.com/SuperManito/LinuxMirrors/raw/main/ChangeMirrors.sh) </code></p><p>如果提示 Command <code>curl</code>not found 则说明当前未安装 curl 软件包</p><p><code>sudo yum install -y curl  sudo apt-get install -y curl</code></p><p>如果提示 Command <code>wget</code>not found 则说明当前未安装 wget 软件包</p><p><code>sudo yum install -y wget  sudo apt-get install -y wget</code></p><p>如果提示 bash: &#x2F;proc&#x2F;self&#x2F;fd&#x2F;11: No such file or directory，请切换至 Root 用户执行</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://gitee.com/SuperManito/LinuxMirrors&quot; &gt;https://gitee.com/SuperManito/LinuxMirrors&lt;i class=&quot;fas fa-external-</summary>
+      
+    
+    
+    
+    
+    <category term="vps" scheme="http://daoke123.github.io/tags/vps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rclone挂载Google Drive网盘</title>
+    <link href="http://daoke123.github.io/2022/11/22/RcloneGoogle-Drive/"/>
+    <id>http://daoke123.github.io/2022/11/22/RcloneGoogle-Drive/</id>
+    <published>2022-11-22T14:22:00.000Z</published>
+    <updated>2022-11-22T14:25:51.984Z</updated>
+    
+    <content type="html"><![CDATA[<p>挂载GD  到这里结束配置 rclone，下面要把 Google Drive 网盘挂载到云主机&#x2F;Vps 上和设置开机自启，自动挂载 Google Drive 网盘  首先安装fuse:</p><p><code>apt-get install fuse</code>  #debian</p><p><code>yum install fuse</code>   #centos</p><p>新建一个你要挂载的目录，例如我要挂载到</p><p><code>/home/gdrive</code></p><p><code>mkdir -p /home/gdrive</code></p><p>再执行挂载命令：</p><p><code>rclone mount gd: /home/gdrive --allow-other --allow-non-empty --vfs-cache-mode writes</code></p><p>gd 为Rclone的配置名称，比如你在创建配置 rclone 的时候 Name 填的 gd，&#x2F;home&#x2F;gdrive 为本地路径（注意空格别漏了）； 这里还可以自定义设置网盘里的文件夹路径，例如：</p><p><code>rclone mount gd:backup /home/gdrive --allow-other --allow-non-empty --vfs-cache-mode writes</code></p><p>卸载 Google Drive 磁盘</p><p><code>fusermount -qzu /home/gdrive</code></p><p>挂载只要几秒钟，但终端不会返回成功信息，关闭 SSH 重连即可。  重连后查看是否挂载成功： <code>df-h</code></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;挂载GD  到这里结束配置 rclone，下面要把 Google Drive 网盘挂载到云主机&amp;#x2F;Vps 上和设置开机自启，自动挂载 Google Drive 网盘  首先安装fuse:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt-get install fuse&lt;/code</summary>
+      
+    
+    
+    
+    <category term="vps" scheme="http://daoke123.github.io/categories/vps/"/>
+    
+    
+    <category term="rclone" scheme="http://daoke123.github.io/tags/rclone/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo的配置</title>
+    <link href="http://daoke123.github.io/2022/11/22/Hexo/"/>
+    <id>http://daoke123.github.io/2022/11/22/Hexo/</id>
+    <published>2022-11-22T14:15:00.000Z</published>
+    <updated>2022-11-22T14:16:56.700Z</updated>
+    
+    <content type="html"><![CDATA[<p>docker exec -it hexo &#x2F;bin&#x2F;bash </p><p>git config –global user.email “<a class="link"   href="mailto:&#x78;&#120;&#x78;&#x78;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;" >&#x78;&#120;&#x78;&#x78;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;<i class="fas fa-external-link-alt"></i></a>“<br>git config –global user.name “xxxx”</p><p>生成 和 发布<br>hexo clean &amp;&amp; hexo d github</p><p>生成 hexo g &amp;&amp; hexo generate</p><p>发布hexo d   &amp;&amp; hexo deploy</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;docker exec -it hexo &amp;#x2F;bin&amp;#x2F;bash &lt;/p&gt;
+&lt;p&gt;git config –global user.email “&lt;a class=&quot;link&quot;   href=&quot;mailto:&amp;#x78;&amp;#120;&amp;#x78;&amp;#x78;&amp;#</summary>
+      
+    
+    
+    
+    <category term="hexo" scheme="http://daoke123.github.io/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://daoke123.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>甲骨文(ARM/x86均可) 使用netboot任意重装系统-silence</title>
+    <link href="http://daoke123.github.io/2022/11/22/%E7%94%B2%E9%AA%A8%E6%96%87/"/>
+    <id>http://daoke123.github.io/2022/11/22/%E7%94%B2%E9%AA%A8%E6%96%87/</id>
+    <published>2022-11-22T14:00:00.000Z</published>
+    <updated>2022-11-22T14:12:36.928Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><h4 id="甲骨文-ARM-x2F-x86均可-oracle-cloud使用netboot任意重装系统"><a href="#甲骨文-ARM-x2F-x86均可-oracle-cloud使用netboot任意重装系统" class="headerlink" title="甲骨文(ARM&#x2F;x86均可) oracle cloud使用netboot任意重装系统"></a>甲骨文(ARM&#x2F;x86均可) oracle cloud使用netboot任意重装系统</h4></blockquote><h6 id="一-创建控制台连接-注意-创建vps时候记得开默认的系统-oracle-linux-其他系统的bios和它不一定相同-试过ubuntu是不一样的-其他没尝试过"><a href="#一-创建控制台连接-注意-创建vps时候记得开默认的系统-oracle-linux-其他系统的bios和它不一定相同-试过ubuntu是不一样的-其他没尝试过" class="headerlink" title="一.创建控制台连接 注意:创建vps时候记得开默认的系统,oracle linux,其他系统的bios和它不一定相同(试过ubuntu是不一样的,其他没尝试过)"></a>一.创建控制台连接 注意:创建vps时候记得开默认的系统,oracle linux,其他系统的bios和它不一定相同(试过ubuntu是不一样的,其他没尝试过)</h6><p>这里我选择用本地的wsl生成了ssh key命令如<br><code>ssh-keygen -t rsa   cat .ssh/id\_rsa.pub</code><br>即可获得你的ssh公钥   然后去创建控制台连接粘贴密钥   创建完成后,复制linux的串口连接命令   再将命令复制到刚才的linux系统里就可以连接了,连接时候会有警告,输入yes即可   </p><h5 id="二-下载netboot-efi-这是重装系统前的最后一步-去netboot-xyz下载EFI引导文件"><a href="#二-下载netboot-efi-这是重装系统前的最后一步-去netboot-xyz下载EFI引导文件" class="headerlink" title="二.下载netboot.efi 这是重装系统前的最后一步,去netboot.xyz下载EFI引导文件"></a>二.下载netboot.efi 这是重装系统前的最后一步,去netboot.xyz下载EFI引导文件</h5><h6 id="x86-64"><a href="#x86-64" class="headerlink" title="x86_64:"></a>x86_64:</h6><p><code>https://boot.netboot.xyz/ipxe/netboot.xyz.efi</code> </p><h6 id="arm64"><a href="#arm64" class="headerlink" title="arm64:"></a>arm64:</h6><p><code>https://boot.netboot.xyz/ipxe/netboot.xyz-arm64.efi</code>  <br>将efi文件wget到vps的<code>/boot/efi/EFI</code>文件夹下即可   </p><h5 id="三-开始重装-连接上串口连接后-去网站控制台重启vps-然后回到连接中-狂按ESC-即可进入bios"><a href="#三-开始重装-连接上串口连接后-去网站控制台重启vps-然后回到连接中-狂按ESC-即可进入bios" class="headerlink" title="三.开始重装 连接上串口连接后,去网站控制台重启vps,然后回到连接中,狂按ESC,即可进入bios"></a>三.开始重装 连接上串口连接后,去网站控制台重启vps,然后回到连接中,狂按ESC,即可进入bios</h5><p>这里选择第三项`Boot Maintenance Manager`按回车进入   选择<code>Boot From File</code>  <br>然后再按一次回车进入默认的硬盘,选择EFI文件夹下的<code>netboot.efi</code>进入<code>netboot</code>   这是启动netboot后的界面,选择<code>Linux Network Installs</code>开始安装  <br>可以看到能安装的系统相当多,我这里选择安装debian11   安装时候记得选择<code>Text Based Install</code> 这样再次重新启动后，系统正常情况下是自动启动进iPXE当中去而不是默认的Debian&#x2F;Ubuntu中去  <br>进了netboot.xyz的启动功能后，用   <code>chain –autofree http://boot.netboot.xyz</code> 再从列表中选择自己要的系统，比如CentOS或Debian ARM 用 netboot.xyz<br>装 CentOS 会下载不到内核，手动下载一下就行； x86_64 CentOS 不能装版本大于7.2的，因为内存不够。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;h4 id=&quot;甲骨文-ARM-x2F-x86均可-oracle-cloud使用netboot任意重装系统&quot;&gt;&lt;a href=&quot;#甲骨文-ARM-x2F-x86均可-oracle-cloud使用netboot任意重装系统&quot; class=&quot;headerli</summary>
+      
+    
+    
+    
+    <category term="vps" scheme="http://daoke123.github.io/categories/vps/"/>
+    
+    
+    <category term="甲骨文" scheme="http://daoke123.github.io/tags/%E7%94%B2%E9%AA%A8%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 rclone 每天定时备份博客网站内容及mysql数据库到 Google Drive/Onedrive等网盘</title>
+    <link href="http://daoke123.github.io/2022/11/22/rclone-Google-Drive-Onedriv/"/>
+    <id>http://daoke123.github.io/2022/11/22/rclone-Google-Drive-Onedriv/</id>
+    <published>2022-11-22T03:56:00.000Z</published>
+    <updated>2022-11-22T14:48:18.796Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="RCLONE-官方提供了一键安装脚本"><a href="#RCLONE-官方提供了一键安装脚本" class="headerlink" title="RCLONE 官方提供了一键安装脚本"></a>RCLONE 官方提供了一键安装脚本</h2><p><code>curl https://rclone.org/install.sh | sudo bash</code><br>rclone config</p><h2>备份脚本编写及授权</h2>创建脚本文件：<p><code>mkdir /home/Backup</code></p><p><code>chmod +x /home/Backup</code></p><p><code class="hljs">touch /home/Backup/backup.sh<br>vi /home/Backup/backup.sh</code></p><pre class="EnlighterJSRAW" data-enlighter-language="md">#!/bin/bash# 定义GOOGLE DRIVE的备份目录GD_PATH="GdriveBackup:Backup"# 定义备份的目录及文件，不同的目录用空格分开BACKUP_SRC="/home/wwwroot/omo.moe/usr"# 定义临时文件存放目录BACKUP_DST="/home/Backup"# 设置MYSQL基本信息 MYSQL_SERVER="localhost"MYSQL_USER="root"MYSQL_PASS="your password"# 定义想要备份的数据库，多个数据库用空格分开BACKUP_DATABASE="typecho_omo"# 定义文件前缀名NOW=$(date +"%Y.%m.%d")OLD=$(date -d -5day +"%Y.%m.%d")# 备份网站数据文件zip -r $BACKUP_DST/auto_fileData_$NOW.zip $BACKUP_SRC# 备份mysql数据库mysqldump -u $MYSQL_USER -h $MYSQL_SERVER -p$MYSQL_PASS --databases $BACKUP_DATABASE &gt; $BACKUP_DST/$NOW-auto-Databases.sql# 使用rclone上传到google driverclone copy -v --stats 15s --bwlimit 40M $BACKUP_DST/ --include "$NOW-auto-Databases.sql" --include "auto_fileData_$NOW.zip" $GD_PATH# 删除本地的临时文件rm -f $BACKUP_DST/$NOW-auto-Databases.sql $BACKUP_DST/auto_fileData_$NOW.zip# 删除5天前的备份rclone delete $GD_PATH/ --include "$OLD-auto-Databases.sql" --include "auto_fileData_$OLD.zip"</pre><p>使用chmod指令赋予执行权限：</p><p><code>chmod +x /home/Backup/backup.sh</code></p><p>三、创建自动备份任务并测试</p><p>使用 crontab 每天4点定时执行自动备份脚本：</p><p><code>crontab -e</code></p><p>复制以下内容粘贴并输入:wq保存：</p><p><code>0 4 * * * /bin/bash /home/backup/backup.sh &gt;/dev/null 2&gt;&amp;1</code></p><p>手动测试看看脚本是否正确运行：</p><p><code>bash /home/Backup/backup.sh</code></p><p>时区设置为东八区：</p><p><code>timedatectl set-timezone Asia/Shanghai</code></p><p>重启定时任务：</p><p><code>service crond restart</code></p><p>重启系统日志：</p><p><code>service rsyslog restart</code></p><p>最后观察下系统日志尾巴状态，是否时区已经调整成功：</p><p><code>tail -f /var/log/cron</code></p><p>转：<a class="link"   href="https://omo.moe/archives/616/" >https://omo.moe/archives/616/<i class="fas fa-external-link-alt"></i></a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;RCLONE-官方提供了一键安装脚本&quot;&gt;&lt;a href=&quot;#RCLONE-官方提供了一键安装脚本&quot; class=&quot;headerlink&quot; title=&quot;RCLONE 官方提供了一键安装脚本&quot;&gt;&lt;/a&gt;RCLONE 官方提供了一键安装脚本&lt;/h2&gt;&lt;p&gt;&lt;code&gt;</summary>
+      
+    
+    
+    
+    <category term="vps" scheme="http://daoke123.github.io/categories/vps/"/>
+    
+    
+    <category term="rclone" scheme="http://daoke123.github.io/tags/rclone/"/>
+    
+    <category term="备份" scheme="http://daoke123.github.io/tags/%E5%A4%87%E4%BB%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>在LNMP环境下实现反向代理</title>
@@ -360,119 +483,6 @@
       
       
     <summary type="html">&lt;h4 id=&quot;检查镜像&quot;&gt;&lt;a href=&quot;#检查镜像&quot; class=&quot;headerlink&quot; title=&quot;检查镜像&quot;&gt;&lt;/a&gt;检查镜像&lt;/h4&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;</summary>
-      
-    
-    
-    
-    <category term="默认分类" scheme="http://daoke123.github.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>NginxProxyManager</title>
-    <link href="http://daoke123.github.io/2022/01/12/71/"/>
-    <id>http://daoke123.github.io/2022/01/12/71/</id>
-    <published>2022-01-12T15:47:00.000Z</published>
-    <updated>2022-11-10T15:18:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mkdir nginx</span><br><span class="line">cd nginx</span><br><span class="line"></span><br><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;80:80&#x27;</span><br><span class="line">      - &#x27;81:81&#x27;</span><br><span class="line">      - &#x27;443:443&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data</span><br><span class="line">      - ./letsencrypt:/etc/letsencrypt</span><br></pre></td></tr></table></figure><p><code>docker-compose up -d</code></p><p>默认帐号密码</p><ul><li>Email:    <a class="link"   href="mailto:&#97;&#100;&#x6d;&#x69;&#110;&#x40;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#111;&#109;" >&#97;&#100;&#x6d;&#x69;&#110;&#x40;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#111;&#109;<i class="fas fa-external-link-alt"></i></a></li><li>Password: changeme</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span c</summary>
-      
-    
-    
-    
-    <category term="默认分类" scheme="http://daoke123.github.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>宝塔降级7.7</title>
-    <link href="http://daoke123.github.io/2022/01/12/70/"/>
-    <id>http://daoke123.github.io/2022/01/12/70/</id>
-    <published>2022-01-12T13:08:00.000Z</published>
-    <updated>2022-10-30T14:11:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>破解的有BUG 推荐使用降级</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.bt.cn/install/update/LinuxPanel-7.7.0.zip</span><br><span class="line">unzip LinuxPanel-*</span><br><span class="line">cd panel</span><br><span class="line">bash update.sh</span><br><span class="line">cd .. &amp;&amp; rm -f LinuxPanel-*.zip &amp;&amp; rm -rf panel</span><br></pre></td></tr></table></figure><p>破解登录</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rm -f /www/server/panel/data/bind.pl</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sed -i -r &quot;s/not not get_user_info\(\)/True/&quot; /www/server/panel/class/public.py &amp;&amp; bt 1</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;破解的有BUG 推荐使用降级&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;lin</summary>
-      
-    
-    
-    
-    <category term="默认分类" scheme="http://daoke123.github.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>常用脚本备份</title>
-    <link href="http://daoke123.github.io/2022/01/12/69/"/>
-    <id>http://daoke123.github.io/2022/01/12/69/</id>
-    <published>2022-01-11T17:56:25.000Z</published>
-    <updated>2022-10-30T14:11:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>网络重装脚本<br>PS：自定义密码直接 -p 你想要的密码就行！！！<br>部分机器需要设置网卡，否则可以VNC，但是不能远程SSH</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-firmware                额外的驱动支持</span><br><span class="line">-d                        Debian系统 后面是系统版本号</span><br><span class="line">-c                        Centos系统 后面是系统版本号</span><br><span class="line">-v                         后面写64位 32位</span><br><span class="line">-a                        不清楚这个干啥的但是每个脚本都带</span><br><span class="line">--mirror                后面是镜像源地址</span><br><span class="line">-p                        后面写自定义密码</span><br><span class="line">–ip-addr                 ifconfig -a 后获取到的 例：194.87.xxx.xxx</span><br><span class="line">–ip-gate                 route -n    后获取到的 例   194.87.xxx.xxx</span><br><span class="line">–ip-mask                 255.255.xxx.xx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>· 甲骨文、三毛、Vir、RN等大部分VPS通用，三毛、甲骨文 记得去掉 -firmware</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bash  /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">sysctl -p</span><br><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br><span class="line">lsmod  grep bbr</span><br></pre></td></tr></table></figure><p>复制代码</p><p>superbench</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- git.io/superbench.sh  bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>Bench.sh</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- bench.sh  bash</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>三网测速</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash </span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;网络重装脚本&lt;br&gt;PS：自定义密码直接 -p 你想要的密码就行！！！&lt;br&gt;部分机器需要设置网卡，否则可以VNC，但是不能远程SSH&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;</summary>
-      
-    
-    
-    
-    <category term="默认分类" scheme="http://daoke123.github.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>WARP为服务器添加IPv4/IPv6网络</title>
-    <link href="http://daoke123.github.io/2022/01/10/68/"/>
-    <id>http://daoke123.github.io/2022/01/10/68/</id>
-    <published>2022-01-09T21:22:37.000Z</published>
-    <updated>2022-10-30T14:11:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh &amp;&amp; bash menu.sh</span><br></pre></td></tr></table></figure><p>WireGuard 网络接口数据，查看 wg</p><p>临时关闭和开启 WARP（reboot重启后恢复开启） warp o 官方原始指令 wg-quick down wgcf ，恢复启动 wg-quick up wgcf</p><p>禁止开机启动 systemctl disable –now wg-quick@wgcf,恢复开机启动 systemctl enable –now wg-quick@wgcf</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
-      
-    
-    
-    
-    <category term="默认分类" scheme="http://daoke123.github.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>dd CentOS</title>
-    <link href="http://daoke123.github.io/2022/01/09/67/"/>
-    <id>http://daoke123.github.io/2022/01/09/67/</id>
-    <published>2022-01-08T22:13:00.000Z</published>
-    <updated>2022-10-30T14:11:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>以下命令中的 -c 后面为CentOS版本号，-v 后面为64位&#x2F;32位，可根据需求进行替换。</p><h1 id="CentOS-6-9-64位："><a href="#CentOS-6-9-64位：" class="headerlink" title="CentOS 6.9 64位："></a>CentOS 6.9 64位：</h1><p>`bash</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;以下命令中的 -c 后面为CentOS版本号，-v 后面为64位&amp;#x2F;32位，可根据需求进行替换。&lt;/p&gt;
-&lt;h1 id=&quot;CentOS-6-9-64位：&quot;&gt;&lt;a href=&quot;#CentOS-6-9-64位：&quot; class=&quot;headerlink&quot; title=&quot;Ce</summary>
       
     
     
