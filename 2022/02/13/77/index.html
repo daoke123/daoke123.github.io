@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -250,35 +250,35 @@
                 <p><a class="link"   target="_blank" rel="noopener" href="https://gitee.com/wfxzf/pyNvr" >pyNvr脚本<i class="fas fa-external-link-alt"></i></a></p>
 <p>安装python3</p>
 <p>如果使用百度网盘：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip3 install bypy</span><br><span class="line">bypy info</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip3 install bypy</span><br><span class="line">bypy info</span><br></pre></td></tr></table></figure>
 
 <p>复制链接粘贴到浏览器打开，登录，填写授权码。<br>如果出错<br>试试删掉配置文件重新授权</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -Rf ~/.bypy</span><br><span class="line">rm -f ~/.bypy.*</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -Rf ~/.bypy</span><br><span class="line">rm -f ~/.bypy.*</span><br></pre></td></tr></table></figure>
 
 <p>如果使用阿里云盘：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install aligo</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip3 install aligo</span><br></pre></td></tr></table></figure>
 
 <p>安装opencv：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install python3-opencv</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install python3-opencv</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>创建保存视频的文件夹,例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/videos</span><br><span class="line">mkdir /home/videos/cam01</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir /home/videos</span><br><span class="line">mkdir /home/videos/cam01</span><br></pre></td></tr></table></figure>
 
 <p>一定要创建好路径，并且跟配置的路径一致，最后一层文件夹的名称为摄像头名称（camname）,参数pwd写到倒数第二层文件夹，以&#x2F;&#x2F;结尾即可。 编辑pyNvr.py,修改配置（选择netdisk（netdisk &#x3D; 1为百度，2为阿里），摄像头名称camname、串流地址url、本地存储路径pwd，单个视频时长blocktime,开启储存到百度网盘upyoby，上传完成后删除本地文件re_af_up）</p>
 <p>运行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd pyNvr</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd pyNvr</span><br></pre></td></tr></table></figure>
 
 <p>运行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 pyNvr.py</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python3 pyNvr.py</span><br></pre></td></tr></table></figure>
 
 <p>如果使用阿里网盘，第一次使用需要登录（百度已经登陆过）<br>如果二维码显示错乱，需要新建一个终端，手动找到&#x2F;tmp中的图片复制到手机可以直接访问的文件夹中，扫描，如：<br>cp &#x2F;tmp&#x2F;tmp56sdcc.png &#x2F;sdcard&#x2F;DCIM&#x2F;QRcode.png<br>打开文件管理，找到DCIM文件夹下的这张图，扫描即可。<br>测试没有问题后，ctrl + C终止程序。<br>后台运行程序:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup python3 pyNvr.py &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nohup python3 pyNvr.py &amp;</span><br></pre></td></tr></table></figure>
 
 <p>增加重启开机自动运行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/rc.local</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/rc.local</span><br></pre></td></tr></table></figure>
 
 <p>把<br><code>nohup python3 /root/pyNvr/pyNvr.py &amp;</code><br>增加exit 0前面<br>程序极其简陋，稳定和安全毫无保障，仅仅用于不含任何隐私信息、图省钱省事还想多一层云备份的情况<br>仅建议用于linux不完整的安卓手机，云服务器、实体机、树莓派建议使用知名开源或商业软件，如bluebeery等。<br>附，国内常见IP摄像头串流地址:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">海康威视</span><br><span class="line">主码流：</span><br><span class="line">rtsp://user:password@ip:554/h264/ch1/main/av_stream</span><br><span class="line">子码流：</span><br><span class="line">rtsp://user:password@ip:554/mpeg4/ch1/sub/av_stream</span><br><span class="line"></span><br><span class="line">大华</span><br><span class="line">rtsp://username:password@ip:port/cam/realmonitor?channel=1&amp;subtype=0</span><br><span class="line"></span><br><span class="line">TP-Link/水星安防</span><br><span class="line">rtsp://user:password@ip:554/stream1</span><br><span class="line">rtsp://user:password@ip:554/stream2</span><br><span class="line">三星</span><br><span class="line">高码流rtsp地址：</span><br><span class="line">rtsp://user:password@ip:554/onvif/profile2/media.smp（720P）</span><br><span class="line">低码率rtsp地址</span><br><span class="line">rtsp://user:password@ip:554/onvif/profile3/media.smp</span><br><span class="line"></span><br><span class="line">LG</span><br><span class="line">高码流（主码流）RTSP地址：</span><br><span class="line">rtsp://user:password@ip:554/Master-0</span><br><span class="line">低码流（子码流）RTSP地址：</span><br><span class="line">rtsp://user:password@ip:554/Slave-0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">海康威视</span><br><span class="line">主码流：</span><br><span class="line">rtsp://user:password@ip:554/h264/ch1/main/av_stream</span><br><span class="line">子码流：</span><br><span class="line">rtsp://user:password@ip:554/mpeg4/ch1/sub/av_stream</span><br><span class="line"></span><br><span class="line">大华</span><br><span class="line">rtsp://username:password@ip:port/cam/realmonitor?channel=1&amp;subtype=0</span><br><span class="line"></span><br><span class="line">TP-Link/水星安防</span><br><span class="line">rtsp://user:password@ip:554/stream1</span><br><span class="line">rtsp://user:password@ip:554/stream2</span><br><span class="line">三星</span><br><span class="line">高码流rtsp地址：</span><br><span class="line">rtsp://user:password@ip:554/onvif/profile2/media.smp（720P）</span><br><span class="line">低码率rtsp地址</span><br><span class="line">rtsp://user:password@ip:554/onvif/profile3/media.smp</span><br><span class="line"></span><br><span class="line">LG</span><br><span class="line">高码流（主码流）RTSP地址：</span><br><span class="line">rtsp://user:password@ip:554/Master-0</span><br><span class="line">低码流（子码流）RTSP地址：</span><br><span class="line">rtsp://user:password@ip:554/Slave-0</span><br></pre></td></tr></table></figure>
             </div>
 
             

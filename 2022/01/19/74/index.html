@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -247,18 +247,18 @@
             
 
             <div class="article-content keep-markdown-body">
-                <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https</span><br></pre></td></tr></table></figure>
+                <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -1sLf &#x27;https://dl.cloudsmith.io/public/caddy/stable/gpg.key&#x27;  sudo apt-key add - </span><br><span class="line">curl -1sLf &#x27;https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt&#x27;  sudo tee -a /etc/apt/sources.list.d/caddy-stable.list</span><br><span class="line">    sudo apt update</span><br><span class="line">    sudo apt install caddy</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -1sLf &#x27;https://dl.cloudsmith.io/public/caddy/stable/gpg.key&#x27;  sudo apt-key add - </span><br><span class="line">curl -1sLf &#x27;https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt&#x27;  sudo tee -a /etc/apt/sources.list.d/caddy-stable.list</span><br><span class="line">    sudo apt update</span><br><span class="line">    sudo apt install caddy</span><br></pre></td></tr></table></figure>
 
-<h4 id="证书位置"><a href="#证书位置" class="headerlink" title="证书位置"></a>证书位置</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/</span><br></pre></td></tr></table></figure>
+<h4 id="证书位置"><a href="#证书位置" class="headerlink" title="证书位置"></a>证书位置</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/</span><br></pre></td></tr></table></figure>
 
-<h4 id="配置文件路径"><a href="#配置文件路径" class="headerlink" title="配置文件路径"></a>配置文件路径</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/caddy/Caddyfile</span><br></pre></td></tr></table></figure>
+<h4 id="配置文件路径"><a href="#配置文件路径" class="headerlink" title="配置文件路径"></a>配置文件路径</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/etc/caddy/Caddyfile</span><br></pre></td></tr></table></figure>
 
 <p>修改配置后 重新加载配置</p>
-<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">www.psvmc.cn &#123;</span><br><span class="line">    reverse_proxy localhost:9000</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">www.psvmc.cn &#123;</span><br><span class="line">    reverse_proxy localhost:9000</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="修改配置后-重新加载配置"><a href="#修改配置后-重新加载配置" class="headerlink" title="修改配置后 重新加载配置"></a>修改配置后 重新加载配置</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl reload caddy</span><br></pre></td></tr></table></figure>
+<h4 id="修改配置后-重新加载配置"><a href="#修改配置后-重新加载配置" class="headerlink" title="修改配置后 重新加载配置"></a>修改配置后 重新加载配置</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl reload caddy</span><br></pre></td></tr></table></figure>
 
 <p>Ubuntu<br><code>sudo systemctl restart caddy</code></p>
 

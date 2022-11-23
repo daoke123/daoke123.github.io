@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -261,13 +261,13 @@
                 <p>vnstat安装步骤，软件包和编译安装任选一种方法即可<br>使用yum&#x2F;apt-get 软件包管理工具进行安装：（建议使用此方法）</p>
 <span id="more"></span>
 <p>CentOS需要先安装EPEL第三方源，安装好EPEL后执行命令：yum install vnstat 即可安装上vnstat，安装过程可能会要求输入y 进行确认。<br>Fedora安装命令：yum install vnstat 或 dnf install vnstat<br>Debian&#x2F;Ubuntu安装命令：<code>apt-get install vnstat</code><br>可以<code>ifconfig</code>看看自己的网卡是否是eth0<br>执行一下：<code>vnstat -u -i eth0</code> 创建上对应网卡的数据库，eth0根据前面的说明自己修改网卡。<br>首先，停止 vnStat 服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop vnstat</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop vnstat</span><br></pre></td></tr></table></figure>
 
 <p>再启动 vnStat 服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start vnstat</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start vnstat</span><br></pre></td></tr></table></figure>
 
 <p>vnstat基本使用命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vnstat -l    #显示实时流量</span><br><span class="line">vnstat -h    #按小时查询</span><br><span class="line">vnstat -d    #按天数查询</span><br><span class="line">vnstat -m    #按月数查询</span><br><span class="line">vnstat -w    #按周数查询</span><br><span class="line">vnstat -t    #查询TOP10</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vnstat -l    #显示实时流量</span><br><span class="line">vnstat -h    #按小时查询</span><br><span class="line">vnstat -d    #按天数查询</span><br><span class="line">vnstat -m    #按月数查询</span><br><span class="line">vnstat -w    #按周数查询</span><br><span class="line">vnstat -t    #查询TOP10</span><br></pre></td></tr></table></figure>
 
 <p>更多命令帮助信息可以 <code>vnstat --help</code> 进行查看。</p>
 

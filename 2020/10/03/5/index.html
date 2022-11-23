@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -270,35 +270,35 @@
 <p>假定armbian已经安装完成</p>
 <p>1、打开putty，输入N1的IP地址连接并登陆</p>
 <p>2、输入命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
 
 <p>复制代码<br>3、在原先的源前面加#号注释掉，并将国内源复制过去</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.ustc.edu.cn/debian stretch main contrib non-free</span><br><span class="line">deb http://mirrors.ustc.edu.cn/debian stretch-updates main contrib non-free</span><br><span class="line">deb http://mirrors.ustc.edu.cn/debian stretch-backports main contrib non-free</span><br><span class="line">deb http://mirrors.ustc.edu.cn/debian-security/ stretch/updates main contrib non-free</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb http://mirrors.ustc.edu.cn/debian stretch main contrib non-free</span><br><span class="line">deb http://mirrors.ustc.edu.cn/debian stretch-updates main contrib non-free</span><br><span class="line">deb http://mirrors.ustc.edu.cn/debian stretch-backports main contrib non-free</span><br><span class="line">deb http://mirrors.ustc.edu.cn/debian-security/ stretch/updates main contrib non-free</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>复制代码<br>改 armbian 源</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/apt/sources.list.d/armbian.list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/apt/sources.list.d/armbian.list</span><br></pre></td></tr></table></figure>
 
 <p>将里面的那行注释掉（在前面添加 # ）然后添加这行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/armbian bionic main bionic-utils bionic-desktop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/armbian bionic main bionic-utils bionic-desktop</span><br></pre></td></tr></table></figure>
 
 <p>4、ctrl+x退出编辑，按y回车保存<br>5、执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt update &amp;&amp; apt upgrade -y</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update &amp;&amp; apt upgrade -y</span><br></pre></td></tr></table></figure>
 
 <p>复制代码</p>
 <h3 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h3><p>更换软件源：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;s/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g&#x27; /etc/apt/sources.list</span><br><span class="line">sed -i &#x27;ssecurity.debian.orgmirrors.tuna.tsinghua.edu.cn/debian-securityg&#x27; /etc/apt/sources.list</span><br><span class="line">sed -i &#x27;sapt.armbian.commirrors.tuna.tsinghua.edu.cn/armbiang&#x27; /etc/apt/sources.list.d/armbian.list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sed -i &#x27;s/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g&#x27; /etc/apt/sources.list</span><br><span class="line">sed -i &#x27;ssecurity.debian.orgmirrors.tuna.tsinghua.edu.cn/debian-securityg&#x27; /etc/apt/sources.list</span><br><span class="line">sed -i &#x27;sapt.armbian.commirrors.tuna.tsinghua.edu.cn/armbiang&#x27; /etc/apt/sources.list.d/armbian.list</span><br></pre></td></tr></table></figure>
 
 <p>复制代码<br>至此，软件源更换完毕。</p>
 <p>6、安装docker</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line"></span><br><span class="line">sh get-docker.sh --mirror Aliyun</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line"></span><br><span class="line">sh get-docker.sh --mirror Aliyun</span><br></pre></td></tr></table></figure>
 
 <p>复制代码<br>使用上述命令安装会调用阿里云的镜像，安装速度较快。</p>
 <p>7、配置docker镜像加速<br>登陆</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dev.aliyun.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dev.aliyun.com</span><br></pre></td></tr></table></figure>
 
 <p>复制代码<br>进入容器镜像服务，得到镜像加速器地址</p>
 <p>8、putty下执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line"></span><br><span class="line">tee /etc/docker/daemon.json </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line"></span><br><span class="line">tee /etc/docker/daemon.json </span><br></pre></td></tr></table></figure>
             </div>
 
             

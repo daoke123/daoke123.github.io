@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -195,7 +195,7 @@
                 <div class="home-article-content keep-markdown-body">
                     
                         萌咖脚本（debian10）：
-1234567891011121314151617全自动安装默认用户：root密码: MoeClub.org某些特殊的服务商不适用此脚本，比如 cloudcone已测试服务商：腾讯云、阿里云# Debian/Ubunt...
+全自动安装默认用户：root密码: MoeClub.org某些特殊的服务商不适用此脚本，比如 cloudcone已测试服务商：腾讯云、阿里云# Debian/Ubuntu:apt-get updateapt-get i...
                     
                 </div>
 
@@ -264,10 +264,10 @@
                 <div class="home-article-content keep-markdown-body">
                     
                         高清
-1rtsp://admin:123456@192.168.2.3:554/stream1
+rtsp://admin:123456@192.168.2.3:554/stream1
 
 一般
-1rtsp://admin:123456@192.168.2.3:554/stream2
+rtsp://admin:123456@192.168.2.3:554/stream2
                     
                 </div>
 
@@ -384,7 +384,7 @@
                     
                         AdGuardHome
 表示对以下设置的所有server发起查询#选择回应最快的一条作为查询结果返回
-1234all-serversserver=192.168.2.2#5533 #AdGuardHomedns-forward-max=1000 #A...
+all-serversserver=192.168.2.2#5533 #AdGuardHomedns-forward-max=1000 #AdGua...
                     
                 </div>
 
@@ -448,7 +448,7 @@
                 <div class="home-article-content keep-markdown-body">
                     
                         安装AdGuardHome
-123456789101112131415wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_arm.tar.gz#进入AdGuard...
+wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_arm.tar.gz#进入AdGuardHome目录cd AdGuardHome#...
                     
                 </div>
 
@@ -507,13 +507,13 @@
                 <div class="home-article-content keep-markdown-body">
                     
                         查看下Swap的大小
-1free -m
+free -m
 
 创建一个存放Swap文件的文件夹
-12mkdir /opt/swap
+mkdir /opt/swap
 
 生成一个大小为1G，名字是swapfile的文件
-1cd /opt/swap &amp;&amp; dd if=/dev/zero of...
+cd /opt/swap &amp;&amp; dd if=/dev/zero of=swa...
                     
                 </div>
 
@@ -573,7 +573,7 @@
                     
                         <p>一、Cron表达式的组成</p>
 <p>其实就是一组时间序列，一个由6个空格7个域组成的字符串，排序如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[秒] [分] [时] [日] [月] [周] [年]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[秒] [分] [时] [日] [月] [周] [年]</span><br></pre></td></tr></table></figure>
                     
                 </div>
 
@@ -692,10 +692,10 @@
                 <div class="home-article-content keep-markdown-body">
                     
                         防火墙放行全部端口
-1234iptables -P INPUT ACCEPTiptables -P OUTPUT ACCEPTiptables -F
+iptables -P INPUT ACCEPTiptables -P OUTPUT ACCEPTiptables -F
 
 或者直接删除规则
-1234rm -rf /etc/iptables/rules.v4rm -rf ...
+rm -rf /etc/iptables/rules.v4rm -rf /etc/ipt...
                     
                 </div>
 

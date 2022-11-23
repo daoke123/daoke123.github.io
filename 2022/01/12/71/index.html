@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -247,12 +247,12 @@
             
 
             <div class="article-content keep-markdown-body">
-                <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mkdir nginx</span><br><span class="line">cd nginx</span><br><span class="line"></span><br><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;80:80&#x27;</span><br><span class="line">      - &#x27;81:81&#x27;</span><br><span class="line">      - &#x27;443:443&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data</span><br><span class="line">      - ./letsencrypt:/etc/letsencrypt</span><br></pre></td></tr></table></figure>
+                <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir nginx</span><br><span class="line">cd nginx</span><br><span class="line"></span><br><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;80:80&#x27;</span><br><span class="line">      - &#x27;81:81&#x27;</span><br><span class="line">      - &#x27;443:443&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data</span><br><span class="line">      - ./letsencrypt:/etc/letsencrypt</span><br></pre></td></tr></table></figure>
 
 <p><code>docker-compose up -d</code></p>
 <p>默认帐号密码</p>
 <ul>
-<li>Email:    <a class="link"   href="mailto:&#x61;&#x64;&#x6d;&#105;&#x6e;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#x63;&#x6f;&#109;" >&#x61;&#x64;&#x6d;&#105;&#x6e;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#x63;&#x6f;&#109;<i class="fas fa-external-link-alt"></i></a></li>
+<li>Email:    <a class="link"   href="mailto:&#97;&#x64;&#x6d;&#105;&#x6e;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#111;&#109;" >&#97;&#x64;&#x6d;&#105;&#x6e;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#111;&#109;<i class="fas fa-external-link-alt"></i></a></li>
 <li>Password: changeme</li>
 </ul>
 

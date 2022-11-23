@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -261,25 +261,25 @@
                 <p>基于openwrt官方19.07.5固件打包制作。</p>
 <p>请勿当路由使用（不包含路由组件），适合做有管理界面的mini Linux跑一些小应用比如京东签到。</p>
 <p>启用混杂模式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link set eth0 promisc on</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip link set eth0 promisc on</span><br></pre></td></tr></table></figure>
 
 <p>创建虚拟macvlan网卡(IP、网关请根据自己的网络修改)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d macvlan --subnet=192.168.11.0/24 --gateway=192.168.11.1 -o parent=eth0 macnet</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker network create -d macvlan --subnet=192.168.11.0/24 --gateway=192.168.11.1 -o parent=eth0 macnet</span><br></pre></td></tr></table></figure>
 
 <p>创建openwrt容器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart always --name openwrt --network macnet --privileged 99010/openwrt /sbin/init</span><br><span class="line">docker run --restart always --name openwrt -d --network macnet --privileged sulinggg/openwrt-mini:arm64 /sbin/init</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --restart always --name openwrt --network macnet --privileged 99010/openwrt /sbin/init</span><br><span class="line">docker run --restart always --name openwrt -d --network macnet --privileged sulinggg/openwrt-mini:arm64 /sbin/init</span><br></pre></td></tr></table></figure>
 
 <p>进入容器并修改相关参数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it openwrt bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker exec -it openwrt bash</span><br></pre></td></tr></table></figure>
 
 <p>执行此命令后我们便进入 OpenWrt 的命令行界面，首先，我们需要编辑 OpenWrt 的网络配置文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/config/network</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/config/network</span><br></pre></td></tr></table></figure>
 
 <p>我们需要更改 Lan 口设置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">config interface &#x27;lan&#x27;</span><br><span class="line">        option type &#x27;bridge&#x27;</span><br><span class="line">        option ifname &#x27;eth0&#x27;</span><br><span class="line">        option proto &#x27;static&#x27;</span><br><span class="line">        option ipaddr &#x27;192.168.3.88&#x27;</span><br><span class="line">        option netmask &#x27;255.255.255.0&#x27;</span><br><span class="line">        option ip6assign &#x27;60&#x27;</span><br><span class="line">        option gateway &#x27;192.168.3.1&#x27;</span><br><span class="line">        option broadcast &#x27;192.168.3.255&#x27;</span><br><span class="line">        option dns &#x27;192.168.3.1&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">config interface &#x27;lan&#x27;</span><br><span class="line">        option type &#x27;bridge&#x27;</span><br><span class="line">        option ifname &#x27;eth0&#x27;</span><br><span class="line">        option proto &#x27;static&#x27;</span><br><span class="line">        option ipaddr &#x27;192.168.3.88&#x27;</span><br><span class="line">        option netmask &#x27;255.255.255.0&#x27;</span><br><span class="line">        option ip6assign &#x27;60&#x27;</span><br><span class="line">        option gateway &#x27;192.168.3.1&#x27;</span><br><span class="line">        option broadcast &#x27;192.168.3.255&#x27;</span><br><span class="line">        option dns &#x27;192.168.3.1&#x27;</span><br></pre></td></tr></table></figure>
 
 <p>6.重启网络</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/network restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/etc/init.d/network restart</span><br></pre></td></tr></table></figure>
 
 <p>京东签到的ipk下载</p>
 <p><a class="link"   target="_blank" rel="noopener" href="https://github.com/jerrykuku/luci-app-jd-dailybonus" >https://github.com/jerrykuku/luci-app-jd-dailybonus<i class="fas fa-external-link-alt"></i></a></p>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -259,19 +259,19 @@
 
             <div class="article-content keep-markdown-body">
                 <p>查看下Swap的大小</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -m</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">free -m</span><br></pre></td></tr></table></figure>
 
 <p>创建一个存放Swap文件的文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/swap</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir /opt/swap</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>生成一个大小为1G，名字是swapfile的文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/swap &amp;&amp; dd if=/dev/zero of=swapfile bs=1024 count=1048576</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /opt/swap &amp;&amp; dd if=/dev/zero of=swapfile bs=1024 count=1048576</span><br></pre></td></tr></table></figure>
 
 <p>文件转换成swap并且激活</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap swapfile &amp;&amp; swapon /opt/swap/swapfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkswap swapfile &amp;&amp; swapon /opt/swap/swapfile</span><br></pre></td></tr></table></figure>
 
 <p>设置开机自动挂载 nano &#x2F;etc&#x2F;fstab 添加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/swap/swapfile swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/opt/swap/swapfile swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
             </div>
 
             

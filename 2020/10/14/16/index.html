@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -249,16 +249,16 @@
             <div class="article-content keep-markdown-body">
                 <p><code>docker run -v /mnt/ssd1:/mnts -d --name ttnode --net=host -i -t --privileged=true --restart=always 744287383/linux-arm64-ttnode /start.sh</code></p>
 <h1 id="第一次执行命令需要下载镜像。如果下载镜像非常慢的，请按下CTRL-C来中断下载，然后再次执行这条命令重新下载-x2F-mnt-x2F-ssd1为硬盘的挂载路径，-x2F-mnts这个冒号和路径的不能改动，ttnode为容器的名字。"><a href="#第一次执行命令需要下载镜像。如果下载镜像非常慢的，请按下CTRL-C来中断下载，然后再次执行这条命令重新下载-x2F-mnt-x2F-ssd1为硬盘的挂载路径，-x2F-mnts这个冒号和路径的不能改动，ttnode为容器的名字。" class="headerlink" title="第一次执行命令需要下载镜像。如果下载镜像非常慢的，请按下CTRL+C来中断下载，然后再次执行这条命令重新下载 #&#x2F;mnt&#x2F;ssd1为硬盘的挂载路径，:&#x2F;mnts这个冒号和路径的不能改动，ttnode为容器的名字。"></a>第一次执行命令需要下载镜像。如果下载镜像非常慢的，请按下CTRL+C来中断下载，然后再次执行这条命令重新下载 #&#x2F;mnt&#x2F;ssd1为硬盘的挂载路径，:&#x2F;mnts这个冒号和路径的不能改动，ttnode为容器的名字。</h1><p>甜糖容器限制内存的方法（防止机器跑死）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker update ttnode --memory-swap -1 -m 1080M  </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker update ttnode --memory-swap -1 -m 1080M  </span><br></pre></td></tr></table></figure>
 
 <p>查看是否生效</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stats</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker stats</span><br></pre></td></tr></table></figure>
 
 <p>查询docker id</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
 
 <p>设置自动启动容器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker update --restart=always</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker update --restart=always</span><br></pre></td></tr></table></figure>
 
 <p>局域网设备解决办法：<br>连接N1的ssh执行以下命令：<br><code>docker exec -it ttnode /bin/bash</code> #进入容器的命令，ttnode是容器名。修改成自己的容器的名字<br><code>/usr/node/ttnode -p /mnts</code> #执行甜糖的命令</p>
 

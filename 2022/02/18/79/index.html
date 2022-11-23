@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -247,9 +247,9 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h1 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/videos</span><br><span class="line">mkdir /home/videos/cam01</span><br><span class="line">cd</span><br><span class="line">mkdir filebrowser</span><br><span class="line">cd filebrowser</span><br><span class="line">touch filebrowser.db</span><br></pre></td></tr></table></figure>
+                <h1 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir /home/videos</span><br><span class="line">mkdir /home/videos/cam01</span><br><span class="line">cd</span><br><span class="line">mkdir filebrowser</span><br><span class="line">cd filebrowser</span><br><span class="line">touch filebrowser.db</span><br></pre></td></tr></table></figure>
 
-<h1 id="运行docker"><a href="#运行docker" class="headerlink" title="运行docker"></a>运行docker</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--name filebrowser \</span><br><span class="line">-v /:/srv/ \</span><br><span class="line">-v /root/filebrowser/filebrowser.db:/database.db \</span><br><span class="line">--user $(id -u):$(id -g) \</span><br><span class="line">-p 8088:80 \</span><br><span class="line">--restart=always \</span><br><span class="line">filebrowser/filebrowser</span><br></pre></td></tr></table></figure>
+<h1 id="运行docker"><a href="#运行docker" class="headerlink" title="运行docker"></a>运行docker</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--name filebrowser \</span><br><span class="line">-v /:/srv/ \</span><br><span class="line">-v /root/filebrowser/filebrowser.db:/database.db \</span><br><span class="line">--user $(id -u):$(id -g) \</span><br><span class="line">-p 8088:80 \</span><br><span class="line">--restart=always \</span><br><span class="line">filebrowser/filebrowser</span><br></pre></td></tr></table></figure>
             </div>
 
             

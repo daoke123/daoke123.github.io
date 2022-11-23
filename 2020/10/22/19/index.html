@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -248,25 +248,25 @@
 
             <div class="article-content keep-markdown-body">
                 <p>查看当前硬盘</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure>
 
 <p>格式化硬盘</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs -t ext4 /dev/sdb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkfs -t ext4 /dev/sdb</span><br></pre></td></tr></table></figure>
 
 <p>分区</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/sdb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fdisk /dev/sdb</span><br></pre></td></tr></table></figure>
 
 <p>然后按提示输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">root@test:/# fdisk /dev/sdb</span><br><span class="line"></span><br><span class="line">Welcome to fdisk (util-linux 2.27.1).</span><br><span class="line">Changes will remain in memory only, until you decide to write them.</span><br><span class="line">Be careful before using the write command.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Command (m for help): n</span><br><span class="line">Partition type</span><br><span class="line">   p   primary (1 primary, 0 extended, 3 free)</span><br><span class="line">   e   extended (container for logical partitions)</span><br><span class="line">Select (default p): p</span><br><span class="line">Partition number (2-4, default 2): 2</span><br><span class="line">First sector (651175056-1953525167, default 651175936): </span><br><span class="line">Last sector, +sectors or +size&#123;K,M,G,T,P&#125; (651175936-1953525167, default 1953525167): 1302350111</span><br><span class="line"></span><br><span class="line">Created a new partition 2 of type &#x27;Linux&#x27; and of size 310.5 GiB.</span><br><span class="line"></span><br><span class="line">Command (m for help): wq</span><br><span class="line">The partition table has been altered.</span><br><span class="line">Calling ioctl() to re-read partition table.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@test:/# fdisk /dev/sdb</span><br><span class="line"></span><br><span class="line">Welcome to fdisk (util-linux 2.27.1).</span><br><span class="line">Changes will remain in memory only, until you decide to write them.</span><br><span class="line">Be careful before using the write command.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Command (m for help): n</span><br><span class="line">Partition type</span><br><span class="line">   p   primary (1 primary, 0 extended, 3 free)</span><br><span class="line">   e   extended (container for logical partitions)</span><br><span class="line">Select (default p): p</span><br><span class="line">Partition number (2-4, default 2): 2</span><br><span class="line">First sector (651175056-1953525167, default 651175936): </span><br><span class="line">Last sector, +sectors or +size&#123;K,M,G,T,P&#125; (651175936-1953525167, default 1953525167): 1302350111</span><br><span class="line"></span><br><span class="line">Created a new partition 2 of type &#x27;Linux&#x27; and of size 310.5 GiB.</span><br><span class="line"></span><br><span class="line">Command (m for help): wq</span><br><span class="line">The partition table has been altered.</span><br><span class="line">Calling ioctl() to re-read partition table.</span><br></pre></td></tr></table></figure>
 
 <p>如果遇到提示Re-reading the partition table failed.: Device or resource busy<br>用命令<code>partprobe</code><br>初始化分区</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sdb1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkfs.ext4 /dev/sdb1</span><br></pre></td></tr></table></figure>
 
 <p>挂载到本地</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sdb1 /mnt/disk_1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mount /dev/sdb1 /mnt/disk_1</span><br></pre></td></tr></table></figure>
 
 <p>查看磁盘使用情况</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -l</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">df -l</span><br></pre></td></tr></table></figure>
 
 <p>提示partition满了,解决办法<br>把swapper分区删掉(不是一个好办法,但是能解决问题)<br>通过fdisk -l查看哪个是swapp<br>swapoff &#x2F;dev&#x2F;sdb*<br>然后通过fdisk &#x2F;dev&#x2F;sdb删掉swapp分区,这样就多了个partition</p>
 

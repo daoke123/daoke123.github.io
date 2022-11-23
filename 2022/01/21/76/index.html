@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -248,22 +248,22 @@
 
             <div class="article-content keep-markdown-body">
                 <p>示例 frps<br>创建一个文件夹 frp</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir frp &amp;&amp; cd frp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir frp &amp;&amp; cd frp</span><br></pre></td></tr></table></figure>
 
 <p>编辑Dockerfile文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano Dockerfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano Dockerfile</span><br></pre></td></tr></table></figure>
 
 <p>下面代码复制粘贴</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">FROM alpine</span><br><span class="line">MAINTAINER Stille </span><br><span class="line"></span><br><span class="line">ENV FRP_VERSION 0.38.0</span><br><span class="line">WORKDIR /</span><br><span class="line"></span><br><span class="line">RUN set -xe &amp;&amp; \</span><br><span class="line">    apk add tzdata &amp;&amp; \</span><br><span class="line">    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &amp;&amp; \</span><br><span class="line">    echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; \</span><br><span class="line">    apk del tzdata</span><br><span class="line"></span><br><span class="line">RUN set -x &amp;&amp; \</span><br><span class="line">    if [ &quot;$(uname -m)&quot; = &quot;x86_64&quot; ]; then export PLATFORM=amd64 ; else if [ &quot;$(uname -m)&quot; = &quot;aarch64&quot; ]; then export PLATFORM=arm64 ; fi fi &amp;&amp; \</span><br><span class="line">    wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v$&#123;FRP_VERSION&#125;/frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;.tar.gz &amp;&amp; \ </span><br><span class="line">    tar xzf frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;.tar.gz &amp;&amp; \</span><br><span class="line">    cd frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125; &amp;&amp; \</span><br><span class="line">    mkdir /frp &amp;&amp; \</span><br><span class="line">    mv frps frps.ini /frp &amp;&amp; \</span><br><span class="line">    cd .. &amp;&amp; \</span><br><span class="line">    rm -rf *.tar.gz frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;</span><br><span class="line"></span><br><span class="line">VOLUME /frp</span><br><span class="line"></span><br><span class="line">CMD /frp/frps -c /frp/frps.ini</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FROM alpine</span><br><span class="line">MAINTAINER Stille </span><br><span class="line"></span><br><span class="line">ENV FRP_VERSION 0.38.0</span><br><span class="line">WORKDIR /</span><br><span class="line"></span><br><span class="line">RUN set -xe &amp;&amp; \</span><br><span class="line">    apk add tzdata &amp;&amp; \</span><br><span class="line">    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &amp;&amp; \</span><br><span class="line">    echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; \</span><br><span class="line">    apk del tzdata</span><br><span class="line"></span><br><span class="line">RUN set -x &amp;&amp; \</span><br><span class="line">    if [ &quot;$(uname -m)&quot; = &quot;x86_64&quot; ]; then export PLATFORM=amd64 ; else if [ &quot;$(uname -m)&quot; = &quot;aarch64&quot; ]; then export PLATFORM=arm64 ; fi fi &amp;&amp; \</span><br><span class="line">    wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v$&#123;FRP_VERSION&#125;/frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;.tar.gz &amp;&amp; \ </span><br><span class="line">    tar xzf frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;.tar.gz &amp;&amp; \</span><br><span class="line">    cd frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125; &amp;&amp; \</span><br><span class="line">    mkdir /frp &amp;&amp; \</span><br><span class="line">    mv frps frps.ini /frp &amp;&amp; \</span><br><span class="line">    cd .. &amp;&amp; \</span><br><span class="line">    rm -rf *.tar.gz frp_$&#123;FRP_VERSION&#125;_linux_$&#123;PLATFORM&#125;</span><br><span class="line"></span><br><span class="line">VOLUME /frp</span><br><span class="line"></span><br><span class="line">CMD /frp/frps -c /frp/frps.ini</span><br></pre></td></tr></table></figure>
 
 <p>生成docker镜像</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t mydaoke/frps:0.38 .</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker build -t mydaoke/frps:0.38 .</span><br></pre></td></tr></table></figure>
 
 <p>mydaoke&#x2F;frps:0.38修改自己的名称<br>查看生成docker镜像</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
 
 <p>试运行一下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart=always --network host -d -v /root/frp/frps.ini:/frp/frps.ini --name frps mydaoke/frps:0.38</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run --restart=always --network host -d -v /root/frp/frps.ini:/frp/frps.ini --name frps mydaoke/frps:0.38</span><br></pre></td></tr></table></figure>
 
 <p>Ok</p>
 

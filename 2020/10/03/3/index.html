@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -272,16 +272,16 @@
             <div class="article-content keep-markdown-body">
                 <p>.&#x2F;install.sh</p>
 <p>…<br>…</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># reboot 重启设备</span><br><span class="line"># poweroff 关闭设备</span><br><span class="line"># apt update &amp;&amp; apt upgrade -y</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># reboot 重启设备</span><br><span class="line"># poweroff 关闭设备</span><br><span class="line"># apt update &amp;&amp; apt upgrade -y</span><br></pre></td></tr></table></figure>
 
 <p>关闭或重启设备时将U盘拔出,就可以进入安装到 EMMC 的系统了.</p>
 <p>如果要配置和使用无线可以用 nmtui, 至少还有个界面看</p>
 <p>如果没有公网 IP 可以使用 Frp 等工具来打洞: Frp</p>
 <p>有公网就直接上 DDNS 吧,我使用的是 CloudFlare, 一个脚本加定时任务就能搞定:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">localIpv6=`ip -6 a  grep global  awk &#x27;&#123;print $2&#125;&#x27;  awk -F &#x27;/&#x27; &#x27;&#123;print $1&#125;&#x27;`</span><br><span class="line"></span><br><span class="line">echo &quot;ipv6 is: $localIpv6, updating to CloudFlare...&quot;</span><br><span class="line"></span><br><span class="line">curl -X PUT https://api.cloudflare.com/client/v4/zones/$zone/dns_records/$domain \</span><br><span class="line">  -H &#x27;Content-Type: application/json&#x27; \</span><br><span class="line">  -H &#x27;X-Auth-Email: youremail@example.com&#x27; \</span><br><span class="line">  -H &#x27;X-Auth-Key: yourapikey&#x27; \</span><br><span class="line">  -H &#x27;cache-control: no-cache&#x27; \</span><br><span class="line">  -d &#x27;&#123;&quot;type&quot;: &quot;AAAA&quot;,&quot;proxied&quot;: false,&quot;name&quot;: &quot;example.com&quot;,&quot;content&quot;: &quot;&#x27;$localIpv6&#x27;&quot;&#125;&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">localIpv6=`ip -6 a  grep global  awk &#x27;&#123;print $2&#125;&#x27;  awk -F &#x27;/&#x27; &#x27;&#123;print $1&#125;&#x27;`</span><br><span class="line"></span><br><span class="line">echo &quot;ipv6 is: $localIpv6, updating to CloudFlare...&quot;</span><br><span class="line"></span><br><span class="line">curl -X PUT https://api.cloudflare.com/client/v4/zones/$zone/dns_records/$domain \</span><br><span class="line">  -H &#x27;Content-Type: application/json&#x27; \</span><br><span class="line">  -H &#x27;X-Auth-Email: youremail@example.com&#x27; \</span><br><span class="line">  -H &#x27;X-Auth-Key: yourapikey&#x27; \</span><br><span class="line">  -H &#x27;cache-control: no-cache&#x27; \</span><br><span class="line">  -d &#x27;&#123;&quot;type&quot;: &quot;AAAA&quot;,&quot;proxied&quot;: false,&quot;name&quot;: &quot;example.com&quot;,&quot;content&quot;: &quot;&#x27;$localIpv6&#x27;&quot;&#125;&#x27;</span><br></pre></td></tr></table></figure>
 
 <p>crontab 加个任务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*/5 * * * * sh /root/ddns.sh &gt; /dev/null</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*/5 * * * * sh /root/ddns.sh &gt; /dev/null</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>附件下载<a class="link"   target="_blank" rel="noopener" href="http://w.daoke.bid/usr/uploads/2020/10/1030870220.zip" >CloudFlareddns.zip<i class="fas fa-external-link-alt"></i></a></p>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -265,17 +265,17 @@
                 <p>常用命令 1.<code>armbian-config</code> 调出窗口配置 2.<code>passwd</code> 修改密码 3.<code>apt install python3-pip</code> 安装软件 4.<code>apt list --installed</code> 列出安装的所有包 5.<code>apt list --installed grep docker</code><br>列出安装的和docker相关的包 6.<code>apt-get remove docker-ce</code> 删除已安装的软件包（保留配置文件），不会删除依赖软件包，保留配置文件；</p>
 <span id="more"></span>
 <p>7.<code>apt-get purge</code> 删除已安装的软件包（不保留配置文件)，删除软件包，同时删除相应依赖软件包； 8.<code>apt-get autoremove</code> 删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件；高能警告：慎用本命令！！！它会在你不知情的情况下，一股脑删除很多“它认为”你不再使用的软件； 9.<code>apt-get clean</code> 删除已经安装过的的软件安装包；自动将<code>/var/cache/apt/archives/</code>下的所有deb删掉，相当于清理下载的软件安装包； 固定mac N1的mac每次重启都会变化，导致IP不固定，因此要固定mac</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/network/interfaces</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/network/interfaces</span><br></pre></td></tr></table></figure>
 
 <p>iface eth0 inet dhcp（static）这行下面，加1行：pre-up ifconfig eth0 hw ether 52:d1:87:32:33:eb</p>
 <h1 id="换源——以stretch版本和buster版本为例"><a href="#换源——以stretch版本和buster版本为例" class="headerlink" title="换源——以stretch版本和buster版本为例"></a>换源——以<code>stretch</code>版本和<code>buster</code>版本为例</h1><p>执行下面的命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
 
 <p>按Delete删除所有内容，并替换内容 如果你的是<code>stretch</code>版本，就换成下面的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br></pre></td></tr></table></figure>
 
 <p>如果你是<code>buster</code>版本，就换成下面的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br></pre></td></tr></table></figure>
 
 <p>简单常用命令：</p>
 <ul>
@@ -284,29 +284,29 @@
 </li>
 </ul>
 <p>如果遇到无法拉取 https 源的情况，请先使用 http 源并安装： <code>sudo apt install apt-transport-https ca-certificates</code> 改 armbian 源 注意<code>stretch</code> <code>buster</code> <code>bionic</code>版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/apt/sources.list.d/armbian.list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc/apt/sources.list.d/armbian.list</span><br></pre></td></tr></table></figure>
 
 <p>以<code>bionic</code>版本为例，将里面的那行注释掉（在前面添加 # ）然后添加这行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/armbian bionic main bionic-utils bionic-desktop</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/armbian bionic main bionic-utils bionic-desktop</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>按Ctrl+X退出，选择是否保存输入Y，按回车确认 如果你是其他版本（如bullseye），源地址可以在这里查询，根据自己的版本选择即可获得地址 <a class="link"   target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/" >https://mirrors.tuna.tsinghua.edu.cn/help/debian/<i class="fas fa-external-link-alt"></i></a> 然后执行如下命令（非常重要！非常重要！非常重要！）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt update&amp;&amp;apt upgrade -y</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update&amp;&amp;apt upgrade -y</span><br></pre></td></tr></table></figure>
 
 <p>作用是更新所有的软件到最新版，无论是以后装宝塔还是装nginx，php，mysql都要先执行这个操作！（当然不用太频繁，太频繁了也没什么可以更新的）执行完之后再装软件一般就不会有什么错了</p>
-<h1 id="开启BBR加速："><a href="#开启BBR加速：" class="headerlink" title="开启BBR加速："></a>开启BBR加速：</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &gt;&gt; /etc/sysctl.conf  /etc/timezone</span><br></pre></td></tr></table></figure>
+<h1 id="开启BBR加速："><a href="#开启BBR加速：" class="headerlink" title="开启BBR加速："></a>开启BBR加速：</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat &gt;&gt; /etc/sysctl.conf  /etc/timezone</span><br></pre></td></tr></table></figure>
 
 <p>删除默认 DNS：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm /etc/resolvconf/resolv.conf.d/head &amp;&amp; touch /etc/resolvconf/resolv.conf.d/head</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm /etc/resolvconf/resolv.conf.d/head &amp;&amp; touch /etc/resolvconf/resolv.conf.d/head</span><br></pre></td></tr></table></figure>
 
 <p>注：在重启系统后，输入<code>cat /etc/resolv.conf</code>，查看返回结果是否为你路由器的 DNS，如果是，则表示删除成功，如果不是，则再执行一次删除命令。 安装docker</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line"></span><br><span class="line">sh get-docker.sh --mirror Aliyun</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line"></span><br><span class="line">sh get-docker.sh --mirror Aliyun</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>使用上述命令安装会调用阿里云的镜像，安装速度较快。 putty下执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line"> &quot;registry-mirrors&quot;: [</span><br><span class="line"> &quot;https://mirror.baidubce.com&quot;,</span><br><span class="line"> &quot;https://registry.docker-cn.com&quot;,</span><br><span class="line"> &quot;http://hub-mirror.c.163.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line"> &quot;registry-mirrors&quot;: [</span><br><span class="line"> &quot;https://mirror.baidubce.com&quot;,</span><br><span class="line"> &quot;https://registry.docker-cn.com&quot;,</span><br><span class="line"> &quot;http://hub-mirror.c.163.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
             </div>
 
             

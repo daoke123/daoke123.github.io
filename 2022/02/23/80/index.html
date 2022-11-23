@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -248,10 +248,10 @@
 
             <div class="article-content keep-markdown-body">
                 <p>下载哪吒 nezha-agent_linux_arm.tar.gz<br><a class="link"   target="_blank" rel="noopener" href="https://github.com/naiba/nezha" >哪吒<i class="fas fa-external-link-alt"></i></a><br>上传ROOT目录给于权限</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 nezha-agent</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod 755 nezha-agent</span><br></pre></td></tr></table></figure>
 
 <p><strong>设置开机自起</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/init.d</span><br><span class="line">touch S96nezha</span><br><span class="line">chmod 755 S96nezha</span><br><span class="line">echo &quot;sleep 10&quot;        &gt;&gt; S96nezha</span><br><span class="line">echo &quot;cd&quot;        &gt;&gt; S96nezha</span><br><span class="line">echo &quot;/root/nezha-agent -s 面板网址:接收端口 -p 唯一秘钥 -d&quot;    &gt;&gt; S96nezha</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc/init.d</span><br><span class="line">touch S96nezha</span><br><span class="line">chmod 755 S96nezha</span><br><span class="line">echo &quot;sleep 10&quot;        &gt;&gt; S96nezha</span><br><span class="line">echo &quot;cd&quot;        &gt;&gt; S96nezha</span><br><span class="line">echo &quot;/root/nezha-agent -s 面板网址:接收端口 -p 唯一秘钥 -d&quot;    &gt;&gt; S96nezha</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>玩客云重启</p>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -263,13 +263,13 @@
 
             <div class="article-content keep-markdown-body">
                 <p><a class="link"   target="_blank" rel="noopener" href="https://github.com/NewFuture/DDNS" >https://github.com/NewFuture/DDNS<i class="fas fa-external-link-alt"></i></a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/NewFuture/DDNS</span><br><span class="line">cd DDNS</span><br><span class="line">./run.py #运行一次 生成config.json配置文件</span><br><span class="line">vi config.json #修改 id 域名 token</span><br><span class="line">./task.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/NewFuture/DDNS</span><br><span class="line">cd DDNS</span><br><span class="line">./run.py #运行一次 生成config.json配置文件</span><br><span class="line">vi config.json #修改 id 域名 token</span><br><span class="line">./task.sh</span><br></pre></td></tr></table></figure>
 
 <p>然后运行命令crontab -e ,将脚本加入定时运行中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
 
 <p>末尾添加一行（复制后到黑色窗口直接鼠标右键就行）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/5 * * * * /root/DDNS/task.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*/5 * * * * /root/DDNS/task.sh</span><br></pre></td></tr></table></figure>
             </div>
 
             

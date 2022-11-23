@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -263,18 +263,18 @@
 
             <div class="article-content keep-markdown-body">
                 <p>CentOS系统执行以下命令安装：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install screen</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install screen</span><br></pre></td></tr></table></figure>
 
 <p>Debian&#x2F;Ubuntu系统执行以下命令安装：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install screen</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get install screen</span><br></pre></td></tr></table></figure>
 
 <p>如何使用screen命令<br>首先创建screen会话，执行以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S lnmp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">screen -S lnmp</span><br></pre></td></tr></table></figure>
 
 <p>screen就会创建一个名字为lnmp的会话。然后就可以运行下载安装lnmp的命令了。</p>
 <p>如果有事离开关闭电脑，可以用快捷键Ctrl+a d(即按住Ctrl，依次再按a,d)，而会话中的程序不会关闭，仍在运行。在实际使用中都是用鼠标点击右上角的X来关闭SSH软件的，也是没问题的。</p>
 <p>恢复screen会话。回来时可以再执行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r lnmp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">screen -r lnmp</span><br></pre></td></tr></table></figure>
 
 <p>即可恢复到离开前创建的lnmp会话的工作界面。</p>
 

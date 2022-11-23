@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -259,20 +259,20 @@
 
             <div class="article-content keep-markdown-body">
                 <p>安装甜糖<br>1、插入U盘<br>2、查看U盘挂载情况：<code>lsblk</code>，可以看到sda或者sda1后面MOUNTPOINT下面如果有内容，表示挂载了<br>3、新建目录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /mnts</span><br><span class="line">mkdir -p /usr/node</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /mnts</span><br><span class="line">mkdir -p /usr/node</span><br></pre></td></tr></table></figure>
 
 <p>复制代码<br>4、挂载U盘到&#x2F;mnts&#x2F;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda1 /mnts/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mount /dev/sda1 /mnts/</span><br></pre></td></tr></table></figure>
 
 <p>5、设置开机自动挂载</p>
 <p>1）查看UUID并记录：<code>blkid /dev/sda1</code><br>如：aaaaaaaa-75c7-834f-bb69-bbbbbbbbbbbb<br>2）编辑文件<code>/etc/fstab</code><br>添加一行：<code>UUID=xxxxxxxxxxxx /mnts ext4 defaults 0 0</code><br>其中xxxxxxxxxxxx为UUID，ext4为U盘的文件格式<br>6、复制甜糖的三个文件 ttnode、log.log、crash_monitor.sh 拖进&#x2F;usr&#x2F;node文件夹，并修改权限为0777<br>7、配置开机自启动ssh及运行程序<br>编辑文件<code>/etc/rc.local</code>，在exit 0前添加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service sshd start</span><br><span class="line">/usr/node/ttnode -p /mnts</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">service sshd start</span><br><span class="line">/usr/node/ttnode -p /mnts</span><br></pre></td></tr></table></figure>
 
 <p>8、添加计划任务，守护甜糖</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
 
 <p>在最后面添加一行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* * * * * /usr/node/crash_monitor.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* * * * * /usr/node/crash_monitor.sh</span><br></pre></td></tr></table></figure>
 
 <p>9、重启，并判断是否运行甜糖：<code>ps -efgrep ttnode</code></p>
 

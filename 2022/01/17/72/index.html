@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -247,17 +247,17 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h4 id="检查镜像"><a href="#检查镜像" class="headerlink" title="检查镜像"></a>检查镜像</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image</span><br></pre></td></tr></table></figure>
+                <h4 id="检查镜像"><a href="#检查镜像" class="headerlink" title="检查镜像"></a>检查镜像</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker image</span><br></pre></td></tr></table></figure>
 
-<h4 id="检查容器"><a href="#检查容器" class="headerlink" title="检查容器"></a>检查容器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+<h4 id="检查容器"><a href="#检查容器" class="headerlink" title="检查容器"></a>检查容器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
 
-<h4 id="交互式运行debian镜像"><a href="#交互式运行debian镜像" class="headerlink" title="交互式运行debian镜像"></a>交互式运行debian镜像</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name blog debian</span><br><span class="line">docker exec -it blog /bin/bash </span><br><span class="line">apt update</span><br><span class="line">apt install -y upgrade</span><br><span class="line">apt install -y vim curl wget bash htop</span><br><span class="line"></span><br><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+<h4 id="交互式运行debian镜像"><a href="#交互式运行debian镜像" class="headerlink" title="交互式运行debian镜像"></a>交互式运行debian镜像</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -itd --name blog debian</span><br><span class="line">docker exec -it blog /bin/bash </span><br><span class="line">apt update</span><br><span class="line">apt install -y upgrade</span><br><span class="line">apt install -y vim curl wget bash htop</span><br><span class="line"></span><br><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
 
-<h4 id="将容器变成镜像"><a href="#将容器变成镜像" class="headerlink" title="将容器变成镜像"></a>将容器变成镜像</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker commit -m=&quot;debian环境&quot; -a=&quot;mydaoke&quot; blog mydaoke/debian:1.0</span><br><span class="line">-m：注释信息</span><br><span class="line">-a：作者名称</span><br><span class="line">blog：待提交的容器名称</span><br><span class="line">mydaoke/debian:1.0：提交后的镜像名:TAG</span><br></pre></td></tr></table></figure>
+<h4 id="将容器变成镜像"><a href="#将容器变成镜像" class="headerlink" title="将容器变成镜像"></a>将容器变成镜像</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker commit -m=&quot;debian环境&quot; -a=&quot;mydaoke&quot; blog mydaoke/debian:1.0</span><br><span class="line">-m：注释信息</span><br><span class="line">-a：作者名称</span><br><span class="line">blog：待提交的容器名称</span><br><span class="line">mydaoke/debian:1.0：提交后的镜像名:TAG</span><br></pre></td></tr></table></figure>
 
-<h4 id="登录Docker-Hub"><a href="#登录Docker-Hub" class="headerlink" title="登录Docker Hub"></a>登录Docker Hub</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login</span><br></pre></td></tr></table></figure>
+<h4 id="登录Docker-Hub"><a href="#登录Docker-Hub" class="headerlink" title="登录Docker Hub"></a>登录Docker Hub</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker login</span><br></pre></td></tr></table></figure>
 
-<h4 id="推送镜像"><a href="#推送镜像" class="headerlink" title="推送镜像"></a>推送镜像</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker push mydaoke/debian:1.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="推送镜像"><a href="#推送镜像" class="headerlink" title="推送镜像"></a>推送镜像</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker push mydaoke/debian:1.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
             </div>
 
             

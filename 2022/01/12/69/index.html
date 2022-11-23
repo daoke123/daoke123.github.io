@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -248,20 +248,20 @@
 
             <div class="article-content keep-markdown-body">
                 <p>网络重装脚本<br>PS：自定义密码直接 -p 你想要的密码就行！！！<br>部分机器需要设置网卡，否则可以VNC，但是不能远程SSH</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-firmware                额外的驱动支持</span><br><span class="line">-d                        Debian系统 后面是系统版本号</span><br><span class="line">-c                        Centos系统 后面是系统版本号</span><br><span class="line">-v                         后面写64位 32位</span><br><span class="line">-a                        不清楚这个干啥的但是每个脚本都带</span><br><span class="line">--mirror                后面是镜像源地址</span><br><span class="line">-p                        后面写自定义密码</span><br><span class="line">–ip-addr                 ifconfig -a 后获取到的 例：194.87.xxx.xxx</span><br><span class="line">–ip-gate                 route -n    后获取到的 例   194.87.xxx.xxx</span><br><span class="line">–ip-mask                 255.255.xxx.xx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-firmware                额外的驱动支持</span><br><span class="line">-d                        Debian系统 后面是系统版本号</span><br><span class="line">-c                        Centos系统 后面是系统版本号</span><br><span class="line">-v                         后面写64位 32位</span><br><span class="line">-a                        不清楚这个干啥的但是每个脚本都带</span><br><span class="line">--mirror                后面是镜像源地址</span><br><span class="line">-p                        后面写自定义密码</span><br><span class="line">–ip-addr                 ifconfig -a 后获取到的 例：194.87.xxx.xxx</span><br><span class="line">–ip-gate                 route -n    后获取到的 例   194.87.xxx.xxx</span><br><span class="line">–ip-mask                 255.255.xxx.xx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>· 甲骨文、三毛、Vir、RN等大部分VPS通用，三毛、甲骨文 记得去掉 -firmware</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bash  /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">sysctl -p</span><br><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br><span class="line">lsmod  grep bbr</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash  /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">sysctl -p</span><br><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br><span class="line">lsmod  grep bbr</span><br></pre></td></tr></table></figure>
 
 <p>复制代码</p>
 <p>superbench</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- git.io/superbench.sh  bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -qO- git.io/superbench.sh  bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>Bench.sh</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- bench.sh  bash</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -qO- bench.sh  bash</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>三网测速</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash </span><br></pre></td></tr></table></figure>
             </div>
 
             

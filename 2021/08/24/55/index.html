@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -259,10 +259,10 @@
 
             <div class="article-content keep-markdown-body">
                 <p>安装AdGuardHome</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_arm.tar.gz</span><br><span class="line"></span><br><span class="line">#进入AdGuardHome目录</span><br><span class="line">cd AdGuardHome</span><br><span class="line">#放行3000端口（AdGuardHome初始化需要使用）</span><br><span class="line">#firewalld放行3000端口</span><br><span class="line">firewall-cmd --zone=public --add-port=3000/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">#iptables放行3000端口</span><br><span class="line">iptables -A INPUT -p tcp --dport 3000 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">#启动AdGuard Home</span><br><span class="line"></span><br><span class="line">./AdGuardHome -s install</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_arm.tar.gz</span><br><span class="line"></span><br><span class="line">#进入AdGuardHome目录</span><br><span class="line">cd AdGuardHome</span><br><span class="line">#放行3000端口（AdGuardHome初始化需要使用）</span><br><span class="line">#firewalld放行3000端口</span><br><span class="line">firewall-cmd --zone=public --add-port=3000/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">#iptables放行3000端口</span><br><span class="line">iptables -A INPUT -p tcp --dport 3000 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">#启动AdGuard Home</span><br><span class="line"></span><br><span class="line">./AdGuardHome -s install</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>下面是控制服务可能需要的其他命令。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./AdGuardHome -s uninstall- 卸载 AdGuard 家庭服务。</span><br><span class="line">./AdGuardHome -s start- 启动服务。</span><br><span class="line">./AdGuardHome -s stop- 停止服务。</span><br><span class="line">./AdGuardHome -s restart- 重新启动服务。</span><br><span class="line">./AdGuardHome -s status- 显示当前服务状态</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./AdGuardHome -s uninstall- 卸载 AdGuard 家庭服务。</span><br><span class="line">./AdGuardHome -s start- 启动服务。</span><br><span class="line">./AdGuardHome -s stop- 停止服务。</span><br><span class="line">./AdGuardHome -s restart- 重新启动服务。</span><br><span class="line">./AdGuardHome -s status- 显示当前服务状态</span><br></pre></td></tr></table></figure>
             </div>
 
             

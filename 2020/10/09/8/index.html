@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="keywords" content="daoke">
     <meta name="description" content="Hexo Theme Keep">
     <meta name="author" content="Daoke">
     
@@ -248,32 +248,32 @@
 
             <div class="article-content keep-markdown-body">
                 <p>Linux最简单的安装方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s https://install.zerotier.com/  sudo bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -s https://install.zerotier.com/  sudo bash</span><br></pre></td></tr></table></figure>
 
 <p>无任何报错显示：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*** Waiting for identity generation...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*** Waiting for identity generation...</span><br></pre></td></tr></table></figure>
 
 <p><em>*</em> Success! You are ZeroTier address [ d56f99571f ].<br>把zerotier服务复制到系统服务目录并激活</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl start zerotier-one</span><br><span class="line">systemctl enable zerotier-one //开机启动</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl start zerotier-one</span><br><span class="line">systemctl enable zerotier-one //开机启动</span><br></pre></td></tr></table></figure>
 
 <p>察看状态：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zerotier-cli info</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zerotier-cli info</span><br></pre></td></tr></table></figure>
 
 <p>演示：</p>
 <p>[root@instance-1 ~]# <code>zerotier-cli info</code><br>200 info d56f99571f 1.2.12 ONLINE<br>最后加入zerotier网络：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zerotier-cli join  //你的Zeroiter网络ID</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zerotier-cli join  //你的Zeroiter网络ID</span><br></pre></td></tr></table></figure>
 
 <p><strong>彻底卸载Zerotier-one</strong><br>通过dpkg删除zerotier-one服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -P zerotier-one</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -P zerotier-one</span><br></pre></td></tr></table></figure>
 
 <p>删除zerotier-one文件夹，该文件夹存储了address地址，删除后再次安装会获得新的address地址</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /var/lib/zerotier-one/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rm -rf /var/lib/zerotier-one/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>服务**</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -P zerotier-one</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -P zerotier-one</span><br></pre></td></tr></table></figure>
 
 <p>删除zerotier-one文件夹，该文件夹存储了address地址，删除后再次安装会获得新的address地址</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /var/lib/zerotier-one/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rm -rf /var/lib/zerotier-one/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
             </div>
 
             
