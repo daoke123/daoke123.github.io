@@ -289,7 +289,7 @@
 <p>以<code>bionic</code>版本为例，将里面的那行注释掉（在前面添加 # ）然后添加这行</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/armbian bionic main bionic-utils bionic-desktop</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>按Ctrl+X退出，选择是否保存输入Y，按回车确认 如果你是其他版本（如bullseye），源地址可以在这里查询，根据自己的版本选择即可获得地址 <a class="link"   target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/" >https://mirrors.tuna.tsinghua.edu.cn/help/debian/<i class="fas fa-external-link-alt"></i></a> 然后执行如下命令（非常重要！非常重要！非常重要！）：</p>
+<p>按Ctrl+X退出，选择是否保存输入Y，按回车确认 如果你是其他版本（如bullseye），源地址可以在这里查询，根据自己的版本选择即可获得地址 <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/">https://mirrors.tuna.tsinghua.edu.cn/help/debian/</a> 然后执行如下命令（非常重要！非常重要！非常重要！）：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update&amp;&amp;apt upgrade -y</span><br></pre></td></tr></table></figure>
 
 <p>作用是更新所有的软件到最新版，无论是以后装宝塔还是装nginx，php，mysql都要先执行这个操作！（当然不用太频繁，太频繁了也没什么可以更新的）执行完之后再装软件一般就不会有什么错了</p>

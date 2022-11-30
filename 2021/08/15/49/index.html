@@ -247,11 +247,11 @@
             
 
             <div class="article-content keep-markdown-body">
-                <p><a class="link"   target="_blank" rel="noopener" href="https://github.com/Lbingyi/CloudflareST" >https://github.com/Lbingyi/CloudflareST<i class="fas fa-external-link-alt"></i></a><br>路由器优选IP脚本设置定时更换优选ip<br>用ssh连接软件连接opewrt</p>
+                <p><a target="_blank" rel="noopener" href="https://github.com/Lbingyi/CloudflareST">https://github.com/Lbingyi/CloudflareST</a><br>路由器优选IP脚本设置定时更换优选ip<br>用ssh连接软件连接opewrt</p>
 <h1 id="进入root文件夹"><a href="#进入root文件夹" class="headerlink" title="进入root文件夹"></a>进入root文件夹</h1><p>cd &#x2F;root</p>
 <h1 id="如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）"><a href="#如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）" class="headerlink" title="如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）"></a>如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）</h1><p>mkdir CloudflareST</p>
 <h1 id="进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）"><a href="#进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）" class="headerlink" title="进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）"></a>进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）</h1><p>cd CloudflareST</p>
-<h1 id="下载-CloudflareST-压缩包（自行根据需求替换-URL-中版本号和文件名）"><a href="#下载-CloudflareST-压缩包（自行根据需求替换-URL-中版本号和文件名）" class="headerlink" title="下载 CloudflareST 压缩包（自行根据需求替换 URL 中版本号和文件名）"></a>下载 CloudflareST 压缩包（自行根据需求替换 URL 中版本号和文件名）</h1><p>wget -N <a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Lbingyi/CloudflareST@main/cfst-DNS.tar.gz" >https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Lbingyi&#x2F;CloudflareST@main&#x2F;cfst-DNS.tar.gz<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="下载-CloudflareST-压缩包（自行根据需求替换-URL-中版本号和文件名）"><a href="#下载-CloudflareST-压缩包（自行根据需求替换-URL-中版本号和文件名）" class="headerlink" title="下载 CloudflareST 压缩包（自行根据需求替换 URL 中版本号和文件名）"></a>下载 CloudflareST 压缩包（自行根据需求替换 URL 中版本号和文件名）</h1><p>wget -N <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Lbingyi/CloudflareST@main/cfst-DNS.tar.gz">https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Lbingyi&#x2F;CloudflareST@main&#x2F;cfst-DNS.tar.gz</a></p>
 <h1 id="解压（不需要删除旧文件，会直接覆盖，自行根据需求替换-文件名）"><a href="#解压（不需要删除旧文件，会直接覆盖，自行根据需求替换-文件名）" class="headerlink" title="解压（不需要删除旧文件，会直接覆盖，自行根据需求替换 文件名）"></a>解压（不需要删除旧文件，会直接覆盖，自行根据需求替换 文件名）</h1><p>tar -zxf cfst-DNS.tar.gz</p>
 <h1 id="赋予执行权限"><a href="#赋予执行权限" class="headerlink" title="赋予执行权限"></a>赋予执行权限</h1><p>chmod +x CloudflareST<br>修改cfst-DNS.sh中的一处地方<br>修改微信&#x2F;Telegram推送token<br>显示不了图片，开一下VPN吧</p>
 

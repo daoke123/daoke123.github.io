@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="daoke">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Daoke">
+    
+    <title>
+        
+            如何在 Ubuntu 上安装 NGINX |
+        
+        Daoke
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/fontawesome/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/fontawesome/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"daoke123.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","avatar":"/images/avatar.svg","font_size":"15px","font_family":"STKaiti","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"header_transparent":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":true,"use":"twikoo","valine":{"appid":null,"appkey":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null},"twikoo":{"env_id":"https://ip.luobu.eu.org","region":null,"version":"v1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.5.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Daoke" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+               Daoke
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">如何在 Ubuntu 上安装 NGINX</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Daoke</span>
+                            
+                                <span class="author-label">Lv5</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2022-11-29 22:47:00</span>
+        <span class="mobile">2022-11-29 22:47</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2022-11-29 22:58:23</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/vps/">vps</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/nginx/">nginx</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                <p>NGINX是一个开源的Web服务器软件。您可以将NGINX部署为独立的Web服务器，也可以部署为其他Web服务器前面的代理（实质上是反向代理）。Nginx 是托管高流量网站的最佳网络服务器之一。</p>
+<p>在本教程中，我们将重点介绍如何在Ubuntu 20.04 上将 NGINX 安装为独立的 Web 服务器。</p>
+<p>在 Ubuntu 20.04 上安装 NGINX<br>首先运行<code>sudo apt-get update</code>以检索有关新的和更新的软件包的信息，然后再继续安装NGINX。</p>
+<p>Nginx 在 Ubuntu 软件包存储库中可用。因此，使用以下命令很容易安装 Nginx：</p>
+<p><code>sudo apt-get install nginx</code><br>检查 NGINX 服务状态<br>让我们做一个快速检查以确认NGINX服务的状态，运行以下命令：</p>
+<p><code>sudo systemctl status nginx</code><br>上述命令的输出确认 NGINX 处于活动状态并正在运行。如果您收到一条消息，指示 NGINX 处于非活动状态、未启动或未运行，则可以通过运行以下命令手动启动 NGINX 服务。</p>
+<p><code>systemctl start nginx</code><br>要检查 Nginx 版本，请运行：</p>
+<p><code>sudo dpkg -l nginx</code><br>输出显示，在编写本教程时，Nginx 版本 1.18.0正在 Ubuntu 20.04 上运行。</p>
+<p>测试 NGINX Web 服务器<br>确认NGINX服务处于活动状态并正在运行后，您现在可以通过打开首选的Web浏览器并输入安装了NGINX的服务器的IP地址（http：&#x2F;&#x2F;your_server_ip）来测试Web服务器。</p>
+<p>您应该会看到标题为“欢迎来到nginx！”<br>要在端口 443 上允许 NGINX，请执行以下操作：</p>
+<p><code>sudo ufw allow &#39;Nginx HTTPS&#39;</code><br>设置 NGINX 服务器块<br>如果您想在同一台NGINX Web服务器上托管多个网站，则需要设置服务器块。服务器块也称为虚拟主机（主要在 Apache 中）。</p>
+<p>NGINX只预配置了一个服务器块，这是默认网站（&#x2F;etc&#x2F;nginx&#x2F;sites-available）的配置细节存储的地方（&#x2F;var&#x2F;www&#x2F;html）。</p>
+<p>一起来看看吧。</p>
+<blockquote>
+<p>sudo ls -l &#x2F;etc&#x2F;nginx&#x2F;sites-available<br>total 8<br>-rw-r–r– 1 root root 2416 Mar 26  2020 default</p>
+</blockquote>
+<p>运行以下命令以显示默认服务器块文件的内容。</p>
+<p><code>sudo cat /etc/nginx/sites-available/default | more</code><br>按键盘上的空格键可一次向下滚动一页。您将看到该文件包含默认的服务器配置详细信息，例如侦听端口号，文档根目录（即存储网站内容的基本文件夹），索引文件和服务器名称。</p>
+<p>您还应该看到标题为“虚拟主机配置”的部分，如下所示。您可以在此处配置其他网站，但最好创建一个单独的服务器块文件并保留默认文件。<br><code>/etc/nginx/sites-available/default</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Virtual Host configuration for example.com</span><br><span class="line">#</span><br><span class="line"># You can move that to a different file under sites-available/ and symlink that</span><br><span class="line"># to sites-enabled/ to enable it.</span><br><span class="line">#</span><br><span class="line">#server &#123;</span><br><span class="line">#	listen 80;</span><br><span class="line">#	listen [::]:80;</span><br><span class="line">#</span><br><span class="line">#	server_name example.com;</span><br><span class="line">#</span><br><span class="line">#	root /var/www/example.com;</span><br><span class="line">#	index index.html;</span><br><span class="line">#</span><br><span class="line">#	location / &#123;</span><br><span class="line">#		try_files $uri $uri/ =404;</span><br><span class="line">#	&#125;</span><br><span class="line">#&#125;</span><br></pre></td></tr></table></figure>
+<p>同时，复制上面的示例配置信息并将其保存在文本编辑器中。我们将很快使用这些信息。</p>
+<p>创建网站根目录<br>接下来，您需要在 &#x2F;var&#x2F;www下创建一个根文件夹来存储其他网站的内容。例如，我将为我的 domain1.com 网站创建一个名为 domain1.com 的文件夹。</p>
+<p>注意：您应该将域名 1 替换为您自己的注册域名。您还应该更新DNS记录，以将您的域名指向NGINX Web服务器的公共IP地址。</p>
+<p><code>sudo mkdir /var/www/domain1.com</code><br>创建索引文件<br>索引文件是打开网站时显示的主网页。运行以下命令为其他网站创建索引文件。</p>
+<p><code>sudo nano /var/www/domain1.com/index.html</code><br>我在这个例子中使用了nano，但你可以使用你最喜欢的文本编辑器。接下来，您可以复制并粘贴以下 HTML 代码以进行测试。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Welcome to Domain1!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css"><span class="attribute">width</span>: <span class="number">35em</span>;</span></span><br><span class="line"><span class="language-css"><span class="attribute">margin</span>: <span class="number">0</span> auto;</span></span><br><span class="line"><span class="language-css"><span class="attribute">font-family</span>: Tahoma, Verdana, Arial, sans-serif;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Welcome to Domain1!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>If you see this page, the Domain1 website is working!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>保存更改并关闭文本编辑器。</p>
+<p>创建服务器块<br>下一步是创建服务器块文件以保存其他网站的配置详细信息。运行以下命令。</p>
+<p><code>sudo nano /etc/nginx/sites-available/domain1</code><br>复制之前保存的示例虚拟主机配置信息，并将其粘贴到新文件中。从“服务器”行开始，确保删除所有#符号以取消注释指令。另外，请记住将“domain1”替换为您自己的注册域名。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"># Virtual Host configuration for example.com</span><br><span class="line">#</span><br><span class="line"># You can move that to a different file under sites-available/ and symlink that</span><br><span class="line"># to sites-enabled/ to enable it.</span><br><span class="line">#</span><br><span class="line">server &#123;</span><br><span class="line">       listen 80;</span><br><span class="line">       listen [::]:80;</span><br><span class="line"></span><br><span class="line">       server_name domain1.com www.domain1.com;</span><br><span class="line"></span><br><span class="line">       root /var/www/domain1.com;</span><br><span class="line">       index index.html;</span><br><span class="line"></span><br><span class="line">       location / &#123;</span><br><span class="line">               try_files $uri $uri/ =404;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>保存更改并关闭此文件。<br>启用服务器块<br>要让 NGINX 知道其他网站可用，请运行以下命令以创建指向服务器块文件的符号链接。</p>
+<p><code> ln -s /etc/nginx/sites-available/domain1 /etc/nginx/sites-enabled</code><br>测试您的配置<br>运行<code>sudo nginx -t</code>以测试您的服务器块配置。您应该会看到一条消息，指示一切正常。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nginx -t</span><br><span class="line">nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /etc/nginx/nginx.conf test is successful</span><br></pre></td></tr></table></figure>
+<p>您可以运行sudo 服务 nginx重新加载来重新加载配置文件。</p>
+<p>测试您的新网站<br>打开网络浏览器并输入您的新网站地址。您应该看到为新网站创建的索引文件的内容，而不是默认的NGINX网页。<br>控制NGINX的基本命令<br>让我们学习基本的Nginx命令来管理你的Web服务器。</p>
+<p>重新启动命令将停止该服务，然后重新启动它。</p>
+<p><code>sudo systemctl restart nginx</code><br>reload命令告诉 NGINX 重新加载其配置文件，但不停止服务。<br><code>sudo systemctl reload nginx</code></p>
+<p>stop命令将停止 NGINX 服务。</p>
+<p> <code>sudo systemctl stop nginx</code><br>要使Nginx 服务能够在启动时启动，请运行</p>
+<p><code>sudo systemctl enable nginx</code><br>注意：默认情况下，Nginx服务启用为在服务器启动时自动启动。</p>
+<p>基本NGINX配置和日志文件<br><code>/etc/nginx</code> –包含所有 NGINX 配置文件</p>
+<p><code>/etc/nginx/sites-available</code>–包含服务器块文件，这些文件存储为一个或多个网站提供服务的配置详细信息</p>
+<p><code>/etc/nginx/sites-enabled</code> –包含一个或多个已启用网站的配置文件</p>
+<p><code>/etc/nginx/nginx.conf</code> –主配置文件，也读取其他文件中的配置指令</p>
+<p><code>/var/log/nginx/access.log</code> –用于存储有关您网站的所有访问的信息的默认位置</p>
+<p><code>/var/log/nginx/error.log</code> –存储 NGINX 错误的默认位置</p>
+<p>结论<br>通过遵循本指南，您应该能够在 Ubuntu 20.04 服务器上启动并运行一个或多个网站。但是，如果您遇到任何问题，请随时在下面的评论部分告诉我们，我们将尽最大努力为您提供帮助。<br>转:<a class="link"   target="_blank" rel="noopener" href="https://linoxide.com/install-nginx-on-ubuntu-20-04/" >https://linoxide.com/install-nginx-on-ubuntu-20-04/<i class="fas fa-external-link-alt"></i></a></p>
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/nginx/">#nginx</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2022/11/30/ubuntu-debian-ACME/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">ubuntu-debian安装ACME</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2022/11/22/VPShost/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">VPS主机一键更换国内软件源脚本</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;评论
+    </div>
+    
+        
+            
+
+    <div class="twikoo-container">
+        <script data-pjax src="//cdn.jsdelivr.net/npm/twikoo@v1.6.8/dist/twikoo.all.min.js"></script>
+        <div id="twikoo-comment"></div>
+        <script data-pjax>
+          function loadTwikoo() {
+            twikoo.init({
+              el: '#twikoo-comment',
+              envId: 'https://ip.luobu.eu.org',
+              region: '',
+              lang: 'zh-CN' || 'zh-CN'
+            });
+          }
+
+          if ('true' === 'true') {
+            const loadTwikooTimeout = setTimeout(() => {
+              loadTwikoo();
+              clearTimeout(loadTwikooTimeout);
+            }, 1000);
+          } else {
+            window.addEventListener('DOMContentLoaded', loadTwikoo);
+          }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2020</span> -
+            
+            2022
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Daoke</a>
+            
+        </div>
+        
+            <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.5.2</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

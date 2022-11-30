@@ -258,7 +258,7 @@
 <li>编译好的openwrt，会生成 rootfs 打包文件：  <br>openwrt-armvirt-64-default-rootfs.tar.gz</li>
 <li>在装好armbian和docker的N1上，把openwrt-armvirt-64-default-rootfs.tar.gz和Dockerfile放到同一个目录下</li>
 <li>制造镜像<br>(示例用的是openwrt by lean r9.7.6源码，因此镜像名称为：openwrt-arm64 版本为 r9.7.6<br>docker build -t openwrt-arm64:r9.7.6 .<br>即可生成镜像<br>用docker images，可以查看到已生成的镜像<br>用docker save openwrt-arm64:r9.7.6 gzip &gt; docker-image-openwrt-arm64-r9.7.6.tar.gz 可以把镜像导出成打包文件<br>用 gzip -dc docker-image-openwrt-arm64-r9.7.6.tar.gz docker load ，可以把打包文件还原成docker镜像</li>
-<li>运行镜像：<br>可以参见 <a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg" >https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg<i class="fas fa-external-link-alt"></i></a><br>重点：<br>a. 物理网卡要开启混杂模式（promisc)，有临时生效型（命令）和永久生效型（要改网络配置文件）<br>b. docker创建macvlan网络<br>c. 用macvlan网络绑定docker容器<br>d. 物理机和openwrt容器在同一网段，但不同ip<br>e. macvlan模式下，物理机和openwrt容器之间是ping不通的，这是正常现象，但第三方电脑都能ping通两者</li>
+<li>运行镜像：<br>可以参见 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg">https://www.jianshu.com/p/e62190cfff1a?tdsourcetag=s_pcqq_aiomsg</a><br>重点：<br>a. 物理网卡要开启混杂模式（promisc)，有临时生效型（命令）和永久生效型（要改网络配置文件）<br>b. docker创建macvlan网络<br>c. 用macvlan网络绑定docker容器<br>d. 物理机和openwrt容器在同一网段，但不同ip<br>e. macvlan模式下，物理机和openwrt容器之间是ping不通的，这是正常现象，但第三方电脑都能ping通两者</li>
 </ol>
 <p>示例：</p>
 <p>#docker创建macvlan网络，名为macnet</p>
