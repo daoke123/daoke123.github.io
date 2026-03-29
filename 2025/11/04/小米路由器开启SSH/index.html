@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.198168.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="小米路由器开启 SSH 方法指南，使用官方工具或 Xmirpatcher 均可实现。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小米路由器开启SSH">
+<meta property="og:url" content="https://blog.198168.xyz/2025/11/04/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFSSH/index.html">
+<meta property="og:site_name" content="老王笔记">
+<meta property="og:description" content="小米路由器开启 SSH 方法指南，使用官方工具或 Xmirpatcher 均可实现。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-04T02:11:44.000Z">
+<meta property="article:modified_time" content="2026-03-29T12:05:59.308Z">
+<meta property="article:author" content="老王笔记">
+<meta property="article:tag" content="SSH">
+<meta property="article:tag" content="小米路由器">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.198168.xyz/2025/11/04/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFSSH/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.198168.xyz/2025/11/04/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFSSH/","path":"2025/11/04/小米路由器开启SSH/","title":"小米路由器开启SSH"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>小米路由器开启SSH | 老王笔记</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/rss2.xml" title="老王笔记" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">老王笔记</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/rss2.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E4%BD%BF%E7%94%A8%E5%AE%98%E6%96%B9-SSH-%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">方法一：使用官方 SSH 工具包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E7%A1%AE%E8%AE%A4%E8%B7%AF%E7%94%B1%E5%99%A8%E5%9B%BA%E4%BB%B6%E7%89%88%E6%9C%AC"><span class="nav-number">1.1.</span> <span class="nav-text">步骤一：确认路由器固件版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E4%B8%8B%E8%BD%BD-SSH-%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="nav-number">1.2.</span> <span class="nav-text">步骤二：下载 SSH 工具包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E5%AE%89%E8%A3%85-SSH-%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="nav-number">1.3.</span> <span class="nav-text">步骤三：安装 SSH 工具包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8-Xmirpatcher-%E5%B7%A5%E5%85%B7"><span class="nav-number">2.</span> <span class="nav-text">方法二：使用 Xmirpatcher 工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7"><span class="nav-number">2.1.</span> <span class="nav-text">步骤一：下载工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E8%BF%90%E8%A1%8C%E5%B9%B6%E8%A7%A3%E9%94%81-SSH"><span class="nav-number">2.2.</span> <span class="nav-text">步骤二：运行并解锁 SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="nav-number">2.3.</span> <span class="nav-text">SSH 登录信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">3.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">老王笔记</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">83</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.198168.xyz/2025/11/04/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFSSH/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="老王笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老王笔记">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="小米路由器开启SSH | 老王笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          小米路由器开启SSH
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-11-04 10:11:44" itemprop="dateCreated datePublished" datetime="2025-11-04T10:11:44+08:00">2025-11-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">运维工具</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><hr>
+<blockquote>
+<p>小米路由器开启 SSH 方法指南，使用官方工具或 Xmirpatcher 均可实现。</p>
+</blockquote>
+<span id="more"></span>
+
+<hr>
+<h2 id="方法一：使用官方-SSH-工具包"><a href="#方法一：使用官方-SSH-工具包" class="headerlink" title="方法一：使用官方 SSH 工具包"></a>方法一：使用官方 SSH 工具包</h2><h3 id="步骤一：确认路由器固件版本"><a href="#步骤一：确认路由器固件版本" class="headerlink" title="步骤一：确认路由器固件版本"></a>步骤一：确认路由器固件版本</h3><ol>
+<li>登录路由器 Web 管理界面</li>
+<li>在「常用设置 → 系统状态」中查看当前路由版本</li>
+<li>若为<strong>稳定版</strong>，需先升级为<strong>开发版</strong> ROM 固件</li>
+</ol>
+<blockquote>
+<p>进入<a target="_blank" rel="noopener" href="https://www.miwifi.com/">小米路由官网</a>，依次选择「下载 → ROM」，下载对应型号的开发版 ROM 固件</p>
+</blockquote>
+<ol start="4">
+<li>在路由器 Web 管理页面的「手动升级」中上传并升级</li>
+</ol>
+<h3 id="步骤二：下载-SSH-工具包"><a href="#步骤二：下载-SSH-工具包" class="headerlink" title="步骤二：下载 SSH 工具包"></a>步骤二：下载 SSH 工具包</h3><ol>
+<li>进入小米路由器官网「开放 → 开启 SSH 工具」页面</li>
+<li>登录小米账号，关联绑定的路由器，记录 root 密码</li>
+<li>下载工具包，将 <code>bin</code> 文件复制到 FAT&#x2F;FAT32 格式 U 盘根目录</li>
+<li>文件名必须为：<code>miwifi_ssh.bin</code></li>
+</ol>
+<h3 id="步骤三：安装-SSH-工具包"><a href="#步骤三：安装-SSH-工具包" class="headerlink" title="步骤三：安装 SSH 工具包"></a>步骤三：安装 SSH 工具包</h3><ol>
+<li><strong>断开</strong>小米路由器电源</li>
+<li>将 U 盘插入 USB 接口</li>
+<li>用卡针按住 <strong>reset</strong> 按钮，接通电源</li>
+<li>指示灯变为<strong>黄色闪烁</strong>状态时，松开 reset 键</li>
+<li>等待 3-5 秒安装完成，路由器会自动重启</li>
+</ol>
+<hr>
+<h2 id="方法二：使用-Xmirpatcher-工具"><a href="#方法二：使用-Xmirpatcher-工具" class="headerlink" title="方法二：使用 Xmirpatcher 工具"></a>方法二：使用 Xmirpatcher 工具</h2><h3 id="步骤一：下载工具"><a href="#步骤一：下载工具" class="headerlink" title="步骤一：下载工具"></a>步骤一：下载工具</h3><p>从 GitHub 下载 <a target="_blank" rel="noopener" href="https://github.com/longzheng268/Xiaomi-Router-patcher">Xmirpatcher</a> 工具，解压后打开文件夹，找到 <code>run.bat</code> 文件</p>
+<h3 id="步骤二：运行并解锁-SSH"><a href="#步骤二：运行并解锁-SSH" class="headerlink" title="步骤二：运行并解锁 SSH"></a>步骤二：运行并解锁 SSH</h3><ol>
+<li>双击运行 <code>run.bat</code></li>
+<li>检查界面显示的 IP 地址是否正确<ul>
+<li>若不正确，输入 <code>1</code> 手动修改</li>
+</ul>
+</li>
+<li>输入 <code>2</code> 开始解锁 SSH</li>
+<li>按提示输入路由器后台密码</li>
+<li>等待提示解锁成功</li>
+</ol>
+<h3 id="SSH-登录信息"><a href="#SSH-登录信息" class="headerlink" title="SSH 登录信息"></a>SSH 登录信息</h3><ul>
+<li><strong>用户名</strong>：<code>root</code></li>
+<li><strong>密码</strong>：工具中获取的密码</li>
+<li><strong>端口</strong>：<code>22</code></li>
+</ul>
+<hr>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>开启 SSH 后，可使用 Putty、Xshell 等工具连接</li>
+<li>开启 SSH 可能使路由器<strong>失去保修</strong></li>
+<li>操作不当可能导致路由器故障，<strong>请谨慎操作</strong></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag"># 小米路由器</a>
+              <a href="/tags/SSH/" rel="tag"># SSH</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/11/04/OpenWrt-%E4%BD%BF%E7%94%A8-Tag-%E7%BB%99%E7%89%B9%E5%AE%9A%E7%9A%84%E8%AE%BE%E5%A4%87%E5%8D%95%E7%8B%AC%E6%8C%87%E5%AE%9A%E6%97%81%E8%B7%AF%E7%BD%91%E5%85%B3%E7%9A%84%E5%9C%B0%E5%9D%80%E5%92%8C-DNS/" rel="prev" title="OpenWrt 使用 Tag 给特定的设备单独指定旁路网关的地址和 DNS">
+                  <i class="fa fa-angle-left"></i> OpenWrt 使用 Tag 给特定的设备单独指定旁路网关的地址和 DNS
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/11/04/PVE-AIO-%E6%A0%87%E5%87%86%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" rel="next" title="PVE AIO 标准路由网络配置">
+                  PVE AIO 标准路由网络配置 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">老王笔记</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

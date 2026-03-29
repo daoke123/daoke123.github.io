@@ -1,0 +1,2283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>老王笔记</title>
+    <link>https://blog.198168.xyz/</link>
+    
+    <atom:link href="https://blog.198168.xyz/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Sun, 29 Mar 2026 12:05:59 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>低成本家用老人摔倒监控：普通摄像头 + 飞牛 fnOS + AI 检测实战</title>
+      <link>https://blog.198168.xyz/2026/03/29/%E4%BD%8E%E6%88%90%E6%9C%AC%E5%AE%B6%E7%94%A8%E8%80%81%E4%BA%BA%E6%91%94%E5%80%92%E7%9B%91%E6%8E%A7%E5%AE%9E%E6%88%98/</link>
+      <guid>https://blog.198168.xyz/2026/03/29/%E4%BD%8E%E6%88%90%E6%9C%AC%E5%AE%B6%E7%94%A8%E8%80%81%E4%BA%BA%E6%91%94%E5%80%92%E7%9B%91%E6%8E%A7%E5%AE%9E%E6%88%98/</guid>
+      <pubDate>Sun, 29 Mar 2026 01:27:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用普通摄像头 + 飞牛fnOS + YOLO AI，在家就能搭建老人摔倒监控，零成本、本地运行、隐私安全。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%80%81%E4%BA%BA%E7%9C%8B%E6%8A%A4/">老人看护</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%91%94%E5%80%92%E6%A3%80%E6%B5%8B/">摔倒检测</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%A3%9E%E7%89%9BfnOS/">飞牛fnOS</category>
+      
+      <category domain="https://blog.198168.xyz/tags/YOLO/">YOLO</category>
+      
+      <category domain="https://blog.198168.xyz/tags/AI%E6%A3%80%E6%B5%8B/">AI检测</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%91%84%E5%83%8F%E5%A4%B4/">摄像头</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%B0%B4%E6%98%9F/">水星</category>
+      
+      
+      <comments>https://blog.198168.xyz/2026/03/29/%E4%BD%8E%E6%88%90%E6%9C%AC%E5%AE%B6%E7%94%A8%E8%80%81%E4%BA%BA%E6%91%94%E5%80%92%E7%9B%91%E6%8E%A7%E5%AE%9E%E6%88%98/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Docker 部署 OpenCode 保姆级教程</title>
+      <link>https://blog.198168.xyz/2026/03/18/Docker-%E9%83%A8%E7%BD%B2-OpenCode-%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B/</link>
+      <guid>https://blog.198168.xyz/2026/03/18/Docker-%E9%83%A8%E7%BD%B2-OpenCode-%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B/</guid>
+      <pubDate>Wed, 18 Mar 2026 02:00:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OpenCode 是一款强大的 AI 编程助手，本文详细介绍如何通过 Docker 快速部署。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/Docker/">Docker</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/OpenCode/">OpenCode</category>
+      
+      
+      <comments>https://blog.198168.xyz/2026/03/18/Docker-%E9%83%A8%E7%BD%B2-OpenCode-%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>OpenWRT 安装哪吒探针</title>
+      <link>https://blog.198168.xyz/2025/11/05/OpenWRT-%E5%AE%89%E8%A3%85%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/</link>
+      <guid>https://blog.198168.xyz/2025/11/05/OpenWRT-%E5%AE%89%E8%A3%85%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/</guid>
+      <pubDate>Wed, 05 Nov 2025 10:05:13 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;前往哪吒探针&lt;a href=&quot;https://github.com/nezhahq/agent/releases&quot;&gt; GitHub Releases &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载适合你设备架构的二进制文件&lt;br&gt;• ARM64架构：&lt;code&gt;nezha-agent_linux_arm64.zip&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/">哪吒探针</category>
+      
+      <category domain="https://blog.198168.xyz/tags/OpenWrt/">OpenWrt</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</category>
+      
+      
+      <comments>https://blog.198168.xyz/2025/11/05/OpenWRT-%E5%AE%89%E8%A3%85%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>PVE AIO 标准路由网络配置</title>
+      <link>https://blog.198168.xyz/2025/11/04/PVE-AIO-%E6%A0%87%E5%87%86%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</link>
+      <guid>https://blog.198168.xyz/2025/11/04/PVE-AIO-%E6%A0%87%E5%87%86%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
+      <pubDate>Tue, 04 Nov 2025 12:21:16 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PVE AIO 标准路由网络配置说明&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;配置说明&quot;&gt;&lt;a href=&quot;#配置说明&quot; class=&quot;headerlink&quot; title=&quot;配置说明&quot;&gt;&lt;/a&gt;配置说明&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;接口类型&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;环回接口&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;用于本地进程间通信&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;WAN 物理网口&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;连接外部网络的光猫&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;LAN 物理网口&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;连接内部局域网的交换机&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/PVE/">PVE</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/PVE/">PVE</category>
+      
+      
+      <comments>https://blog.198168.xyz/2025/11/04/PVE-AIO-%E6%A0%87%E5%87%86%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>小米路由器开启SSH</title>
+      <link>https://blog.198168.xyz/2025/11/04/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFSSH/</link>
+      <guid>https://blog.198168.xyz/2025/11/04/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFSSH/</guid>
+      <pubDate>Tue, 04 Nov 2025 02:11:44 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;小米路由器开启 SSH 方法指南，使用官方工具或 Xmirpatcher 均可实现。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8/">小米路由器</category>
+      
+      <category domain="https://blog.198168.xyz/tags/SSH/">SSH</category>
+      
+      
+      <comments>https://blog.198168.xyz/2025/11/04/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFSSH/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>OpenWrt 使用 Tag 给特定的设备单独指定旁路网关的地址和 DNS</title>
+      <link>https://blog.198168.xyz/2025/11/04/OpenWrt-%E4%BD%BF%E7%94%A8-Tag-%E7%BB%99%E7%89%B9%E5%AE%9A%E7%9A%84%E8%AE%BE%E5%A4%87%E5%8D%95%E7%8B%AC%E6%8C%87%E5%AE%9A%E6%97%81%E8%B7%AF%E7%BD%91%E5%85%B3%E7%9A%84%E5%9C%B0%E5%9D%80%E5%92%8C-DNS/</link>
+      <guid>https://blog.198168.xyz/2025/11/04/OpenWrt-%E4%BD%BF%E7%94%A8-Tag-%E7%BB%99%E7%89%B9%E5%AE%9A%E7%9A%84%E8%AE%BE%E5%A4%87%E5%8D%95%E7%8B%AC%E6%8C%87%E5%AE%9A%E6%97%81%E8%B7%AF%E7%BD%91%E5%85%B3%E7%9A%84%E5%9C%B0%E5%9D%80%E5%92%8C-DNS/</guid>
+      <pubDate>Tue, 04 Nov 2025 01:47:41 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OpenWrt 中使用 Tag 功能可以为特定设备单独指定网关和 DNS，实现更灵活的网络配置。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/OpenWrt/">OpenWrt</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Tag/">Tag</category>
+      
+      
+      <comments>https://blog.198168.xyz/2025/11/04/OpenWrt-%E4%BD%BF%E7%94%A8-Tag-%E7%BB%99%E7%89%B9%E5%AE%9A%E7%9A%84%E8%AE%BE%E5%A4%87%E5%8D%95%E7%8B%AC%E6%8C%87%E5%AE%9A%E6%97%81%E8%B7%AF%E7%BD%91%E5%85%B3%E7%9A%84%E5%9C%B0%E5%9D%80%E5%92%8C-DNS/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>小米路由器ipv6防火墙设置</title>
+      <link>https://blog.198168.xyz/2025/11/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8ipv6%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE/</link>
+      <guid>https://blog.198168.xyz/2025/11/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8ipv6%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE/</guid>
+      <pubDate>Mon, 03 Nov 2025 12:10:27 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;通过配置小米路由器的 IPv6 防火墙规则，可以实现对特定端口的放行，从而满足远程桌面或其他网络需求。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8/">小米路由器</category>
+      
+      <category domain="https://blog.198168.xyz/tags/IPV6/">IPV6</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%98%B2%E7%81%AB%E5%A2%99/">防火墙</category>
+      
+      
+      <comments>https://blog.198168.xyz/2025/11/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8ipv6%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>ubuntu-debian安装ACME</title>
+      <link>https://blog.198168.xyz/2022/11/30/ubuntu-debian%E5%AE%89%E8%A3%85ACME/</link>
+      <guid>https://blog.198168.xyz/2022/11/30/ubuntu-debian%E5%AE%89%E8%A3%85ACME/</guid>
+      <pubDate>Wed, 30 Nov 2022 03:21:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;h4 id=&quot;获取-acme-sh&quot;&gt;&lt;a href=&quot;#获取-acme-sh&quot; class=&quot;headerlink&quot; title=&quot;获取 acme.sh&quot;&gt;&lt;/a&gt;获取 acme.sh&lt;/h4&gt;&lt;p&gt;acme.sh 是一个 shell 脚本，可以自动颁发和续订来自 Let’s Encrypt 的免费证书。您可以通过直接从 Web 下载脚本或克隆其 git 项目来获取 acme.sh 脚本。&lt;br&gt;从网络下载 acme.sh&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Debian/">Debian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/ACME/">ACME</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Ubuntu/">Ubuntu</category>
+      
+      <category domain="https://blog.198168.xyz/tags/SSL/">SSL</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%AF%81%E4%B9%A6/">证书</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/11/30/ubuntu-debian%E5%AE%89%E8%A3%85ACME/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>如何在 Ubuntu 上安装 NGINX</title>
+      <link>https://blog.198168.xyz/2022/11/29/%E5%A6%82%E4%BD%95%E5%9C%A8-Ubuntu-%E4%B8%8A%E5%AE%89%E8%A3%85-NGINX/</link>
+      <guid>https://blog.198168.xyz/2022/11/29/%E5%A6%82%E4%BD%95%E5%9C%A8-Ubuntu-%E4%B8%8A%E5%AE%89%E8%A3%85-NGINX/</guid>
+      <pubDate>Tue, 29 Nov 2022 14:47:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;在 Ubuntu 上安装 Nginx&lt;br&gt;在 Ubuntu 上安装 Nginx 可通过以下步骤完成，操作简单且高效：&lt;br&gt;一、更新系统软件包&lt;br&gt;首先更新系统的软件包列表，确保安装的是最新版本的 Nginx 及其依赖：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;sudo&lt;/span&gt; apt update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;sudo&lt;/span&gt; apt upgrade -y&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Ubuntu/">Ubuntu</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%89%E8%A3%85/">安装</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Nginx/">Nginx</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/11/29/%E5%A6%82%E4%BD%95%E5%9C%A8-Ubuntu-%E4%B8%8A%E5%AE%89%E8%A3%85-NGINX/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Rclone挂载Google Drive网盘</title>
+      <link>https://blog.198168.xyz/2022/11/22/Rclone%E6%8C%82%E8%BD%BDGoogle-Drive%E7%BD%91%E7%9B%98/</link>
+      <guid>https://blog.198168.xyz/2022/11/22/Rclone%E6%8C%82%E8%BD%BDGoogle-Drive%E7%BD%91%E7%9B%98/</guid>
+      <pubDate>Tue, 22 Nov 2022 14:22:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Rclone 可以将 Google Drive 网盘挂载到 VPS 上，作为本地磁盘使用。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Rclone/">Rclone</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Google-Drive/">Google Drive</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/11/22/Rclone%E6%8C%82%E8%BD%BDGoogle-Drive%E7%BD%91%E7%9B%98/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>甲骨文(ARM/x86均可) 使用netboot重装系统</title>
+      <link>https://blog.198168.xyz/2022/11/22/%E7%94%B2%E9%AA%A8%E6%96%87(ARMx86%E5%9D%87%E5%8F%AF)-%E4%BD%BF%E7%94%A8netboot%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/</link>
+      <guid>https://blog.198168.xyz/2022/11/22/%E7%94%B2%E9%AA%A8%E6%96%87(ARMx86%E5%9D%87%E5%8F%AF)-%E4%BD%BF%E7%94%A8netboot%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/</guid>
+      <pubDate>Tue, 22 Nov 2022 14:00:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;甲骨文云 Oracle Cloud 可以通过 Netboot 任意重装系统，不受官方镜像限制。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/DD/">DD</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%94%B2%E9%AA%A8%E6%96%87/">甲骨文</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">云服务器</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/11/22/%E7%94%B2%E9%AA%A8%E6%96%87(ARMx86%E5%9D%87%E5%8F%AF)-%E4%BD%BF%E7%94%A8netboot%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>使用 rclone 每天定时备份博客</title>
+      <link>https://blog.198168.xyz/2022/11/22/%E4%BD%BF%E7%94%A8-rclone-%E6%AF%8F%E5%A4%A9%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E5%8D%9A%E5%AE%A2/</link>
+      <guid>https://blog.198168.xyz/2022/11/22/%E4%BD%BF%E7%94%A8-rclone-%E6%AF%8F%E5%A4%A9%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E5%8D%9A%E5%AE%A2/</guid>
+      <pubDate>Tue, 22 Nov 2022 03:56:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;博客数据定期备份很重要，本文介绍使用 rclone 每天自动备份博客到 Google Drive。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">定时任务</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%A4%87%E4%BB%BD/">备份</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Rclone/">Rclone</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/11/22/%E4%BD%BF%E7%94%A8-rclone-%E6%AF%8F%E5%A4%A9%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E5%8D%9A%E5%AE%A2/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>vps常用一键脚本与命令</title>
+      <link>https://blog.198168.xyz/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/</link>
+      <guid>https://blog.198168.xyz/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/</guid>
+      <pubDate>Thu, 10 Nov 2022 14:24:20 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;VPS常用一键脚本与命令&lt;br&gt;更新源&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span c</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%84%9A%E6%9C%AC/">脚本</category>
+      
+      <category domain="https://blog.198168.xyz/tags/VPS/">VPS</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>mjj版的Linux入门教程</title>
+      <link>https://blog.198168.xyz/2022/11/02/mjj%E7%89%88%E7%9A%84linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</link>
+      <guid>https://blog.198168.xyz/2022/11/02/mjj%E7%89%88%E7%9A%84linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</guid>
+      <pubDate>Tue, 01 Nov 2022 22:24:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给 Linux 初学者的简单教程，看完后可以对 Linux 系统有基础认识，能够配置常见软件和写一些一键脚本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本教程写于 2021 年下半年，采用 Debian GNU&amp;#x2F;Linux 11 (bullseye)。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Linux/">Linux</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/11/02/mjj%E7%89%88%E7%9A%84linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Github常用命令总结</title>
+      <link>https://blog.198168.xyz/2022/05/29/Github%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</link>
+      <guid>https://blog.198168.xyz/2022/05/29/Github%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
+      <pubDate>Sun, 29 May 2022 04:10:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Git 是分布式版本控制系统，GitHub 是一个基于 Git 的代码托管平台。本文总结常用的 Git 命令。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/">网络资源</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%91%BD%E4%BB%A4/">命令</category>
+      
+      <category domain="https://blog.198168.xyz/tags/GitHub/">GitHub</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Git/">Git</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/05/29/Github%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>VPS采用Ed25519密钥登录</title>
+      <link>https://blog.198168.xyz/2022/05/26/VPS%E9%87%87%E7%94%A8Ed25519%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95/</link>
+      <guid>https://blog.198168.xyz/2022/05/26/VPS%E9%87%87%E7%94%A8Ed25519%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95/</guid>
+      <pubDate>Wed, 25 May 2022 16:00:00 GMT</pubDate>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Ed25519 是目前最推荐的公钥算法，相比 RSA 更安全且效率更高。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AF%86%E9%92%A5/">密钥</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/05/26/VPS%E9%87%87%E7%94%A8Ed25519%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>docker mysql容器创建用户密码</title>
+      <link>https://blog.198168.xyz/2022/05/18/docker-mysql%E5%AE%B9%E5%99%A8%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81/</link>
+      <guid>https://blog.198168.xyz/2022/05/18/docker-mysql%E5%AE%B9%E5%99%A8%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81/</guid>
+      <pubDate>Tue, 17 May 2022 21:56:21 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;启动一个 MySQL 容器。你可以使用官方的 MySQL 镜像，并通过 Docker 命令行来运行它。例如：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;t</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/Docker/">Docker</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/MySQL/">MySQL</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/05/18/docker-mysql%E5%AE%B9%E5%99%A8%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>使用Caddy2作为文件服务器</title>
+      <link>https://blog.198168.xyz/2022/05/15/%E4%BD%BF%E7%94%A8Caddy2%E4%BD%9C%E4%B8%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <guid>https://blog.198168.xyz/2022/05/15/%E4%BD%BF%E7%94%A8Caddy2%E4%BD%9C%E4%B8%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <pubDate>Sun, 15 May 2022 10:22:18 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Caddy 是一个简单的 Web 服务器，自带 HTTPS 功能，非常适合用来搭建简单的文件服务器。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Caddy/">Caddy</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/05/15/%E4%BD%BF%E7%94%A8Caddy2%E4%BD%9C%E4%B8%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>玩客云官方系统ROOT安装哪吒探针</title>
+      <link>https://blog.198168.xyz/2022/02/23/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%AE%98%E6%96%B9%E7%B3%BB%E7%BB%9FROOT%E5%AE%89%E8%A3%85%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/</link>
+      <guid>https://blog.198168.xyz/2022/02/23/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%AE%98%E6%96%B9%E7%B3%BB%E7%BB%9FROOT%E5%AE%89%E8%A3%85%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/</guid>
+      <pubDate>Wed, 23 Feb 2022 15:42:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;下载哪吒 nezha-agent_linux_arm.tar.gz&lt;br&gt;&lt;a href=&quot;https://github.com/naiba/nezha&quot;&gt;哪吒&lt;/a&gt;&lt;br&gt;上传RO</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/">玩客云</category>
+      
+      <category domain="https://blog.198168.xyz/tags/docker/">docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/">哪吒探针</category>
+      
+      <category domain="https://blog.198168.xyz/tags/armbian/">armbian</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/02/23/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%AE%98%E6%96%B9%E7%B3%BB%E7%BB%9FROOT%E5%AE%89%E8%A3%85%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Docker 部署 FileBrowser 文件管理器</title>
+      <link>https://blog.198168.xyz/2022/02/18/docker-filebrowser/</link>
+      <guid>https://blog.198168.xyz/2022/02/18/docker-filebrowser/</guid>
+      <pubDate>Fri, 18 Feb 2022 15:50:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;FileBrowser 是一个基于 Web 的文件管理器，可以用来搭建私有网盘。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/Docker/">Docker</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/FileBrowser/">FileBrowser</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/02/18/docker-filebrowser/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>自制N1 Docker Openwrt镜像及运行镜像</title>
+      <link>https://blog.198168.xyz/2022/02/16/%E8%87%AA%E5%88%B6N1-Docker-Openwrt%E9%95%9C%E5%83%8F%E5%8F%8A%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/</link>
+      <guid>https://blog.198168.xyz/2022/02/16/%E8%87%AA%E5%88%B6N1-Docker-Openwrt%E9%95%9C%E5%83%8F%E5%8F%8A%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/</guid>
+      <pubDate>Wed, 16 Feb 2022 11:48:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;1.编译openwrt&lt;br&gt;Target System 选择 QEMU ARM VIrtual Machine&lt;br&gt;Subtarget 选择 ARMv8 multiplatform&lt;br&gt;其它的随意&lt;br&gt;1.编译openwrt&lt;br&gt;Target System 选择 QEMU ARM VIrtual Machine  &lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Armbian/">Armbian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/N1/">N1</category>
+      
+      <category domain="https://blog.198168.xyz/tags/OpenWrt/">OpenWrt</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%95%9C%E5%83%8F/">镜像</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/02/16/%E8%87%AA%E5%88%B6N1-Docker-Openwrt%E9%95%9C%E5%83%8F%E5%8F%8A%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>玩客云当录像机安装pyNvr</title>
+      <link>https://blog.198168.xyz/2022/02/13/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%BD%93%E5%BD%95%E5%83%8F%E6%9C%BA%E5%AE%89%E8%A3%85pyNvr/</link>
+      <guid>https://blog.198168.xyz/2022/02/13/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%BD%93%E5%BD%95%E5%83%8F%E6%9C%BA%E5%AE%89%E8%A3%85pyNvr/</guid>
+      <pubDate>Sun, 13 Feb 2022 13:46:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;&lt;a href=&quot;https://gitee.com/wfxzf/pyNvr&quot;&gt;pyNvr脚本&lt;/a&gt;&lt;br&gt;安装python3&lt;br&gt;如果使用百度网盘：&lt;br&gt;&lt;a href=&quot;https://gitee.com/wfxzf/pyNvr&quot;&gt;pyNvr脚本&lt;/a&gt;&lt;br&gt;安装python3&lt;br&gt;如果使用百度网盘：&lt;br&gt;pip3 install bypy&lt;br&gt;bypy info  &lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/">玩客云</category>
+      
+      <category domain="https://blog.198168.xyz/tags/docker/">docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/armbian/">armbian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%BD%95%E5%83%8F%E6%9C%BA/">录像机</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/02/13/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%BD%93%E5%BD%95%E5%83%8F%E6%9C%BA%E5%AE%89%E8%A3%85pyNvr/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>使用 Dockerfile 定制镜像</title>
+      <link>https://blog.198168.xyz/2022/01/21/%E4%BD%BF%E7%94%A8-Dockerfile-%E5%AE%9A%E5%88%B6%E9%95%9C%E5%83%8F/</link>
+      <guid>https://blog.198168.xyz/2022/01/21/%E4%BD%BF%E7%94%A8-Dockerfile-%E5%AE%9A%E5%88%B6%E9%95%9C%E5%83%8F/</guid>
+      <pubDate>Fri, 21 Jan 2022 11:54:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;示例 frps&lt;br&gt;创建一个文件夹 frp&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir frp &amp;amp;&amp;amp; cd frp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;编辑Dockerfile文件&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nano Dockerfile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;下面代码复制粘贴&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;FROM alpine&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;MAINTAINER Stille &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ENV FRP_VERSION 0.38.0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;WORKDIR /&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;RUN set -xe &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    apk add tzdata &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    echo &amp;quot;Asia/Shanghai&amp;quot; &amp;gt; /etc/timezone &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    apk del tzdata&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;RUN set -x &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if [ &amp;quot;$(uname -m)&amp;quot; = &amp;quot;x86_64&amp;quot; ]; then export PLATFORM=amd64 ; else if [ &amp;quot;$(uname -m)&amp;quot; = &amp;quot;aarch64&amp;quot; ]; then export PLATFORM=arm64 ; fi fi &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v$&amp;#123;FRP_VERSION&amp;#125;/frp_$&amp;#123;FRP_VERSION&amp;#125;_linux_$&amp;#123;PLATFORM&amp;#125;.tar.gz &amp;amp;&amp;amp; &#92; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    tar xzf frp_$&amp;#123;FRP_VERSION&amp;#125;_linux_$&amp;#123;PLATFORM&amp;#125;.tar.gz &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    cd frp_$&amp;#123;FRP_VERSION&amp;#125;_linux_$&amp;#123;PLATFORM&amp;#125; &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mkdir /frp &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mv frps frps.ini /frp &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    cd .. &amp;amp;&amp;amp; &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    rm -rf *.tar.gz frp_$&amp;#123;FRP_VERSION&amp;#125;_linux_$&amp;#123;PLATFORM&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;VOLUME /frp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;CMD /frp/frps -c /frp/frps.ini&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;生成docker镜像&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker build -t mydaoke/frps:0.38 .&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;mydaoke&amp;#x2F;frps:0.38修改自己的名称&lt;br&gt;查看生成docker镜像&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker images&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;试运行一下&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run --restart=always --network host -d -v /root/frp/frps.ini:/frp/frps.ini --name frps mydaoke/frps:0.38&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Ok&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%95%9C%E5%83%8F/">镜像</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/01/21/%E4%BD%BF%E7%94%A8-Dockerfile-%E5%AE%9A%E5%88%B6%E9%95%9C%E5%83%8F/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>caddy安装</title>
+      <link>https://blog.198168.xyz/2022/01/19/caddy%E5%AE%89%E8%A3%85/</link>
+      <guid>https://blog.198168.xyz/2022/01/19/caddy%E5%AE%89%E8%A3%85/</guid>
+      <pubDate>Wed, 19 Jan 2022 12:45:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/sp</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Caddy/">Caddy</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/01/19/caddy%E5%AE%89%E8%A3%85/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Linux 文件/文件夹的创建、复制、移动、删除</title>
+      <link>https://blog.198168.xyz/2022/01/18/Linux-%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E5%88%9B%E5%BB%BA%E3%80%81%E5%A4%8D%E5%88%B6%E3%80%81%E7%A7%BB%E5%8A%A8%E3%80%81%E5%88%A0%E9%99%A4/</link>
+      <guid>https://blog.198168.xyz/2022/01/18/Linux-%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E5%88%9B%E5%BB%BA%E3%80%81%E5%A4%8D%E5%88%B6%E3%80%81%E7%A7%BB%E5%8A%A8%E3%80%81%E5%88%A0%E9%99%A4/</guid>
+      <pubDate>Mon, 17 Jan 2022 16:37:34 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;Linux 命令行终端中，文件&amp;#x2F;文件夹的创建、复制、移动、删除。&lt;/p&gt;
+&lt;h3 id=&quot;文件夹创建命令&quot;&gt;&lt;a href=&quot;#文件夹创建命令&quot; class=&quot;headerlink&quot; title=&quot;文件夹创建命令&quot;&gt;&lt;/a&gt;文件夹创建命令&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;mkdir 1 #创建文件夹1到当前目录&lt;/li&gt;
+&lt;li&gt;mkdir -p 1&amp;#x2F;2 #创建文件夹1，并在文件夹1中创建文件夹2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;文件创建命令&quot;&gt;&lt;a href=&quot;#文件创建命令&quot; class=&quot;headerlink&quot; title=&quot;文件创建命令&quot;&gt;&lt;/a&gt;文件创建命令&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;touch 1.txt #创建文件1.txt到当前目录&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Linux/">Linux</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/01/18/Linux-%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E5%88%9B%E5%BB%BA%E3%80%81%E5%A4%8D%E5%88%B6%E3%80%81%E7%A7%BB%E5%8A%A8%E3%80%81%E5%88%A0%E9%99%A4/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>docker 制作自己的镜像</title>
+      <link>https://blog.198168.xyz/2022/01/17/docker-%E5%88%B6%E4%BD%9C%E8%87%AA%E5%B7%B1%E7%9A%84%E9%95%9C%E5%83%8F/</link>
+      <guid>https://blog.198168.xyz/2022/01/17/docker-%E5%88%B6%E4%BD%9C%E8%87%AA%E5%B7%B1%E7%9A%84%E9%95%9C%E5%83%8F/</guid>
+      <pubDate>Sun, 16 Jan 2022 17:16:50 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;h1 id=&quot;检查镜像&quot;&gt;&lt;a href=&quot;#检查镜像&quot; class=&quot;headerlink&quot; title=&quot;检查镜像&quot;&gt;&lt;/a&gt;检查镜像&lt;/h1&gt;&lt;figure class=&quot;highl</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%95%9C%E5%83%8F/">镜像</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/01/17/docker-%E5%88%B6%E4%BD%9C%E8%87%AA%E5%B7%B1%E7%9A%84%E9%95%9C%E5%83%8F/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>NginxProxyManager</title>
+      <link>https://blog.198168.xyz/2022/01/12/NginxProxyManager/</link>
+      <guid>https://blog.198168.xyz/2022/01/12/NginxProxyManager/</guid>
+      <pubDate>Wed, 12 Jan 2022 15:47:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/sp</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Nginx/">Nginx</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/01/12/NginxProxyManager/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>宝塔降级7.7</title>
+      <link>https://blog.198168.xyz/2022/01/12/%E5%AE%9D%E5%A1%94%E9%99%8D%E7%BA%A77.7/</link>
+      <guid>https://blog.198168.xyz/2022/01/12/%E5%AE%9D%E5%A1%94%E9%99%8D%E7%BA%A77.7/</guid>
+      <pubDate>Wed, 12 Jan 2022 13:08:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;破解的有BUG 推荐使用降级&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%9D%E5%A1%94/">宝塔</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%99%8D%E7%BA%A7/">降级</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/01/12/%E5%AE%9D%E5%A1%94%E9%99%8D%E7%BA%A77.7/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>常用脚本备份</title>
+      <link>https://blog.198168.xyz/2022/01/12/%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC%E5%A4%87%E4%BB%BD/</link>
+      <guid>https://blog.198168.xyz/2022/01/12/%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC%E5%A4%87%E4%BB%BD/</guid>
+      <pubDate>Tue, 11 Jan 2022 17:56:25 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;网络重装脚本  &lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%84%9A%E6%9C%AC/">脚本</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">定时任务</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%A4%87%E4%BB%BD/">备份</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/01/12/%E5%B8%B8%E7%94%A8%E8%84%9A%E6%9C%AC%E5%A4%87%E4%BB%BD/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>WARP为服务器添加IPv4/IPv6网络</title>
+      <link>https://blog.198168.xyz/2022/01/10/WARP%E4%B8%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B7%BB%E5%8A%A0IPv4IPv6%E7%BD%91%E7%BB%9C/</link>
+      <guid>https://blog.198168.xyz/2022/01/10/WARP%E4%B8%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B7%BB%E5%8A%A0IPv4IPv6%E7%BD%91%E7%BB%9C/</guid>
+      <pubDate>Sun, 09 Jan 2022 21:22:37 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh &amp;amp;&amp;amp; bash menu.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;WireGuard 网络接口数据，查看 wg&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/">网络资源</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/WARP/">WARP</category>
+      
+      <category domain="https://blog.198168.xyz/tags/IPv4/">IPv4</category>
+      
+      <category domain="https://blog.198168.xyz/tags/IPv6/">IPv6</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/01/10/WARP%E4%B8%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B7%BB%E5%8A%A0IPv4IPv6%E7%BD%91%E7%BB%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>宝塔相关安装与卸载</title>
+      <link>https://blog.198168.xyz/2022/01/02/%E5%AE%9D%E5%A1%94%E7%9B%B8%E5%85%B3%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/</link>
+      <guid>https://blog.198168.xyz/2022/01/02/%E5%AE%9D%E5%A1%94%E7%9B%B8%E5%85%B3%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/</guid>
+      <pubDate>Sat, 01 Jan 2022 20:25:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;h1 id=&quot;宝塔国内版&quot;&gt;&lt;a href=&quot;#宝塔国内版&quot; class=&quot;headerlink&quot; title=&quot;宝塔国内版&quot;&gt;&lt;/a&gt;宝塔国内版&lt;/h1&gt;&lt;p&gt;Centos安装命令：&lt;/</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%9D%E5%A1%94/">宝塔</category>
+      
+      
+      <comments>https://blog.198168.xyz/2022/01/02/%E5%AE%9D%E5%A1%94%E7%9B%B8%E5%85%B3%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>4行命令，设置80和443只允许CF访问，防止被扫。</title>
+      <link>https://blog.198168.xyz/2021/12/21/4%E8%A1%8C%E5%91%BD%E4%BB%A4%EF%BC%8C%E8%AE%BE%E7%BD%AE80%E5%92%8C443%E5%8F%AA%E5%85%81%E8%AE%B8CF%E8%AE%BF%E9%97%AE%EF%BC%8C%E9%98%B2%E6%AD%A2%E8%A2%AB%E6%89%AB%E3%80%82/</link>
+      <guid>https://blog.198168.xyz/2021/12/21/4%E8%A1%8C%E5%91%BD%E4%BB%A4%EF%BC%8C%E8%AE%BE%E7%BD%AE80%E5%92%8C443%E5%8F%AA%E5%85%81%E8%AE%B8CF%E8%AE%BF%E9%97%AE%EF%BC%8C%E9%98%B2%E6%AD%A2%E8%A2%AB%E6%89%AB%E3%80%82/</guid>
+      <pubDate>Tue, 21 Dec 2021 11:09:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/sp</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/12/21/4%E8%A1%8C%E5%91%BD%E4%BB%A4%EF%BC%8C%E8%AE%BE%E7%BD%AE80%E5%92%8C443%E5%8F%AA%E5%85%81%E8%AE%B8CF%E8%AE%BF%E9%97%AE%EF%BC%8C%E9%98%B2%E6%AD%A2%E8%A2%AB%E6%89%AB%E3%80%82/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>青龙</title>
+      <link>https://blog.198168.xyz/2021/11/25/%E9%9D%92%E9%BE%99/</link>
+      <guid>https://blog.198168.xyz/2021/11/25/%E9%9D%92%E9%BE%99/</guid>
+      <pubDate>Thu, 25 Nov 2021 15:27:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/sp</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">定时任务</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%9D%92%E9%BE%99/">青龙</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/11/25/%E9%9D%92%E9%BE%99/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Screen命令安装使用教程</title>
+      <link>https://blog.198168.xyz/2021/08/31/Screen%E5%91%BD%E4%BB%A4%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+      <guid>https://blog.198168.xyz/2021/08/31/Screen%E5%91%BD%E4%BB%A4%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+      <pubDate>Mon, 30 Aug 2021 22:44:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;CentOS系统执行以下命令安装：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum install screen&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Debian&amp;#x2F;Ubuntu系统执行以下命令安装：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get install screen&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如何使用screen命令&lt;br&gt;首先创建screen会话，执行以下命令：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;screen -S lnmp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Screen/">Screen</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/31/Screen%E5%91%BD%E4%BB%A4%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>腾讯云DD 系统</title>
+      <link>https://blog.198168.xyz/2021/08/30/%E8%85%BE%E8%AE%AF%E4%BA%91DD-%E7%B3%BB%E7%BB%9F/</link>
+      <guid>https://blog.198168.xyz/2021/08/30/%E8%85%BE%E8%AE%AF%E4%BA%91DD-%E7%B3%BB%E7%BB%9F/</guid>
+      <pubDate>Mon, 30 Aug 2021 15:38:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;萌咖脚本（debian10）：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/DD/">DD</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/">腾讯云</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/30/%E8%85%BE%E8%AE%AF%E4%BA%91DD-%E7%B3%BB%E7%BB%9F/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>水星摄像头</title>
+      <link>https://blog.198168.xyz/2021/08/28/%E6%B0%B4%E6%98%9F%E6%91%84%E5%83%8F%E5%A4%B4/</link>
+      <guid>https://blog.198168.xyz/2021/08/28/%E6%B0%B4%E6%98%9F%E6%91%84%E5%83%8F%E5%A4%B4/</guid>
+      <pubDate>Fri, 27 Aug 2021 19:44:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%91%84%E5%83%8F%E5%A4%B4/">摄像头</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%B0%B4%E6%98%9F/">水星</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/28/%E6%B0%B4%E6%98%9F%E6%91%84%E5%83%8F%E5%A4%B4/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Github+jsDelivr为图片文件加速</title>
+      <link>https://blog.198168.xyz/2021/08/26/Github+jsDelivr%E4%B8%BA%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E5%8A%A0%E9%80%9F/</link>
+      <guid>https://blog.198168.xyz/2021/08/26/Github+jsDelivr%E4%B8%BA%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E5%8A%A0%E9%80%9F/</guid>
+      <pubDate>Wed, 25 Aug 2021 20:12:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/&lt;/code&gt; 即可访问你的内容了！&lt;br&gt;如本文示例：&lt;code&gt;https://cdn.jsdelivr.net/gh/malaohu/jscdn@1.0&lt;/code&gt;&amp;#x2F;  &lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/">网络资源</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/jsDelivr/">jsDelivr</category>
+      
+      <category domain="https://blog.198168.xyz/tags/GitHub/">GitHub</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Git/">Git</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%8A%A0%E9%80%9F/">加速</category>
+      
+      <category domain="https://blog.198168.xyz/tags/CDN/">CDN</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/26/Github+jsDelivr%E4%B8%BA%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E5%8A%A0%E9%80%9F/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>老毛子固件DNSMASQ优化：AdGuardHome外挂服务</title>
+      <link>https://blog.198168.xyz/2021/08/26/%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6DNSMASQ%E4%BC%98%E5%8C%96%EF%BC%9AAdGuardHome%E5%A4%96%E6%8C%82%E6%9C%8D%E5%8A%A1/</link>
+      <guid>https://blog.198168.xyz/2021/08/26/%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6DNSMASQ%E4%BC%98%E5%8C%96%EF%BC%9AAdGuardHome%E5%A4%96%E6%8C%82%E6%9C%8D%E5%8A%A1/</guid>
+      <pubDate>Wed, 25 Aug 2021 19:57:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;AdGuardHome&lt;br&gt;表示对以下设置的所有server发起查询#选择回应最快的一条作为查询结果返回&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;all-servers&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server=192.168.2.2#5533 #AdGuardHome&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dns-forward-max=1000 #AdGuardHome&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/AdGuardHome/">AdGuardHome</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%80%81%E6%AF%9B%E5%AD%90/">老毛子</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/26/%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6DNSMASQ%E4%BC%98%E5%8C%96%EF%BC%9AAdGuardHome%E5%A4%96%E6%8C%82%E6%9C%8D%E5%8A%A1/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>安装AdGuardHome</title>
+      <link>https://blog.198168.xyz/2021/08/24/%E5%AE%89%E8%A3%85AdGuardHome/</link>
+      <guid>https://blog.198168.xyz/2021/08/24/%E5%AE%89%E8%A3%85AdGuardHome/</guid>
+      <pubDate>Tue, 24 Aug 2021 15:58:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;安装AdGuardHome&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;sp</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/AdGuardHome/">AdGuardHome</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/24/%E5%AE%89%E8%A3%85AdGuardHome/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Debian添加swap</title>
+      <link>https://blog.198168.xyz/2021/08/23/Debian%E6%B7%BB%E5%8A%A0swap/</link>
+      <guid>https://blog.198168.xyz/2021/08/23/Debian%E6%B7%BB%E5%8A%A0swap/</guid>
+      <pubDate>Sun, 22 Aug 2021 16:37:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;查看下Swap的大小&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Debian/">Debian</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/23/Debian%E6%B7%BB%E5%8A%A0swap/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>定时任务cron表达式的填写规则介绍</title>
+      <link>https://blog.198168.xyz/2021/08/21/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1cron%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%A1%AB%E5%86%99%E8%A7%84%E5%88%99%E4%BB%8B%E7%BB%8D/</link>
+      <guid>https://blog.198168.xyz/2021/08/21/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1cron%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%A1%AB%E5%86%99%E8%A7%84%E5%88%99%E4%BB%8B%E7%BB%8D/</guid>
+      <pubDate>Fri, 20 Aug 2021 20:15:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;一、Cron表达式的组成&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[秒] [分] [时] [日] [月] [周] [年]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;二、Cron每个域（时间）的相关定义，用表格梳理比较明了。&lt;br&gt;域 是否必填 值以及范围 通配符&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;秒    是    0-59    , – * /&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;分    是    0-59    , – * /&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;时    是    0-23    , – * /&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;日    是    1-31    , – * ? / L W&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;月    是    1-12 或 JAN-DEC    , – * /&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;周    是    1-7 或 SUN-SAT    , – * ? / L #&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;年    否    1970-2099    , – * /&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Cron表达式&lt;br&gt;通配符的含义：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期五。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&amp;#x27;L&amp;#x27;时，不要指定列表&amp;#x27;,&amp;#x27;或范围&amp;#x27;-&amp;#x27;，否则易导致出现意料之外的结果。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&amp;quot;4W&amp;quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&amp;quot;1W&amp;quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;LW：‘L’和&amp;#x27;W&amp;#x27;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;三、举个例子（要足够多）&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;*/5 * * * * ? 每隔 5 秒执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 */1 * * * ? 每隔 1 分钟执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0 2 1 * ? * 每月 1 日的凌晨 2 点执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 ? * MON-FRI 周一到周五每天上午 10：15 执行作业&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 ? 6L 2002-2006 2002 年至 2006 年的每个月的最后一个星期五上午 10:15 执行作业&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0 23 * * ? 每天 23 点执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0 1 * * ? 每天凌晨 1 点执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0 1 1 * ? 每月 1 日凌晨 1 点执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0 23 L * ? 每月最后一天 23 点执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0 1 ? * L 每周星期天凌晨 1 点执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 26,29,33 * * * ? 在 26 分、29 分、33 分执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0 0,13,18,21 * * ? 每天的 0 点、13 点、18 点、21 点都执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0 10,14,16 * * ? 每天上午 10 点，下午 2 点，4 点执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0/30 9-17 * * ? 朝九晚五工作时间内每半小时执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0 12 ? * WED 每个星期三中午 12 点执行一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0 12 * * ? 每天中午 12 点触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 ? * * 每天上午 10:15 触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 * * ? 每天上午 10:15 触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 * * ? * 每天上午 10:15 触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 * * ? 2005 2005 年的每天上午 10:15 触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 * 14 * * ? 每天下午 2 点到 2:59 期间的每 1 分钟触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0/5 14 * * ? 每天下午 2 点到 2:55 期间的每 5 分钟触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0/5 14,18 * * ? 每天下午 2 点到 2:55 期间和下午 6 点到 6:55 期间的每 5 分钟触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 0-5 14 * * ? 每天下午 2 点到 2:05 期间的每 1 分钟触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 10,44 14 ? 3 WED 每年三月的星期三的下午 2:10 和 2:44 触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 ? * MON-FRI 周一至周五的上午 10:15 触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 15 * ? 每月 15 日上午 10:15 触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 L * ? 每月最后一日的上午 10:15 触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 ? * 6L 每月的最后一个星期五上午 10:15 触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 ? * 6L 2002-2005 2002 年至 2005 年的每月的最后一个星期五上午 10:15 触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 15 10 ? * 6#3 每月的第三个星期五上午 10:15 触发&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">定时任务</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Cron/">Cron</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/21/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1cron%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%A1%AB%E5%86%99%E8%A7%84%E5%88%99%E4%BB%8B%E7%BB%8D/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>甲骨文ubuntu20.04安装了宝塔无法打开面板</title>
+      <link>https://blog.198168.xyz/2021/08/18/%E7%94%B2%E9%AA%A8%E6%96%87ubuntu20.04%E5%AE%89%E8%A3%85%E4%BA%86%E5%AE%9D%E5%A1%94%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E9%9D%A2%E6%9D%BF/</link>
+      <guid>https://blog.198168.xyz/2021/08/18/%E7%94%B2%E9%AA%A8%E6%96%87ubuntu20.04%E5%AE%89%E8%A3%85%E4%BA%86%E5%AE%9D%E5%A1%94%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E9%9D%A2%E6%9D%BF/</guid>
+      <pubDate>Tue, 17 Aug 2021 19:14:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;甲骨文其他的系统都可以进，&lt;br&gt;就是ubuntu20进不去，防火墙也放行了，甲骨文后台的安全组已经开放全部端口了。&lt;br&gt;打开并登录Xshell自己服务器账号密钥：&lt;br&gt;在未roo</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%94%B2%E9%AA%A8%E6%96%87/">甲骨文</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">云服务器</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Ubuntu/">Ubuntu</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%9D%E5%A1%94/">宝塔</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/18/%E7%94%B2%E9%AA%A8%E6%96%87ubuntu20.04%E5%AE%89%E8%A3%85%E4%BA%86%E5%AE%9D%E5%A1%94%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E9%9D%A2%E6%9D%BF/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>甲骨文改成root密码登录</title>
+      <link>https://blog.198168.xyz/2021/08/18/%E7%94%B2%E9%AA%A8%E6%96%87%E6%94%B9%E6%88%90root%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</link>
+      <guid>https://blog.198168.xyz/2021/08/18/%E7%94%B2%E9%AA%A8%E6%96%87%E6%94%B9%E6%88%90root%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</guid>
+      <pubDate>Tue, 17 Aug 2021 18:38:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;防火墙放行全部端口&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;iptables -P INPUT ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -P OUTPUT ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -F&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;或者直接删除规则&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;rm -rf /etc/iptables/rules.v4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rm -rf /etc/iptables/rules.v6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%94%B2%E9%AA%A8%E6%96%87/">甲骨文</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">云服务器</category>
+      
+      <category domain="https://blog.198168.xyz/tags/SSH/">SSH</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Root/">Root</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/18/%E7%94%B2%E9%AA%A8%E6%96%87%E6%94%B9%E6%88%90root%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>修改宝塔OneDrive插件API为自己的E5续命</title>
+      <link>https://blog.198168.xyz/2021/08/17/%E4%BF%AE%E6%94%B9%E5%AE%9D%E5%A1%94OneDrive%E6%8F%92%E4%BB%B6API%E4%B8%BA%E8%87%AA%E5%B7%B1%E7%9A%84E5%E7%BB%AD%E5%91%BD/</link>
+      <guid>https://blog.198168.xyz/2021/08/17/%E4%BF%AE%E6%94%B9%E5%AE%9D%E5%A1%94OneDrive%E6%8F%92%E4%BB%B6API%E4%B8%BA%E8%87%AA%E5%B7%B1%E7%9A%84E5%E7%BB%AD%E5%91%BD/</guid>
+      <pubDate>Tue, 17 Aug 2021 11:57:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;地址：&lt;a href=&quot;https://portal.azure.com/#home&quot;&gt;https://portal.azure.com/#home&lt;/a&gt;&lt;br&gt;1：使用@xxx.onmicrosoft.com账号登陆。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/OneDrive/">OneDrive</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%9D%E5%A1%94/">宝塔</category>
+      
+      <category domain="https://blog.198168.xyz/tags/E5/">E5</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/17/%E4%BF%AE%E6%94%B9%E5%AE%9D%E5%A1%94OneDrive%E6%8F%92%E4%BB%B6API%E4%B8%BA%E8%87%AA%E5%B7%B1%E7%9A%84E5%E7%BB%AD%E5%91%BD/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Padavan防火墙ipv6配置</title>
+      <link>https://blog.198168.xyz/2021/08/11/Padavan%E9%98%B2%E7%81%AB%E5%A2%99ipv6%E9%85%8D%E7%BD%AE/</link>
+      <guid>https://blog.198168.xyz/2021/08/11/Padavan%E9%98%B2%E7%81%AB%E5%A2%99ipv6%E9%85%8D%E7%BD%AE/</guid>
+      <pubDate>Wed, 11 Aug 2021 00:41:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;防火墙ipv6配置&lt;br&gt;关闭ipv6防火墙&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -F&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -P INPUT ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -P OUTPUT ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -P FORWARD ACCEPT&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -A FORWARD -p tcp --dport 11899 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -A FORWARD -p udp --dport 11899 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;本机开放ipv6防火墙特定端口80&amp;#x2F;443&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -A INPUT -p tcp --dport 80 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -A OUTPUT -p tcp --sport 80 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -A INPUT -p tcp --dport 443 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -A OUTPUT -p tcp --sport 443 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;本机服务端口开放-SSH-8622-HTTPS-8623&quot;&gt;&lt;a href=&quot;#本机服务端口开放-SSH-8622-HTTPS-8623&quot; class=&quot;headerlink&quot; title=&quot;本机服务端口开放 SSH:8622 HTTPS:8623&quot;&gt;&lt;/a&gt;本机服务端口开放 SSH:8622 HTTPS:8623&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;iptables -I INPUT -p tcp --dport 8622 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -I OUTPUT -p tcp --sport 8622 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -I INPUT -p tcp --dport 8623 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -I OUTPUT -p tcp --sport 8623 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -I INPUT -p tcp --dport 8622 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -I OUTPUT -p tcp --sport 8622 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -I INPUT -p tcp --dport 8623 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -I OUTPUT -p tcp --sport 8623 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;NAS服务端口开放-88&quot;&gt;&lt;a href=&quot;#NAS服务端口开放-88&quot; class=&quot;headerlink&quot; title=&quot;NAS服务端口开放 88&quot;&gt;&lt;/a&gt;NAS服务端口开放 88&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#iptables -I FORWARD -p tcp -d 192.168.9.10 --dport 88 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#iptables -I FORWARD -p tcp -s 192.168.9.10 --sport 88 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -I FORWARD -p tcp -d 240e:XXXX:XXXX:XXXX:1a8b:15ff:fe16:5f01 --dport 88 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -I FORWARD -p tcp -s 240e:XXXX:XXXX:XXXX:1a8b:15ff:fe16:5f01 --sport 88 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;值班台服务端口开放-80-8080&quot;&gt;&lt;a href=&quot;#值班台服务端口开放-80-8080&quot; class=&quot;headerlink&quot; title=&quot;值班台服务端口开放 80,8080&quot;&gt;&lt;/a&gt;值班台服务端口开放 80,8080&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#iptables -I FORWARD -p tcp -d 192.168.9.209 --dport 80 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#iptables -I FORWARD -p tcp -s 192.168.9.209 --sport 80 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#iptables -I FORWARD -p tcp -d 192.168.9.209 --dport 8080 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#iptables -I FORWARD -p tcp -s 192.168.9.209 --sport 8080 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -I FORWARD -p tcp -d 240e:XXXX:XXXX:XXXX:f017:f31f:6d5c:79ee --dport 80 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -I FORWARD -p tcp -s 240e:XXXX:XXXX:XXXX:f017:f31f:6d5c:79ee --sport 80 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -I FORWARD -p tcp -d 240e:XXXX:XXXX:XXXX:f017:f31f:6d5c:79ee --dport 8080 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ip6tables -I FORWARD -p tcp -s 240e:XXXX:XXXX:XXXX:f017:f31f:6d5c:79ee --sport 8080 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/IPV6/">IPV6</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%98%B2%E7%81%AB%E5%A2%99/">防火墙</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/08/11/Padavan%E9%98%B2%E7%81%AB%E5%A2%99ipv6%E9%85%8D%E7%BD%AE/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>MoeClub.org萌咖一键网络重装正式支持 Oracle/甲骨文/亚马逊Amazon</title>
+      <link>https://blog.198168.xyz/2021/04/05/MoeClub.org%E8%90%8C%E5%92%96%E4%B8%80%E9%94%AE%E7%BD%91%E7%BB%9C%E9%87%8D%E8%A3%85%E6%AD%A3%E5%BC%8F%E6%94%AF%E6%8C%81-Oracle%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%9A%E9%A9%AC%E9%80%8AAmazon/</link>
+      <guid>https://blog.198168.xyz/2021/04/05/MoeClub.org%E8%90%8C%E5%92%96%E4%B8%80%E9%94%AE%E7%BD%91%E7%BB%9C%E9%87%8D%E8%A3%85%E6%AD%A3%E5%BC%8F%E6%94%AF%E6%8C%81-Oracle%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%9A%E9%A9%AC%E9%80%8AAmazon/</guid>
+      <pubDate>Sun, 04 Apr 2021 22:33:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;原系统请选择 ubuntu16 .(ubuntu18 有点小毛病, 稍后兼容.)&lt;br&gt;支持 debian9+&amp;#x2F;ubuntu16.04+&lt;br&gt;为什么不支持 debian8 或更低？&lt;br&gt;网卡驱动原因。&lt;br&gt;为什么不支持 新版centos ?&lt;br&gt;不会用centos.&lt;br&gt;默认root密码是什么?&lt;br&gt;GeekN.net&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%84%9A%E6%9C%AC/">脚本</category>
+      
+      <category domain="https://blog.198168.xyz/tags/DD/">DD</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%94%B2%E9%AA%A8%E6%96%87/">甲骨文</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">云服务器</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/04/05/MoeClub.org%E8%90%8C%E5%92%96%E4%B8%80%E9%94%AE%E7%BD%91%E7%BB%9C%E9%87%8D%E8%A3%85%E6%AD%A3%E5%BC%8F%E6%94%AF%E6%8C%81-Oracle%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%9A%E9%A9%AC%E9%80%8AAmazon/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>一键DD脚本</title>
+      <link>https://blog.198168.xyz/2021/04/05/%E4%B8%80%E9%94%AEDD%E8%84%9A%E6%9C%AC/</link>
+      <guid>https://blog.198168.xyz/2021/04/05/%E4%B8%80%E9%94%AEDD%E8%84%9A%E6%9C%AC/</guid>
+      <pubDate>Sun, 04 Apr 2021 17:02:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;20210127：更换部分windows镜像.&lt;br&gt;20210109：更新支持Ubuntu20.04安装,更新几个windows镜像.&lt;br&gt;20200708：更新自动为CN主机使用国内镜像源.&lt;br&gt;安装重装系统的前提组件:&lt;br&gt;Debian&amp;#x2F;Ubuntu:&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%84%9A%E6%9C%AC/">脚本</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/04/05/%E4%B8%80%E9%94%AEDD%E8%84%9A%E6%9C%AC/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>n1用的mini docker openwrt</title>
+      <link>https://blog.198168.xyz/2021/02/27/n1%E7%94%A8%E7%9A%84mini-docker-openwrt/</link>
+      <guid>https://blog.198168.xyz/2021/02/27/n1%E7%94%A8%E7%9A%84mini-docker-openwrt/</guid>
+      <pubDate>Fri, 26 Feb 2021 19:48:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;基于openwrt官方19.07.5固件打包制作。&lt;br&gt;请勿当路由使用（不包含路由组件），适合做有管理界面的mini Linux跑一些小应用比如京东签到。&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ip link set eth0 promisc on&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;创建虚拟macvlan网卡(IP、网关请根据自己的网络修改)&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker network create -d macvlan --subnet=192.168.11.0/24 --gateway=192.168.11.1 -o parent=eth0 macnet&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;创建openwrt容器&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -d --restart always --name openwrt --network macnet --privileged 99010/openwrt /sbin/init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker run --restart always --name openwrt -d --network macnet --privileged sulinggg/openwrt-mini:arm64 /sbin/init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;进入容器并修改相关参数&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker exec -it openwrt bash&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;执行此命令后我们便进入 OpenWrt 的命令行界面，首先，我们需要编辑 OpenWrt 的网络配置文件：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/config/network&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;我们需要更改 Lan 口设置：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;config interface &amp;#x27;lan&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        option type &amp;#x27;bridge&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        option ifname &amp;#x27;eth0&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        option proto &amp;#x27;static&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        option ipaddr &amp;#x27;192.168.3.88&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        option netmask &amp;#x27;255.255.255.0&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        option ip6assign &amp;#x27;60&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        option gateway &amp;#x27;192.168.3.1&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        option broadcast &amp;#x27;192.168.3.255&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        option dns &amp;#x27;192.168.3.1&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;6.重启网络&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/etc/init.d/network restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;京东签到的ipk下载&lt;br&gt;&lt;a href=&quot;https://github.com/jerrykuku/luci-app-jd-dailybonus&quot;&gt;https://github.com/jerrykuku/luci-app-jd-dailybonus&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://hub.docker.com/r/sulinggg/openwrt-mini&quot;&gt;https://hub.docker.com/r/sulinggg/openwrt-mini&lt;/a&gt;&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Armbian/">Armbian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/N1/">N1</category>
+      
+      <category domain="https://blog.198168.xyz/tags/OpenWrt/">OpenWrt</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/02/27/n1%E7%94%A8%E7%9A%84mini-docker-openwrt/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>简单好用的ddns -go</title>
+      <link>https://blog.198168.xyz/2021/02/27/%E7%AE%80%E5%8D%95%E5%A5%BD%E7%94%A8%E7%9A%84ddns-go/</link>
+      <guid>https://blog.198168.xyz/2021/02/27/%E7%AE%80%E5%8D%95%E5%A5%BD%E7%94%A8%E7%9A%84ddns-go/</guid>
+      <pubDate>Fri, 26 Feb 2021 19:39:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/DDNS/">DDNS</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">动态域名解析</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/02/27/%E7%AE%80%E5%8D%95%E5%A5%BD%E7%94%A8%E7%9A%84ddns-go/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>N1 Armbian 安装 docker 并启用 OpenWrt</title>
+      <link>https://blog.198168.xyz/2021/02/15/N1-Armbian-%E5%AE%89%E8%A3%85-docker-%E5%B9%B6%E5%90%AF%E7%94%A8-OpenWrt/</link>
+      <guid>https://blog.198168.xyz/2021/02/15/N1-Armbian-%E5%AE%89%E8%A3%85-docker-%E5%B9%B6%E5%90%AF%E7%94%A8-OpenWrt/</guid>
+      <pubDate>Mon, 15 Feb 2021 10:40:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;安装 Docker在安装 Docker 时，建议处于低调上网环境，否则可能会导致下载速度缓慢甚至失败。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;curl -fsSL https://get.docker.com | bash&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Armbian/">Armbian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/N1/">N1</category>
+      
+      <category domain="https://blog.198168.xyz/tags/OpenWrt/">OpenWrt</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">路由器</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/02/15/N1-Armbian-%E5%AE%89%E8%A3%85-docker-%E5%B9%B6%E5%90%AF%E7%94%A8-OpenWrt/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>GitHub 克隆太慢的解决方法</title>
+      <link>https://blog.198168.xyz/2021/02/06/GitHub-%E5%85%8B%E9%9A%86%E5%A4%AA%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <guid>https://blog.198168.xyz/2021/02/06/GitHub-%E5%85%8B%E9%9A%86%E5%A4%AA%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <pubDate>Fri, 05 Feb 2021 23:42:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;在克隆GitHub上的代码的时候，直接克隆会很慢&lt;br&gt;如&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/">网络资源</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/GitHub/">GitHub</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Git/">Git</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%8A%A0%E9%80%9F/">加速</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/02/06/GitHub-%E5%85%8B%E9%9A%86%E5%A4%AA%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>lnmp+froxlor</title>
+      <link>https://blog.198168.xyz/2021/01/31/lnmp+froxlor/</link>
+      <guid>https://blog.198168.xyz/2021/01/31/lnmp+froxlor/</guid>
+      <pubDate>Sat, 30 Jan 2021 22:26:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;安装LNMP  &lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/01/31/lnmp+froxlor/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>VPS性能测试脚本</title>
+      <link>https://blog.198168.xyz/2021/01/25/VPS%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/</link>
+      <guid>https://blog.198168.xyz/2021/01/25/VPS%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/</guid>
+      <pubDate>Mon, 25 Jan 2021 14:14:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;bensh.sh测试的内容包括VPS系统基本信息、全球各知名数据中心的测试点的速度（支持IPv6）以及IO 测试。&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -qO- bench.sh  bash&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;SuperBench.sh&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%84%9A%E6%9C%AC/">脚本</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/01/25/VPS%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Debian 8安装vnStat统计vps流量</title>
+      <link>https://blog.198168.xyz/2021/01/16/Debian-8%E5%AE%89%E8%A3%85vnStat%E7%BB%9F%E8%AE%A1vps%E6%B5%81%E9%87%8F/</link>
+      <guid>https://blog.198168.xyz/2021/01/16/Debian-8%E5%AE%89%E8%A3%85vnStat%E7%BB%9F%E8%AE%A1vps%E6%B5%81%E9%87%8F/</guid>
+      <pubDate>Sat, 16 Jan 2021 14:04:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;安装vnStat&lt;br&gt;apt-get install vnstat #apt安装&lt;br&gt;vnstat -u -i eth0 #生成流量统计数据库 ‘eth0’用’ip a’命令查看&lt;br&gt;systemctl stop vnstat #停止 vnStat 服务  &lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Debian/">Debian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/VPS/">VPS</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%B5%81%E9%87%8F/">流量</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%9B%91%E6%8E%A7/">监控</category>
+      
+      <category domain="https://blog.198168.xyz/tags/vnStat/">vnStat</category>
+      
+      
+      <comments>https://blog.198168.xyz/2021/01/16/Debian-8%E5%AE%89%E8%A3%85vnStat%E7%BB%9F%E8%AE%A1vps%E6%B5%81%E9%87%8F/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Debian8小内存环境安装Caddy+PHP5+SQLite3</title>
+      <link>https://blog.198168.xyz/2020/12/17/Debian8%E5%B0%8F%E5%86%85%E5%AD%98%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85Caddy+PHP5+SQLite3/</link>
+      <guid>https://blog.198168.xyz/2020/12/17/Debian8%E5%B0%8F%E5%86%85%E5%AD%98%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85Caddy+PHP5+SQLite3/</guid>
+      <pubDate>Thu, 17 Dec 2020 12:29:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Debian8小内存环境安装Caddy+PHP5+SQLite3&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;0、前言&lt;/strong&gt;&lt;br&gt;最近入手了Gullo的128M内存小鸡，因为内存太小，故一直在找Debian8能用的一键环境安装脚本，&lt;br&gt;LNMP肯定是安装不上了，编译安装一半的时候，就已经报错了，所以编译安装这条路算是走不通了。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Debian/">Debian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Caddy/">Caddy</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%89%E8%A3%85/">安装</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/12/17/Debian8%E5%B0%8F%E5%86%85%E5%AD%98%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85Caddy+PHP5+SQLite3/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>谷歌云ssh开启root密码登录</title>
+      <link>https://blog.198168.xyz/2020/12/17/%E8%B0%B7%E6%AD%8C%E4%BA%91ssh%E5%BC%80%E5%90%AFroot%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</link>
+      <guid>https://blog.198168.xyz/2020/12/17/%E8%B0%B7%E6%AD%8C%E4%BA%91ssh%E5%BC%80%E5%90%AFroot%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</guid>
+      <pubDate>Thu, 17 Dec 2020 12:22:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;谷歌云ssh开启root密码登录&lt;/strong&gt;&lt;br&gt;修改配置&lt;br&gt;1.先选择从浏览器打开ssh连接服务器&lt;br&gt;连接登录成功后，输入以下命令&lt;br&gt;sudo -i #切换到root&lt;br&gt;passwd #修改密码&lt;br&gt;然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91/">谷歌云</category>
+      
+      <category domain="https://blog.198168.xyz/tags/SSH/">SSH</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Root/">Root</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/12/17/%E8%B0%B7%E6%AD%8C%E4%BA%91ssh%E5%BC%80%E5%90%AFroot%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Linux VPS常用命令集合备忘录</title>
+      <link>https://blog.198168.xyz/2020/12/17/Linux-VPS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88%E5%A4%87%E5%BF%98%E5%BD%95/</link>
+      <guid>https://blog.198168.xyz/2020/12/17/Linux-VPS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88%E5%A4%87%E5%BF%98%E5%BD%95/</guid>
+      <pubDate>Thu, 17 Dec 2020 12:19:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;Linux VPS常用命令集合备忘录&lt;br&gt;常用命令&lt;br&gt;更改root密码&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;passwd root&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;mv命令 - 移动文件&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;mv&lt;/span&gt; /abc.tar.gz /backup&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;将&lt;code&gt;abc.tar.gz&lt;/code&gt;文件移动到&lt;code&gt;backup&lt;/code&gt;目录。&lt;br&gt;rm命令 - 删除文件&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;rm&lt;/span&gt; -rf /&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• &lt;code&gt;-r&lt;/code&gt;：向下递归，删除所有子目录和文件。&lt;br&gt;• &lt;code&gt;-f&lt;/code&gt;：强制删除，不作任何提示。&lt;br&gt;注意：如果文件夹名称包含空格，需要加引号。例如：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;rm&lt;/span&gt; -rf &lt;span class=&quot;string&quot;&gt;&amp;#x27;/Naughty America SiteRip 4K Part13-sweety&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;tar命令 - 打包和解压文件&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar zcvf test.tar.gz /&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;将&lt;code&gt;/&lt;/code&gt;目录打包成&lt;code&gt;test.tar.gz&lt;/code&gt;文件。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar zxvf test.tar.gz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在当前目录解压&lt;code&gt;test.tar.gz&lt;/code&gt;文件。&lt;br&gt;安装VI编辑器&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get install vim&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• &lt;code&gt;i&lt;/code&gt;：开始编辑。&lt;br&gt;• &lt;code&gt;Esc&lt;/code&gt;：完成编辑。&lt;br&gt;• &lt;code&gt;:wq&lt;/code&gt;：保存并退出。&lt;br&gt;• &lt;code&gt;:q!&lt;/code&gt;：退出，不保存。&lt;br&gt;查看硬盘使用时间&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get install smartmontools&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;smartctl -A /sda&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;查看&lt;code&gt;sda&lt;/code&gt;硬盘的通电时间，单位为小时。&lt;br&gt;IPV6测试&lt;br&gt;VPS&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ping6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;PC&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ping -6 2400:da00::6666&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;SSD硬盘测试&lt;br&gt;安装hdparm&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;install hdparm -y&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;找出对应磁盘的驱动号&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;fdisk -l&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;测试硬盘读写速度&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hdparm -t /hda&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其他常用命令&lt;br&gt;• &lt;code&gt;cd&lt;/code&gt;：进入某目录。例如：&lt;code&gt;cd /&lt;/code&gt;&lt;br&gt;• &lt;code&gt;ls&lt;/code&gt;：查看当前目录文件。&lt;br&gt;• &lt;code&gt;echo nameserver 8.8.8.8 &amp;amp;gt;&amp;amp;gt; /etc/resolv.conf&lt;/code&gt;：设置DNS为Google的。&lt;br&gt;• &lt;code&gt;lsb_release -a&lt;/code&gt;：查看系统版本。&lt;br&gt;• &lt;code&gt;uname -r&lt;/code&gt;：查看内核版本。&lt;br&gt;• &lt;code&gt;uname -a&lt;/code&gt;：查看内核、操作系统和CPU信息。&lt;br&gt;• &lt;code&gt;head -n 1 /etc/issue&lt;/code&gt;：查看操作系统版本。&lt;br&gt;• &lt;code&gt;cat /proc/cpuinfo&lt;/code&gt;：查看CPU信息。&lt;br&gt;• &lt;code&gt;hostname&lt;/code&gt;：查看计算机名。&lt;br&gt;• &lt;code&gt;lspci -tv&lt;/code&gt;：列出所有PCI设备。&lt;br&gt;• &lt;code&gt;lsusb -tv&lt;/code&gt;：列出所有USB设备。&lt;br&gt;• &lt;code&gt;lsmod&lt;/code&gt;：列出加载的内核模块。&lt;br&gt;• &lt;code&gt;env&lt;/code&gt;：查看环境变量。&lt;br&gt;关闭防火墙&lt;br&gt;Ubuntu&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get remove ufw&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -P INPUT ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -P OUTPUT ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -F&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;CentOS&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;systemctl stop firewalld.service&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;systemctl &lt;span class=&quot;built_in&quot;&gt;disable&lt;/span&gt; firewalld.service&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum install iptables iptables-services&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -P INPUT ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -P OUTPUT ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -F&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;放行端口&lt;br&gt;Ubuntu&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;iptables -I INPUT -p tcp --dport 8888 -j ACCEPT&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables-save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;安装iptables-persistent使规则持续生效：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get install iptables-persistent&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;netfilter-persistent save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;netfilter-persistent reload&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;CentOS&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;firewall-cmd --zone=public --add-port=8888/tcp --permanent&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;firewall-cmd --reload&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;查看防火墙规则&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;iptables -L&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;阿里卸载云盾监控&lt;br&gt;卸载云盾监控&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sh uninstall.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wget ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sh quartz_uninstall.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;删除目录残留&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pkill aliyun-service&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;rm&lt;/span&gt; -fr /usr/local/agentwatch /usr/local/aliyun-service&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;rm&lt;/span&gt; -rf /usr/local/aegis&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;wget命令&lt;br&gt;安装wget&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-get install wget&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wget --version&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;常用命令&lt;br&gt;• 下载单个文件：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget &amp;lt;URL&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 下载并重命名：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -O xx.zip &amp;lt;URL&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 限速下载：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget --limit-rate=500k &amp;lt;URL&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 断点续传：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -c &amp;lt;URL&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 后台下载：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -b &amp;lt;URL&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 伪装代理名称下载：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget --user-agent=&lt;span class=&quot;string&quot;&gt;&amp;quot;Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16&amp;quot;&lt;/span&gt; &amp;lt;URL&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 批次下载多个文件：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -i filelist.txt &lt;span class=&quot;comment&quot;&gt;# 创建一个filelist.txt文件，每行一个链接文件。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 限制下载文件大小：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -Q5m -i filelist.txt &lt;span class=&quot;comment&quot;&gt;# 下载不超过5MB的文件。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;TOP命令示例&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Tasks: 29 total, 1 running, 28 sleeping, 0 stopped, 0 zombie&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Cpu(s): 0.3% us, 1.0% sy, 0.0% ni, 98.7% id, 0.0% wa, 0.0% hi, 0.0% si&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Tasks:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• total: 进程总数 (29)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• running: 正在运行的进程数 (1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• sleeping: 睡眠的进程数 (28)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• stopped: 停止的进程数 (0)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• zombie: 僵尸进程数 (0)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Cpu(s):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• us: 用户空间占用CPU百分比 (0.3%)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• sy: 内核空间占用CPU百分比 (1.0%)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• ni: 用户进程空间内改变过优先级的进程占用CPU百分比 (0.0%)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• id: 空闲CPU百分比 (98.7%)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• wa: 等待输入输出的CPU时间百分比 (0.0%)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• hi:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• si:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;• wa: 可以大致地体现出当前的磁盘IO请求是否频繁。如果wa的数量比较大，说明等待输入输出的IO比较多。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;安装UNZIP&lt;br&gt;获取unzip源码&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget ...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;解压源码包&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar zxvf unzip552.tar.gz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;进入解压后的目录&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; unzip552/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;复制Makefile到当前目录&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cp&lt;/span&gt; unix/Makefile .&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;安装unzip&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;make generic&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;系统信息查询命令&lt;br&gt;• &lt;code&gt;arch&lt;/code&gt;：显示机器的处理器架构。&lt;br&gt;• &lt;code&gt;uname -m&lt;/code&gt;：显示机器的处理器架构。&lt;br&gt;• &lt;code&gt;uname -r&lt;/code&gt;：显示正在使用的内核版本。&lt;br&gt;• &lt;code&gt;dmidecode -q&lt;/code&gt;：显示硬件系统部件信息（SMBIOS &amp;#x2F; DMI）。&lt;br&gt;• &lt;code&gt;hdparm -i /dev/hda&lt;/code&gt;：罗列一个磁盘的架构特性。&lt;br&gt;• &lt;code&gt;hdparm -tT /dev/sda&lt;/code&gt;：在磁盘上执行测试性读取操作。&lt;br&gt;• &lt;code&gt;cat /proc/cpuinfo&lt;/code&gt;：显示CPU信息。&lt;br&gt;• &lt;code&gt;cat /proc/interrupts&lt;/code&gt;：显示中断信息。&lt;br&gt;• &lt;code&gt;cat /proc/meminfo&lt;/code&gt;：校验内存使用情况。&lt;br&gt;• &lt;code&gt;cat /proc/swaps&lt;/code&gt;：显示哪些swap被使用。&lt;br&gt;• &lt;code&gt;cat /proc/version&lt;/code&gt;：显示内核版本。&lt;br&gt;• &lt;code&gt;cat /proc/devices&lt;/code&gt;：显示已注册的设备驱动程序列表。&lt;br&gt;• &lt;code&gt;cat /proc/filesystems&lt;/code&gt;：显示已加载的文件系统。&lt;br&gt;• &lt;code&gt;lspci -tv&lt;/code&gt;：罗列PCI设备。&lt;br&gt;• &lt;code&gt;lsusb -tv&lt;/code&gt;：显示USB设备。&lt;br&gt;• &lt;code&gt;date&lt;/code&gt;：显示系统日期。&lt;br&gt;• &lt;code&gt;cal 2007&lt;/code&gt;：显示2007年的日历表。&lt;br&gt;• &lt;code&gt;date 041217002007.00&lt;/code&gt;：设置日期和时间。&lt;br&gt;• &lt;code&gt;clock -w&lt;/code&gt;：将时间修改保存到BIOS。&lt;br&gt;资源查询命令&lt;br&gt;• &lt;code&gt;free -m&lt;/code&gt;：查看内存使用量和交换区使用量。&lt;br&gt;• &lt;code&gt;df -h&lt;/code&gt;：查看各分区使用情况。&lt;br&gt;• &lt;code&gt;du -sh&lt;/code&gt;：查看指定目录的大小。&lt;br&gt;• &lt;code&gt;grep MemTotal /proc/meminfo&lt;/code&gt;：查看内存总量。&lt;br&gt;• &lt;code&gt;grep MemFree /proc/meminfo&lt;/code&gt;：查看空闲内存量。&lt;br&gt;• &lt;code&gt;uptime&lt;/code&gt;：查看系统运行时间、用户数、负载。&lt;br&gt;• &lt;code&gt;cat /proc/loadavg&lt;/code&gt;：查看系统负载。&lt;br&gt;磁盘和分区查询命令&lt;br&gt;• &lt;code&gt;mount | column -t&lt;/code&gt;：查看挂接的分区状态。&lt;br&gt;• &lt;code&gt;fdisk -l&lt;/code&gt;：查看所有分区。&lt;br&gt;• &lt;code&gt;swapon -s&lt;/code&gt;：查看所有交换分区。&lt;br&gt;• &lt;code&gt;hdparm -i /dev/hda&lt;/code&gt;：查看磁盘参数（仅适用于IDE设备）。&lt;br&gt;• &lt;code&gt;dmesg | grep IDE&lt;/code&gt;：查看启动时IDE设备检测状况。&lt;br&gt;网络相关命令&lt;br&gt;• &lt;code&gt;ifconfig&lt;/code&gt;：查看所有网络接口的属性。&lt;br&gt;• &lt;code&gt;iptables -L&lt;/code&gt;：查看防火墙设置。&lt;br&gt;• &lt;code&gt;route -n&lt;/code&gt;：查看路由表。&lt;br&gt;• &lt;code&gt;netstat -lntp&lt;/code&gt;：查看所有监听端口。&lt;br&gt;• &lt;code&gt;netstat -antp&lt;/code&gt;：查看所有已经建立的连接。&lt;br&gt;• &lt;code&gt;netstat -s&lt;/code&gt;：查看网络统计信息。&lt;br&gt;进程管理命令&lt;br&gt;• &lt;code&gt;ps -ef&lt;/code&gt;：查看所有进程。&lt;br&gt;• &lt;code&gt;top&lt;/code&gt;：实时显示进程状态。&lt;br&gt;用户管理命令&lt;br&gt;• &lt;code&gt;w&lt;/code&gt;：查看活动用户。&lt;br&gt;• &lt;code&gt;id &amp;amp;lt;用户名&amp;amp;gt;&lt;/code&gt;：查看指定用户信息。&lt;br&gt;• &lt;code&gt;last&lt;/code&gt;：查看用户登录日志。&lt;br&gt;• &lt;code&gt;cut -d: -f1 /etc/passwd&lt;/code&gt;：查看系统所有用户。&lt;br&gt;• &lt;code&gt;cut -d: -f1 /etc/group&lt;/code&gt;：查看系统所有组。&lt;br&gt;• &lt;code&gt;crontab -l&lt;/code&gt;：查看当前用户的计划任务。&lt;br&gt;服务管理命令&lt;br&gt;• &lt;code&gt;chkconfig --list&lt;/code&gt;：列出所有系统服务。&lt;br&gt;• &lt;code&gt;chkconfig --list | grep on&lt;/code&gt;：列出所有启动的系统服务程序。&lt;br&gt;• &lt;code&gt;rpm -qa&lt;/code&gt;：查看所有安装的软件包。&lt;br&gt;文件搜索命令&lt;br&gt;• &lt;code&gt;find / -name file1&lt;/code&gt;：从根目录开始搜索名为file1的文件和目录。&lt;br&gt;• &lt;code&gt;find / -user user1&lt;/code&gt;：搜索属于用户user1的文件和目录。&lt;br&gt;• &lt;code&gt;find /user1 -name &amp;quot;.bin&amp;quot;&lt;/code&gt;：在&amp;#x2F;user1目录中搜索以.bin结尾的文件。&lt;br&gt;• &lt;code&gt;find /bin -type f -atime +100&lt;/code&gt;：搜索在过去100天内未被使用过的执行文件。&lt;br&gt;• &lt;code&gt;find /bin -type f -mtime -10&lt;/code&gt;：搜索在10天内被创建或修改过的文件。&lt;br&gt;• &lt;code&gt;find / -name &amp;quot;.rpm&amp;quot; -exec chmod 755 {} &#92;;&lt;/code&gt;：搜索以.rpm结尾的文件，并将其权限设置为755。&lt;br&gt;• &lt;code&gt;find / -xdev -name &amp;quot;.rpm&amp;quot;&lt;/code&gt;：搜索以.rpm结尾的文件，忽略光驱、U盘等可移动设备。&lt;br&gt;• &lt;code&gt;locate &amp;quot;.ps&amp;quot;&lt;/code&gt;：寻找以.ps结尾的文件（先运行updatedb命令）。&lt;br&gt;• &lt;code&gt;whereis halt&lt;/code&gt;：显示二进制文件、源码或man页的位置。&lt;br&gt;• &lt;code&gt;which halt&lt;/code&gt;：显示二进制文件或可执行文件的完整路径。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/VPS/">VPS</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Linux/">Linux</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/12/17/Linux-VPS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88%E5%A4%87%E5%BF%98%E5%BD%95/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>bbr加速脚本合集</title>
+      <link>https://blog.198168.xyz/2020/12/14/bbr%E5%8A%A0%E9%80%9F%E8%84%9A%E6%9C%AC%E5%90%88%E9%9B%86/</link>
+      <guid>https://blog.198168.xyz/2020/12/14/bbr%E5%8A%A0%E9%80%9F%E8%84%9A%E6%9C%AC%E5%90%88%E9%9B%86/</guid>
+      <pubDate>Mon, 14 Dec 2020 14:21:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%84%9A%E6%9C%AC/">脚本</category>
+      
+      <category domain="https://blog.198168.xyz/tags/BBR/">BBR</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/12/14/bbr%E5%8A%A0%E9%80%9F%E8%84%9A%E6%9C%AC%E5%90%88%E9%9B%86/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>speedtest-x</title>
+      <link>https://blog.198168.xyz/2020/12/14/speedtest-x/</link>
+      <guid>https://blog.198168.xyz/2020/12/14/speedtest-x/</guid>
+      <pubDate>Mon, 14 Dec 2020 13:56:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/speedtest/">speedtest</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%B5%81%E9%87%8F/">流量</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%9B%91%E6%8E%A7/">监控</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/12/14/speedtest-x/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Debian CentOS修改时区</title>
+      <link>https://blog.198168.xyz/2020/12/12/Debian-CentOS%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/</link>
+      <guid>https://blog.198168.xyz/2020/12/12/Debian-CentOS%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/</guid>
+      <pubDate>Fri, 11 Dec 2020 17:24:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;Debian CentOS修改时区&lt;br&gt;Debian修改时区：&lt;br&gt;&lt;code&gt;dpkg-reconfigure tzdata&lt;/code&gt;&lt;br&gt;timedatectl set-timezone Asia&amp;#x2F;Shanghai&lt;br&gt;1.首先查看当前语言环境&lt;br&gt;&lt;code&gt;env grep LANG&lt;/code&gt;&lt;br&gt;2.开始第一步&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/CentOS/">CentOS</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Debian/">Debian</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/12/12/Debian-CentOS%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>debian shell脚本加入开机启动</title>
+      <link>https://blog.198168.xyz/2020/12/12/debian-shell%E8%84%9A%E6%9C%AC%E5%8A%A0%E5%85%A5%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link>
+      <guid>https://blog.198168.xyz/2020/12/12/debian-shell%E8%84%9A%E6%9C%AC%E5%8A%A0%E5%85%A5%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid>
+      <pubDate>Fri, 11 Dec 2020 17:22:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;问题：&lt;br&gt;debian shell脚本加入开机启动&lt;br&gt;解决：&lt;br&gt;编辑&amp;#x2F;etc&amp;#x2F;crontab，尾部加入：@reboot root &amp;#x2F;root&amp;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Debian/">Debian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%84%9A%E6%9C%AC/">脚本</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/12/12/debian-shell%E8%84%9A%E6%9C%AC%E5%8A%A0%E5%85%A5%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Arm Linux二进制程序合集</title>
+      <link>https://blog.198168.xyz/2020/11/26/Arm-Linux%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%A8%8B%E5%BA%8F%E5%90%88%E9%9B%86/</link>
+      <guid>https://blog.198168.xyz/2020/11/26/Arm-Linux%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%A8%8B%E5%BA%8F%E5%90%88%E9%9B%86/</guid>
+      <pubDate>Thu, 26 Nov 2020 15:56:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;二进制程序真香！&lt;br&gt;Nging&lt;br&gt;安装命令：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Linux/">Linux</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/11/26/Arm-Linux%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%A8%8B%E5%BA%8F%E5%90%88%E9%9B%86/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>7ghost 反向代理神器</title>
+      <link>https://blog.198168.xyz/2020/11/26/7ghost-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%A5%9E%E5%99%A8/</link>
+      <guid>https://blog.198168.xyz/2020/11/26/7ghost-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%A5%9E%E5%99%A8/</guid>
+      <pubDate>Wed, 25 Nov 2020 19:53:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/7ghost/">7ghost</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/11/26/7ghost-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%A5%9E%E5%99%A8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Linux 格式化硬盘、分区</title>
+      <link>https://blog.198168.xyz/2020/10/22/Linux-%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%A1%AC%E7%9B%98%E3%80%81%E5%88%86%E5%8C%BA/</link>
+      <guid>https://blog.198168.xyz/2020/10/22/Linux-%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%A1%AC%E7%9B%98%E3%80%81%E5%88%86%E5%8C%BA/</guid>
+      <pubDate>Thu, 22 Oct 2020 10:54:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;查看当前硬盘&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;fdisk -l&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;格式化硬盘&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkfs -t ext4 /dev/sdb&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;分区&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;fdisk /dev/sdb&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后按提示输入&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;root@test:/# fdisk /dev/sdb&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Welcome to fdisk (util-linux 2.27.1).&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Changes will remain in memory only, until you decide to write them.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Be careful before using the write command.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Command (m for help): n&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Partition type&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   p   primary (1 primary, 0 extended, 3 free)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   e   extended (container for logical partitions)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Select (default p): p&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Partition number (2-4, default 2): 2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;First sector (651175056-1953525167, default 651175936): &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Last sector, +sectors or +size&amp;#123;K,M,G,T,P&amp;#125; (651175936-1953525167, default 1953525167): 1302350111&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Created a new partition 2 of type &amp;#x27;Linux&amp;#x27; and of size 310.5 GiB.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Command (m for help): wq&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;The partition table has been altered.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Calling ioctl() to re-read partition table.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果遇到提示Re-reading the partition table failed.: Device or resource busy&lt;br&gt;用命令&lt;code&gt;partprobe&lt;/code&gt;&lt;br&gt;初始化分区&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkfs.ext4 /dev/sdb1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;挂载到本地&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mount /dev/sdb1 /mnt/disk_1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;查看磁盘使用情况&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;df -l&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;提示partition满了,解决办法&lt;br&gt;把swapper分区删掉(不是一个好办法,但是能解决问题)&lt;br&gt;通过fdisk -l查看哪个是swapp&lt;br&gt;swapoff &amp;#x2F;dev&amp;#x2F;sdb*&lt;br&gt;然后通过fdisk &amp;#x2F;dev&amp;#x2F;sdb删掉swapp分区,这样就多了个partition&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%A1%AC%E7%9B%98/">硬盘</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%88%86%E5%8C%BA/">分区</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/22/Linux-%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%A1%AC%E7%9B%98%E3%80%81%E5%88%86%E5%8C%BA/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>N1 armbian 前期基本操作管理</title>
+      <link>https://blog.198168.xyz/2020/10/16/N1-armbian-%E5%89%8D%E6%9C%9F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%AE%A1%E7%90%86/</link>
+      <guid>https://blog.198168.xyz/2020/10/16/N1-armbian-%E5%89%8D%E6%9C%9F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%AE%A1%E7%90%86/</guid>
+      <pubDate>Fri, 16 Oct 2020 12:32:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;常用命令&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;调出窗口配置&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;armbian-config&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;passwd&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;安装软件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt install python3-pip&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;列出安装的所有包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt list --installed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;列出安装的和 Docker 相关的包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt list --installed | grep docker&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;删除已安装的软件包（保留配置文件）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get remove docker-ce&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 不会删除依赖软件包。&lt;br&gt;• 保留配置文件。&lt;br&gt;7. 删除已安装的软件包（不保留配置文件）&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get purge&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 删除软件包及其依赖软件包。&lt;br&gt;8. 删除不再需要的依赖软件包&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get autoremove&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 高能警告：慎用本命令！它可能会删除很多“它认为”你不再使用的软件。&lt;br&gt;9. 删除已经安装过的软件安装包&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get clean&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;• 自动删除 &lt;code&gt;/var/cache/apt/archives/&lt;/code&gt; 下的所有 &lt;code&gt;.deb&lt;/code&gt; 文件。&lt;br&gt;固定 MAC 地址&lt;br&gt;N1 的 MAC 地址每次重启都会变化，导致 IP 不固定，因此需要固定 MAC 地址。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nano /etc/network/interfaces&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在 &lt;code&gt;iface eth0 inet dhcp&lt;/code&gt;（或 &lt;code&gt;static&lt;/code&gt;）这行下面，添加一行：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pre-up ifconfig eth0 hw ether 52:d1:87:32:33:eb&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;换源&lt;br&gt;Debian 版本换源&lt;br&gt;Stretch 版本&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nano /etc/apt/sources.list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;删除所有内容，并替换为以下内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Buster 版本&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nano /etc/apt/sources.list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;删除所有内容，并替换为以下内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Armbian 版本换源&lt;br&gt;Bionic 版本&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nano /etc/apt/sources.list.d/armbian.list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;注释掉原有的行，并添加以下内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/armbian bionic main bionic-utils bionic-desktop&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;按 &lt;code&gt;Ctrl + X&lt;/code&gt; 退出，选择是否保存输入 &lt;code&gt;Y&lt;/code&gt;，按回车确认。&lt;br&gt;其他版本&lt;br&gt;如果使用其他版本（如 &lt;code&gt;bullseye&lt;/code&gt;），可以在 &lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/help/debian/&quot;&gt;https://mirrors.tuna.tsinghua.edu.cn/help/debian/&lt;/a&gt; 查询对应的源地址，并根据自己的版本选择合适的地址。&lt;br&gt;更新软件&lt;br&gt;执行以下命令更新所有软件到最新版：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt update &amp;amp;&amp;amp; apt upgrade -y&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;开启 BBR 加速&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cat&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.conf &amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;EOF&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;net.core.default_qdisc=fq&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;net.ipv4.tcp_congestion_control=bbr&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;EOF&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cat&lt;/span&gt; &amp;gt;&amp;gt; /etc/timezone &amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;EOF&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;Asia/Shanghai&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;EOF&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;删除默认 DNS&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;rm&lt;/span&gt; /etc/resolvconf/resolv.conf.d/head &amp;amp;&amp;amp; &lt;span class=&quot;built_in&quot;&gt;touch&lt;/span&gt; /etc/resolvconf/resolv.conf.d/head&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;注：在重启系统后，输入 &lt;code&gt;cat /etc/resolv.conf&lt;/code&gt;，查看返回结果是否为你路由器的 DNS，如果是，则表示删除成功，如果不是，则再执行一次删除命令。&lt;br&gt;安装 Docker&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;curl -fsSL https://get.docker.com -o get-docker.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sh get-docker.sh --mirror Aliyun&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;使用上述命令安装会调用阿里云的镜像，安装速度较快。putty下执行&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;mkdir&lt;/span&gt; -p /etc/docker&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;tee&lt;/span&gt; /etc/docker/daemon.json &amp;lt;&amp;lt;-&lt;span class=&quot;string&quot;&gt;&amp;#x27;EOF&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&amp;quot;registry-mirrors&amp;quot;&lt;/span&gt;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&amp;quot;https://mirror.baidubce.com&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&amp;quot;https://registry.docker-cn.com&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&amp;quot;http://hub-mirror.c.163.com&amp;quot;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;systemctl daemon-reload&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;systemctl restart docker&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Armbian/">Armbian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/N1/">N1</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/16/N1-armbian-%E5%89%8D%E6%9C%9F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%AE%A1%E7%90%86/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>玩客云安装AdGuardHome</title>
+      <link>https://blog.198168.xyz/2020/10/12/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%AE%89%E8%A3%85AdGuardHome/</link>
+      <guid>https://blog.198168.xyz/2020/10/12/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%AE%89%E8%A3%85AdGuardHome/</guid>
+      <pubDate>Mon, 12 Oct 2020 10:03:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;安装 AdGuard Home&lt;br&gt;二进制版本&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;p</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/">玩客云</category>
+      
+      <category domain="https://blog.198168.xyz/tags/docker/">docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/AdGuardHome/">AdGuardHome</category>
+      
+      <category domain="https://blog.198168.xyz/tags/armbian/">armbian</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/12/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%AE%89%E8%A3%85AdGuardHome/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Linux VPS流量查看/监测工具 -- vnStat</title>
+      <link>https://blog.198168.xyz/2020/10/11/Linux-VPS%E6%B5%81%E9%87%8F%E6%9F%A5%E7%9C%8B%E7%9B%91%E6%B5%8B%E5%B7%A5%E5%85%B7-vnStat/</link>
+      <guid>https://blog.198168.xyz/2020/10/11/Linux-VPS%E6%B5%81%E9%87%8F%E6%9F%A5%E7%9C%8B%E7%9B%91%E6%B5%8B%E5%B7%A5%E5%85%B7-vnStat/</guid>
+      <pubDate>Sun, 11 Oct 2020 10:37:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;vnstat安装步骤，软件包和编译安装任选一种方法即可&lt;br&gt;CentOS需要先安装EPEL第三方源，安装好EPEL后执行命令：yum install vnstat 即可安装上vnstat，安装过程可能会要求输入y 进行确认。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E6%B5%81%E9%87%8F/">流量</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%9B%91%E6%8E%A7/">监控</category>
+      
+      <category domain="https://blog.198168.xyz/tags/vnStat/">vnStat</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/11/Linux-VPS%E6%B5%81%E9%87%8F%E6%9F%A5%E7%9C%8B%E7%9B%91%E6%B5%8B%E5%B7%A5%E5%85%B7-vnStat/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>N1 ARMBIAN 固定MAC</title>
+      <link>https://blog.198168.xyz/2020/10/10/N1-ARMBIAN-%E5%9B%BA%E5%AE%9AMAC/</link>
+      <guid>https://blog.198168.xyz/2020/10/10/N1-ARMBIAN-%E5%9B%BA%E5%AE%9AMAC/</guid>
+      <pubDate>Sat, 10 Oct 2020 15:48:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Armbian/">Armbian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/N1/">N1</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/10/N1-ARMBIAN-%E5%9B%BA%E5%AE%9AMAC/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>动态域名解析dns</title>
+      <link>https://blog.198168.xyz/2020/10/09/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90dns/</link>
+      <guid>https://blog.198168.xyz/2020/10/09/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90dns/</guid>
+      <pubDate>Fri, 09 Oct 2020 14:24:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/NewFuture/DDNS&quot;&gt;https://github.com/NewFuture/DDNS&lt;/a&gt;&lt;/p&gt;
+&lt;figur</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/DDNS/">DDNS</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">动态域名解析</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/09/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90dns/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>玩客云宝塔5.9版本</title>
+      <link>https://blog.198168.xyz/2020/10/09/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%AE%9D%E5%A1%945.9%E7%89%88%E6%9C%AC/</link>
+      <guid>https://blog.198168.xyz/2020/10/09/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%AE%9D%E5%A1%945.9%E7%89%88%E6%9C%AC/</guid>
+      <pubDate>Thu, 08 Oct 2020 18:10:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;第一步&lt;br&gt;宝塔5.9版本&lt;br&gt;wget -O install.sh &lt;a href=&quot;http://download.bt.cn/install/install-ubuntu.sh&quot;&gt;http://download.bt.cn/install/install-ubuntu.sh&lt;/a&gt; &amp;amp;&amp;amp; bash install.sh&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/">玩客云</category>
+      
+      <category domain="https://blog.198168.xyz/tags/docker/">docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%9D%E5%A1%94/">宝塔</category>
+      
+      <category domain="https://blog.198168.xyz/tags/armbian/">armbian</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/09/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%AE%9D%E5%A1%945.9%E7%89%88%E6%9C%AC/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>花生壳5.0 for 树莓派</title>
+      <link>https://blog.198168.xyz/2020/10/09/%E8%8A%B1%E7%94%9F%E5%A3%B35.0-for-%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+      <guid>https://blog.198168.xyz/2020/10/09/%E8%8A%B1%E7%94%9F%E5%A3%B35.0-for-%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
+      <pubDate>Thu, 08 Oct 2020 18:07:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;一、下载&lt;br&gt;在&lt;a href=&quot;https://hsk.oray.com/download/&quot;&gt;花生壳下载页面&lt;/a&gt;，找到树莓派5.0并下载。将安装包下载到本地电脑后，可以通过WinSCP等工具将安装包传输到树莓派中。&lt;br&gt;二、安装&lt;br&gt;注意：安装花生壳前，需输入命令：sudo -s 切换到管理员权限。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/DDNS/">DDNS</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E8%8A%B1%E7%94%9F%E5%A3%B3/">花生壳</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/09/%E8%8A%B1%E7%94%9F%E5%A3%B35.0-for-%E6%A0%91%E8%8E%93%E6%B4%BE/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>ArmBian做ZeroTier内网穿透</title>
+      <link>https://blog.198168.xyz/2020/10/09/ArmBian%E5%81%9AZeroTier%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+      <guid>https://blog.198168.xyz/2020/10/09/ArmBian%E5%81%9AZeroTier%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+      <pubDate>Thu, 08 Oct 2020 18:03:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;h3 id=&quot;Linux最简单的安装方法：&quot;&gt;&lt;a href=&quot;#Linux最简单的安装方法：&quot; class=&quot;headerlink&quot; title=&quot;Linux最简单的安装方法：&quot;&gt;&lt;/a&gt;Linux最简单的安装方法：&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;curl -s https://install.zerotier.com/  sudo bash&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;无任何报错显示：&quot;&gt;&lt;a href=&quot;#无任何报错显示：&quot; class=&quot;headerlink&quot; title=&quot;无任何报错显示：&quot;&gt;&lt;/a&gt;无任何报错显示：&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;*** Waiting for identity generation...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Armbian/">Armbian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/N1/">N1</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/09/ArmBian%E5%81%9AZeroTier%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>利用宝塔面板实现阿里云DDNS更新</title>
+      <link>https://blog.198168.xyz/2020/10/03/%E5%88%A9%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%9E%E7%8E%B0%E9%98%BF%E9%87%8C%E4%BA%91DDNS%E6%9B%B4%E6%96%B0/</link>
+      <guid>https://blog.198168.xyz/2020/10/03/%E5%88%A9%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%9E%E7%8E%B0%E9%98%BF%E9%87%8C%E4%BA%91DDNS%E6%9B%B4%E6%96%B0/</guid>
+      <pubDate>Sat, 03 Oct 2020 15:23:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;由于我的N1在Armbian上安装了宝塔面板，并架设了NextCloud(性能低下)所以还是装了Cloudreve，利用IPv6实现外网的便捷访问。Docker使用仅仅是为了DDNS还是很浪费资源的。所以就使用宝塔的计划任务来实现吧！&lt;br&gt;其中的更新时间建议每天执行，当然也可以更频繁些，例如N小时一次。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/">运维工具</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/DDNS/">DDNS</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">动态域名解析</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%AE%9D%E5%A1%94/">宝塔</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/03/%E5%88%A9%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%9E%E7%8E%B0%E9%98%BF%E9%87%8C%E4%BA%91DDNS%E6%9B%B4%E6%96%B0/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>N1刷入Armbian后换软件源、安装Docker并提速</title>
+      <link>https://blog.198168.xyz/2020/10/03/N1%E5%88%B7%E5%85%A5Armbian%E5%90%8E%E6%8D%A2%E8%BD%AF%E4%BB%B6%E6%BA%90%E3%80%81%E5%AE%89%E8%A3%85Docker%E5%B9%B6%E6%8F%90%E9%80%9F/</link>
+      <guid>https://blog.198168.xyz/2020/10/03/N1%E5%88%B7%E5%85%A5Armbian%E5%90%8E%E6%8D%A2%E8%BD%AF%E4%BB%B6%E6%BA%90%E3%80%81%E5%AE%89%E8%A3%85Docker%E5%B9%B6%E6%8F%90%E9%80%9F/</guid>
+      <pubDate>Sat, 03 Oct 2020 15:13:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;网络环境所限，在使用Armbian的时候经常下载软件出问题，下载不到或者下载中断，所以找来了国内的源，更换一下，下载会变快很多。&lt;br&gt;假定armbian已经安装完成&lt;br&gt;1、打开putty，输入N1的IP地址连接并登陆&lt;br&gt;2、输入命令&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nano /etc/apt/sources.list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;复制代码&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/Armbian/">Armbian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/N1/">N1</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/03/N1%E5%88%B7%E5%85%A5Armbian%E5%90%8E%E6%8D%A2%E8%BD%AF%E4%BB%B6%E6%BA%90%E3%80%81%E5%AE%89%E8%A3%85Docker%E5%B9%B6%E6%8F%90%E9%80%9F/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>n1 Armbian CloudFlare DDNS IPV6</title>
+      <link>https://blog.198168.xyz/2020/10/03/n1-Armbian-CloudFlare-DDNS-IPV6/</link>
+      <guid>https://blog.198168.xyz/2020/10/03/n1-Armbian-CloudFlare-DDNS-IPV6/</guid>
+      <pubDate>Sat, 03 Oct 2020 15:04:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;hr&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/sp</description>
+          
+        
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/N1%E7%9B%92%E5%AD%90/">N1盒子</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/DDNS/">DDNS</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">动态域名解析</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Armbian/">Armbian</category>
+      
+      <category domain="https://blog.198168.xyz/tags/IPV6/">IPV6</category>
+      
+      <category domain="https://blog.198168.xyz/tags/CloudFlare/">CloudFlare</category>
+      
+      <category domain="https://blog.198168.xyz/tags/Docker/">Docker</category>
+      
+      <category domain="https://blog.198168.xyz/tags/N1/">N1</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%98%B2%E7%81%AB%E5%A2%99/">防火墙</category>
+      
+      
+      <comments>https://blog.198168.xyz/2020/10/03/n1-Armbian-CloudFlare-DDNS-IPV6/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>

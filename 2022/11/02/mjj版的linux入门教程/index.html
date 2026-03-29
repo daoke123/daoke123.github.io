@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.198168.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="给 Linux 初学者的简单教程，看完后可以对 Linux 系统有基础认识，能够配置常见软件和写一些一键脚本。  本教程写于 2021 年下半年，采用 Debian GNU&#x2F;Linux 11 (bullseye)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mjj版的Linux入门教程">
+<meta property="og:url" content="https://blog.198168.xyz/2022/11/02/mjj%E7%89%88%E7%9A%84linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="老王笔记">
+<meta property="og:description" content="给 Linux 初学者的简单教程，看完后可以对 Linux 系统有基础认识，能够配置常见软件和写一些一键脚本。  本教程写于 2021 年下半年，采用 Debian GNU&#x2F;Linux 11 (bullseye)。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-01T22:24:00.000Z">
+<meta property="article:modified_time" content="2026-03-29T13:01:05.624Z">
+<meta property="article:author" content="老王笔记">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.198168.xyz/2022/11/02/mjj%E7%89%88%E7%9A%84linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.198168.xyz/2022/11/02/mjj%E7%89%88%E7%9A%84linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/","path":"2022/11/02/mjj版的linux入门教程/","title":"mjj版的Linux入门教程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>mjj版的Linux入门教程 | 老王笔记</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/rss2.xml" title="老王笔记" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">老王笔记</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/rss2.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%89%8D%E8%A8%80%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-Debian"><span class="nav-number">1.</span> <span class="nav-text">0. 前言：为什么选择 Debian</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">1. 环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E7%B3%BB%E7%BB%9F%E9%80%89%E6%8B%A9%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 系统选择与安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%9Anano-%E5%92%8C-vim"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 文本编辑器：nano 和 vim</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#nano-%E4%BD%BF%E7%94%A8"><span class="nav-number">2.3.1.</span> <span class="nav-text">nano 使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-%E4%BD%BF%E7%94%A8"><span class="nav-number">2.3.2.</span> <span class="nav-text">vim 使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.4.</span> <span class="nav-text">1.4 更新系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-SSH-%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">2. SSH 连接和基础配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-SSH-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%8E%A8%E8%8D%90"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 SSH 客户端推荐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E4%BF%AE%E6%94%B9-SSH-%E7%AB%AF%E5%8F%A3"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 修改 SSH 端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 密钥登录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Linux-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">4.</span> <span class="nav-text">3. Linux 文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 文件系统格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E6%9D%83%E9%99%90%E8%AF%B4%E6%98%8E"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 权限说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Shell-%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8"><span class="nav-number">5.</span> <span class="nav-text">4. Shell 脚本入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Crontab-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-number">6.</span> <span class="nav-text">5. Crontab 定时任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%B3%BB%E7%BB%9F%E6%9D%83%E9%99%90"><span class="nav-number">7.</span> <span class="nav-text">6. 系统权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-number">7.1.</span> <span class="nav-text">6.1 用户管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4"><span class="nav-number">7.2.</span> <span class="nav-text">6.2 权限命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Systemd-%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">7. Systemd 服务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%92%8C%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4"><span class="nav-number">8.1.</span> <span class="nav-text">7.1 开机自启和进程守护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1"><span class="nav-number">8.2.</span> <span class="nav-text">7.2 自定义服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E7%BD%91%E7%AB%99%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">9.</span> <span class="nav-text">8. 网站环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF"><span class="nav-number">9.1.</span> <span class="nav-text">8.1 宝塔面板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA"><span class="nav-number">9.2.</span> <span class="nav-text">8.2 手动搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Nginx"><span class="nav-number">9.2.1.</span> <span class="nav-text">安装 Nginx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-PHP"><span class="nav-number">9.2.2.</span> <span class="nav-text">安装 PHP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">9.2.3.</span> <span class="nav-text">安装数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-SSL-%E8%AF%81%E4%B9%A6%EF%BC%88Let%E2%80%99s-Encrypt%EF%BC%89"><span class="nav-number">9.2.4.</span> <span class="nav-text">配置 SSL 证书（Let’s Encrypt）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Docker-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="nav-number">10.</span> <span class="nav-text">9. Docker 快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-%E5%AE%89%E8%A3%85-Docker"><span class="nav-number">10.1.</span> <span class="nav-text">9.1 安装 Docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-%E5%B8%B8%E7%94%A8-Docker-%E5%91%BD%E4%BB%A4"><span class="nav-number">10.2.</span> <span class="nav-text">9.2 常用 Docker 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-Docker-%E5%AE%89%E8%A3%85-Nextcloud%EF%BC%88%E7%BD%91%E7%9B%98%EF%BC%89"><span class="nav-number">10.3.</span> <span class="nav-text">9.3 Docker 安装 Nextcloud（网盘）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%EF%BC%9Afrp-%E7%A4%BA%E4%BE%8B"><span class="nav-number">11.</span> <span class="nav-text">10. 内网穿透：frp 示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-number">11.1.</span> <span class="nav-text">服务端配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-number">11.2.</span> <span class="nav-text">客户端配置</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">老王笔记</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">83</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.198168.xyz/2022/11/02/mjj%E7%89%88%E7%9A%84linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="老王笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老王笔记">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="mjj版的Linux入门教程 | 老王笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          mjj版的Linux入门教程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-11-02 06:24:00" itemprop="dateCreated datePublished" datetime="2022-11-02T06:24:00+08:00">2022-11-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">运维工具</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><hr>
+<blockquote>
+<p>给 Linux 初学者的简单教程，看完后可以对 Linux 系统有基础认识，能够配置常见软件和写一些一键脚本。</p>
+</blockquote>
+<p>本教程写于 2021 年下半年，采用 Debian GNU&#x2F;Linux 11 (bullseye)。</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="0-前言：为什么选择-Debian"><a href="#0-前言：为什么选择-Debian" class="headerlink" title="0. 前言：为什么选择 Debian"></a>0. 前言：为什么选择 Debian</h2><p>国内首批接触 Linux 的人大多延续了 Unix-like 背景。千禧年后，真正的 Linux 使用者开始推广这个系统。红帽（Red Hat）在 1994 年发布操作系统，后改组为 RHEL。得益于优秀的商业支持，RHEL 迅速占领国内市场，成为 Linux 入门的主流选项。</p>
+<p>CentOS 是根据 RHEL 源码重新编译的，相当于换标版本。但 CentOS 对入门用户不太友好：</p>
+<ul>
+<li>软件源落后主流版本好几代</li>
+<li>配置繁琐</li>
+<li>SElinux 等功能对个人用户必要性不大</li>
+</ul>
+<p>举个例子，很多新手修改 SSH 端口时，操作没问题但就是无法生效，最后发现是没在 SElinux 里放行。</p>
+<p>所以本文选择 <strong>Debian GNU&#x2F;Linux 11 (bullseye)</strong> 来演示。相比 Ubuntu 往系统里塞各种私货，Debian 始终保持着一个纯净 Linux 的追求。</p>
+<hr>
+<h2 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1. 环境搭建"></a>1. 环境搭建</h2><h3 id="1-1-系统选择与安装"><a href="#1-1-系统选择与安装" class="headerlink" title="1.1 系统选择与安装"></a>1.1 系统选择与安装</h3><p>Debian 安装包命名规则：</p>
+<ul>
+<li><code>11</code> - 大版本号，代号称 bullseye（来源于《玩具总动员》角色名）</li>
+<li><code>amd64</code> - 64 位系统（i386&#x2F;x86 是 32 位）</li>
+<li><code>netinst</code> - 网络安装版（需联网），DVD 后缀是完整版</li>
+<li><code>firmware</code> - 含第三方非开源驱动（如 intel、Realtek 网卡驱动）</li>
+</ul>
+<p><strong>VPS 一键重装脚本</strong>（推荐使用 vicer 的脚本）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget --no-check-certificate -qO- <span class="string">&#x27;https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh&#x27;</span>) -d 11 -v 64 -p <span class="string">&quot;自定义root密码&quot;</span> -port <span class="string">&quot;自定义ssh端口&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="1-2-常用命令"><a href="#1-2-常用命令" class="headerlink" title="1.2 常用命令"></a>1.2 常用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看系统信息</span></span><br><span class="line"><span class="built_in">cat</span> /etc/os-release</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">touch</span> /home/hello.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出文件</span></span><br><span class="line"><span class="built_in">ls</span> -la  <span class="comment"># 显示详细信息，包括隐藏文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入目录</span></span><br><span class="line"><span class="built_in">cd</span> /home</span><br><span class="line"><span class="built_in">cd</span> ..    <span class="comment"># 返回上层</span></span><br><span class="line"><span class="built_in">cd</span> -     <span class="comment"># 返回刚才的目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建目录</span></span><br><span class="line"><span class="built_in">mkdir</span> /home/Python</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动/重命名</span></span><br><span class="line"><span class="built_in">mv</span> /home/hello.py /home/helloworld.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制文件</span></span><br><span class="line"><span class="built_in">cp</span> /home/fileA /home/fileB</span><br><span class="line"><span class="built_in">cp</span> -r /home/folderA /home/folderB  <span class="comment"># 复制文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除文件/文件夹</span></span><br><span class="line"><span class="built_in">rm</span> /home/hello.py</span><br><span class="line"><span class="built_in">rm</span> -rf /home/Python  <span class="comment"># 递归强制删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看文件夹大小</span></span><br><span class="line"><span class="built_in">du</span> -lh</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="1-3-文本编辑器：nano-和-vim"><a href="#1-3-文本编辑器：nano-和-vim" class="headerlink" title="1.3 文本编辑器：nano 和 vim"></a>1.3 文本编辑器：nano 和 vim</h3><p>Debian 11 自带简便的 nano 编辑器，非常适合新手。</p>
+<h4 id="nano-使用"><a href="#nano-使用" class="headerlink" title="nano 使用"></a>nano 使用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>常用快捷键：</p>
+<ul>
+<li><code>Ctrl+O</code> - 保存</li>
+<li><code>Ctrl+X</code> - 退出</li>
+<li><code>Ctrl+C</code> - 取消</li>
+</ul>
+<h4 id="vim-使用"><a href="#vim-使用" class="headerlink" title="vim 使用"></a>vim 使用</h4><p>vim 被称作”编辑器之神”，功能强大但需要学习。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 vim</span></span><br><span class="line">apt update</span><br><span class="line">apt install vim -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件</span></span><br><span class="line">vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>基本操作：</p>
+<ul>
+<li>按 <code>i</code> 或 <code>Insert</code> 进入编辑模式</li>
+<li>按 <code>Esc</code> 退出编辑模式</li>
+<li><code>:wq</code> - 保存并退出</li>
+<li><code>:q!</code> - 不保存强制退出</li>
+</ul>
+<hr>
+<h3 id="1-4-更新系统"><a href="#1-4-更新系统" class="headerlink" title="1.4 更新系统"></a>1.4 更新系统</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 同步更新源</span></span><br><span class="line">apt update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看可更新软件</span></span><br><span class="line">apt list --upgradable</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新软件</span></span><br><span class="line">apt upgrade -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载软件</span></span><br><span class="line">apt remove vim   <span class="comment"># 只卸载软件，保留配置</span></span><br><span class="line">apt purge vim    <span class="comment"># 连同配置一起卸载</span></span><br><span class="line">apt autoremove  <span class="comment"># 清理不需要的依赖</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2-SSH-连接和基础配置"><a href="#2-SSH-连接和基础配置" class="headerlink" title="2. SSH 连接和基础配置"></a>2. SSH 连接和基础配置</h2><h3 id="2-1-SSH-客户端推荐"><a href="#2-1-SSH-客户端推荐" class="headerlink" title="2.1 SSH 客户端推荐"></a>2.1 SSH 客户端推荐</h3><table>
+<thead>
+<tr>
+<th align="left">客户端</th>
+<th align="left">特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Xshell</td>
+<td align="left">家庭免费，中文，限制 4 个会话</td>
+</tr>
+<tr>
+<td align="left">MobaXterm</td>
+<td align="left">功能强大，文件传输、性能监控、远程桌面等</td>
+</tr>
+<tr>
+<td align="left">FinalShell</td>
+<td align="left">国产，全中文</td>
+</tr>
+<tr>
+<td align="left">electerm</td>
+<td align="left">开源免费，跨平台</td>
+</tr>
+<tr>
+<td align="left">PuTTY</td>
+<td align="left">老牌，简单</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-修改-SSH-端口"><a href="#2-2-修改-SSH-端口" class="headerlink" title="2.2 修改 SSH 端口"></a>2.2 修改 SSH 端口</h3><p>SSH 默认端口是 22，容易被扫描攻击。建议改成高端口（如 35261）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line"><span class="comment"># 修改 Port 22 为 Port 35261</span></span><br><span class="line">systemctl restart ssh</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-密钥登录"><a href="#2-3-密钥登录" class="headerlink" title="2.3 密钥登录"></a>2.3 密钥登录</h3><p>相比密码登录，密钥更安全：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成密钥</span></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置公钥</span></span><br><span class="line"><span class="built_in">touch</span> ~/.ssh/authorized_keys</span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"><span class="built_in">chmod</span> 600 ~/.ssh/authorized_keys</span><br><span class="line"><span class="built_in">chmod</span> 700 ~/.ssh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改 SSH 配置</span></span><br><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line"><span class="comment"># PubkeyAuthentication yes</span></span><br><span class="line"><span class="comment"># PasswordAuthentication no  # 测试密钥登录成功后再改</span></span><br><span class="line">systemctl restart ssh</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-Linux-文件系统"><a href="#3-Linux-文件系统" class="headerlink" title="3. Linux 文件系统"></a>3. Linux 文件系统</h2><h3 id="3-1-文件系统格式"><a href="#3-1-文件系统格式" class="headerlink" title="3.1 文件系统格式"></a>3.1 文件系统格式</h3><p>Linux 将所有硬盘”挂载”在 <code>/</code> 根目录下。Linux 普遍使用 EXT4 格式，与 Windows 的 NTFS 互不兼容。</p>
+<h3 id="3-2-目录结构"><a href="#3-2-目录结构" class="headerlink" title="3.2 目录结构"></a>3.2 目录结构</h3><table>
+<thead>
+<tr>
+<th align="left">目录</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>/bin</code></td>
+<td align="left">应用程序</td>
+</tr>
+<tr>
+<td align="left"><code>/boot</code></td>
+<td align="left">启动文件</td>
+</tr>
+<tr>
+<td align="left"><code>/dev</code></td>
+<td align="left">外部设备（Linux 一切皆文件）</td>
+</tr>
+<tr>
+<td align="left"><code>/etc</code></td>
+<td align="left">系统配置文件</td>
+</tr>
+<tr>
+<td align="left"><code>/home</code></td>
+<td align="left">用户目录</td>
+</tr>
+<tr>
+<td align="left"><code>/root</code></td>
+<td align="left">root 用户目录</td>
+</tr>
+<tr>
+<td align="left"><code>/tmp</code></td>
+<td align="left">临时文件</td>
+</tr>
+<tr>
+<td align="left"><code>/usr</code></td>
+<td align="left">共享资源（类似 Windows 程序目录）</td>
+</tr>
+<tr>
+<td align="left"><code>/var</code></td>
+<td align="left">不断变化的文件（如日志）</td>
+</tr>
+</tbody></table>
+<h3 id="3-3-权限说明"><a href="#3-3-权限说明" class="headerlink" title="3.3 权限说明"></a>3.3 权限说明</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 权限示例：rwxr-xr-x</span></span><br><span class="line"><span class="comment"># r=4, w=2, x=1</span></span><br><span class="line"><span class="comment"># chmod +x file  # 添加执行权限</span></span><br><span class="line"><span class="comment"># chmod 755 folder  # 所有者全权限，其他读执行</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="4-Shell-脚本入门"><a href="#4-Shell-脚本入门" class="headerlink" title="4. Shell 脚本入门"></a>4. Shell 脚本入门</h2><p>简单示例：查看 CPU 和内存使用率</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;1 for CPU, 2 for RAM&quot;</span></span><br><span class="line"><span class="built_in">read</span> choice</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$choice</span> -eq 1 ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;CPU usage:&quot;</span></span><br><span class="line">    grep <span class="string">&#x27;cpu &#x27;</span> /proc/stat | awk <span class="string">&#x27;&#123;usage=($2+$4)*100/($2+$4+$5)&#125; END &#123;print usage &quot;%&quot;&#125;&#x27;</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$choice</span> -eq 2 ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;RAM usage:&quot;</span></span><br><span class="line">    free -m | grep Mem | awk <span class="string">&#x27;&#123;print ($3/$2)*100 &quot;%&quot;&#125;&#x27;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;WRONG INPUT&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-Crontab-定时任务"><a href="#5-Crontab-定时任务" class="headerlink" title="5. Crontab 定时任务"></a>5. Crontab 定时任务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑定时任务</span></span><br><span class="line">crontab -e</span><br><span class="line"></span><br><span class="line"><span class="comment"># 格式：分 时 日 月 周 命令</span></span><br><span class="line"><span class="comment"># 每 15 分钟执行</span></span><br><span class="line">*/15 * * * * /usr/bin/python3 /usr/local/weather/weather.py</span><br></pre></td></tr></table></figure>
+
+<p>时间设置推荐使用 <a target="_blank" rel="noopener" href="https://crontab.guru/">crontab.guru</a></p>
+<hr>
+<h2 id="6-系统权限"><a href="#6-系统权限" class="headerlink" title="6. 系统权限"></a>6. 系统权限</h2><h3 id="6-1-用户管理"><a href="#6-1-用户管理" class="headerlink" title="6.1 用户管理"></a>6.1 用户管理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加用户</span></span><br><span class="line">adduser mjj</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换用户</span></span><br><span class="line">su mjj</span><br><span class="line"></span><br><span class="line"><span class="comment"># 给用户 sudo 权限</span></span><br><span class="line">apt install <span class="built_in">sudo</span> -y</span><br><span class="line">usermod -aG <span class="built_in">sudo</span> mjj</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-权限命令"><a href="#6-2-权限命令" class="headerlink" title="6.2 权限命令"></a>6.2 权限命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加执行权限</span></span><br><span class="line"><span class="built_in">chmod</span> +x script.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归设置权限</span></span><br><span class="line"><span class="built_in">chmod</span> -R 755 /folder/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改文件所有者</span></span><br><span class="line"><span class="built_in">chown</span> -R www-data:www-data /var/www/html</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>注意：</strong> 永远不要使用 <code>chmod +777</code>！这是安全隐患！</p>
+</blockquote>
+<hr>
+<h2 id="7-Systemd-服务管理"><a href="#7-Systemd-服务管理" class="headerlink" title="7. Systemd 服务管理"></a>7. Systemd 服务管理</h2><h3 id="7-1-开机自启和进程守护"><a href="#7-1-开机自启和进程守护" class="headerlink" title="7.1 开机自启和进程守护"></a>7.1 开机自启和进程守护</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开机自启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> frps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 立即运行</span></span><br><span class="line">systemctl start frps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看状态</span></span><br><span class="line">systemctl status frps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">systemctl restart frps</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-自定义服务"><a href="#7-2-自定义服务" class="headerlink" title="7.2 自定义服务"></a>7.2 自定义服务</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=My App</span><br><span class="line"><span class="attr">After</span>=network.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">WorkingDirectory</span>=/opt/myapp</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/bin/node app.js</span><br><span class="line"><span class="attr">Restart</span>=always</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="8-网站环境搭建"><a href="#8-网站环境搭建" class="headerlink" title="8. 网站环境搭建"></a>8. 网站环境搭建</h2><h3 id="8-1-宝塔面板"><a href="#8-1-宝塔面板" class="headerlink" title="8.1 宝塔面板"></a>8.1 宝塔面板</h3><p>国内版：<a target="_blank" rel="noopener" href="https://www.bt.cn/">https://www.bt.cn/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>国际版（aapanel）：<a target="_blank" rel="noopener" href="https://www.aapanel.com/install.html">https://www.aapanel.com/install.html</a></p>
+<h3 id="8-2-手动搭建"><a href="#8-2-手动搭建" class="headerlink" title="8.2 手动搭建"></a>8.2 手动搭建</h3><h4 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 Nginx</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install nginx</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装-PHP"><a href="#安装-PHP" class="headerlink" title="安装 PHP"></a>安装 PHP</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install php-fpm</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install mariadb-server</span><br><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置-SSL-证书（Let’s-Encrypt）"><a href="#配置-SSL-证书（Let’s-Encrypt）" class="headerlink" title="配置 SSL 证书（Let’s Encrypt）"></a>配置 SSL 证书（Let’s Encrypt）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 certbot</span></span><br><span class="line">apt install python3 python3-venv libaugeas0</span><br><span class="line">python3 -m venv /opt/certbot/</span><br><span class="line">/opt/certbot/bin/pip install --upgrade pip</span><br><span class="line">/opt/certbot/bin/pip install certbot certbot-nginx</span><br><span class="line"><span class="built_in">ln</span> -s /opt/certbot/bin/certbot /usr/bin/certbot</span><br><span class="line"></span><br><span class="line"><span class="comment"># 申请证书</span></span><br><span class="line">certbot --nginx</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="9-Docker-快速入门"><a href="#9-Docker-快速入门" class="headerlink" title="9. Docker 快速入门"></a>9. Docker 快速入门</h2><h3 id="9-1-安装-Docker"><a href="#9-1-安装-Docker" class="headerlink" title="9.1 安装 Docker"></a>9.1 安装 Docker</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install -y ca-certificates curl gnupg lsb-release</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 Docker GPG 密钥</span></span><br><span class="line">curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 Docker 源</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [arch=<span class="subst">$(dpkg --print-architecture)</span> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Docker</span></span><br><span class="line">apt update</span><br><span class="line">apt install -y docker-ce docker-ce-cli containerd.io</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-2-常用-Docker-命令"><a href="#9-2-常用-Docker-命令" class="headerlink" title="9.2 常用 Docker 命令"></a>9.2 常用 Docker 命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line">docker pull nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行容器</span></span><br><span class="line">docker run -d -p 80:80 --name mynginx nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止/启动容器</span></span><br><span class="line">docker stop mynginx</span><br><span class="line">docker start mynginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除容器</span></span><br><span class="line">docker <span class="built_in">rm</span> mynginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看镜像</span></span><br><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-3-Docker-安装-Nextcloud（网盘）"><a href="#9-3-Docker-安装-Nextcloud（网盘）" class="headerlink" title="9.3 Docker 安装 Nextcloud（网盘）"></a>9.3 Docker 安装 Nextcloud（网盘）</h3><p>在 <a target="_blank" rel="noopener" href="https://hub.docker.com/">Docker Hub</a> 搜索 Nextcloud，获取安装命令。</p>
+<hr>
+<h2 id="10-内网穿透：frp-示例"><a href="#10-内网穿透：frp-示例" class="headerlink" title="10. 内网穿透：frp 示例"></a>10. 内网穿透：frp 示例</h2><h3 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载 frp</span></span><br><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.38.0/frp_0.38.0_linux_amd64.tar.gz</span><br><span class="line">tar -zxvf frp_0.38.0_linux_amd64.tar.gz</span><br><span class="line"><span class="built_in">cd</span> frp_0.38.0_linux_amd64/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置</span></span><br><span class="line"><span class="built_in">mkdir</span> /etc/frp/</span><br><span class="line"><span class="built_in">mv</span> frps.ini /etc/frp/frps.ini</span><br><span class="line"><span class="built_in">mv</span> frps /bin/</span><br><span class="line"><span class="built_in">mv</span> systemd/frps.service /etc/systemd/system/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> frps</span><br><span class="line">systemctl start frps</span><br></pre></td></tr></table></figure>
+
+<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 客户端配置示例</span></span><br><span class="line">[common]</span><br><span class="line">server_addr = 你的服务器IP</span><br><span class="line">server_port = 7000</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line"><span class="built_in">type</span> = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 6000</span><br></pre></td></tr></table></figure>
+
+<p>配置完成后，通过 <code>服务器IP:6000</code> 即可访问内网设备的 SSH。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/29/Github%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" rel="prev" title="Github常用命令总结">
+                  <i class="fa fa-angle-left"></i> Github常用命令总结
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/11/10/vps%E5%B8%B8%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E4%B8%8E%E5%91%BD%E4%BB%A4/" rel="next" title="vps常用一键脚本与命令">
+                  vps常用一键脚本与命令 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">老王笔记</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
