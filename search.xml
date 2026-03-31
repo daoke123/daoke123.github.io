@@ -2495,4 +2495,126 @@
         <tag>水星</tag>
       </tags>
   </entry>
+  <entry>
+    <title>frpc 内网穿透使用教程</title>
+    <url>/2026/04/01/frpc-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<hr>
+<blockquote>
+<p>frpc 是 frp 的客户端，用于将内网服务映射到公网。本文详细介绍 frpc 的配置方法，帮助你快速实现内网穿透。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>frp (Fast Reverse Proxy) 是一款高性能的反向代理工具，支持 TCP、UDP、HTTP、HTTPS 等多种协议。通过 frp，你可以将内网服务暴露到公网，无需公网 IP 也能访问家中服务。</p>
+<p>本文以 frpc 客户端配置为例，教你如何连接到 frps 服务器，实现内网穿透。</p>
+<hr>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li><strong>frps 服务器</strong>：需要一台运行 frps 的公网服务器</li>
+<li><strong>frpc 客户端</strong>：需要在内网设备上运行 frpc</li>
+<li><strong>配置文件</strong>：按照本文模板修改</li>
+</ol>
+<hr>
+<h2 id="配置文件模板"><a href="#配置文件模板" class="headerlink" title="配置文件模板"></a>配置文件模板</h2><p>以下是 frpc 的完整配置文件模板：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">serverAddr</span> = <span class="string">&quot;122.199.155.99&quot;</span>  <span class="comment"># frps 公网 IP</span></span><br><span class="line"><span class="attr">serverPort</span> = <span class="number">7000</span>              <span class="comment"># frps 绑定端口</span></span><br><span class="line"><span class="attr">loginFailExit</span> = <span class="literal">false</span>          <span class="comment"># 连接失败不退出</span></span><br><span class="line"><span class="attr">user</span> = <span class="string">&quot;user1&quot;</span>                 <span class="comment"># 客户端用户名</span></span><br><span class="line"><span class="attr">metadatas.token</span> = <span class="string">&quot;user456321&quot;</span> <span class="comment"># 认证 token</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[proxies]]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;fnos&quot;</span>  <span class="comment"># 一定要英文 名称</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;tcp&quot;</span></span><br><span class="line"><span class="attr">localIP</span> = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line"><span class="attr">localPort</span> = <span class="number">5666</span>  <span class="comment"># 本地端口号</span></span><br><span class="line"><span class="attr">remotePort</span> = <span class="number">5698</span> <span class="comment"># 远程端口号</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[proxies]]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;fnnas&quot;</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;tcp&quot;</span></span><br><span class="line"><span class="attr">localIP</span> = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line"><span class="attr">localPort</span> = <span class="number">5667</span></span><br><span class="line"><span class="attr">remotePort</span> = <span class="number">5689</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>serverAddr</code></td>
+<td>frps 服务器的公网 IP 地址</td>
+</tr>
+<tr>
+<td><code>serverPort</code></td>
+<td>frps 监听的端口，默认 7000</td>
+</tr>
+<tr>
+<td><code>loginFailExit</code></td>
+<td>连接失败是否退出，设为 false 可自动重连</td>
+</tr>
+<tr>
+<td><code>user</code></td>
+<td>客户端用户名，用于区分不同客户端</td>
+</tr>
+<tr>
+<td><code>metadatas.token</code></td>
+<td>认证 token，需与 frps 服务器配置一致</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>代理名称，必须为英文，不能重复</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>协议类型，常用 tcp、udp、http</td>
+</tr>
+<tr>
+<td><code>localIP</code></td>
+<td>本地服务 IP，通常为 127.0.0.1</td>
+</tr>
+<tr>
+<td><code>localPort</code></td>
+<td>本地服务端口</td>
+</tr>
+<tr>
+<td><code>remotePort</code></td>
+<td>映射到公网的端口</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="1-下载-frpc"><a href="#1-下载-frpc" class="headerlink" title="1. 下载 frpc"></a>1. 下载 frpc</h3><p>根据你的系统架构下载对应的 frpc 二进制文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux x86_64</span></span><br><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.52.3/frp_0.52.3_linux_amd64.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># Linux arm64</span></span><br><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.52.3/frp_0.52.3_linux_arm64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-解压并配置"><a href="#2-解压并配置" class="headerlink" title="2. 解压并配置"></a>2. 解压并配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xzf frp_0.52.3_linux_amd64.tar.gz</span><br><span class="line"><span class="built_in">cd</span> frp_0.52.3_linux_amd64</span><br></pre></td></tr></table></figure>
+
+<p>将上述配置文件保存为 <code>frpc.ini</code>。</p>
+<h3 id="3-运行-frpc"><a href="#3-运行-frpc" class="headerlink" title="3. 运行 frpc"></a>3. 运行 frpc</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 前台运行</span></span><br><span class="line">./frpc -c frpc.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 后台运行</span></span><br><span class="line"><span class="built_in">nohup</span> ./frpc -c frpc.ini &amp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-开机自启"><a href="#4-开机自启" class="headerlink" title="4. 开机自启"></a>4. 开机自启</h3><p>创建 systemd 服务 <code>/etc/systemd/system/frpc.service</code>：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=frpc client</span><br><span class="line"><span class="attr">After</span>=network.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">User</span>=root</span><br><span class="line"><span class="attr">ExecStart</span>=/path/to/frpc -c /path/to/frpc.ini</span><br><span class="line"><span class="attr">Restart</span>=<span class="literal">on</span>-failure</span><br><span class="line"><span class="attr">RestartSec</span>=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>启动服务：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> frpc</span><br><span class="line">systemctl start frpc</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="飞牛-fnOS-中使用"><a href="#飞牛-fnOS-中使用" class="headerlink" title="飞牛 fnOS 中使用"></a>飞牛 fnOS 中使用</h2><p>在飞牛 fnOS 中，可以通过 Docker 部署 frpc：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">frpc:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">snowdream/frpc</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">frpc</span></span><br><span class="line">    <span class="attr">network_mode:</span> <span class="string">host</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./frpc.ini:/etc/frp/frpc.ini</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="验证连接"><a href="#验证连接" class="headerlink" title="验证连接"></a>验证连接</h2><p>启动 frpc 后，查看日志：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">frpc -c frpc.ini</span><br></pre></td></tr></table></figure>
+
+<p>如果看到类似以下输出，说明连接成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2026/04/01 10:00:00 [I] [service.go:234] [fnos] start proxy success</span><br></pre></td></tr></table></figure>
+
+<p>此时可以通过 <code>122.199.155.99:5698</code> 访问内网的 <code>127.0.0.1:5666</code> 服务。</p>
+<hr>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="1-连接失败"><a href="#1-连接失败" class="headerlink" title="1. 连接失败"></a>1. 连接失败</h3><ul>
+<li>检查 frps 服务器是否正常运行</li>
+<li>确认服务器 IP 和端口是否正确</li>
+<li>检查 token 是否匹配</li>
+</ul>
+<h3 id="2-端口被占用"><a href="#2-端口被占用" class="headerlink" title="2. 端口被占用"></a>2. 端口被占用</h3><ul>
+<li>更换 <code>remotePort</code> 为其他端口</li>
+<li>检查本地端口是否被其他服务占用</li>
+</ul>
+<h3 id="3-自动重连"><a href="#3-自动重连" class="headerlink" title="3. 自动重连"></a>3. 自动重连</h3><p>将 <code>loginFailExit</code> 设为 <code>false</code>， frpc 会在连接断开后自动重连。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>frpc 配置简单，功能强大，是实现内网穿透的利器。通过本文的配置文件模板，你可以快速搭建自己的内网穿透服务，将家中的服务暴露到公网。</p>
+]]></content>
+      <categories>
+        <category>内网穿透</category>
+      </categories>
+      <tags>
+        <tag>飞牛fnOS</tag>
+        <tag>frp</tag>
+        <tag>frpc</tag>
+        <tag>内网穿透</tag>
+        <tag>端口映射</tag>
+      </tags>
+  </entry>
 </search>
