@@ -9,8 +9,40 @@
     <atom:link href="https://blog.198168.xyz/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 29 Mar 2026 12:05:59 GMT</pubDate>
+    <pubDate>Tue, 31 Mar 2026 23:15:43 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>frpc 内网穿透使用教程</title>
+      <link>https://blog.198168.xyz/2026/04/01/frpc-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+      <guid>https://blog.198168.xyz/2026/04/01/frpc-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+      <pubDate>Wed, 01 Apr 2026 02:00:00 GMT</pubDate>
+      
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;frpc 是 frp 的客户端，用于将内网服务映射到公网。本文详细介绍 frpc 的配置方法，帮助你快速实现内网穿透。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      
+      <category domain="https://blog.198168.xyz/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">内网穿透</category>
+      
+      
+      <category domain="https://blog.198168.xyz/tags/%E9%A3%9E%E7%89%9BfnOS/">飞牛fnOS</category>
+      
+      <category domain="https://blog.198168.xyz/tags/frp/">frp</category>
+      
+      <category domain="https://blog.198168.xyz/tags/frpc/">frpc</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">内网穿透</category>
+      
+      <category domain="https://blog.198168.xyz/tags/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/">端口映射</category>
+      
+      
+      <comments>https://blog.198168.xyz/2026/04/01/frpc-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>低成本家用老人摔倒监控：普通摄像头 + 飞牛 fnOS + AI 检测实战</title>

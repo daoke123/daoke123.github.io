@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.198168.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="frpc 是 frp 的客户端，用于将内网服务映射到公网。本文详细介绍 frpc 的配置方法，帮助你快速实现内网穿透。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="frpc 内网穿透使用教程">
+<meta property="og:url" content="https://blog.198168.xyz/2026/04/01/frpc-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="老王笔记">
+<meta property="og:description" content="frpc 是 frp 的客户端，用于将内网服务映射到公网。本文详细介绍 frpc 的配置方法，帮助你快速实现内网穿透。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-04-01T02:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-31T23:15:43.756Z">
+<meta property="article:author" content="老王笔记">
+<meta property="article:tag" content="frp">
+<meta property="article:tag" content="frpc">
+<meta property="article:tag" content="内网穿透">
+<meta property="article:tag" content="端口映射">
+<meta property="article:tag" content="飞牛fnOS">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.198168.xyz/2026/04/01/frpc-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.198168.xyz/2026/04/01/frpc-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/","path":"2026/04/01/frpc-内网穿透使用教程/","title":"frpc 内网穿透使用教程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>frpc 内网穿透使用教程 | 老王笔记</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/rss2.xml" title="老王笔记" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">老王笔记</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/rss2.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF"><span class="nav-number">3.</span> <span class="nav-text">配置文件模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">配置说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BD-frpc"><span class="nav-number">5.1.</span> <span class="nav-text">1. 下载 frpc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%A7%A3%E5%8E%8B%E5%B9%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">5.2.</span> <span class="nav-text">2. 解压并配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%90%E8%A1%8C-frpc"><span class="nav-number">5.3.</span> <span class="nav-text">3. 运行 frpc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF"><span class="nav-number">5.4.</span> <span class="nav-text">4. 开机自启</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%9E%E7%89%9B-fnOS-%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">飞牛 fnOS 中使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E8%BF%9E%E6%8E%A5"><span class="nav-number">7.</span> <span class="nav-text">验证连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">8.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5"><span class="nav-number">8.1.</span> <span class="nav-text">1. 连接失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8"><span class="nav-number">8.2.</span> <span class="nav-text">2. 端口被占用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E"><span class="nav-number">8.3.</span> <span class="nav-text">3. 自动重连</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">老王笔记</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.198168.xyz/2026/04/01/frpc-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="老王笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老王笔记">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="frpc 内网穿透使用教程 | 老王笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          frpc 内网穿透使用教程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-04-01 10:00:00" itemprop="dateCreated datePublished" datetime="2026-04-01T10:00:00+08:00">2026-04-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" itemprop="url" rel="index"><span itemprop="name">内网穿透</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><hr>
+<blockquote>
+<p>frpc 是 frp 的客户端，用于将内网服务映射到公网。本文详细介绍 frpc 的配置方法，帮助你快速实现内网穿透。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>frp (Fast Reverse Proxy) 是一款高性能的反向代理工具，支持 TCP、UDP、HTTP、HTTPS 等多种协议。通过 frp，你可以将内网服务暴露到公网，无需公网 IP 也能访问家中服务。</p>
+<p>本文以 frpc 客户端配置为例，教你如何连接到 frps 服务器，实现内网穿透。</p>
+<hr>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li><strong>frps 服务器</strong>：需要一台运行 frps 的公网服务器</li>
+<li><strong>frpc 客户端</strong>：需要在内网设备上运行 frpc</li>
+<li><strong>配置文件</strong>：按照本文模板修改</li>
+</ol>
+<hr>
+<h2 id="配置文件模板"><a href="#配置文件模板" class="headerlink" title="配置文件模板"></a>配置文件模板</h2><p>以下是 frpc 的完整配置文件模板：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">serverAddr</span> = <span class="string">&quot;122.199.155.99&quot;</span>  <span class="comment"># frps 公网 IP</span></span><br><span class="line"><span class="attr">serverPort</span> = <span class="number">7000</span>              <span class="comment"># frps 绑定端口</span></span><br><span class="line"><span class="attr">loginFailExit</span> = <span class="literal">false</span>          <span class="comment"># 连接失败不退出</span></span><br><span class="line"><span class="attr">user</span> = <span class="string">&quot;user1&quot;</span>                 <span class="comment"># 客户端用户名</span></span><br><span class="line"><span class="attr">metadatas.token</span> = <span class="string">&quot;user456321&quot;</span> <span class="comment"># 认证 token</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[proxies]]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;fnos&quot;</span>  <span class="comment"># 一定要英文 名称</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;tcp&quot;</span></span><br><span class="line"><span class="attr">localIP</span> = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line"><span class="attr">localPort</span> = <span class="number">5666</span>  <span class="comment"># 本地端口号</span></span><br><span class="line"><span class="attr">remotePort</span> = <span class="number">5698</span> <span class="comment"># 远程端口号</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[proxies]]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;fnnas&quot;</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;tcp&quot;</span></span><br><span class="line"><span class="attr">localIP</span> = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line"><span class="attr">localPort</span> = <span class="number">5667</span></span><br><span class="line"><span class="attr">remotePort</span> = <span class="number">5689</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>serverAddr</code></td>
+<td>frps 服务器的公网 IP 地址</td>
+</tr>
+<tr>
+<td><code>serverPort</code></td>
+<td>frps 监听的端口，默认 7000</td>
+</tr>
+<tr>
+<td><code>loginFailExit</code></td>
+<td>连接失败是否退出，设为 false 可自动重连</td>
+</tr>
+<tr>
+<td><code>user</code></td>
+<td>客户端用户名，用于区分不同客户端</td>
+</tr>
+<tr>
+<td><code>metadatas.token</code></td>
+<td>认证 token，需与 frps 服务器配置一致</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>代理名称，必须为英文，不能重复</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>协议类型，常用 tcp、udp、http</td>
+</tr>
+<tr>
+<td><code>localIP</code></td>
+<td>本地服务 IP，通常为 127.0.0.1</td>
+</tr>
+<tr>
+<td><code>localPort</code></td>
+<td>本地服务端口</td>
+</tr>
+<tr>
+<td><code>remotePort</code></td>
+<td>映射到公网的端口</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="1-下载-frpc"><a href="#1-下载-frpc" class="headerlink" title="1. 下载 frpc"></a>1. 下载 frpc</h3><p>根据你的系统架构下载对应的 frpc 二进制文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Linux x86_64</span></span><br><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.52.3/frp_0.52.3_linux_amd64.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># Linux arm64</span></span><br><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.52.3/frp_0.52.3_linux_arm64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-解压并配置"><a href="#2-解压并配置" class="headerlink" title="2. 解压并配置"></a>2. 解压并配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xzf frp_0.52.3_linux_amd64.tar.gz</span><br><span class="line"><span class="built_in">cd</span> frp_0.52.3_linux_amd64</span><br></pre></td></tr></table></figure>
+
+<p>将上述配置文件保存为 <code>frpc.ini</code>。</p>
+<h3 id="3-运行-frpc"><a href="#3-运行-frpc" class="headerlink" title="3. 运行 frpc"></a>3. 运行 frpc</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前台运行</span></span><br><span class="line">./frpc -c frpc.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 后台运行</span></span><br><span class="line"><span class="built_in">nohup</span> ./frpc -c frpc.ini &amp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-开机自启"><a href="#4-开机自启" class="headerlink" title="4. 开机自启"></a>4. 开机自启</h3><p>创建 systemd 服务 <code>/etc/systemd/system/frpc.service</code>：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=frpc client</span><br><span class="line"><span class="attr">After</span>=network.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">User</span>=root</span><br><span class="line"><span class="attr">ExecStart</span>=/path/to/frpc -c /path/to/frpc.ini</span><br><span class="line"><span class="attr">Restart</span>=<span class="literal">on</span>-failure</span><br><span class="line"><span class="attr">RestartSec</span>=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>启动服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> frpc</span><br><span class="line">systemctl start frpc</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="飞牛-fnOS-中使用"><a href="#飞牛-fnOS-中使用" class="headerlink" title="飞牛 fnOS 中使用"></a>飞牛 fnOS 中使用</h2><p>在飞牛 fnOS 中，可以通过 Docker 部署 frpc：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">frpc:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">snowdream/frpc</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">frpc</span></span><br><span class="line">    <span class="attr">network_mode:</span> <span class="string">host</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./frpc.ini:/etc/frp/frpc.ini</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="验证连接"><a href="#验证连接" class="headerlink" title="验证连接"></a>验证连接</h2><p>启动 frpc 后，查看日志：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">frpc -c frpc.ini</span><br></pre></td></tr></table></figure>
+
+<p>如果看到类似以下输出，说明连接成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2026/04/01 10:00:00 [I] [service.go:234] [fnos] start proxy success</span><br></pre></td></tr></table></figure>
+
+<p>此时可以通过 <code>122.199.155.99:5698</code> 访问内网的 <code>127.0.0.1:5666</code> 服务。</p>
+<hr>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="1-连接失败"><a href="#1-连接失败" class="headerlink" title="1. 连接失败"></a>1. 连接失败</h3><ul>
+<li>检查 frps 服务器是否正常运行</li>
+<li>确认服务器 IP 和端口是否正确</li>
+<li>检查 token 是否匹配</li>
+</ul>
+<h3 id="2-端口被占用"><a href="#2-端口被占用" class="headerlink" title="2. 端口被占用"></a>2. 端口被占用</h3><ul>
+<li>更换 <code>remotePort</code> 为其他端口</li>
+<li>检查本地端口是否被其他服务占用</li>
+</ul>
+<h3 id="3-自动重连"><a href="#3-自动重连" class="headerlink" title="3. 自动重连"></a>3. 自动重连</h3><p>将 <code>loginFailExit</code> 设为 <code>false</code>， frpc 会在连接断开后自动重连。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>frpc 配置简单，功能强大，是实现内网穿透的利器。通过本文的配置文件模板，你可以快速搭建自己的内网穿透服务，将家中的服务暴露到公网。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%A3%9E%E7%89%9BfnOS/" rel="tag"># 飞牛fnOS</a>
+              <a href="/tags/frp/" rel="tag"># frp</a>
+              <a href="/tags/frpc/" rel="tag"># frpc</a>
+              <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" rel="tag"># 内网穿透</a>
+              <a href="/tags/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/" rel="tag"># 端口映射</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/03/29/%E4%BD%8E%E6%88%90%E6%9C%AC%E5%AE%B6%E7%94%A8%E8%80%81%E4%BA%BA%E6%91%94%E5%80%92%E7%9B%91%E6%8E%A7%E5%AE%9E%E6%88%98/" rel="prev" title="低成本家用老人摔倒监控：普通摄像头 + 飞牛 fnOS + AI 检测实战">
+                  <i class="fa fa-angle-left"></i> 低成本家用老人摔倒监控：普通摄像头 + 飞牛 fnOS + AI 检测实战
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">老王笔记</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
