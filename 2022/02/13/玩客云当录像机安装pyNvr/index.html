@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.198168.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="pyNvr脚本安装python3如果使用百度网盘：pyNvr脚本安装python3如果使用百度网盘：pip3 install bypybypy info">
+<meta property="og:type" content="article">
+<meta property="og:title" content="玩客云当录像机安装pyNvr">
+<meta property="og:url" content="https://blog.198168.xyz/2022/02/13/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%BD%93%E5%BD%95%E5%83%8F%E6%9C%BA%E5%AE%89%E8%A3%85pyNvr/index.html">
+<meta property="og:site_name" content="老王笔记">
+<meta property="og:description" content="pyNvr脚本安装python3如果使用百度网盘：pyNvr脚本安装python3如果使用百度网盘：pip3 install bypybypy info">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-13T13:46:00.000Z">
+<meta property="article:modified_time" content="2026-03-29T12:05:59.308Z">
+<meta property="article:author" content="老王笔记">
+<meta property="article:tag" content="armbian">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="录像机">
+<meta property="article:tag" content="玩客云">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.198168.xyz/2022/02/13/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%BD%93%E5%BD%95%E5%83%8F%E6%9C%BA%E5%AE%89%E8%A3%85pyNvr/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.198168.xyz/2022/02/13/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%BD%93%E5%BD%95%E5%83%8F%E6%9C%BA%E5%AE%89%E8%A3%85pyNvr/","path":"2022/02/13/玩客云当录像机安装pyNvr/","title":"玩客云当录像机安装pyNvr"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>玩客云当录像机安装pyNvr | 老王笔记</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/rss2.xml" title="老王笔记" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">老王笔记</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/rss2.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">老王笔记</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">83</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.198168.xyz/2022/02/13/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%BD%93%E5%BD%95%E5%83%8F%E6%9C%BA%E5%AE%89%E8%A3%85pyNvr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="老王笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老王笔记">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="玩客云当录像机安装pyNvr | 老王笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          玩客云当录像机安装pyNvr
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-13 21:46:00" itemprop="dateCreated datePublished" datetime="2022-02-13T21:46:00+08:00">2022-02-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/N1%E7%9B%92%E5%AD%90/" itemprop="url" rel="index"><span itemprop="name">N1盒子</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://gitee.com/wfxzf/pyNvr">pyNvr脚本</a><br>安装python3<br>如果使用百度网盘：<br><a target="_blank" rel="noopener" href="https://gitee.com/wfxzf/pyNvr">pyNvr脚本</a><br>安装python3<br>如果使用百度网盘：<br>pip3 install bypy<br>bypy info  </p>
+<span id="more"></span>
+<p>复制链接粘贴到浏览器打开，登录，填写授权码。<br>如果出错<br>试试删掉配置文件重新授权<br>rm -Rf ~&#x2F;.bypy<br>rm -f ~&#x2F;.bypy.*<br>如果使用阿里云盘：<br>pip3 install aligo<br>安装opencv：<br>apt install python3-opencv  </p>
+<p>创建保存视频的文件夹,例如：<br>mkdir &#x2F;home&#x2F;videos<br>mkdir &#x2F;home&#x2F;videos&#x2F;cam01<br>一定要创建好路径，并且跟配置的路径一致，最后一层文件夹的名称为摄像头名称（camname）,参数pwd写到倒数第二层文件夹，以&#x2F;&#x2F;结尾即可。 编辑pyNvr.py,修改配置（选择netdisk（netdisk &#x3D; 1为百度，2为阿里），摄像头名称camname、串流地址url、本地存储路径pwd，单个视频时长blocktime,开启储存到百度网盘upyoby，上传完成后删除本地文件re_af_up）<br>运行：<br>cd pyNvr<br>运行：<br>python3 pyNvr.py<br>如果使用阿里网盘，第一次使用需要登录（百度已经登陆过）<br>如果二维码显示错乱，需要新建一个终端，手动找到&#x2F;tmp中的图片复制到手机可以直接访问的文件夹中，扫描，如：<br>cp &#x2F;tmp&#x2F;tmp56sdcc.png &#x2F;sdcard&#x2F;DCIM&#x2F;QRcode.png<br>打开文件管理，找到DCIM文件夹下的这张图，扫描即可。<br>测试没有问题后，ctrl + C终止程序。<br>后台运行程序:<br>nohup python3 pyNvr.py &amp;<br>增加重启开机自动运行<br>nano &#x2F;etc&#x2F;rc.local<br>把<br><code>nohup python3 /root/pyNvr/pyNvr.py &amp;</code><br>增加exit 0前面<br>程序极其简陋，稳定和安全毫无保障，仅仅用于不含任何隐私信息、图省钱省事还想多一层云备份的情况<br>仅建议用于linux不完整的安卓手机，云服务器、实体机、树莓派建议使用知名开源或商业软件，如bluebeery等。<br>附，国内常见IP摄像头串流地址:<br>海康威视<br>主码流：<br>rtsp:&#x2F;&#x2F;user:password@ip:554&#x2F;h264&#x2F;ch1&#x2F;main&#x2F;av_stream<br>子码流：<br>rtsp:&#x2F;&#x2F;user:password@ip:554&#x2F;mpeg4&#x2F;ch1&#x2F;sub&#x2F;av_stream  </p>
+<p>大华<br>rtsp:&#x2F;&#x2F;username:password@ip:port&#x2F;cam&#x2F;realmonitor?channel&#x3D;1&amp;subtype&#x3D;0  </p>
+<p>TP-Link&#x2F;水星安防<br>rtsp:&#x2F;&#x2F;user:password@ip:554&#x2F;stream1<br>rtsp:&#x2F;&#x2F;user:password@ip:554&#x2F;stream2<br>三星<br>高码流rtsp地址：<br>rtsp:&#x2F;&#x2F;user:password@ip:554&#x2F;onvif&#x2F;profile2&#x2F;media.smp（720P）<br>低码率rtsp地址<br>rtsp:&#x2F;&#x2F;user:password@ip:554&#x2F;onvif&#x2F;profile3&#x2F;media.smp  </p>
+<p>LG<br>高码流（主码流）RTSP地址：<br>rtsp:&#x2F;&#x2F;user:password@ip:554&#x2F;Master-0<br>低码流（子码流）RTSP地址：<br>rtsp:&#x2F;&#x2F;user:password@ip:554&#x2F;Slave-0</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/" rel="tag"># 玩客云</a>
+              <a href="/tags/docker/" rel="tag"># docker</a>
+              <a href="/tags/armbian/" rel="tag"># armbian</a>
+              <a href="/tags/%E5%BD%95%E5%83%8F%E6%9C%BA/" rel="tag"># 录像机</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/21/%E4%BD%BF%E7%94%A8-Dockerfile-%E5%AE%9A%E5%88%B6%E9%95%9C%E5%83%8F/" rel="prev" title="使用 Dockerfile 定制镜像">
+                  <i class="fa fa-angle-left"></i> 使用 Dockerfile 定制镜像
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/02/16/%E8%87%AA%E5%88%B6N1-Docker-Openwrt%E9%95%9C%E5%83%8F%E5%8F%8A%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/" rel="next" title="自制N1 Docker Openwrt镜像及运行镜像">
+                  自制N1 Docker Openwrt镜像及运行镜像 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">老王笔记</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
